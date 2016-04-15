@@ -1,0 +1,1422 @@
+[ 2016-04-14T08:35:10+08:00 ] ::1 /sc/index.php/Admin/users/ok/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000052s ]
+INFO: [ app_init ] --END-- [ RunTime:0.049282s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001152s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001280s ]
+ERR: 非法操作:ok
+
+[ 2016-04-14T08:35:13+08:00 ] ::1 /sc/index.php/Admin/users/ok
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000275s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000654s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000817s ]
+ERR: 非法操作:ok
+
+[ 2016-04-14T08:35:21+08:00 ] ::1 /sc/index.php/Admin/users/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000580s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000547s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000707s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.023429s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.023612s ]
+NOTIC: [2] file_put_contents(./Application/Runtime/Cache/Admin/bc9bb313b7b10ed98e9fefca5d3752b1.php): failed to open stream: Permission denied /wwwroot/sc/ThinkPHP/Library/Think/Storage/Driver/File.class.php 第 47 行.
+ERR: _STORAGE_WRITE_ERROR_:./Application/Runtime/Cache/Admin/bc9bb313b7b10ed98e9fefca5d3752b1.php
+
+[ 2016-04-14T08:35:33+08:00 ] ::1 /sc/index.php/Admin/users/addok
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000471s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000409s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000501s ]
+
+[ 2016-04-14T08:35:59+08:00 ] ::1 /sc/index.php/Admin/users/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000375s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000339s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000426s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000078s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000198s ]
+NOTIC: [2] file_put_contents(./Application/Runtime/Cache/Admin/bc9bb313b7b10ed98e9fefca5d3752b1.php): failed to open stream: Permission denied /wwwroot/sc/ThinkPHP/Library/Think/Storage/Driver/File.class.php 第 47 行.
+ERR: _STORAGE_WRITE_ERROR_:./Application/Runtime/Cache/Admin/bc9bb313b7b10ed98e9fefca5d3752b1.php
+
+[ 2016-04-14T08:36:22+08:00 ] ::1 /sc/index.php/Admin/public/checklogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015417s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001490s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001652s ]
+
+[ 2016-04-14T08:36:39+08:00 ] ::1 /sc/index.php/Admin/users/ok
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000395s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000414s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000502s ]
+ERR: 非法操作:ok
+
+[ 2016-04-14T08:36:45+08:00 ] ::1 /sc/index.php/Admin/users/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000071s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000540s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000376s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000477s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000057s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000194s ]
+NOTIC: [2] file_put_contents(./Application/Runtime/Cache/Admin/bc9bb313b7b10ed98e9fefca5d3752b1.php): failed to open stream: Permission denied /wwwroot/sc/ThinkPHP/Library/Think/Storage/Driver/File.class.php 第 47 行.
+ERR: _STORAGE_WRITE_ERROR_:./Application/Runtime/Cache/Admin/bc9bb313b7b10ed98e9fefca5d3752b1.php
+
+[ 2016-04-14T08:37:39+08:00 ] ::1 /sc/index.php/Admin/users/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004781s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000659s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000766s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000087s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000198s ]
+NOTIC: [2] file_put_contents(./Application/Runtime/Cache/Admin/bc9bb313b7b10ed98e9fefca5d3752b1.php): failed to open stream: Permission denied /wwwroot/sc/ThinkPHP/Library/Think/Storage/Driver/File.class.php 第 47 行.
+ERR: _STORAGE_WRITE_ERROR_:./Application/Runtime/Cache/Admin/bc9bb313b7b10ed98e9fefca5d3752b1.php
+
+[ 2016-04-14T08:37:42+08:00 ] ::1 /sc/index.php/Admin/users/addok
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000056s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000491s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000360s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000476s ]
+
+[ 2016-04-14T08:37:52+08:00 ] ::1 /sc/index.php/Admin/users/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000537s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000596s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000731s ]
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.3010s ]
+SQL: SELECT `u_id`,`u_icon_url`,`u_nick_name`,`u_true_name`,`u_gender`,`h_pocn`,`u_mobile`,`u_email`,`u_id_card_num`,`u_create_time`,`u_last_log_ip`,`u_last_log_time`,`u_if_aprvd` FROM `sc_users`  [ RunTime:0.0016s ]
+
+[ 2016-04-14T08:38:50+08:00 ] ::1 /sc/index.php/Admin/users/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015482s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000615s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000711s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000079s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000211s ]
+NOTIC: [2] file_put_contents(./Application/Runtime/Cache/Admin/bc9bb313b7b10ed98e9fefca5d3752b1.php): failed to open stream: Permission denied /wwwroot/sc/ThinkPHP/Library/Think/Storage/Driver/File.class.php 第 47 行.
+ERR: _STORAGE_WRITE_ERROR_:./Application/Runtime/Cache/Admin/bc9bb313b7b10ed98e9fefca5d3752b1.php
+
+[ 2016-04-14T08:39:50+08:00 ] ::1 /sc/index.php/Admin/users/a
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015656s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000971s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001083s ]
+ERR: 模板不存在:./Application/Admin/View/Users/a.html
+
+[ 2016-04-14T08:39:56+08:00 ] ::1 /sc/index.php/Admin/users/a
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000309s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000390s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000593s ]
+ERR: 模板不存在:./Application/Admin/View/Users/a.html
+
+[ 2016-04-14T08:40:00+08:00 ] ::1 /sc/index.php/Admin/users/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000315s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000348s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000436s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000065s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000175s ]
+NOTIC: [2] file_put_contents(./Application/Runtime/Cache/Admin/bc9bb313b7b10ed98e9fefca5d3752b1.php): failed to open stream: Permission denied /wwwroot/sc/ThinkPHP/Library/Think/Storage/Driver/File.class.php 第 47 行.
+ERR: _STORAGE_WRITE_ERROR_:./Application/Runtime/Cache/Admin/bc9bb313b7b10ed98e9fefca5d3752b1.php
+
+[ 2016-04-14T08:41:51+08:00 ] ::1 /sc/index.php/Admin/users/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004561s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000640s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000754s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000091s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000239s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.203576s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.203737s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.034277s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.034440s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.018023s ]
+INFO: [ app_end ] --END-- [ RunTime:0.018190s ]
+
+[ 2016-04-14T09:00:05+08:00 ] ::1 /sc/index.php/Admin/users/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000060s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015904s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001032s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001200s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000100s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000214s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.051069s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.051194s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000457s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000536s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000762s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000856s ]
+
+[ 2016-04-14T09:01:08+08:00 ] ::1 /sc/index.php/Admin/users/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000453s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000432s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000519s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000071s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000185s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019406s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019543s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000171s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000245s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000528s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000619s ]
+
+[ 2016-04-14T09:01:48+08:00 ] ::1 /sc/index.php/Admin/users/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000104s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000606s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000433s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000556s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000231s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000556s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020029s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020154s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000177s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000253s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000355s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000451s ]
+
+[ 2016-04-14T09:01:51+08:00 ] ::1 /sc/index.php/Admin/users/addok
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000324s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000299s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000377s ]
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0018s ]
+ERR: 1364:Field 'u_nick_name' doesn't have a default value
+ [ SQL语句 ] : INSERT INTO `sc_users` (`u_create_time`) VALUES ('2016-04-14 09:01:50')
+ERR: 1364:Field 'u_nick_name' doesn't have a default value
+ [ SQL语句 ] : INSERT INTO `sc_users` (`u_create_time`) VALUES ('2016-04-14 09:01:50')
+
+[ 2016-04-14T09:03:13+08:00 ] ::1 /sc/index.php/Admin/users/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000279s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000292s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000394s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000065s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000170s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021177s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021316s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000194s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000279s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000409s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000537s ]
+
+[ 2016-04-14T09:03:18+08:00 ] ::1 /sc/index.php/Admin/users/addok
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000279s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000310s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000402s ]
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0009s ]
+NOTIC: [8] Undefined index: validate /wwwroot/sc/ThinkPHP/Library/Think/Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto /wwwroot/sc/ThinkPHP/Library/Think/Model.class.php 第 1128 行.
+ERR: 1364:Field 'u_true_name' doesn't have a default value
+ [ SQL语句 ] : INSERT INTO `sc_users` (`u_nick_name`,`u_create_time`) VALUES ('12312','2016-04-14 09:03:18')
+ERR: 1364:Field 'u_true_name' doesn't have a default value
+ [ SQL语句 ] : INSERT INTO `sc_users` (`u_nick_name`,`u_create_time`) VALUES ('12312','2016-04-14 09:03:18')
+
+[ 2016-04-14T09:16:54+08:00 ] ::1 /sc/index.php/Admin/users/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000051s ]
+INFO: [ app_init ] --END-- [ RunTime:0.025985s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000744s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000854s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000121s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000289s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.084257s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.084395s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000448s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000533s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000722s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000827s ]
+
+[ 2016-04-14T09:17:20+08:00 ] ::1 /sc/index.php/Admin/users/addok
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000047s ]
+INFO: [ app_init ] --END-- [ RunTime:0.022850s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.012946s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.013082s ]
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0009s ]
+NOTIC: [8] Undefined index: validate /wwwroot/sc/ThinkPHP/Library/Think/Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto /wwwroot/sc/ThinkPHP/Library/Think/Model.class.php 第 1128 行.
+SQL: INSERT INTO `sc_users` (`u_nick_name`,`u_true_name`,`u_password`,`u_gender`,`h_pocn`,`u_mobile`,`u_email`,`u_id_card_num`,`u_create_time`) VALUES ('1231111','1213212','123123131','2','45646546','1231231231','45456464','45456456456','2016-04-14 09:17:20') [ RunTime:0.2637s ]
+
+[ 2016-04-14T09:23:59+08:00 ] ::1 /sc/index.php/Admin/users/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000039s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015666s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001508s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001643s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000085s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000204s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.161995s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.162138s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000463s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000565s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000726s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000851s ]
+
+[ 2016-04-14T09:24:23+08:00 ] ::1 /sc/index.php/Admin/users/addok
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000050s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015314s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000831s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000947s ]
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0305s ]
+NOTIC: [8] Undefined index: validate /wwwroot/sc/ThinkPHP/Library/Think/Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto /wwwroot/sc/ThinkPHP/Library/Think/Model.class.php 第 1128 行.
+SQL: INSERT INTO `sc_users` (`u_nick_name`,`u_true_name`,`u_password`,`h_pocn`,`u_mobile`,`u_email`,`u_id_card_num`,`u_create_time`) VALUES ('我们是谁','奶奶的额','ni zainnali ','','0','','','2016-04-14 09:24:22') [ RunTime:0.0360s ]
+
+[ 2016-04-14T09:26:28+08:00 ] ::1 /sc/index.php/Admin/users/addok
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.016873s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.015745s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.015870s ]
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0007s ]
+NOTIC: [8] Undefined index: validate /wwwroot/sc/ThinkPHP/Library/Think/Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto /wwwroot/sc/ThinkPHP/Library/Think/Model.class.php 第 1128 行.
+SQL: INSERT INTO `sc_users` (`u_nick_name`,`u_true_name`,`u_password`,`h_pocn`,`u_mobile`,`u_email`,`u_id_card_num`) VALUES ('','','','','0','','') [ RunTime:0.0008s ]
+
+[ 2016-04-14T09:29:26+08:00 ] ::1 /sc/index.php/Admin/users/addok
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000072s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015776s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000895s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001012s ]
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0008s ]
+NOTIC: [8] Undefined index: validate /wwwroot/sc/ThinkPHP/Library/Think/Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto /wwwroot/sc/ThinkPHP/Library/Think/Model.class.php 第 1128 行.
+
+[ 2016-04-14T09:34:16+08:00 ] ::1 /sc/index.php/Admin/users/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000052s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015771s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.015262s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.015439s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000106s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000219s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.093965s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.094153s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.031281s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.031382s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.015715s ]
+INFO: [ app_end ] --END-- [ RunTime:0.015827s ]
+
+[ 2016-04-14T09:34:18+08:00 ] ::1 /sc/index.php/Admin/users/addok
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000508s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000499s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000700s ]
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0013s ]
+NOTIC: [8] Undefined index: validate /wwwroot/sc/ThinkPHP/Library/Think/Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto /wwwroot/sc/ThinkPHP/Library/Think/Model.class.php 第 1128 行.
+
+[ 2016-04-14T09:34:32+08:00 ] ::1 /sc/index.php/Admin/users/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015505s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000914s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001034s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000090s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000193s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010300s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010415s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000409s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000497s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000625s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000706s ]
+
+[ 2016-04-14T09:34:34+08:00 ] ::1 /sc/index.php/Admin/users/addok
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000308s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000291s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000370s ]
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0008s ]
+NOTIC: [8] Undefined index: validate /wwwroot/sc/ThinkPHP/Library/Think/Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto /wwwroot/sc/ThinkPHP/Library/Think/Model.class.php 第 1128 行.
+
+[ 2016-04-14T09:35:32+08:00 ] ::1 /sc/index.php/Admin/users/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015699s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000858s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000989s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000085s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000224s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.080276s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.080389s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001114s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001224s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000826s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000924s ]
+
+[ 2016-04-14T09:35:34+08:00 ] ::1 /sc/index.php/Admin/users/addok
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000455s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000309s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000401s ]
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0007s ]
+NOTIC: [8] Undefined index: validate /wwwroot/sc/ThinkPHP/Library/Think/Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto /wwwroot/sc/ThinkPHP/Library/Think/Model.class.php 第 1128 行.
+
+[ 2016-04-14T09:42:14+08:00 ] ::1 /sc/index.php/Admin/users/addok
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.024744s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000936s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001062s ]
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0014s ]
+NOTIC: [8] Undefined index: validate /wwwroot/sc/ThinkPHP/Library/Think/Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto /wwwroot/sc/ThinkPHP/Library/Think/Model.class.php 第 1128 行.
+
+[ 2016-04-14T09:43:22+08:00 ] ::1 /sc/index.php/Admin/users/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.048388s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.023619s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.023736s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000105s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000212s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.062078s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.062192s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000404s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000491s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000654s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000741s ]
+
+[ 2016-04-14T09:43:23+08:00 ] ::1 /sc/index.php/Admin/users/addok
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000601s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000623s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000812s ]
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0007s ]
+NOTIC: [8] Undefined index: validate /wwwroot/sc/ThinkPHP/Library/Think/Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto /wwwroot/sc/ThinkPHP/Library/Think/Model.class.php 第 1128 行.
+
+[ 2016-04-14T09:44:37+08:00 ] ::1 /sc/index.php/Admin/users/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000053s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015774s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000646s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000810s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000098s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000259s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.062154s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.062267s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000428s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000513s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000674s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000753s ]
+
+[ 2016-04-14T09:44:39+08:00 ] ::1 /sc/index.php/Admin/users/addok
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000312s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000338s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000452s ]
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0007s ]
+NOTIC: [8] Undefined index: validate /wwwroot/sc/ThinkPHP/Library/Think/Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto /wwwroot/sc/ThinkPHP/Library/Think/Model.class.php 第 1128 行.
+
+[ 2016-04-14T09:46:29+08:00 ] ::1 /sc/index.php/Admin/users/addok
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.016704s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.016261s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.016429s ]
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0011s ]
+NOTIC: [8] Undefined index: validate /wwwroot/sc/ThinkPHP/Library/Think/Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto /wwwroot/sc/ThinkPHP/Library/Think/Model.class.php 第 1128 行.
+
+[ 2016-04-14T09:46:37+08:00 ] ::1 /sc/index.php/Admin/users/addok
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000702s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000450s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000552s ]
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0009s ]
+NOTIC: [8] Undefined index: validate /wwwroot/sc/ThinkPHP/Library/Think/Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto /wwwroot/sc/ThinkPHP/Library/Think/Model.class.php 第 1128 行.
+
+[ 2016-04-14T09:47:12+08:00 ] ::1 /sc/index.php/Admin/users/addok
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.016290s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.015264s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.015424s ]
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0006s ]
+NOTIC: [8] Undefined index: validate /wwwroot/sc/ThinkPHP/Library/Think/Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto /wwwroot/sc/ThinkPHP/Library/Think/Model.class.php 第 1128 行.
+
+[ 2016-04-14T09:50:28+08:00 ] ::1 /sc/index.php/Admin/users/addok
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000051s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015440s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000754s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000894s ]
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0016s ]
+NOTIC: [8] Undefined index: validate /wwwroot/sc/ThinkPHP/Library/Think/Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto /wwwroot/sc/ThinkPHP/Library/Think/Model.class.php 第 1128 行.
+
+[ 2016-04-14T09:58:22+08:00 ] ::1 /sc/index.php/Admin/users/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000050s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015459s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000756s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000872s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000191s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000418s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.084371s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.084498s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000442s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000525s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000716s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000814s ]
+
+[ 2016-04-14T09:58:25+08:00 ] ::1 /sc/index.php/Admin/users/addok
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000348s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000348s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000441s ]
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0014s ]
+NOTIC: [8] Undefined index: validate /wwwroot/sc/ThinkPHP/Library/Think/Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto /wwwroot/sc/ThinkPHP/Library/Think/Model.class.php 第 1128 行.
+
+[ 2016-04-14T09:58:31+08:00 ] ::1 /sc/index.php/Admin/users/addok
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000431s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000473s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000652s ]
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0011s ]
+NOTIC: [8] Undefined index: validate /wwwroot/sc/ThinkPHP/Library/Think/Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto /wwwroot/sc/ThinkPHP/Library/Think/Model.class.php 第 1128 行.
+
+[ 2016-04-14T09:58:45+08:00 ] ::1 /sc/index.php/Admin/users/addok
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000505s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000462s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000584s ]
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0013s ]
+NOTIC: [8] Undefined index: validate /wwwroot/sc/ThinkPHP/Library/Think/Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto /wwwroot/sc/ThinkPHP/Library/Think/Model.class.php 第 1128 行.
+
+[ 2016-04-14T09:58:51+08:00 ] ::1 /sc/index.php/Admin/users/addok
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000440s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000471s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000574s ]
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0006s ]
+NOTIC: [8] Undefined index: validate /wwwroot/sc/ThinkPHP/Library/Think/Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto /wwwroot/sc/ThinkPHP/Library/Think/Model.class.php 第 1128 行.
+
+[ 2016-04-14T09:58:55+08:00 ] ::1 /sc/index.php/Admin/users/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000339s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000952s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001134s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000076s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000170s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.059705s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.059832s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.013223s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.013340s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000682s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000779s ]
+
+[ 2016-04-14T09:58:56+08:00 ] ::1 /sc/index.php/Admin/users/addok
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000049s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000723s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000567s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000784s ]
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0009s ]
+NOTIC: [8] Undefined index: validate /wwwroot/sc/ThinkPHP/Library/Think/Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto /wwwroot/sc/ThinkPHP/Library/Think/Model.class.php 第 1128 行.
+
+[ 2016-04-14T10:00:59+08:00 ] ::1 /sc/index.php/Admin/users/addok
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015148s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000812s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000953s ]
+
+[ 2016-04-14T10:01:41+08:00 ] ::1 /sc/index.php/Admin/users/addok
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015489s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001017s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001195s ]
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0006s ]
+NOTIC: [8] Undefined index: validate /wwwroot/sc/ThinkPHP/Library/Think/Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto /wwwroot/sc/ThinkPHP/Library/Think/Model.class.php 第 1128 行.
+
+[ 2016-04-14T10:02:05+08:00 ] ::1 /sc/index.php/Admin/users/addok
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015460s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000607s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000716s ]
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0006s ]
+NOTIC: [8] Undefined index: validate /wwwroot/sc/ThinkPHP/Library/Think/Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto /wwwroot/sc/ThinkPHP/Library/Think/Model.class.php 第 1128 行.
+
+[ 2016-04-14T10:05:36+08:00 ] ::1 /sc/index.php/Admin/users/addok
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000039s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015720s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001147s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001265s ]
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: validate /wwwroot/sc/ThinkPHP/Library/Think/Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto /wwwroot/sc/ThinkPHP/Library/Think/Model.class.php 第 1128 行.
+ERR: 1406:Data too long for column 'u_true_name' at row 1
+ [ SQL语句 ] : INSERT INTO `sc_users` (`u_icon_url`,`u_nick_name`,`u_true_name`,`u_password`,`u_gender`,`h_pocn`,`u_mobile`,`u_email`,`u_id_card_num`) VALUES ('121231','2123123123','123123123123','202cb962ac59075b964b07152d234b70','2','1231231','123123123','123123123','123123123')
+ERR: 1406:Data too long for column 'u_true_name' at row 1
+ [ SQL语句 ] : INSERT INTO `sc_users` (`u_icon_url`,`u_nick_name`,`u_true_name`,`u_password`,`u_gender`,`h_pocn`,`u_mobile`,`u_email`,`u_id_card_num`) VALUES ('121231','2123123123','123123123123','202cb962ac59075b964b07152d234b70','2','1231231','123123123','123123123','123123123')
+
+[ 2016-04-14T10:06:03+08:00 ] ::1 /sc/index.php/Admin/users/addok
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015867s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001257s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001448s ]
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0006s ]
+NOTIC: [8] Undefined index: validate /wwwroot/sc/ThinkPHP/Library/Think/Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto /wwwroot/sc/ThinkPHP/Library/Think/Model.class.php 第 1128 行.
+SQL: INSERT INTO `sc_users` (`u_icon_url`,`u_nick_name`,`u_true_name`,`u_password`,`u_gender`,`h_pocn`,`u_mobile`,`u_email`,`u_id_card_num`) VALUES ('123123','1231','1231','202cb962ac59075b964b07152d234b70','2','123','123','123','123') [ RunTime:0.0304s ]
+
+[ 2016-04-14T10:22:39+08:00 ] ::1 /sc/index.php/Admin/public/checklogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000056s ]
+INFO: [ app_init ] --END-- [ RunTime:0.040607s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001441s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001577s ]
+
+[ 2016-04-14T10:23:05+08:00 ] ::1 /sc/index.php/Admin/public/checklogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000060s ]
+INFO: [ app_init ] --END-- [ RunTime:0.030574s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.016141s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.016283s ]
+
+[ 2016-04-14T10:23:08+08:00 ] ::1 /sc/index.php/Admin/public/checklogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000447s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000383s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000481s ]
+
+[ 2016-04-14T10:23:53+08:00 ] ::1 /sc/index.php/Admin/public/checklogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015584s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000680s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000790s ]
+
+[ 2016-04-14T10:23:56+08:00 ] ::1 /sc/index.php/Admin/public/checklogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000326s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000534s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000693s ]
+
+[ 2016-04-14T10:24:33+08:00 ] ::1 /sc/index.php/Admin/public/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.016788s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000677s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000781s ]
+ERR: 非法操作:index
+
+[ 2016-04-14T10:24:41+08:00 ] ::1 /sc/index.php/Admin/public/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000282s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000316s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000454s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000107s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000233s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.190490s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.190597s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.014492s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.014662s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001179s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001402s ]
+
+[ 2016-04-14T10:27:07+08:00 ] ::1 /sc/index.php/Admin/public/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015203s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.035150s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.035400s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000080s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000200s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.330236s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.330426s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.030827s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.030966s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.116461s ]
+INFO: [ app_end ] --END-- [ RunTime:0.116593s ]
+
+[ 2016-04-14T10:27:27+08:00 ] ::1 /sc/index.php/Admin/public/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015762s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001033s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001171s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000118s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000301s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031376s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031588s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.010882s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.010998s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.016333s ]
+INFO: [ app_end ] --END-- [ RunTime:0.016461s ]
+
+[ 2016-04-14T10:27:27+08:00 ] ::1 /sc/index.php/Admin/public/localhost/sc/admin/public/checklogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000278s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000405s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000534s ]
+ERR: 非法操作:localhost
+
+[ 2016-04-14T10:27:43+08:00 ] ::1 /sc/index.php/Admin/public/localhost/sc/admin/public/checklogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015651s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000906s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001026s ]
+ERR: 非法操作:localhost
+
+[ 2016-04-14T10:28:37+08:00 ] ::1 /sc/index.php/Admin/public/localhost/sc/admin/public/checklogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015455s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.019834s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.020026s ]
+ERR: 非法操作:localhost
+
+[ 2016-04-14T10:28:55+08:00 ] ::1 /sc/index.php/Admin/public/localhost/sc/admin/public/checklogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015575s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000634s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000734s ]
+ERR: 非法操作:localhost
+
+[ 2016-04-14T10:29:02+08:00 ] ::1 /sc/index.php/Admin/public/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000328s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000374s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000568s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000060s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000164s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.096865s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.096975s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.019190s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.019333s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000855s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001013s ]
+
+[ 2016-04-14T10:29:04+08:00 ] ::1 /sc/index.php/Admin/public/checklogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000274s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000308s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000386s ]
+
+[ 2016-04-14T10:36:54+08:00 ] ::1 /sc/index.php/Admin/public/checklogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000051s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015645s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.016068s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.016217s ]
+
+[ 2016-04-14T10:39:03+08:00 ] ::1 /sc/index.php/Admin/public/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000042s ]
+INFO: [ app_init ] --END-- [ RunTime:0.016776s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.015232s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.015385s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000110s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000235s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.095094s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.095244s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000444s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000526s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000790s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000886s ]
+
+[ 2016-04-14T10:39:11+08:00 ] ::1 /sc/index.php/Admin/public/checklogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000464s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000481s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000576s ]
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0016s ]
+SQL: SELECT * FROM `sc_users` WHERE ( u_nick_name='1231' and u_password='202cb962ac59075b964b07152d234b70' ) LIMIT 1   [ RunTime:0.0005s ]
+ERR: Think\Controller:db_update方法不存在！
+
+[ 2016-04-14T10:40:50+08:00 ] ::1 /sc/index.php/Admin/public/checklogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015534s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000689s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000797s ]
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `sc_users` WHERE ( u_nick_name='1231' and u_password='202cb962ac59075b964b07152d234b70' ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8192] mysql_query(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /wwwroot/sc/Application/Admin/Controller/PublicController.class.php 第 94 行.
+NOTIC: [2] mysql_query(): Access denied for user ''@'localhost' (using password: NO) /wwwroot/sc/Application/Admin/Controller/PublicController.class.php 第 94 行.
+NOTIC: [2] mysql_query(): A link to the server could not be established /wwwroot/sc/Application/Admin/Controller/PublicController.class.php 第 94 行.
+
+[ 2016-04-14T10:41:46+08:00 ] ::1 /sc/index.php/Admin/public/checklogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015682s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000769s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000904s ]
+
+[ 2016-04-14T10:42:08+08:00 ] ::1 /sc/index.php/Admin/public/checklogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004877s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.016492s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.016613s ]
+
+[ 2016-04-14T10:42:15+08:00 ] ::1 /sc/index.php/Admin/public/checklogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000471s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000444s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000537s ]
+
+[ 2016-04-14T10:54:21+08:00 ] ::1 /sc/index.php/Admin/public/checklogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000048s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015488s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000895s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001011s ]
+
+[ 2016-04-14T10:54:23+08:00 ] ::1 /sc/index.php/Admin/public/checklogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000317s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000306s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000384s ]
+
+[ 2016-04-14T10:55:15+08:00 ] ::1 /sc/index.php/Admin/public/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015213s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001002s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001127s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000096s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000208s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.041337s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.041466s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000464s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000547s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000788s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000889s ]
+
+[ 2016-04-14T10:55:15+08:00 ] ::1 /sc/index.php/Admin/public/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000283s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000433s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000514s ]
+ERR: 非法操作:index
+
+[ 2016-04-14T10:55:17+08:00 ] ::1 /sc/index.php/Admin/public/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000319s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000370s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000463s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000103s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000275s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005387s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005494s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000143s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000221s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000346s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000453s ]
+
+[ 2016-04-14T10:55:20+08:00 ] ::1 /sc/index.php/Admin/public/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000318s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000329s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000417s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000064s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000186s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004776s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004880s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000147s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000221s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000449s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000524s ]
+
+[ 2016-04-14T10:55:22+08:00 ] ::1 /sc/index.php/Admin/public/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000495s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000373s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000471s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000054s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000135s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003704s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003789s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000194s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000330s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000492s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000588s ]
+
+[ 2016-04-14T10:55:36+08:00 ] ::1 /sc/index.php/Admin/public/checklogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000280s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000331s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000420s ]
+
+[ 2016-04-14T10:56:47+08:00 ] ::1 /sc/index.php/Admin/public/checklogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000040s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000821s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000990s ]
+
+[ 2016-04-14T10:58:38+08:00 ] ::1 /sc/index.php/Admin/public/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015782s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001022s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001142s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000074s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000186s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.044935s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.045140s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000581s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000680s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000764s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000866s ]
+
+[ 2016-04-14T10:58:45+08:00 ] ::1 /sc/index.php/Admin/public/checklogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000299s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000306s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000435s ]
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `sc_users` WHERE ( u_nick_name='1231' and u_password='202cb962ac59075b964b07152d234b70' ) LIMIT 1   [ RunTime:0.0006s ]
+NOTIC: [8192] mysql_query(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /wwwroot/sc/Application/Admin/Controller/PublicController.class.php 第 94 行.
+NOTIC: [2] mysql_query(): Access denied for user ''@'localhost' (using password: NO) /wwwroot/sc/Application/Admin/Controller/PublicController.class.php 第 94 行.
+NOTIC: [2] mysql_query(): A link to the server could not be established /wwwroot/sc/Application/Admin/Controller/PublicController.class.php 第 94 行.
+
+[ 2016-04-14T11:00:22+08:00 ] ::1 /sc/index.php/Admin/public/checklogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015460s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000621s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000743s ]
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0080s ]
+SQL: SELECT * FROM `sc_users` WHERE ( u_nick_name='1231' and u_password='202cb962ac59075b964b07152d234b70' ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8192] mysql_query(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /wwwroot/sc/Application/Admin/Controller/PublicController.class.php 第 95 行.
+NOTIC: [2] mysql_query(): Access denied for user ''@'localhost' (using password: NO) /wwwroot/sc/Application/Admin/Controller/PublicController.class.php 第 95 行.
+NOTIC: [2] mysql_query(): A link to the server could not be established /wwwroot/sc/Application/Admin/Controller/PublicController.class.php 第 95 行.
+
+[ 2016-04-14T11:01:12+08:00 ] ::1 /sc/index.php/Admin/public/checklogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015547s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000779s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000934s ]
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0259s ]
+SQL: SELECT * FROM `sc_users` WHERE ( u_nick_name='1231' and u_password='202cb962ac59075b964b07152d234b70' ) LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8192] mysql_query(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /wwwroot/sc/Application/Admin/Controller/PublicController.class.php 第 94 行.
+NOTIC: [2] mysql_query(): Access denied for user ''@'localhost' (using password: NO) /wwwroot/sc/Application/Admin/Controller/PublicController.class.php 第 94 行.
+NOTIC: [2] mysql_query(): A link to the server could not be established /wwwroot/sc/Application/Admin/Controller/PublicController.class.php 第 94 行.
+
+[ 2016-04-14T11:04:34+08:00 ] ::1 /sc/index.php/Admin/public/checklogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015638s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000639s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000746s ]
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `sc_users` WHERE ( u_nick_name='1231' and u_password='202cb962ac59075b964b07152d234b70' ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8192] mysql_query(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /wwwroot/sc/Application/Admin/Controller/PublicController.class.php 第 94 行.
+NOTIC: [2] mysql_query(): Access denied for user ''@'localhost' (using password: NO) /wwwroot/sc/Application/Admin/Controller/PublicController.class.php 第 94 行.
+NOTIC: [2] mysql_query(): A link to the server could not be established /wwwroot/sc/Application/Admin/Controller/PublicController.class.php 第 94 行.
+
+[ 2016-04-14T11:04:40+08:00 ] ::1 /sc/index.php/Admin/public/checklogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000421s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000392s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000482s ]
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `sc_users` WHERE ( u_nick_name='1231' and u_password='202cb962ac59075b964b07152d234b70' ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8192] mysql_query(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /wwwroot/sc/Application/Admin/Controller/PublicController.class.php 第 94 行.
+NOTIC: [2] mysql_query(): Access denied for user ''@'localhost' (using password: NO) /wwwroot/sc/Application/Admin/Controller/PublicController.class.php 第 94 行.
+NOTIC: [2] mysql_query(): A link to the server could not be established /wwwroot/sc/Application/Admin/Controller/PublicController.class.php 第 94 行.
+
+[ 2016-04-14T11:07:38+08:00 ] ::1 /sc/index.php/Admin/public/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015638s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000750s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000911s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000094s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000190s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.074032s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.074143s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000431s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000518s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000662s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000798s ]
+
+[ 2016-04-14T11:07:44+08:00 ] ::1 /sc/index.php/Admin/public/checklogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000322s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000299s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000378s ]
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `sc_users` WHERE ( u_nick_name='1231' and u_password='202cb962ac59075b964b07152d234b70' ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: id /wwwroot/sc/Application/Admin/Controller/PublicController.class.php 第 66 行.
+NOTIC: [8192] mysql_query(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /wwwroot/sc/Application/Admin/Controller/PublicController.class.php 第 67 行.
+NOTIC: [2] mysql_query(): Access denied for user ''@'localhost' (using password: NO) /wwwroot/sc/Application/Admin/Controller/PublicController.class.php 第 67 行.
+NOTIC: [2] mysql_query(): A link to the server could not be established /wwwroot/sc/Application/Admin/Controller/PublicController.class.php 第 67 行.
+
+[ 2016-04-14T11:08:39+08:00 ] ::1 /sc/index.php/Admin/public/checklogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000300s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000346s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000456s ]
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0079s ]
+SQL: SELECT * FROM `sc_users` WHERE ( u_nick_name='1231' and u_password='202cb962ac59075b964b07152d234b70' ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8192] mysql_query(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /wwwroot/sc/Application/Admin/Controller/PublicController.class.php 第 67 行.
+NOTIC: [2] mysql_query(): Access denied for user ''@'localhost' (using password: NO) /wwwroot/sc/Application/Admin/Controller/PublicController.class.php 第 67 行.
+NOTIC: [2] mysql_query(): A link to the server could not be established /wwwroot/sc/Application/Admin/Controller/PublicController.class.php 第 67 行.
+
+[ 2016-04-14T11:28:24+08:00 ] ::1 /sc/index.php/Admin/public/checklogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000054s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015506s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000744s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000867s ]
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0417s ]
+SQL: SELECT * FROM `sc_users` WHERE ( u_nick_name='1231' and u_password='202cb962ac59075b964b07152d234b70' ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: UPDATE `sc_users` SET `u_last_log_ip`='::1',`u_last_log_time`='2016-04-14 11:28:23' WHERE `u_id` = 26 [ RunTime:0.3129s ]
+
+[ 2016-04-14T11:31:02+08:00 ] ::1 /sc/index.php/Admin/public/checklogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000053s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015531s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000768s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000886s ]
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0079s ]
+SQL: SELECT * FROM `sc_users` WHERE ( u_nick_name='1231' and u_password='202cb962ac59075b964b07152d234b70' ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: UPDATE `sc_users` SET `u_last_log_ip`='::1',`u_last_log_time`='2016-04-14 11:31:02' WHERE `u_id` = 26 [ RunTime:0.0621s ]
+
+[ 2016-04-14T11:45:47+08:00 ] ::1 /sc/index.php/Admin/INDEX/LOGOUT
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000060s ]
+INFO: [ app_init ] --END-- [ RunTime:0.067288s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.039546s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.039680s ]
+
+[ 2016-04-14T11:45:57+08:00 ] ::1 /sc/index.php/Admin/INDEX/LOGIN
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000490s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000456s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000547s ]
+
+[ 2016-04-14T11:46:02+08:00 ] ::1 /sc/index.php/Admin/INDEX/LOGIN
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000452s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000441s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000571s ]
+
+[ 2016-04-14T11:46:10+08:00 ] ::1 /sc/index.php/Admin/PUBLIC/LOGIN
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000281s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000295s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000371s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000113s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000234s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.173769s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.174013s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.019158s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.019303s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000817s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000916s ]
+
+[ 2016-04-14T11:46:18+08:00 ] ::1 /sc/index.php/Admin/PUBLIC/CHECKLOGIN
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000628s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000515s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000614s ]
+
+[ 2016-04-14T11:46:35+08:00 ] ::1 /sc/index.php/Admin/PUBLIC/VERIFY
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000045s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015609s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001335s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001450s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.025566s ]
+INFO: [ app_end ] --END-- [ RunTime:0.025728s ]
+
+[ 2016-04-14T14:20:47+08:00 ] ::1 /sc/index.php/Admin/public/CHECKLOGIN
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000052s ]
+INFO: [ app_init ] --END-- [ RunTime:0.041959s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000916s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001056s ]
+
+[ 2016-04-14T14:20:55+08:00 ] ::1 /sc/index.php/Admin/PUBLIC/VERIFY
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000637s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000801s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000976s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.024911s ]
+INFO: [ app_end ] --END-- [ RunTime:0.025096s ]
+
+[ 2016-04-14T14:20:58+08:00 ] ::1 /sc/index.php/Admin/public/CHECKLOGIN
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000307s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000467s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000585s ]
+
+[ 2016-04-14T14:21:00+08:00 ] ::1 /sc/index.php/Admin/public/CHECKLOGIN
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000404s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000529s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000618s ]
+
+[ 2016-04-14T16:43:06+08:00 ] ::1 /sc/index.php/Admin/users/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000056s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015427s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001272s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001422s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.016874s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.017071s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.150961s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.151148s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.029350s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.029494s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000746s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000851s ]
+
+[ 2016-04-14T16:43:23+08:00 ] ::1 /sc/index.php/Admin/users/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000092s ]
+INFO: [ app_init ] --END-- [ RunTime:0.063091s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000902s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001020s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000086s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000199s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.173057s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.173167s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000425s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000501s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000674s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000772s ]
+
+[ 2016-04-14T16:43:26+08:00 ] ::1 /sc/index.php/Admin/users/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000333s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000480s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000595s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000067s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000178s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019025s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019153s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000176s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000265s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000464s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000553s ]
+

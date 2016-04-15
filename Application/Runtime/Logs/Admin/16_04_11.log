@@ -1,0 +1,1462 @@
+[ 2016-04-11T10:23:42+08:00 ] ::1 /sc/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000780s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000703s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000769s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000054s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000112s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021392s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021482s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000833s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000889s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000862s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000911s ]
+
+[ 2016-04-11T10:41:24+08:00 ] ::1 /sc/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000868s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001107s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001233s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000054s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000115s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.050838s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.050945s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.015302s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.015372s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000883s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000938s ]
+
+[ 2016-04-11T14:12:12+08:00 ] ::1 /sc/index.php/admin/public
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000247s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000730s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000812s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016056s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016143s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000291s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000359s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000457s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000495s ]
+
+[ 2016-04-11T14:12:15+08:00 ] ::1 /sc/index.php/admin/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000442s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000355s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000400s ]
+ERR: 无法加载控制器:Index
+
+[ 2016-04-11T14:12:19+08:00 ] ::1 /sc/index.php/admin/public
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000205s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000258s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000290s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000090s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000122s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000082s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000108s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000281s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000309s ]
+
+[ 2016-04-11T14:13:29+08:00 ] ::1 /sc/index.php/admin/public
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000245s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000576s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000621s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-04-11T14:13:32+08:00 ] ::1 /sc/index.php/admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000305s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000318s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000360s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000136s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000197s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000147s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000231s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000434s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000483s ]
+
+[ 2016-04-11T14:15:35+08:00 ] ::1 /sc/index.php/admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000549s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000493s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000539s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000196s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000235s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000108s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000138s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000322s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000352s ]
+
+[ 2016-04-11T14:15:41+08:00 ] ::1 /sc/index.php/admin/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000208s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000260s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000292s ]
+ERR: 无法加载控制器:Login
+
+[ 2016-04-11T14:15:49+08:00 ] ::1 /sc/index.php/admin/index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000211s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000260s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000292s ]
+ERR: 模板不存在:./Application/Admin/View/Index/login.html
+
+[ 2016-04-11T14:17:15+08:00 ] ::1 /sc/index.php/admin/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000206s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000255s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000288s ]
+ERR: 无法加载控制器:Login
+
+[ 2016-04-11T14:17:21+08:00 ] ::1 /sc/index.php/admin/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000245s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000309s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000349s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000178s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000271s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000173s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000206s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000441s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000482s ]
+
+[ 2016-04-11T14:17:26+08:00 ] ::1 /sc/index.php/admin/index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000206s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000257s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000289s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000098s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000138s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000099s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000126s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000267s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000295s ]
+
+[ 2016-04-11T14:17:31+08:00 ] ::1 /sc/index.php/admin/index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000274s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000369s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000412s ]
+ERR: 模板不存在:./Application/Admin/View/Index/login.html
+
+[ 2016-04-11T14:18:43+08:00 ] ::1 /sc/index.php/admin/public/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000284s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000449s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000497s ]
+ERR: 模板不存在:./Application/Admin/View/Public/login.html
+
+[ 2016-04-11T14:19:42+08:00 ] ::1 /sc/index.php/admin/public/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000408s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000452s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000493s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000035s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000095s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023481s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023614s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000189s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000232s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000448s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000511s ]
+
+[ 2016-04-11T14:24:17+08:00 ] ::1 /sc/index.php/admin/public/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000043s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000469s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000407s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000452s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000066s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000184s ]
+NOTIC: [8] Undefined variable: titile /wwwroot/sc/Application/Runtime/Cache/Admin/3c5566b2bfbf6ef00ac5366ba47246fe.php 第 1 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.111789s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.111864s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000299s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000361s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000752s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000828s ]
+
+[ 2016-04-11T14:24:19+08:00 ] ::1 /sc/index.php/admin/public/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000250s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000317s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000360s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000043s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000154s ]
+NOTIC: [8] Undefined variable: titile /wwwroot/sc/Application/Runtime/Cache/Admin/3c5566b2bfbf6ef00ac5366ba47246fe.php 第 1 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018327s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018383s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000191s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000290s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001160s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001250s ]
+
+[ 2016-04-11T14:24:50+08:00 ] ::1 /sc/index.php/admin/public/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000440s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000495s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000542s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000044s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000110s ]
+NOTIC: [8] Undefined variable: titile /wwwroot/sc/Application/Runtime/Cache/Admin/3c5566b2bfbf6ef00ac5366ba47246fe.php 第 1 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019252s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019295s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000142s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000176s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000548s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000597s ]
+
+[ 2016-04-11T14:31:04+08:00 ] ::1 /sc/index.php/admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000325s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000387s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000435s ]
+ERR: 模板不存在:./Application/Admin/View/Index/index.html
+
+[ 2016-04-11T14:32:24+08:00 ] ::1 /sc/index.php/admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000389s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000465s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000588s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000032s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000078s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018646s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018762s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000210s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000269s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000753s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000823s ]
+
+[ 2016-04-11T14:32:29+08:00 ] ::1 /sc/index.php/admin/public
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000290s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000480s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000531s ]
+ERR: 非法操作:index
+
+[ 2016-04-11T14:32:33+08:00 ] ::1 /sc/index.php/admin/public/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000209s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000258s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000289s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000024s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000056s ]
+NOTIC: [8] Undefined variable: titile /wwwroot/sc/Application/Runtime/Cache/Admin/3c5566b2bfbf6ef00ac5366ba47246fe.php 第 1 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018227s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018294s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000312s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000385s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000576s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000630s ]
+
+[ 2016-04-11T14:35:58+08:00 ] ::1 /sc/index.php/admin/public/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000245s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000579s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000635s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000030s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000073s ]
+NOTIC: [8] Undefined variable: titile /wwwroot/sc/Application/Runtime/Cache/Admin/3c5566b2bfbf6ef00ac5366ba47246fe.php 第 1 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018385s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018481s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000328s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000440s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000579s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000645s ]
+
+[ 2016-04-11T14:36:00+08:00 ] ::1 /sc/index.php/admin/public/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000245s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000839s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000904s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000055s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000135s ]
+NOTIC: [8] Undefined variable: titile /wwwroot/sc/Application/Runtime/Cache/Admin/3c5566b2bfbf6ef00ac5366ba47246fe.php 第 1 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019425s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019495s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000296s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000366s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000491s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000539s ]
+
+[ 2016-04-11T14:41:04+08:00 ] ::1 /sc/index.php/admin/public/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000604s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000767s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000842s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000036s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000092s ]
+NOTIC: [8] Undefined variable: titile /wwwroot/sc/Application/Runtime/Cache/Admin/3c5566b2bfbf6ef00ac5366ba47246fe.php 第 1 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005408s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005464s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000292s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000326s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000548s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000586s ]
+
+[ 2016-04-11T14:41:09+08:00 ] ::1 /sc/index.php/admin/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000205s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000256s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000289s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000041s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000106s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020960s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021056s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000167s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000204s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000411s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000450s ]
+
+[ 2016-04-11T14:41:33+08:00 ] ::1 /sc/index.php/admin/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000264s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000471s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000530s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000046s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000117s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.077127s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.077183s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000135s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000170s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000362s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000409s ]
+
+[ 2016-04-11T14:42:00+08:00 ] ::1 /sc/index.php/admin/public
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000207s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000259s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000291s ]
+ERR: 非法操作:index
+
+[ 2016-04-11T14:42:04+08:00 ] ::1 /sc/index.php/admin/public
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000207s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000257s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000288s ]
+ERR: 非法操作:index
+
+[ 2016-04-11T14:42:09+08:00 ] ::1 /sc/index.php/admin/public/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000207s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000256s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000288s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000024s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000056s ]
+NOTIC: [8] Undefined variable: titile /wwwroot/sc/Application/Runtime/Cache/Admin/3c5566b2bfbf6ef00ac5366ba47246fe.php 第 1 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018286s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018344s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000251s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000303s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000546s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000599s ]
+
+[ 2016-04-11T14:42:16+08:00 ] ::1 /sc/index.php/admin/index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000259s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000448s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000489s ]
+ERR: 非法操作:login
+
+[ 2016-04-11T14:42:20+08:00 ] ::1 /sc/index.php/admin/index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000207s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000256s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000289s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000025s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000058s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018180s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018269s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000316s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000393s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000591s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000646s ]
+
+[ 2016-04-11T14:42:25+08:00 ] ::1 /sc/index.php/admin/public/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000394s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000333s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000387s ]
+ERR: 非法操作:index
+
+[ 2016-04-11T14:42:30+08:00 ] ::1 /sc/index.php/admin/public/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000228s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000287s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000322s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000026s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000061s ]
+NOTIC: [8] Undefined variable: titile /wwwroot/sc/Application/Runtime/Cache/Admin/3c5566b2bfbf6ef00ac5366ba47246fe.php 第 1 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018570s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018630s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000200s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000256s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000486s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000541s ]
+
+[ 2016-04-11T15:18:24+08:00 ] ::1 /sc/index.php/admin/users/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000669s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004305s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004416s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000036s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000098s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004297s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004338s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000109s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000147s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000314s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000353s ]
+
+[ 2016-04-11T15:18:28+08:00 ] ::1 /sc/index.php/admin/users/addok
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000266s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000305s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000342s ]
+
+[ 2016-04-11T15:20:43+08:00 ] ::1 /sc/index.php/admin/users/addok
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000330s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000432s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000513s ]
+
+[ 2016-04-11T15:20:46+08:00 ] ::1 /sc/index.php/admin/users/addok
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000254s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000341s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000386s ]
+
+[ 2016-04-11T15:20:58+08:00 ] ::1 /sc/index.php/admin/users/addok
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000304s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000320s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000360s ]
+ERR: 无法加载数据库驱动: Think\Db\Driver\
+
+[ 2016-04-11T15:21:06+08:00 ] ::1 /sc/index.php/admin/users/addok
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000308s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000317s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000357s ]
+ERR: 无法加载数据库驱动: Think\Db\Driver\
+
+[ 2016-04-11T15:28:33+08:00 ] ::1 /sc/index.php/admin/users/addok
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000301s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000482s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000540s ]
+ERR: 1146:Table 'smart_community.sc_users' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `sc_users`
+ERR: 1146:Table 'smart_community.sc_users' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `sc_users`
+
+[ 2016-04-11T15:30:16+08:00 ] ::1 /sc/index.php/admin/users/addok
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000416s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000427s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000473s ]
+ERR: 无法加载控制器:Users
+
+[ 2016-04-11T15:30:38+08:00 ] ::1 /sc/index.php/admin/users/addok
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000468s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000395s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000441s ]
+ERR: 无法加载控制器:Users
+
+[ 2016-04-11T15:30:41+08:00 ] ::1 /sc/index.php/admin/users/addok
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000250s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000522s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000565s ]
+ERR: 无法加载控制器:Users
+
+[ 2016-04-11T15:32:53+08:00 ] ::1 /sc/index.php/admin/users/addok
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000357s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000398s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000442s ]
+ERR: 无法加载控制器:Users
+
+[ 2016-04-11T15:36:51+08:00 ] ::1 /sc/index.php/admin/users/addok
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000268s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000336s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000382s ]
+ERR: 无法加载控制器:Users
+
+[ 2016-04-11T15:36:56+08:00 ] ::1 /sc/index.php/admin/users/addok
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000241s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000569s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000644s ]
+ERR: 无法加载控制器:Users
+
+[ 2016-04-11T15:36:59+08:00 ] ::1 /sc/index.php/admin/users/addok
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000292s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000480s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000537s ]
+ERR: 无法加载控制器:Users
+
+[ 2016-04-11T15:37:07+08:00 ] ::1 /sc/index.php/admin/users/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000209s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000297s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000330s ]
+ERR: 无法加载控制器:Users
+
+[ 2016-04-11T15:37:37+08:00 ] ::1 /sc/index.php/admin/role_users/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000256s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000307s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000347s ]
+ERR: 无法加载控制器:Role_users
+
+[ 2016-04-11T15:37:46+08:00 ] ::1 /sc/index.php/admin/role_users/addok
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000208s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000258s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000290s ]
+ERR: 无法加载控制器:Role_users
+
+[ 2016-04-11T15:38:32+08:00 ] ::1 /sc/index.php/admin/role_users/addok
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000387s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000351s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000425s ]
+ERR: 无法加载控制器:Role_users
+
+[ 2016-04-11T15:41:26+08:00 ] ::1 /sc/index.php/admin/role_users/addok
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000367s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000350s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000402s ]
+ERR: 无法加载控制器:Role_users
+
+[ 2016-04-11T15:41:46+08:00 ] ::1 /sc/index.php/admin/role_users/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000210s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000256s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000290s ]
+ERR: 无法加载控制器:Role_users
+
+[ 2016-04-11T15:41:51+08:00 ] ::1 /sc/index.php/admin/users/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000293s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000322s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000364s ]
+ERR: 无法加载控制器:Users
+
+[ 2016-04-11T15:41:56+08:00 ] ::1 /sc/index.php/admin/users
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000276s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000374s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000439s ]
+ERR: 无法加载控制器:Users
+
+[ 2016-04-11T15:42:01+08:00 ] ::1 /sc/index.php/admin/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000207s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000259s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000290s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000025s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000060s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019023s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019111s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000321s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000400s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000594s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000651s ]
+
+[ 2016-04-11T15:42:18+08:00 ] ::1 /sc/index.php/admin/public
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000381s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000486s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000551s ]
+ERR: 非法操作:index
+
+[ 2016-04-11T15:42:22+08:00 ] ::1 /sc/index.php/admin/public/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000223s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000277s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000313s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000027s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000067s ]
+NOTIC: [8] Undefined variable: titile /wwwroot/sc/Application/Runtime/Cache/Admin/3c5566b2bfbf6ef00ac5366ba47246fe.php 第 1 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003372s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003405s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000107s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000134s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000281s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000310s ]
+
+[ 2016-04-11T15:45:58+08:00 ] ::1 /sc/index.php/admin/public/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000530s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000358s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000401s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000040s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000100s ]
+NOTIC: [8] Undefined variable: titile /wwwroot/sc/Application/Runtime/Cache/Admin/3c5566b2bfbf6ef00ac5366ba47246fe.php 第 1 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018244s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018338s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000212s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000250s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000380s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000446s ]
+
+[ 2016-04-11T15:46:06+08:00 ] ::1 /sc/index.php/admin/users/ok
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000216s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000267s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000300s ]
+ERR: 非法操作:ok
+
+[ 2016-04-11T15:46:10+08:00 ] ::1 /sc/index.php/admin/users/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000222s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000272s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000307s ]
+ERR: 模板不存在:./Application/Admin/View/Users/add.html
+
+[ 2016-04-11T15:46:14+08:00 ] ::1 /sc/index.php/admin/users/addok
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000272s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000358s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000402s ]
+ERR: SQLSTATE[HY000] [1049] Unknown database 'smart_community1'
+
+[ 2016-04-11T15:46:44+08:00 ] ::1 /sc/index.php/admin/users/addok
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000448s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000469s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000513s ]
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0225s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001385s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001555s ]
+
+[ 2016-04-11T15:51:20+08:00 ] ::1 /sc/index.php/admin/users/addok
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000382s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000500s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000542s ]
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0006s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000703s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000790s ]
+
+[ 2016-04-11T15:51:44+08:00 ] ::1 /sc/index.php/admin/users/addok
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000412s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000474s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000566s ]
+
+[ 2016-04-11T15:51:59+08:00 ] ::1 /sc/index.php/admin/users/addok
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000418s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000498s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000548s ]
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0005s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000649s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000737s ]
+
+[ 2016-04-11T15:52:26+08:00 ] ::1 /sc/index.php/admin/users/addok
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000307s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000456s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000523s ]
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0005s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000581s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000657s ]
+
+[ 2016-04-11T16:00:01+08:00 ] ::1 /sc/index.php/admin/users/addok
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000253s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000379s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000427s ]
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0007s ]
+SQL: INSERT INTO `sc_users` (`u_id`,`u_icon_url`,`u_nick_name`,`u_true_name`,`u_password`,`u_gender`,`h_pocn`,`u_mobile`,`u_email`,`u_id_card_num`,`u_last_log_ip`,`u_last_log_time`) VALUES ('1','NULL','TestAdmin','NameTrue','asdfasdf','1','13132','123123','1231332','12312313','545456','2013-01-01 10:10:00') [ RunTime:0.0128s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000707s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000791s ]
+
+[ 2016-04-11T16:00:24+08:00 ] ::1 /sc/index.php/admin/users/addok
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000269s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000413s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000469s ]
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0006s ]
+ERR: 1062:Duplicate entry '1' for key 'PRIMARY'
+ [ SQL语句 ] : INSERT INTO `sc_users` (`u_id`,`u_icon_url`,`u_nick_name`,`u_true_name`,`u_password`,`u_gender`,`h_pocn`,`u_mobile`,`u_email`,`u_id_card_num`,`u_last_log_ip`,`u_last_log_time`) VALUES ('1','NULL','TestAdmin','NameTrue','asdfasdf','1','13132','123123','1231332','12312313','545456','2013-01-01 10:10:00')
+ERR: 1062:Duplicate entry '1' for key 'PRIMARY'
+ [ SQL语句 ] : INSERT INTO `sc_users` (`u_id`,`u_icon_url`,`u_nick_name`,`u_true_name`,`u_password`,`u_gender`,`h_pocn`,`u_mobile`,`u_email`,`u_id_card_num`,`u_last_log_ip`,`u_last_log_time`) VALUES ('1','NULL','TestAdmin','NameTrue','asdfasdf','1','13132','123123','1231332','12312313','545456','2013-01-01 10:10:00')
+
+[ 2016-04-11T16:01:06+08:00 ] ::1 /sc/index.php/admin/users/addok
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000324s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000414s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000459s ]
+
+[ 2016-04-11T16:01:22+08:00 ] ::1 /sc/index.php/admin/users/addok
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000248s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000336s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000378s ]
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0007s ]
+SQL: INSERT INTO `sc_users` (`u_id`,`u_icon_url`,`u_nick_name`,`u_true_name`,`u_password`,`u_gender`,`h_pocn`,`u_mobile`,`u_email`,`u_id_card_num`,`u_last_log_ip`,`u_last_log_time`) VALUES ('0','NULL','TestAdmin','NameTrue','asdfasdf','1','13132','123123','1231332','12312313','545456','2013-01-01 10:10:00') [ RunTime:0.0005s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000825s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000895s ]
+
+[ 2016-04-11T16:01:44+08:00 ] ::1 /sc/index.php/admin/users/addok
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000356s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000502s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000587s ]
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0006s ]
+SQL: INSERT INTO `sc_users` (`u_id`,`u_icon_url`,`u_nick_name`,`u_true_name`,`u_password`,`u_gender`,`h_pocn`,`u_mobile`,`u_email`,`u_id_card_num`,`u_last_log_ip`,`u_last_log_time`) VALUES ('0','NULL','TestAdmin','NameTrue','asdfasdf','1','13132','123123','1231332','12312313','545456','2013-01-01 10:10:00') [ RunTime:0.0005s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001227s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001487s ]
+
+[ 2016-04-11T16:01:59+08:00 ] ::1 /sc/index.php/admin/users/addok
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000254s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000552s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000597s ]
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0006s ]
+SQL: INSERT INTO `sc_users` (`u_id`,`u_icon_url`,`u_nick_name`,`u_true_name`,`u_password`,`u_gender`,`h_pocn`,`u_mobile`,`u_email`,`u_id_card_num`,`u_last_log_ip`,`u_last_log_time`) VALUES ('0','NULL','TestAdmin','NameTrue','asdfasdf','1','13132','123123','1231332','12312313','545456','2013-01-01 10:10:00') [ RunTime:0.0006s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000440s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000568s ]
+
+[ 2016-04-11T16:03:34+08:00 ] ::1 /sc/index.php/admin/users/addok
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000415s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000495s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000537s ]
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0006s ]
+SQL: INSERT INTO `sc_users` (`u_id`,`u_icon_url`,`u_nick_name`,`u_true_name`,`u_password`,`u_gender`,`h_pocn`,`u_mobile`,`u_email`,`u_id_card_num`,`u_last_log_ip`,`u_last_log_time`) VALUES ('0','NULL','TestAdmin','NameTrue','asdfasdf','1','13132','123123','1231332','12312313','545456','2013-01-01 10:10:00') [ RunTime:0.0005s ]
+SQL: DELETE FROM `sc_users` WHERE `u_id` = 2 [ RunTime:0.0955s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000467s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000515s ]
+
+[ 2016-04-11T16:09:52+08:00 ] ::1 /sc/index.php/admin/users/addok
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000549s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000930s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001027s ]
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0007s ]
+SQL: INSERT INTO `sc_users` (`u_id`,`u_icon_url`,`u_nick_name`,`u_true_name`,`u_password`,`u_gender`,`h_pocn`,`u_mobile`,`u_email`,`u_id_card_num`,`u_last_log_ip`,`u_last_log_time`) VALUES ('0','NULL','TestAdmin','NameTrue','asdfasdf','1','13132','123123','1231332','12312313','545456','2013-01-01 10:10:00') [ RunTime:0.0005s ]
+SQL: DELETE FROM `sc_users` WHERE `u_id` = 2 [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.016030s ]
+INFO: [ app_end ] --END-- [ RunTime:0.016102s ]
+
+[ 2016-04-11T16:11:35+08:00 ] ::1 /sc/index.php/admin/users/addok
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000290s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000289s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000325s ]
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0005s ]
+SQL: INSERT INTO `sc_users` (`u_id`,`u_icon_url`,`u_nick_name`,`u_true_name`,`u_password`,`u_gender`,`h_pocn`,`u_mobile`,`u_email`,`u_id_card_num`,`u_last_log_ip`,`u_last_log_time`) VALUES ('0','NULL','TestAdmin','NameTrue','asdfasdf','1','13132','123123','1231332','12312313','545456','2013-01-01 10:10:00') [ RunTime:0.0004s ]
+SQL: DELETE FROM `sc_users` WHERE `u_id` = 2 [ RunTime:0.0002s ]
+ERR: 1406:Data too long for column 'u_true_name' at row 1
+ [ SQL语句 ] : UPDATE `sc_users` SET `u_icon_url`='NULL',`u_nick_name`='1231231321',`u_true_name`='NameTru12123123e',`u_password`='asdfsdfsdf1132asdf',`u_gender`='1',`h_pocn`='13132',`u_mobile`='123123',`u_email`='1231332',`u_id_card_num`='12312313',`u_last_log_ip`='545456',`u_last_log_time`='2013-01-01 10:10:00' WHERE `u_id` = 1
+ERR: 1406:Data too long for column 'u_true_name' at row 1
+ [ SQL语句 ] : UPDATE `sc_users` SET `u_icon_url`='NULL',`u_nick_name`='1231231321',`u_true_name`='NameTru12123123e',`u_password`='asdfsdfsdf1132asdf',`u_gender`='1',`h_pocn`='13132',`u_mobile`='123123',`u_email`='1231332',`u_id_card_num`='12312313',`u_last_log_ip`='545456',`u_last_log_time`='2013-01-01 10:10:00' WHERE `u_id` = 1
+
+[ 2016-04-11T16:11:46+08:00 ] ::1 /sc/index.php/admin/users/addok
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000205s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000256s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000287s ]
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0005s ]
+SQL: INSERT INTO `sc_users` (`u_id`,`u_icon_url`,`u_nick_name`,`u_true_name`,`u_password`,`u_gender`,`h_pocn`,`u_mobile`,`u_email`,`u_id_card_num`,`u_last_log_ip`,`u_last_log_time`) VALUES ('0','NULL','TestAdmin','NameTrue','asdfasdf','1','13132','123123','1231332','12312313','545456','2013-01-01 10:10:00') [ RunTime:0.0390s ]
+SQL: DELETE FROM `sc_users` WHERE `u_id` = 2 [ RunTime:0.0006s ]
+SQL: UPDATE `sc_users` SET `u_icon_url`='NULL',`u_nick_name`='1231231321',`u_true_name`='N2123123e',`u_password`='asdfsdfsdf1132asdf',`u_gender`='1',`h_pocn`='13132',`u_mobile`='123123',`u_email`='1231332',`u_id_card_num`='12312313',`u_last_log_ip`='545456',`u_last_log_time`='2013-01-01 10:10:00' WHERE `u_id` = 1 [ RunTime:0.0991s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000934s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001037s ]
+
+[ 2016-04-11T16:58:23+08:00 ] ::1 /sc/index.php/admin/users/addok
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000811s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000905s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000983s ]
+
+[ 2016-04-11T16:58:57+08:00 ] ::1 /sc/index.php/admin/users/addok
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000380s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000402s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000447s ]
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0008s ]
+SQL: INSERT INTO `sc_users` (`u_id`,`u_icon_url`,`u_nick_name`,`u_true_name`,`u_password`,`u_gender`,`h_pocn`,`u_mobile`,`u_email`,`u_id_card_num`,`u_last_log_ip`,`u_last_log_time`) VALUES ('0','NULL','TestAdmin','NameTrue','asdfasdf','1','13132','123123','1231332','12312313','545456','2013-01-01 10:10:00') [ RunTime:0.0196s ]
+SQL: DELETE FROM `sc_users` WHERE `u_id` = 2 [ RunTime:0.0003s ]
+SQL: UPDATE `sc_users` SET `u_icon_url`='NULL',`u_nick_name`='1231231321',`u_true_name`='N2123123e',`u_password`='asdfsdfsdf1132asdf',`u_gender`='1',`h_pocn`='13132',`u_mobile`='123123',`u_email`='1231332',`u_id_card_num`='12312313',`u_last_log_ip`='545456',`u_last_log_time`='2013-01-01 10:10:00' WHERE `u_id` = 1 [ RunTime:0.0007s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.026144s ]
+INFO: [ app_end ] --END-- [ RunTime:0.026233s ]
+
+[ 2016-04-11T16:59:19+08:00 ] ::1 /sc/index.php/admin/users/addok
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000266s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000475s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000543s ]
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0006s ]
+SQL: INSERT INTO `sc_users` (`u_id`,`u_icon_url`,`u_nick_name`,`u_true_name`,`u_password`,`u_gender`,`h_pocn`,`u_mobile`,`u_email`,`u_id_card_num`,`u_last_log_ip`,`u_last_log_time`) VALUES ('0','NULL','TestAdmin','NameTrue','asdfasdf','1','13132','123123','1231332','12312313','545456','2013-01-01 10:10:00') [ RunTime:0.0007s ]
+SQL: DELETE FROM `sc_users` WHERE `u_id` = 2 [ RunTime:0.0003s ]
+SQL: UPDATE `sc_users` SET `u_icon_url`='NULL',`u_nick_name`='1231231321',`u_true_name`='N2123123e',`u_password`='asdfsdfsdf1132asdf',`u_gender`='1',`h_pocn`='13132',`u_mobile`='123123',`u_email`='1231332',`u_id_card_num`='12312313',`u_last_log_ip`='545456',`u_last_log_time`='2013-01-01 10:10:00' WHERE `u_id` = 1 [ RunTime:0.0012s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000671s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000760s ]
+
+[ 2016-04-11T17:02:06+08:00 ] ::1 /sc/index.php/admin/users/addok
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000593s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000611s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000660s ]
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0455s ]
+SQL: INSERT INTO `sc_users` (`u_id`,`u_icon_url`,`u_nick_name`,`u_true_name`,`u_password`,`u_gender`,`h_pocn`,`u_mobile`,`u_email`,`u_id_card_num`,`u_last_log_ip`,`u_last_log_time`) VALUES ('0','NULL','TestAdmin','NameTrue','asdfasdf','1','13132','123123','1231332','12312313','545456','2013-01-01 10:10:00') [ RunTime:0.0013s ]
+SQL: DELETE FROM `sc_users` WHERE `u_id` = 2 [ RunTime:0.0003s ]
+SQL: UPDATE `sc_users` SET `u_icon_url`='NULL',`u_nick_name`='1231231321',`u_true_name`='N2123123e',`u_password`='asdfsdfsdf1132asdf',`u_gender`='1',`h_pocn`='13132',`u_mobile`='123123',`u_email`='1231332',`u_id_card_num`='12312313',`u_last_log_ip`='545456',`u_last_log_time`='2013-01-01 10:10:00' WHERE `u_id` = 1 [ RunTime:0.0009s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000802s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000898s ]
+
+[ 2016-04-11T17:05:59+08:00 ] ::1 /sc/index.php/admin/users/addok
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000243s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000297s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000335s ]
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0006s ]
+SQL: INSERT INTO `sc_users` (`u_id`,`u_icon_url`,`u_nick_name`,`u_true_name`,`u_password`,`u_gender`,`h_pocn`,`u_mobile`,`u_email`,`u_id_card_num`,`u_last_log_ip`,`u_last_log_time`) VALUES ('0','NULL','TestAdmin','NameTrue','asdfasdf','1','13132','123123','1231332','12312313','545456','2013-01-01 10:10:00') [ RunTime:0.0024s ]
+SQL: DELETE FROM `sc_users` WHERE `u_id` = 2 [ RunTime:0.0010s ]
+SQL: UPDATE `sc_users` SET `u_icon_url`='NULL',`u_nick_name`='1231231321',`u_true_name`='N2123123e',`u_password`='asdfsdfsdf1132asdf',`u_gender`='1',`h_pocn`='13132',`u_mobile`='123123',`u_email`='1231332',`u_id_card_num`='12312313',`u_last_log_ip`='545456',`u_last_log_time`='2013-01-01 10:10:00' WHERE `u_id` = 1 [ RunTime:0.0007s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000597s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000662s ]
+
+[ 2016-04-11T17:06:57+08:00 ] ::1 /sc/index.php/admin/users/addok
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000514s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000562s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000606s ]
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0005s ]
+SQL: INSERT INTO `sc_users` (`u_id`,`u_icon_url`,`u_nick_name`,`u_true_name`,`u_password`,`u_gender`,`h_pocn`,`u_mobile`,`u_email`,`u_id_card_num`,`u_last_log_ip`,`u_last_log_time`) VALUES ('0','NULL','TestAdmin','NameTrue','asdfasdf','1','13132','123123','1231332','12312313','545456','2013-01-01 10:10:00') [ RunTime:0.0014s ]
+SQL: DELETE FROM `sc_users` WHERE `u_id` = 2 [ RunTime:0.0003s ]
+SQL: UPDATE `sc_users` SET `u_icon_url`='NULL',`u_nick_name`='1231231321',`u_true_name`='N2123123e',`u_password`='asdfsdfsdf1132asdf',`u_gender`='1',`h_pocn`='13132',`u_mobile`='123123',`u_email`='1231332',`u_id_card_num`='12312313',`u_last_log_ip`='545456',`u_last_log_time`='2013-01-01 10:10:00' WHERE `u_id` = 1 [ RunTime:0.0007s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000431s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000479s ]
+
+[ 2016-04-11T17:07:00+08:00 ] ::1 /sc/index.php/admin/users/addok
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000482s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000535s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000597s ]
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0005s ]
+SQL: INSERT INTO `sc_users` (`u_id`,`u_icon_url`,`u_nick_name`,`u_true_name`,`u_password`,`u_gender`,`h_pocn`,`u_mobile`,`u_email`,`u_id_card_num`,`u_last_log_ip`,`u_last_log_time`) VALUES ('0','NULL','TestAdmin','NameTrue','asdfasdf','1','13132','123123','1231332','12312313','545456','2013-01-01 10:10:00') [ RunTime:0.0006s ]
+SQL: DELETE FROM `sc_users` WHERE `u_id` = 2 [ RunTime:0.0002s ]
+SQL: UPDATE `sc_users` SET `u_icon_url`='NULL',`u_nick_name`='1231231321',`u_true_name`='N2123123e',`u_password`='asdfsdfsdf1132asdf',`u_gender`='1',`h_pocn`='13132',`u_mobile`='123123',`u_email`='1231332',`u_id_card_num`='12312313',`u_last_log_ip`='545456',`u_last_log_time`='2013-01-01 10:10:00' WHERE `u_id` = 1 [ RunTime:0.0007s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000420s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000466s ]
+
+[ 2016-04-11T17:07:59+08:00 ] ::1 /sc/index.php/admin/users/addok
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000243s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000526s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000573s ]
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0005s ]
+SQL: INSERT INTO `sc_users` (`u_id`,`u_icon_url`,`u_nick_name`,`u_true_name`,`u_password`,`u_gender`,`h_pocn`,`u_mobile`,`u_email`,`u_id_card_num`,`u_last_log_ip`,`u_last_log_time`) VALUES ('0','NULL','TestAdmin','NameTrue','asdfasdf','1','13132','123123','1231332','12312313','545456','2013-01-01 10:10:00') [ RunTime:0.0020s ]
+SQL: DELETE FROM `sc_users` WHERE `u_id` = 2 [ RunTime:0.0002s ]
+SQL: UPDATE `sc_users` SET `u_icon_url`='NULL',`u_nick_name`='1231231321',`u_true_name`='N2123123e',`u_password`='asdfsdfsdf1132asdf',`u_gender`='1',`h_pocn`='13132',`u_mobile`='123123',`u_email`='1231332',`u_id_card_num`='12312313',`u_last_log_ip`='545456',`u_last_log_time`='2013-01-01 10:10:00' WHERE `u_id` = 1 [ RunTime:0.0253s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000962s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001045s ]
+
+[ 2016-04-11T17:08:03+08:00 ] ::1 /sc/index.php/admin/users/addok
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000687s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000486s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000527s ]
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0005s ]
+SQL: INSERT INTO `sc_users` (`u_id`,`u_icon_url`,`u_nick_name`,`u_true_name`,`u_password`,`u_gender`,`h_pocn`,`u_mobile`,`u_email`,`u_id_card_num`,`u_last_log_ip`,`u_last_log_time`) VALUES ('0','NULL','TestAdmin','NameTrue','asdfasdf','1','13132','123123','1231332','12312313','545456','2013-01-01 10:10:00') [ RunTime:0.0006s ]
+SQL: DELETE FROM `sc_users` WHERE `u_id` = 2 [ RunTime:0.0005s ]
+SQL: UPDATE `sc_users` SET `u_icon_url`='NULL',`u_nick_name`='1231231321',`u_true_name`='N2123123e',`u_password`='asdfsdfsdf1132asdf',`u_gender`='1',`h_pocn`='13132',`u_mobile`='123123',`u_email`='1231332',`u_id_card_num`='12312313',`u_last_log_ip`='545456',`u_last_log_time`='2013-01-01 10:10:00' WHERE `u_id` = 1 [ RunTime:0.0012s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000617s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000697s ]
+
+[ 2016-04-11T17:08:43+08:00 ] ::1 /sc/index.php/admin/users/addok
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000274s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000393s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000446s ]
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0005s ]
+ERR: 1292:Incorrect datetime value: '1460365723' for column 'u_last_log_time' at row 1
+ [ SQL语句 ] : INSERT INTO `sc_users` (`u_id`,`u_icon_url`,`u_nick_name`,`u_true_name`,`u_password`,`u_gender`,`h_pocn`,`u_mobile`,`u_email`,`u_id_card_num`,`u_last_log_ip`,`u_last_log_time`) VALUES ('0','NULL','TestAdmin','NameTrue','asdfasdf','1','13132','123123','1231332','12312313','545456','1460365723')
+ERR: 1292:Incorrect datetime value: '1460365723' for column 'u_last_log_time' at row 1
+ [ SQL语句 ] : INSERT INTO `sc_users` (`u_id`,`u_icon_url`,`u_nick_name`,`u_true_name`,`u_password`,`u_gender`,`h_pocn`,`u_mobile`,`u_email`,`u_id_card_num`,`u_last_log_ip`,`u_last_log_time`) VALUES ('0','NULL','TestAdmin','NameTrue','asdfasdf','1','13132','123123','1231332','12312313','545456','1460365723')
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /wwwroot/sc/Application/Admin/Controller/UsersController.class.php:16) /wwwroot/sc/ThinkPHP/Library/Think/Think.class.php 第 229 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /wwwroot/sc/Application/Admin/Controller/UsersController.class.php:16) /wwwroot/sc/ThinkPHP/Library/Think/Think.class.php 第 230 行.
+
+[ 2016-04-11T17:09:01+08:00 ] ::1 /sc/index.php/admin/users/addok
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000349s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000367s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000410s ]
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0005s ]
+
+[ 2016-04-11T17:09:55+08:00 ] ::1 /sc/index.php/admin/users/addok
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000395s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000426s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000476s ]
+
+[ 2016-04-11T17:10:05+08:00 ] ::1 /sc/index.php/admin/users/addok
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000345s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000315s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000357s ]
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0007s ]
+ERR: 1292:Incorrect datetime value: '1460365805' for column 'u_last_log_time' at row 1
+ [ SQL语句 ] : INSERT INTO `sc_users` (`u_id`,`u_icon_url`,`u_nick_name`,`u_true_name`,`u_password`,`u_gender`,`h_pocn`,`u_mobile`,`u_email`,`u_id_card_num`,`u_last_log_ip`,`u_last_log_time`) VALUES ('0','NULL','TestAdmin','NameTrue','asdfasdf','1','13132','123123','1231332','12312313','545456','1460365805')
+ERR: 1292:Incorrect datetime value: '1460365805' for column 'u_last_log_time' at row 1
+ [ SQL语句 ] : INSERT INTO `sc_users` (`u_id`,`u_icon_url`,`u_nick_name`,`u_true_name`,`u_password`,`u_gender`,`h_pocn`,`u_mobile`,`u_email`,`u_id_card_num`,`u_last_log_ip`,`u_last_log_time`) VALUES ('0','NULL','TestAdmin','NameTrue','asdfasdf','1','13132','123123','1231332','12312313','545456','1460365805')
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /wwwroot/sc/Application/Admin/Controller/UsersController.class.php:16) /wwwroot/sc/ThinkPHP/Library/Think/Think.class.php 第 229 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /wwwroot/sc/Application/Admin/Controller/UsersController.class.php:16) /wwwroot/sc/ThinkPHP/Library/Think/Think.class.php 第 230 行.
+
+[ 2016-04-11T17:10:58+08:00 ] ::1 /sc/index.php/admin/users/addok
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000441s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000363s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000433s ]
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0006s ]
+SQL: INSERT INTO `sc_users` (`u_id`,`u_icon_url`,`u_nick_name`,`u_true_name`,`u_password`,`u_gender`,`h_pocn`,`u_mobile`,`u_email`,`u_id_card_num`,`u_last_log_ip`,`u_last_log_time`) VALUES ('0','NULL','TestAdmin','NameTrue','asdfasdf','1','13132','123123','1231332','12312313','545456','2016-04-11 05:10:58') [ RunTime:0.0497s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000676s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000744s ]
+
+[ 2016-04-11T17:11:00+08:00 ] ::1 /sc/index.php/admin/users/addok
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000246s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000475s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000522s ]
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0005s ]
+SQL: INSERT INTO `sc_users` (`u_id`,`u_icon_url`,`u_nick_name`,`u_true_name`,`u_password`,`u_gender`,`h_pocn`,`u_mobile`,`u_email`,`u_id_card_num`,`u_last_log_ip`,`u_last_log_time`) VALUES ('0','NULL','TestAdmin','NameTrue','asdfasdf','1','13132','123123','1231332','12312313','545456','2016-04-11 05:11:00') [ RunTime:0.0006s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000571s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000647s ]
+
+[ 2016-04-11T17:11:02+08:00 ] ::1 /sc/index.php/admin/users/addok
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000596s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000536s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000671s ]
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0006s ]
+SQL: INSERT INTO `sc_users` (`u_id`,`u_icon_url`,`u_nick_name`,`u_true_name`,`u_password`,`u_gender`,`h_pocn`,`u_mobile`,`u_email`,`u_id_card_num`,`u_last_log_ip`,`u_last_log_time`) VALUES ('0','NULL','TestAdmin','NameTrue','asdfasdf','1','13132','123123','1231332','12312313','545456','2016-04-11 05:11:02') [ RunTime:0.0006s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000603s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000687s ]
+
+[ 2016-04-11T17:23:27+08:00 ] ::1 /sc/index.php/admin/users/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000208s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000258s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000288s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000042s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000101s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.028240s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.028275s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004282s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004347s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000486s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000540s ]
+
+[ 2016-04-11T17:23:28+08:00 ] ::1 /sc/index.php/admin/users/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000364s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000458s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000530s ]
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0005s ]
+NOTIC: [8] Undefined variable: dept /wwwroot/sc/Application/Admin/Controller/UsersController.class.php 第 10 行.
+
+[ 2016-04-11T17:23:52+08:00 ] ::1 /sc/index.php/admin/users/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000252s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000475s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000529s ]
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `sc_users`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000045s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000107s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.073583s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.073682s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000273s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000327s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000637s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000693s ]
+
+[ 2016-04-11T17:46:44+08:00 ] ::1 /sc/index.php/admin/users/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000723s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000927s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001024s ]
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `sc_users`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000035s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000078s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005688s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005734s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000418s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000458s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000710s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000748s ]
+
+[ 2016-04-11T17:46:53+08:00 ] ::1 /sc/index.php/admin/users/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000212s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000350s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000388s ]
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `sc_users`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000034s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000078s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004312s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004357s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000112s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000140s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000330s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000359s ]
+
+[ 2016-04-11T17:46:55+08:00 ] ::1 /sc/index.php/admin/users/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000228s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000255s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000287s ]
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `sc_users`  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000040s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000098s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005220s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005269s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000174s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000211s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000592s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000633s ]
+
+[ 2016-04-11T17:46:58+08:00 ] ::1 /sc/index.php/admin/users/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000229s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000359s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000421s ]
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `sc_users`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000029s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000064s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003800s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003848s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000108s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000136s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000283s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000311s ]
+
+[ 2016-04-11T17:46:59+08:00 ] ::1 /sc/index.php/admin/users/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000228s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000282s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000318s ]
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `sc_users`  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000044s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000103s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005951s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006024s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000138s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000177s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000411s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000453s ]
+
+[ 2016-04-11T17:47:01+08:00 ] ::1 /sc/index.php/admin/users/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000233s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000287s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000320s ]
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `sc_users`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000031s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000064s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003703s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003759s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000108s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000134s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000283s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000311s ]
+
+[ 2016-04-11T17:47:03+08:00 ] ::1 /sc/index.php/admin/users/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000222s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000338s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000373s ]
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `sc_users`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000030s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000063s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003642s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003686s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000106s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000132s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000280s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000307s ]
+

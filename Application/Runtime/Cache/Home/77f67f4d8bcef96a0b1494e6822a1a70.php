@@ -1,0 +1,1 @@
+<?php if (!defined('THINK_PATH')) exit();?>您访问的Name控制器不存在!
