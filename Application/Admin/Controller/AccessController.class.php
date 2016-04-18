@@ -102,12 +102,16 @@ class AccessController extends CommonController{
 		if($status){
 			$status = M('role_user')->where(array('user_id'=>$id))->delete();
 			if($status){
-				$this->success('删除成功',U('Admin/Access/index'));
+				//$this->success('删除成功',U('Admin/Access/index'));
+			    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Access/index'), 'sec' => 2),'info' => urlencode('删除用户成功！'),'code' => 200);
+			    exit(urldecode(json_encode($output)));
 			}else{
-				$this->error('删除失败');
+			    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Access/index'), 'sec' => 3),'info' => urlencode('修改用户失败！'),'code' => -200);
+			    exit(urldecode(json_encode($output)));
 			}
 		}else{
-			$this->error('删除失败');
+		    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Access/index'), 'sec' => 3),'info' => urlencode('修改用户失败！'),'code' => -200);
+		    exit(urldecode(json_encode($output)));
 		}
 	}
 
@@ -117,9 +121,14 @@ class AccessController extends CommonController{
     */
 	public function node(){
 		$data = M('node')->select();
+		foreach ($data as $key => &$value){
+		    $value['title'] = urlencode($value['title']);
+		}		
 		$info = category($data);
-		$this->assign('data',$info);
-		$this->display();
+// 		$this->assign('data',$info);
+// 		$this->display();
+		$output = array('data' => $info,'info' => urlencode('节点列表'),'code' => 200);
+		exit(urldecode(json_encode($output)));		
 	}
 
 	/**
@@ -142,10 +151,12 @@ class AccessController extends CommonController{
 				$view = '模块';
 				break;
 		}
-		$this->assign('view',$view);
-		$this->assign('pid',$pid);
-		$this->assign('level',$level);
-		$this->display();
+// 		$this->assign('view',$view);
+// 		$this->assign('pid',$pid);
+// 		$this->assign('level',$level);
+// 		$this->display();
+		$output = array('data' => array('view' => urlencode($view), 'pid' => $pid, 'level' => $level),'info' => urlencode('添加/编辑节点'),'code' => 200);
+		exit(urldecode(json_encode($output)));
 	}
 
 	/**
@@ -163,9 +174,13 @@ class AccessController extends CommonController{
 			);
 		$status = M('node')->add($data);
 		if($status){
-			$this->success('添加成功',U('Admin/Access/node'));
+			//$this->success('添加成功',U('Admin/Access/node'));
+		    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Access/node'), 'sec' => 2),'info' => urlencode('添加节点成功！'),'code' => 200);
+		    exit(urldecode(json_encode($output)));			
 		}else{
-			$this->error('添加失败');
+			//$this->error('添加失败');
+		    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Access/node'), 'sec' => 3),'info' => urlencode('添加节点失败！'),'code' => -200);
+		    exit(urldecode(json_encode($output)));
 		}
 
 	}
@@ -180,9 +195,13 @@ class AccessController extends CommonController{
 		$status = M('node')->where(array('id'=>$id))->delete();
 		if($status){
 		    $status = M('access')->where(array('node_id'=>$id))->delete();
-			$this->success('删除成功',U('Admin/Access/node'));
+			//$this->success('删除成功',U('Admin/Access/node'));
+		    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Access/node'), 'sec' => 2),'info' => urlencode('删除节点成功！'),'code' => 200);
+		    exit(urldecode(json_encode($output)));			
 		}else{
-			$this->error('删除失败');
+			//$this->error('删除失败');
+		    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Access/node'), 'sec' => 3),'info' => urlencode('删除节点失败！'),'code' => -200);
+		    exit(urldecode(json_encode($output)));			
 		}
 	}
 
@@ -192,8 +211,14 @@ class AccessController extends CommonController{
      */
 	public function role(){
 		$data = M('role')->select();
-		$this->assign('data',$data);
-		$this->display();
+// 		$this->assign('data',$data);
+// 		$this->display();
+		foreach ($data as $key => &$value){
+		    $value['name'] = urlencode($value['name']);
+		    $value['remark'] = urlencode($value['remark']);
+		}
+		$output = array('data' => $data,'info' => urlencode('角色列表'),'code' => 200);
+		exit(urldecode(json_encode($output)));		
 	}
 
 	/**
@@ -208,9 +233,13 @@ class AccessController extends CommonController{
 				);
 			$status = M('role')->add($data);
 			if($status){
-				$this->success('添加成功',U('Admin/Access/role'));
+				//$this->success('添加成功',U('Admin/Access/role'));
+			    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Access/role'), 'sec' => 2),'info' => urlencode('添加角色成功！'),'code' => 200);
+			    exit(urldecode(json_encode($output)));				
 			}else{
-				$this->error('添加失败');
+				//$this->error('添加失败');
+			    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Access/role'), 'sec' => 3),'info' => urlencode('添加角色失败！'),'code' => -200);
+			    exit(urldecode(json_encode($output)));
 			}
 
 		}else{
@@ -231,13 +260,17 @@ class AccessController extends CommonController{
 		        'role_id' => 0 //为分配角色
 		    );		    
 		    M('role_user')->where(array('role_id'=>$id))->setField($data);	    
-			$this->success('删除成功',U('Admin/Access/role'));
+			$output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Access/role'), 'sec' => 2),'info' => urlencode('删除角色成功！'),'code' => 200);
+			exit(urldecode(json_encode($output)));				
 		}else{
-			$this->error('删除失败');
+			//$this->error('添加失败');
+		    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Access/role'), 'sec' => 3),'info' => urlencode('删除角色失败！'),'code' => -200);
+			exit(urldecode(json_encode($output)));
 		}
 	}
 
 	/**
+	 * 权限添加修改
 	 * [access description]
 	 * @return [type] [description]
 	 */
@@ -255,21 +288,33 @@ class AccessController extends CommonController{
 			}
 			$status = M('access')->addAll($data);
 			if($status){
-				$this->success('添加成功',U('Admin/Access/role'));
+				$output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Access/role'), 'sec' => 2),'info' => urlencode('更新权限成功！'),'code' => 200);
+			    exit(urldecode(json_encode($output)));				
 			}else{
-				$this->error('添加失败');
-			} 
+				//$this->error('添加失败');
+			    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Access/role'), 'sec' => 3),'info' => urlencode('更新权限失败！'),'code' => -200);
+			    exit(urldecode(json_encode($output)));
+			}
 		}else{
 			$id = I('get.id');
 			$data = M('node')->select();
 			$ids  = M('access')->where(array('role_id'=>$id))->getField('node_id',true);
-			$this->assign('ids',$ids);
+// 			$this->assign('ids',$ids);
+			foreach ($data as $key => &$value){
+			    $value['title'] = urlencode($value['title']);
+			}
 			$info = category($data);
-			$this->assign('id',$id);
-			$this->assign('data',$info);
-			$this->display();
+// 			$this->assign('id',$id);
+// 			$this->assign('data',$info);
+// 			$this->display();
+			$output = array('data' => array(
+			    'ids' => $ids, 
+			    'id' => $id,
+			    'data' => $info
+			),'info' => urlencode('权限列表'),'code' => 200);
+			exit(urldecode(json_encode($output)));			
 		}
 
 	}
 
-}	
+}
