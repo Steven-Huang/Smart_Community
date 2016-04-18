@@ -23,7 +23,16 @@ return array(
     	'__ADMIN__'	=>	'/Public/Admin'
     ),
     
-//     //权限认证
+     //权限认证
+
+    'ADMIN_AUTH_KEY'    => 'admin',
+    'USER_AUTH_ON'      => '1',
+    'USER_AUTH_TYPE'    => '1',//2为即时验证模式，别的数字为登陆验证
+    'RBAC_ROLE_TABLE'   => 'sc_role',
+    'RBAC_USER_TABLE'   => 'sc_role_user',
+    'RBAC_ACCESS_TABLE' => 'sc_access',
+    'RBAC_NODE_TABLE'   => 'sc_node',    
+    
 //     'USER_AUTH_ON' => true, // 支持权限检查？
 //     'USER_AUTH_TYPE' => 1, // 默认认证类型 1 登录认证 2 实时认证
 //     'USER_AUTH_KEY' => 'authId', // 用户认证SESSION标记

@@ -16,6 +16,10 @@ class CommonController extends Controller{
 		    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Public/login'), 'sec' => 3),'info' => urlencode('您没有权限访问！！'),'code' => -207);
 		    exit(urldecode(json_encode($output)));
 		}
+// 		$access = \Org\Util\Rbac::AccessDecision();
+// 		if(!$access){
+// 		    $this->error('你没有权限');
+// 		}		
 // 		// 用户权限检查
 // 		if (C ( 'USER_AUTH_ON' ) && ! in_array ( MODULE_NAME, explode ( ',', C ( 'NOT_AUTH_MODULE' ) ) )) {
 // 		    //1.如果需要验证
