@@ -4,24 +4,24 @@ use Think\Model;
 
 class UsersModel extends Model {
 	//定义主键
-	protected $pk = 'u_id';
+	protected $pk = 'id';
 	//定义字段信息
-	protected $fileds = array('u_id','u_icon_url','u_nick_name','u_true_name','u_password','u_gender','h_pocn','u_mobile','u_email','u_id_card_num','u_create_time','u_last_log_ip','u_last_log_time','u_if_aprvd');
+	protected $fileds = array('id','icon_url','nick_name','true_name','password','gender','h_pocn','mobile','email','id_card_num','create_time','last_log_ip','last_log_time','if_aprvd');
 	//定义字段映射
 	protected $_map = array(
 		//假名	=>	真名
-		'user_icon_url' => 'u_icon_url',
-		'user_nick_name' => 'u_nick_name',
-		'user_true_name' => 'u_true_name',
-		'user_password' => 'u_password',
-		'user_gender' => 'u_gender',
+		'user_icon_url' => 'icon_url',
+		'user_nick_name' => 'nick_name',
+		'user_true_name' => 'true_name',
+		'user_password' => 'password',
+		'user_gender' => 'gender',
 		'user_pocn' => 'h_pocn',
-		'user_mobile' => 'u_mobile',
-		'user_email' => 'u_email',
-		'user_id_card_num' => 'u_id_card_num',
-		'user_create_time' => 'u_create_time',
-		'user_last_log_ip' => 'u_last_log_ip',
-		'user_last_log_time' => 'u_last_log_time',
-	    'user_if_approved' => 'u_if_aprvd'
+		'user_mobile' => 'mobile',
+		'user_email' => 'email',
+		'user_id_card_num' => 'id_card_num',
+		'user_create_time' => 'create_time',
+		'user_last_log_ip' => 'last_log_ip',
+		'user_last_log_time' => 'last_log_time',
+	    'user_if_approved' => 'if_aprvd'
 	);
 }

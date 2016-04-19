@@ -29,7 +29,7 @@
             <div class="form-group">
                 <label for="inputEmail3" class="col-md-1 control-label">名称:</label>
                 <div class="col-md-3">
-                    <input type="text" class="form-control" name="name" value="{$data['u_nick_name']}">
+                    <input type="text" class="form-control" name="name" value="{$data['nick_name']}">
                 </div>
             </div>
             <div class="form-group">
@@ -42,7 +42,7 @@
                 <label for="inputPassword3" class="col-md-1 control-label">角色:</label>
                 <div class="col-md-3">
                     <select class="form-control" name="role_id">
-                        <foreach name="role" item="v">
+                        <foreach name="role_list" item="v">
                             <option value="{$v['id']}" <if condition="$v['id'] eq $role_id">selected="selected"</if> >{$v['name']}</option>
                         </foreach>
                     </select>
@@ -50,7 +50,7 @@
             </div>
             <div class="form-group">
                 <div class="col-md-offset-1 col-md-3">
-                    <input type="hidden" name="user_id" value="{$data['u_id']}">
+                    <input type="hidden" name="user_id" value="{$data['id']}">
                     <button type="submit" class="btn btn-default">保存</button>
                 </div>
             </div>
