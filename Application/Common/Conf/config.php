@@ -54,5 +54,8 @@ return array(
 //     'RBAC_NODE_TABLE'   => 'sc_node',    
     
 //     //权限认证错误页面
-//     'RBAC_ERROR_PAGE' => '/thinkphps/Public/error404.html'    
+//     'RBAC_ERROR_PAGE' => '/thinkphps/Public/error404.html'
+
+    //每页展示数量
+    'PAGE_NUM' => 1
 );

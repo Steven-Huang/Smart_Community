@@ -1,13 +1,41 @@
 <?php
 namespace Admin\Controller;
-//use Admin\Model\UsersModel;
 
 class UsersController extends CommonController {
-    //展示业主基本信息（需做分页功能）
-	public function index(){
+    //展示业主基本信息(已审批通过的)
+	public function approved_users(){
+	    //获取每页展示行数
+	    $num = I('post.num') ? I('post.num') : C('PAGE_NUM');
+	    //实例化模型
 		$users = D('users');
-		$data = $users->field('id,icon_url,nick_name,true_name,gender,h_pocn,mobile,email,id_card_num,create_time,last_log_ip,last_log_time,if_aprvd')->select();
-        exit(urldecode(json_encode($data)));
+		//获取总记录数
+		$count = $users->where("if_aprvd='1'")->count();
+		//实例化分类页
+		$Page = new \Think\Page($count,$num);
+		//调用show显示分页链接
+		$show = $Page->show();
+		//实现数据分页
+		$data = $users->field('id,icon_url,nick_name,true_name,gender,h_pocn,mobile,email,id_card_num,create_time,last_log_ip,last_log_time')->where("if_aprvd='1'")->limit($Page->firstRow,$Page->listRows)->select();
+		$output = array('data' => array('data' => $data, 'count' => $count, 'page' => urlencode($show)),'info' => urlencode('已审核通过的业主信息！'),'code' => 200);
+		exit(urldecode(json_encode($output)));
+	}
+	
+	//展示业主基本信息(待审批的)
+	public function pending_users(){
+	    //获取每页展示行数
+	    $num = I('post.num') ? I('post.num') : C('PAGE_NUM');
+	    //实例化模型
+	    $users = D('users');
+	    //获取总记录数
+	    $count = $users->where("if_aprvd='0'")->count();
+	    //实例化分类页
+	    $Page = new \Think\Page($count,$num);
+	    //调用show显示分页链接
+	    $show = $Page->show();
+	    //实现数据分页
+	    $data = $users->field('id,icon_url,nick_name,true_name,gender,h_pocn,mobile,email,id_card_num,create_time,last_log_ip,last_log_time')->where("if_aprvd='0'")->limit($Page->firstRow,$Page->listRows)->select();
+	    $output = array('data' => array('data' => $data, 'count' => $count, 'page' => urlencode($show)),'info' => urlencode('等待审批的业主信息！'),'code' => 200);
+	    exit(urldecode(json_encode($output)));
 	}
     
 	//添加业主信息页面
@@ -51,14 +79,7 @@ class UsersController extends CommonController {
 			//密码加密
 			$data['password'] = md5($data['password']);
 			$data['create_time'] = date('Y-m-d h:i:s',time());
-			if ($users->add($data)) {
-			    $id = M('users')->field('id')->order('id desc')->limit(1)->select();
-			    //当添加业主成功，需同时给sc_role_user添加角色关系，角色默认为“无”
-			    $data = array(
-			        'role_id' => 0, //默认为无
-			        'user_id' => 'U'.$id
-			    );
-			    $status = M('role_user')->add($data);
+			if ($users->add($data)) {		    
 		        $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Users/index'), 'sec' => 2),'info' => urlencode('添加业主信息成功！'),'code' => 200);
 		        exit(urldecode(json_encode($output)));				
 			}else{
@@ -69,9 +90,13 @@ class UsersController extends CommonController {
 	        $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Users/add'), 'sec' => 3),'info' => urlencode('请求错误！请重新再试！'),'code' => -205);
 	        exit(urldecode(json_encode($output)));	
 		}
+	}	
+	
+	//更新信息页面
+	public function edit(){
+	    $this->display();
 	}
 	
-	//更新业主信息
 	//更新用户头像
 	public function edit_icon(){
 	    $id = I('post.user_id');
@@ -116,14 +141,18 @@ class UsersController extends CommonController {
 	
 	//更新所有信息(物业/管理员使用)
     public function edit_all(){
-        
+        $id = I('post.user_id');
+        $users = D('users');
+        $data = $users->field('id,icon_url,nick_name,mobile,email')->where("id = '{$id}'")->select();
+        $output = array('data' => $data,'info' => urlencode('需更新的用户信息'),'code' => 200);
+        exit(urldecode(json_encode($output)));        
     }
 	//处理业主更新信息
 	public function do_edit(){
 	    $edit_type = I('post.edit_type');
 	    if ($edit_type == 'edit_icon'){
 	        $id = I('post.user_id');
-	        $icon_url = I('icon_url');
+	        $icon_url = I('post.icon_url');
 	        $data = array(
 	            'icon_url' => $icon_url,
 	            'id' => $id
@@ -131,7 +160,11 @@ class UsersController extends CommonController {
 	        D('users')->save($data);
 	    }elseif ($edit_type == 'edit_nick_name'){
 	        $id = I('post.user_id');
-	        $nick_name = I('nick_name');
+	        $nick_name = I('post.nick_name');
+	        if (D('users')->field('id')->where("nick_name = '{$nick_name}'")->select()){
+	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Users/edit_nick_name'), 'sec' => 3),'info' => urlencode('用户名已存在！'),'code' => -200);
+	            exit(urldecode(json_encode($output)));	            
+	        }
 	        $data = array(
 	            'nick_name' => $nick_name,
 	            'id' => $id
@@ -160,7 +193,13 @@ class UsersController extends CommonController {
 	        D('users')->save($data);
 	    }elseif ($edit_type == 'edit_mobile'){
 	        $id = I('post.user_id');
-	        $mobile = I('mobile');
+	        $mobile = I('post.mobile');
+	        
+	        if (D('users')->field('id')->where("mobile = '{$mobile}'")->select()){
+	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Users/edit_mobile'), 'sec' => 3),'info' => urlencode('手机号已存在！'),'code' => -200);
+	            exit(urldecode(json_encode($output)));
+	        }
+	        
 	        $data = array(
 	            'mobile' => $mobile,
 	            'id' => $id
@@ -168,11 +207,65 @@ class UsersController extends CommonController {
 	        D('users')->save($data);	        
 	    }elseif ($edit_type == 'edit_email'){
 	        $id = I('post.user_id');
-	        $email = I('email');
+	        $email = I('post.email');
+	        
+	        if (D('users')->field('id')->where("email = '{$email}'")->select()){
+	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Users/edit_email'), 'sec' => 3),'info' => urlencode('邮箱已存在！'),'code' => -200);
+	            exit(urldecode(json_encode($output)));
+	            	        
 	        $data = array(
 	            'email' => $email,
 	            'id' => $id
 	        );
+	        D('users')->save($data);	        
+	    }elseif ($edit_type == 'edit_all'){
+	        $id = I('post.user_id');
+	        $icon_url = I('post.icon_url');
+	        $nick_name = I('post.nick_name');
+	        $old_password = MD5(I('post.old_password'));
+	        $new_password = MD5(I('post.new_password'));
+	        $confirm_password = MD5(I('post.confirm_password'));
+	        $mobile = I('post.mobile');
+	        $email = I('post.email');
+	        
+	        //当用户信息为空时，返回错误信息（需前端配合过滤）
+	        if (empty($icon_url) || empty($nick_name) || empty($old_password) || empty($new_password) || empty($confirm_password) || empty($mobile) || empty($email)){
+	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Users/edit_all'), 'sec' => 3),'info' => urlencode('业主信息不能为空！'),'code' => -200);
+	            exit(urldecode(json_encode($output)));
+	        }
+	        //检查信息(nick_name,mobile,email,id_card_num)是否重复,需前端配合过滤
+	        if (D('users')->field('id')->where("nick_name = '{$nick_name}'")->select()){
+	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Users/edit_all'), 'sec' => 3),'info' => urlencode('昵称已存在！'),'code' => -200);
+	            exit(urldecode(json_encode($output)));
+	        }
+	        if (D('users')->field('id')->where("mobile = '{$mobile}'")->select()){
+	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Users/edit_all'), 'sec' => 3),'info' => urlencode('手机号已存在！'),'code' => -200);
+	            exit(urldecode(json_encode($output)));
+	        }
+	        if (D('users')->field('id')->where("email = '{$email}'")->select()){
+	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Users/edit_all'), 'sec' => 3),'info' => urlencode('邮箱已存在！'),'code' => -200);
+	            exit(urldecode(json_encode($output)));
+	            	        
+	        //获取当前用户密码
+	        $current_password = D('users')->field('password')->where("id = '{$id}'")->select();
+	        //判断错误
+	        if ($current_password != $old_password) {
+	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Users/edit_all'), 'sec' => 3),'info' => urlencode('输入的当前密码错误！'),'code' => -200);
+	            exit(urldecode(json_encode($output)));
+	        }elseif ($new_password != $confirm_password){
+	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Users/edit_all'), 'sec' => 3),'info' => urlencode('输入的新密码不一致！'),'code' => -200);
+	            exit(urldecode(json_encode($output)));
+	        }
+	        //执行	        
+	        $data = array(
+	            'id' => $id,
+	            'icon_url' => $icon_url,
+	            'nick_name' => $nick_name,
+	            'password' => $new_password,
+	            'mobile' => $mobile,
+	            'email' => $email
+	        );
+
 	        D('users')->save($data);	        
 	    }
 	}

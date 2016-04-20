@@ -3,20 +3,51 @@ namespace Admin\Controller;
 class AccessController extends CommonController{
 
 	/**
-	 * 用户列表
+	 * 用户角色列表
 	 * @return [type] 
 	 */
 	public function index(){
+	    //获取每页展示行数
+	    $num = I('post.num') ? I('post.num') : C('PAGE_NUM');
 	    //接收角色数据
 	    $role = I('post.role');
-		$data = M($role)->field('a.id,a.nick_name,b.role_id')->join('as a left join sc_role_user as b on a.id = b.user_id')->select();
-		foreach ($data as $key => &$value) {
-			$value['role'] = urlencode(M('role')->where(array('id'=>$value['role_id']))->getField('name'));
-		}
-		$output = array('data' => $data,'info' => urlencode('用户列表'),'code' => 200);
-		exit(urldecode(json_encode($output)));                             
+	    $role = 'users';
+	    if ($role == 'users') {
+	        //获取总记录数
+	        $count = D('role_user')->where("user_type = 'U'")->count();
+	        //实例化分类页
+	        $Page = new \Think\Page($count,$num);
+	        //调用show显示分页链接
+	        $show = $Page->show();
+	        	        
+	        $data = M('users')->field('a.id,a.nick_name,b.role_id')->join('as a join sc_role_user as b on a.id = b.user_id')->where("user_type = 'U'")->limit($Page->firstRow,$Page->listRows)->select();        
+	    }elseif ($role == 'mgrs'){
+	        //获取总记录数
+	        $count = D('role_user')->where("user_type = 'M'")->count();
+	        //实例化分类页
+	        $Page = new \Think\Page($count,$num);
+	        //调用show显示分页链接
+	        $show = $Page->show();
+	        	        
+	        $data = M('users')->field('a.id,a.nick_name,b.role_id')->join('as a join sc_role_user as b on a.id = b.user_id')->where("user_type = 'M'")->limit($Page->firstRow,$Page->listRows)->select();	    
+	    }elseif ($role == 'admin'){
+	        //获取总记录数
+	        $count = D('role_user')->where("user_type = 'A'")->count();
+	        //实例化分类页
+	        $Page = new \Think\Page($count,$num);
+	        //调用show显示分页链接
+	        $show = $Page->show();
+	        	        
+	        $data = M('users')->field('a.id,a.nick_name,b.role_id')->join('as a join sc_role_user as b on a.id = b.user_id')->where("user_type = 'A'")->limit($Page->firstRow,$Page->listRows)->select();	    
+	    }
+	    
+	    foreach ($data as $key => &$value) {
+	        $value['role'] = urlencode(M('role')->where(array('id'=>$value['role_id']))->getField('name'));
+	    }
+	    $output = array('data' => array('data' => $data, 'count' => $count, 'page' => urlencode($show)),'info' => urlencode('用户列表'),'code' => 200);
+	    exit(urldecode(json_encode($output)));
 	}
-
+	
 	/**
 	 * 编辑用户角色
 	 */
