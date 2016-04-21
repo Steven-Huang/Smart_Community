@@ -1,0 +1,15 @@
+[ 2016-04-21T13:39:18+08:00 ] ::1 /smart_community/index.php/Public/Admin/images/img.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000749s ]
+
+[ 2016-04-21T13:39:21+08:00 ] ::1 /smart_community/index.php/Public/Admin/images/img.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000313s ]
+
+[ 2016-04-21T13:45:49+08:00 ] ::1 /smart_community/index.php/public/admin/images/img.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000353s ]
+

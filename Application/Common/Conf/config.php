@@ -20,7 +20,7 @@ return array(
     /*模板替换*/
     'TMPL_PARSE_STRING'     =>	array(
     	//定义路径
-    	'__ADMIN__'	=>	'/Public/Admin'
+    	'__ADMIN__'	=>	'../../../Public/Admin'
     ),
     
      //权限认证

@@ -28,7 +28,7 @@ class AdminController extends CommonController {
     
 	//处理管理员信息
 	public function addOK(){
-			if (IS_POST) {
+		if (IS_POST) {
 		    $pwd_confirm = I('post.user_password_confirmed');
 			$users = D('admin');
 			$data = $users->create();
@@ -224,6 +224,7 @@ class AdminController extends CommonController {
 	        if (D('admin')->field('id')->where("email = '{$email}'")->select()){
 	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Admin/edit_email'), 'sec' => 3),'info' => urlencode('邮箱已存在！'),'code' => -200);
 	            exit(urldecode(json_encode($output)));
+	        }    
 	        $data = array(
 	            'email' => $email,
 	            'id' => $id
@@ -256,7 +257,7 @@ class AdminController extends CommonController {
 	        if (D('admin')->field('id')->where("email = '{$email}'")->select()){
 	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Admin/edit_all'), 'sec' => 3),'info' => urlencode('邮箱已存在！'),'code' => -200);
 	            exit(urldecode(json_encode($output)));
-	            
+	        }    
 	        //获取当前用户密码
 	        $current_password = D('admin')->field('password')->where("id = '{$id}'")->select();
 	        //判断错误

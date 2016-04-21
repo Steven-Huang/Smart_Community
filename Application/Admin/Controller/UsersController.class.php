@@ -212,7 +212,7 @@ class UsersController extends CommonController {
 	        if (D('users')->field('id')->where("email = '{$email}'")->select()){
 	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Users/edit_email'), 'sec' => 3),'info' => urlencode('邮箱已存在！'),'code' => -200);
 	            exit(urldecode(json_encode($output)));
-	            	        
+	        }    	        
 	        $data = array(
 	            'email' => $email,
 	            'id' => $id
@@ -245,7 +245,7 @@ class UsersController extends CommonController {
 	        if (D('users')->field('id')->where("email = '{$email}'")->select()){
 	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Users/edit_all'), 'sec' => 3),'info' => urlencode('邮箱已存在！'),'code' => -200);
 	            exit(urldecode(json_encode($output)));
-	            	        
+	        }    	        
 	        //获取当前用户密码
 	        $current_password = D('users')->field('password')->where("id = '{$id}'")->select();
 	        //判断错误

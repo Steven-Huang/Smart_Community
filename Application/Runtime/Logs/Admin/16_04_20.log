@@ -1564,3 +1564,31 @@ SQL: SELECT a.id,a.nick_name,b.role_id FROM `sc_users` as a join sc_role_user as
 SQL: SHOW COLUMNS FROM `sc_role` [ RunTime:0.0004s ]
 SQL: SELECT `name` FROM `sc_role` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0002s ]
 
+[ 2016-04-20T14:31:23+08:00 ] ::1 /smart_community/index.php/Admin/admin/approving_users
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000042s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000625s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000722s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000866s ]
+
+[ 2016-04-20T14:38:24+08:00 ] ::1 /smart_community/index.php/Admin/admin/approving_user
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000063s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008722s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000756s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000893s ]
+ERR: 非法操作:approving_user
+
+[ 2016-04-20T14:38:27+08:00 ] ::1 /smart_community/index.php/Admin/admin/approving_users
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000281s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000288s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000368s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.037575s ]
+INFO: [ app_end ] --END-- [ RunTime:0.037706s ]
+
