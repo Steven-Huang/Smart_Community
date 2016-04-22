@@ -3,6 +3,16 @@ namespace Admin\Controller;
 //use Admin\Model\UsersModel;
 
 class AdminController extends CommonController {
+    //定义_empty空操作
+    public function _empty(){
+        $this->show();
+    }
+    
+    public function show(){
+        $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Index/index'), 'sec' => 3),'info' => urlencode('您访问的页面不存在！'),'code' => -404);
+        exit(urldecode(json_encode($output)));
+    }
+    
     //展示管理员基本信息（需做分页功能）
 	public function index(){
 	    //获取每页展示行数

@@ -3,6 +3,16 @@ namespace Admin\Controller;
 use Think\Controller;
 
 class PublicController extends Controller {
+    //定义_empty空操作
+    public function _empty(){
+        $this->show();
+    }
+    
+    public function show(){
+        $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Index/index'), 'sec' => 3),'info' => urlencode('您访问的页面不存在！'),'code' => -404);
+        exit(urldecode(json_encode($output)));
+    }
+    
     public function login(){
         $this->display();
     }
@@ -32,24 +42,28 @@ class PublicController extends Controller {
             $role = I('post.role');
             //$remember = I('post.remember');
             //判断数据合法性
-//             if (empty($code)) {
-//                 $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Public/login'), 'sec' => 3),'info' => urlencode('验证码不能为空！'),'code' => -201);
-//                 exit(urldecode(json_encode($output)));
-//             }
+            if ($role == '-1'){
+                $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Public/login'), 'sec' => 3),'info' => urlencode('请选择用户角色！'),'code' => -201);
+                exit(urldecode(json_encode($output)));
+            }            
             if (empty($username)) {
-                $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Public/login'), 'sec' => 3),'info' => urlencode('用户名不能为空！'),'code' => -202);
+                $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Public/login'), 'sec' => 3),'info' => urlencode('用户名不能为空！'),'code' => -201);
                 exit(urldecode(json_encode($output)));
             }
             if (empty($password)) {
-                $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Public/login'), 'sec' => 3),'info' => urlencode('密码不能为空！'),'code' => -203);
+                $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Public/login'), 'sec' => 3),'info' => urlencode('密码不能为空！'),'code' => -201);
                 exit(urldecode(json_encode($output)));
             }
+            if (empty($code)) {
+                $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Public/login'), 'sec' => 3),'info' => urlencode('验证码不能为空！'),'code' => -201);
+                exit(urldecode(json_encode($output)));
+            }            
             //判断验证码是否正确
-//             $verify = new \Think\Verify();
-//             if (!$verify->check($code)) {
-//                 $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Public/login'), 'sec' => 3),'info' => urlencode('验证码错误！'),'code' => -204);
-//                 exit(urldecode(json_encode($output)));
-//             }
+            $verify = new \Think\Verify();
+            if (!$verify->check($code)) {
+                $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Public/login'), 'sec' => 3),'info' => urlencode('验证码错误！'),'code' => -202);
+                exit(urldecode(json_encode($output)));
+            }
             $password = md5($password);
             //实例化模型
             $users = M($role);
@@ -57,30 +71,26 @@ class PublicController extends Controller {
             $where1 = "nick_name='{$username}' and password='{$password}'";
             $where2 = "email='{$username}' and password='{$password}'";
             $where3 = "mobile='{$username}' and password='{$password}'";
-            $row1 = $users->where($where1)->find();
-            $row2 = $users->where($where2)->find();
-            $row3 = $users->where($where3)->find();
-            var_dump($row1);
-            var_dump($row2);
-            var_dump($row3);
+            $row = $users->where($where1)->find() ? $users->where($where1)->find() : ($users->where($where2)->find() ? $users->where($where2)->find() : $users->where($where3)->find());
 
             //针对业主账户的状态进行判断
-            if ($row1['if_aprvd'] == 0) {
-                $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Public/login'), 'sec' => 3),'info' => urlencode('您的账户正在审核中，请耐心等待！'),'code' => -200);
-                exit(urldecode(json_encode($output)));  
-            }elseif ($row1['if_aprvd'] == -1){
-                $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Public/login'), 'sec' => 3),'info' => urlencode('您的账户审核不通过或被禁止访问，请联系物业人员！'),'code' => -200);
-                exit(urldecode(json_encode($output)));                
+            if ($role == 'users' && $row['if_aprvd'] == 0) {
+                $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Public/login'), 'sec' => 3),'info' => urlencode('您的账户正在审核中，请耐心等待！'),'code' => -203);
+                exit(urldecode(json_encode($output)));
+            }elseif ($role == 'users' && $row['if_aprvd'] == -1){
+                $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Public/login'), 'sec' => 3),'info' => urlencode('您的账户审核不通过或被禁止访问，请联系物业人员！'),'code' => -204);
+                exit(urldecode(json_encode($output)));
             }
+
             //判断登录是否成功
-            if ($row1['id']) {
+            if ($row['id']) {
                 //设置session
-                session('user_id',$row1['id']);
-                session('name',$row1['nick_name']);
+                session('user_id',$row['id']);
+                session('name',$row['nick_name']);
                 if($username == C('ADMIN_AUTH_KEY')){
                     session(C('ADMIN_AUTH_KEY'),$username);
                 }else{
-                    \Org\Util\Rbac::saveAccessList($row1['id']);
+                    \Org\Util\Rbac::saveAccessList($row['id']);
                 }                
 //                 //判断用户是否记住了用户信息
 //                 if($remember == 'on'){
@@ -90,54 +100,16 @@ class PublicController extends Controller {
 //                 }
                 //更新用户IP及登录时间信息
                 $data = array(
-                    'id' => $row1['id'],
+                    'id' => $row['id'],
                     'last_log_ip' => $_SERVER['REMOTE_ADDR'],
                     'last_log_time' => date('Y-m-d h:i:s',time())
                 );
                 $users->save($data);      
-                //$this->success('登陆成功！',U('Admin/Index/index'),3);
-                $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Index/index'), 'sec' => 2),'info' => urlencode('登录成功！'),'code' => 200);
-                exit(urldecode(json_encode($output)));                
-            }elseif($row2['id']) {
-                //设置session
-                session('user_id',$row2['id']);
-                session('name',$row2['nick_name']);
-                if($username == C('ADMIN_AUTH_KEY')){
-                    session(C('ADMIN_AUTH_KEY'),$username);
-                }else{
-                    \Org\Util\Rbac::saveAccessList($row2['id']);
-                }                
-                $data = array(
-                    'id' => $row2['id'],
-                    'last_log_ip' => $_SERVER['REMOTE_ADDR'],
-                    'last_log_time' => date('Y-m-d h:i:s',time())
-                );
-                $users->save($data);      
-                //$this->success('登陆成功！',U('Admin/Index/index'),3);
-                $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Index/index'), 'sec' => 2),'info' => urlencode('登录成功！'),'code' => 200);
-                exit(urldecode(json_encode($output)));                
-            }elseif($row3['id']) {
-                //设置session
-                session('user_id',$row3['id']);
-                session('name',$row3['nick_name']);
-                if($username == C('ADMIN_AUTH_KEY')){
-                    session(C('ADMIN_AUTH_KEY'),$username);
-                }else{
-                    \Org\Util\Rbac::saveAccessList($row3['id']);
-                }
-                $data = array(
-                    'id' => $row3['id'],
-                    'last_log_ip' => $_SERVER['REMOTE_ADDR'],
-                    'last_log_time' => date('Y-m-d h:i:s',time())
-                );
-                $users->save($data);      
-                //$this->success('登陆成功！',U('Admin/Index/index'),3);
                 $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Index/index'), 'sec' => 2),'info' => urlencode('登录成功！'),'code' => 200);
                 exit(urldecode(json_encode($output)));                
             }else{
-                //$this->error('登陆失败！','login',3);
-                $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Public/login'), 'sec' => 3),'info' => urlencode('登录失败！'),'code' => -200);
-                exit(urldecode(json_encode($output)));                 
+                $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Public/login'), 'sec' => 3),'info' => urlencode('用户名或密码错误！'),'code' => -200);
+                exit(urldecode(json_encode($output)));
             }
         }else{
             
@@ -149,19 +121,4 @@ class PublicController extends Controller {
             exit(urldecode(json_encode($output)));        
         }
     }
-
-    //用户退出
-    public function logout(){
-        //清理session
-        session('user_id',null);
-        session(null);
-        //     	//清除COOKIE
-        //     	if(isset($_COOKIE['user_id'])){
-        //     	    //删除cookie
-        //     	    setcookie('user_id','',1);
-        //     	}
-        //跳转到登陆页面
-        $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Public/login'), 'sec' => 2),'info' => urlencode('退出成功！'),'code' => 200);
-        exit(urldecode(json_encode($output)));
-        }
 }

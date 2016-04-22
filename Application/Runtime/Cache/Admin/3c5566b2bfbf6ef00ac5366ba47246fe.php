@@ -44,17 +44,32 @@
     <div id="wrapper">
       <div id="login" class="animate form">
         <section class="login_content">
-          <form>
+          <form id="login_form" novalidate>
             <h1>后台登录</h1>
-            <div>
-              <input type="text" class="form-control" placeholder="Username" required="" />
+            <div class="form-group">
+	            <select class="form-control" id="role">
+	              <option value='-1'>请选择角色</option>
+	              <option value= "users">业主</option>
+	              <option value= "mgrs">物业</option>
+	              <option value= "admin">管理员</option>
+	            </select>
             </div>
-            <div>
-              <input type="password" class="form-control" placeholder="Password" required="" />
+            <div class="form-group">
+              <input type="text" class="form-control" id="username" placeholder="用户名/邮箱/手机号" required="" />
             </div>
+            <div class="form-group">
+              <input type="password" class="form-control" id="password" placeholder="密码" required="" />
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" id="code" placeholder="请输入下面的验证码" required="" />
+            </div>
+            <div class="form-group">
+                <img id="code_img" src="/smart_community/index.php/Admin/Public/verify" alt="CAPTCHA" style="cursor: pointer;" title="看不清？点击更换另一个验证码。" onclick="this.src='/smart_community/index.php/Admin/Public/verify/'+Math.random()" />
+            </div>                 
             <div>
-              <a class="btn btn-default submit" href="index.html">登录</a>
-              <a class="reset_pass" href="#">忘记密码?</a>
+               <!-- <input type="submit" class="btn btn-success" value="登录" /> -->
+	           <a href="javascript:;" class="showModel btn btn-default submit" >登录</a>
+               <a class="reset_pass" href="#">忘记密码?</a>
             </div>
             <div class="clearfix"></div>
             <div class="separator">
@@ -67,7 +82,7 @@
               <div>
                 <h1><i class="fa fa-paw" style="font-size: 26px;"></i> JoyRill Smart Community</h1>
 
-                <p>©2015 All Rights Reserved.</p>
+                <p>©2016 All Rights Reserved.</p>
               </div>
             </div>
           </form>
@@ -76,15 +91,15 @@
         <!-- content -->
       </div>
     </div>
-    <div id="wrapper" style="min-width:500px">
+    <div id="wrapper" style="min-width:700px">
       <div id="register" class="animate form">
-        <section class="">
+        <section class="login_content">
           <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12">
               <div class="x_panel">
                 <div class="x_content">
 
-                  <form class="form-horizontal form-label-left" novalidate>
+                  <form class="form-horizontal form-label-left" id="register_form" novalidate>
                     <h1>新用户注册申请</h1>
                     <div class="item form-group">
                       <label class="control-label col-md-3 col-sm-3 col-xs-12" for="user_nick_name">用户名 <span class="required">*</span>
@@ -103,11 +118,31 @@
                     <div class="item form-group">
                       <label class="control-label col-md-3 col-sm-3 col-xs-12" for="user_gender">性别 <span class="required">*</span>
                       </label>
-                      <div class="col-md-6 col-sm-6 col-xs-9">
-                        <input type="radio" id="user_gender" name="user_gender" value="1">&nbsp;男&nbsp;
-                        <input type="radio" id="user_gender" name="user_gender" value="2">&nbsp;女
+                      <div class="col-md-6 col-sm-6 col-xs-9" style="text-align:left">
+                        <div id="gender" class="btn-group" data-toggle="buttons">
+                          <label class="btn btn-default" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+                            <input type="radio" name="gender" value="1"> &nbsp; 男 &nbsp;
+                          </label>
+                          <label class="btn btn-default" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+                            <input type="radio" name="gender" value="2"> &nbsp; 女 &nbsp;
+                          </label>
+                        </div>
                       </div>
-                    </div>                                    
+                    </div>                    
+                    <div class="item form-group">
+                      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="user_id_card_num">身份证号 <span class="required">*</span>
+                      </label>
+                      <div class="col-md-6 col-sm-6 col-xs-9">
+                        <input id="user_id_card_num" name="user_id_card_num" class="form-control col-md-7 col-xs-12" maxlength="18" placeholder="" required="required" type="text">
+                      </div>
+                    </div>   
+                    <div class="item form-group">
+                      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="user_pocn">房产证号 <span class="required">*</span>
+                      </label>
+                      <div class="col-md-6 col-sm-6 col-xs-9">
+                        <input id="user_pocn" name="user_pocn" class="form-control col-md-7 col-xs-12" maxlength="18" placeholder="" required="required" type="text">
+                      </div>
+                    </div>                                                                        
                     <div class="item form-group">
                       <label class="control-label col-md-3 col-sm-3 col-xs-12" for="email">邮箱地址 <span class="required">*</span>
                       </label>
@@ -123,13 +158,15 @@
                       </div>
                     </div>
                     <div class="item form-group">
-                      <label for="password" class="control-label col-md-3 col-sm-3 col-xs-12">密码</label>
+                      <label for="password" class="control-label col-md-3 col-sm-3 col-xs-12">密码 <span class="required">*</span>
+                      </label>
                       <div class="col-md-6 col-sm-6 col-xs-9">
                         <input id="password" type="password" name="password" data-validate-length="6,8" class="form-control col-md-7 col-xs-12" required="required">
                       </div>
                     </div>
                     <div class="item form-group">
-                      <label for="password2" class="control-label col-md-3 col-sm-3 col-xs-12">再次输入密码</label>
+                      <label for="password2" class="control-label col-md-3 col-sm-3 col-xs-12">再次输入密码 <span class="required">*</span>
+                      </label>
                       <div class="col-md-6 col-sm-6 col-xs-9">
                         <input id="password2" type="password" name="password2" data-validate-linked="password" class="form-control col-md-7 col-xs-12" required="required">
                       </div>
@@ -158,7 +195,7 @@
 					  <div>
 					    <h1><i class="fa fa-paw" style="font-size: 26px;"></i> JoyRill Smart Community</h1>
 					
-					    <p>©2015 All Rights Reserved.</p>
+					    <p>©2016 All Rights Reserved.</p>
 					  </div>
 					</div>
                   </form>
@@ -172,7 +209,8 @@
       </div>
     </div>
   </div>
-
+	
+  <script src="../../../Public/Admin/js/bootstrap.min.js"></script>
   <!-- form validation -->
   <script src="../../../Public/Admin/js/validator/validator.js"></script>
   <script>
@@ -205,18 +243,87 @@
         this.submit();
       return false;
     });
-
-    /* FOR DEMO ONLY */
-    $('#vfields').change(function() {
-      $('form').toggleClass('mode2');
-    }).prop('checked', false);
-
-    $('#alerts').change(function() {
-      validator.defaults.alerts = (this.checked) ? false : true;
-      if (this.checked)
-        $('form .alert').remove();
-    }).prop('checked', false);
-  </script>
+    //验证码
+/*     window.onload = function(){
+        $.ajax({
+            type: "post",
+            url: "/smart_community/index.php/Admin/Public/verify",
+            data: {
+              },
+            dataType: "json",
+            success: function(data) {
+			
+            },
+            error: function(xhr, type, errorThrown) {
+              //异常处理
+              console.log(type);
+            }
+          });    	
+    } */
+    //触发登录事件
+/*     function checklogin(){
+      $.ajax({
+        type: "post",
+        url: "/smart_community/index.php/Admin/Public/checkLogin",
+        data: {
+          username : $('#username').val(),
+          password : $('#password').val(),
+          role : $('#role').val(),
+          code : $('#code').val()
+          },
+        dataType: "json",
+        success: function(data) {
+        	if(data['code'] == '-201'){
+        		alert(data['info']);
+        	}
+        	if(data['code'] == '-202'){
+        		alert(data['info']);
+         		var verify=document.getElementById('code_img');
+        		verify.setAttribute('src','/smart_community/index.php/Admin/Public/verify/'+Math.random());
+        	}
+        	if(data['code'] == '-203' || data['code'] == '-204'){
+        		alert(data['info']);
+        		location.href = 'http://' + data['data']['redirect_url'];
+        	}        	
+        },
+        error: function(xhr, type, errorThrown) {
+          //异常处理
+          console.log(type);
+        }
+      });
+    } */
+    $('body').on('click','.showModel',function(){
+    	$.ajax({
+            type: "post",
+            url: "/smart_community/index.php/Admin/Public/checkLogin",
+            data: {
+              username : $('#username').val(),
+              password : $('#password').val(),
+              role : $('#role').val(),
+              code : $('#code').val()
+              },
+            dataType: "json",
+            success: function(data) {
+            	if(data['code'] == '-201'){
+            		alert(data['info']);
+            	}
+            	if(data['code'] == '-202'){
+            		alert(data['info']);
+             		var verify=document.getElementById('code_img');
+            		verify.setAttribute('src','/smart_community/index.php/Admin/Public/verify/'+Math.random());
+            	}
+            	if(data['code'] == '-203' || data['code'] == '-204'){
+            		alert(data['info']);
+            		location.href = 'http://' + data['data']['redirect_url'];
+            	}        	
+            },
+            error: function(xhr, type, errorThrown) {
+              //异常处理
+              console.log(type);
+            }
+          });    
+    })
+  </script> 
 </body>
 
 </html>
