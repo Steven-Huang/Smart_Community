@@ -1,0 +1,1 @@
+<?php if (!defined('THINK_PATH')) exit();?>您访问的Inbox控制器不存在!

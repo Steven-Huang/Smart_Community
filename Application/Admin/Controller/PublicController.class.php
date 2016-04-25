@@ -54,16 +54,16 @@ class PublicController extends Controller {
                 $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Public/login'), 'sec' => 3),'info' => urlencode('密码不能为空！'),'code' => -201);
                 exit(urldecode(json_encode($output)));
             }
-            if (empty($code)) {
-                $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Public/login'), 'sec' => 3),'info' => urlencode('验证码不能为空！'),'code' => -201);
-                exit(urldecode(json_encode($output)));
-            }            
+            // if (empty($code)) {
+            //     $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Public/login'), 'sec' => 3),'info' => urlencode('验证码不能为空！'),'code' => -201);
+            //     exit(urldecode(json_encode($output)));
+            // }            
             //判断验证码是否正确
-            $verify = new \Think\Verify();
-            if (!$verify->check($code)) {
-                $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Public/login'), 'sec' => 3),'info' => urlencode('验证码错误！'),'code' => -202);
-                exit(urldecode(json_encode($output)));
-            }
+            // $verify = new \Think\Verify();
+            // if (!$verify->check($code)) {
+            //     $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Public/login'), 'sec' => 3),'info' => urlencode('验证码错误！'),'code' => -202);
+            //     exit(urldecode(json_encode($output)));
+            // }
             $password = md5($password);
             //实例化模型
             $users = M($role);
@@ -71,23 +71,25 @@ class PublicController extends Controller {
             $where1 = "nick_name='{$username}' and password='{$password}'";
             $where2 = "email='{$username}' and password='{$password}'";
             $where3 = "mobile='{$username}' and password='{$password}'";
-            $row = $users->where($where1)->find() ? $users->where($where1)->find() : ($users->where($where2)->find() ? $users->where($where2)->find() : $users->where($where3)->find());
-
-            //针对业主账户的状态进行判断
-            if ($role == 'users' && $row['if_aprvd'] == 0) {
-                $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Public/login'), 'sec' => 3),'info' => urlencode('您的账户正在审核中，请耐心等待！'),'code' => -203);
-                exit(urldecode(json_encode($output)));
-            }elseif ($role == 'users' && $row['if_aprvd'] == -1){
-                $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Public/login'), 'sec' => 3),'info' => urlencode('您的账户审核不通过或被禁止访问，请联系物业人员！'),'code' => -204);
-                exit(urldecode(json_encode($output)));
-            }
+            $field = 'id,nick_name,if_aprvd';
+            $row = $users->field($field)->where($where1)->find() ? $users->field($field)->where($where1)->find() : ($users->field($field)->where($where2)->find() ? $users->field($field)->where($where2)->find() : $users->field($field)->where($where3)->find());
 
             //判断登录是否成功
             if ($row['id']) {
+                //针对业主账户的状态进行判断
+                if ($role == 'users' && $row['if_aprvd'] == 0) {
+                    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Public/login'), 'sec' => 3),'info' => urlencode('您的账户正在审核中，请耐心等待！'),'code' => -203);
+                    exit(urldecode(json_encode($output)));
+                }elseif ($role == 'users' && $row['if_aprvd'] == -1){
+                    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Public/login'), 'sec' => 3),'info' => urlencode('您的账户审核不通过或被禁止访问，请联系物业人员！'),'code' => -204);
+                    exit(urldecode(json_encode($output)));
+                }
+
                 //设置session
                 session('user_id',$row['id']);
                 session('name',$row['nick_name']);
-                if($username == C('ADMIN_AUTH_KEY')){
+             
+                if($role == 'admin' && $username == C('ADMIN_AUTH_KEY')){
                     session(C('ADMIN_AUTH_KEY'),$username);
                 }else{
                     \Org\Util\Rbac::saveAccessList($row['id']);
@@ -114,8 +116,9 @@ class PublicController extends Controller {
         }else{
             
 //测试模式， 上线后务必删除
-                VAR_DUMP(session());
-                echo get_client_ip();
+                            session('user_id','1');
+                session('name','nn');
+VAR_DUMP(session());
 
             $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Public/login'), 'sec' => 3),'info' => urlencode('请求失败，请重新登录！'),'code' => -205);
             exit(urldecode(json_encode($output)));        

@@ -1,0 +1,1206 @@
+[ 2016-04-25T08:38:04+08:00 ] ::1 /smart_community/index.php/Admin/Public/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.248562s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.038163s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.038363s ]
+NOTIC: [2048] Declaration of Admin\Controller\PublicController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/PublicController.class.php 第 124 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000163s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000289s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.950406s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.950702s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.165643s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.165835s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.118830s ]
+INFO: [ app_end ] --END-- [ RunTime:0.119135s ]
+
+[ 2016-04-25T08:38:05+08:00 ] ::1 /smart_community/index.php/Admin/Public/checklogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.237293s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.040387s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.040596s ]
+NOTIC: [2048] Declaration of Admin\Controller\PublicController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/PublicController.class.php 第 124 行.
+
+[ 2016-04-25T08:38:41+08:00 ] ::1 /smart_community/index.php/Admin/Public/verify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000531s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000405s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000561s ]
+NOTIC: [2048] Declaration of Admin\Controller\PublicController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/PublicController.class.php 第 124 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.096486s ]
+INFO: [ app_end ] --END-- [ RunTime:0.096726s ]
+
+[ 2016-04-25T08:52:04+08:00 ] ::1 /smart_community/index.php/Admin/Public/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000671s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000981s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001157s ]
+NOTIC: [2] include(/wwwroot/Smart_Community/Application/Admin/Controller/PublicController.class.php): failed to open stream: Permission denied /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2] include(): Failed opening './Application/Admin/Controller/PublicController.class.php' for inclusion (include_path='.:/usr/local/php5/lib/php') /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2048] Declaration of Admin\Controller\EmptyController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/EmptyController.class.php 第 4 行.
+
+[ 2016-04-25T08:52:17+08:00 ] ::1 /smart_community/index.php/Admin/Public/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000371s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000374s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000463s ]
+NOTIC: [2] include(/wwwroot/Smart_Community/Application/Admin/Controller/PublicController.class.php): failed to open stream: Permission denied /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2] include(): Failed opening './Application/Admin/Controller/PublicController.class.php' for inclusion (include_path='.:/usr/local/php5/lib/php') /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2048] Declaration of Admin\Controller\EmptyController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/EmptyController.class.php 第 4 行.
+
+[ 2016-04-25T08:52:34+08:00 ] ::1 /smart_community/index.php/Admin/Public/checklogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000415s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000546s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000652s ]
+NOTIC: [2] include(/wwwroot/Smart_Community/Application/Admin/Controller/PublicController.class.php): failed to open stream: Permission denied /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2] include(): Failed opening './Application/Admin/Controller/PublicController.class.php' for inclusion (include_path='.:/usr/local/php5/lib/php') /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2048] Declaration of Admin\Controller\EmptyController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/EmptyController.class.php 第 4 行.
+
+[ 2016-04-25T08:53:04+08:00 ] ::1 /smart_community/index.php/Admin/Public/checklogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000068s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000937s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000659s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000832s ]
+NOTIC: [2] include(/wwwroot/Smart_Community/Application/Admin/Controller/PublicController.class.php): failed to open stream: Permission denied /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2] include(): Failed opening './Application/Admin/Controller/PublicController.class.php' for inclusion (include_path='.:/usr/local/php5/lib/php') /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2048] Declaration of Admin\Controller\EmptyController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/EmptyController.class.php 第 4 行.
+
+[ 2016-04-25T08:53:07+08:00 ] ::1 /smart_community/index.php/Admin/Public/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000534s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000396s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000586s ]
+NOTIC: [2] include(/wwwroot/Smart_Community/Application/Admin/Controller/PublicController.class.php): failed to open stream: Permission denied /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2] include(): Failed opening './Application/Admin/Controller/PublicController.class.php' for inclusion (include_path='.:/usr/local/php5/lib/php') /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2048] Declaration of Admin\Controller\EmptyController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/EmptyController.class.php 第 4 行.
+
+[ 2016-04-25T08:54:27+08:00 ] ::1 /smart_community/index.php/Admin/Public/checklogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000039s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000768s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001027s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001204s ]
+NOTIC: [2] include(/wwwroot/Smart_Community/Application/Admin/Controller/PublicController.class.php): failed to open stream: Permission denied /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2] include(): Failed opening './Application/Admin/Controller/PublicController.class.php' for inclusion (include_path='.:/usr/local/php5/lib/php') /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2048] Declaration of Admin\Controller\EmptyController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/EmptyController.class.php 第 4 行.
+
+[ 2016-04-25T08:54:29+08:00 ] ::1 /smart_community/index.php/Admin/Public/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000472s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000360s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000447s ]
+NOTIC: [2] include(/wwwroot/Smart_Community/Application/Admin/Controller/PublicController.class.php): failed to open stream: Permission denied /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2] include(): Failed opening './Application/Admin/Controller/PublicController.class.php' for inclusion (include_path='.:/usr/local/php5/lib/php') /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2048] Declaration of Admin\Controller\EmptyController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/EmptyController.class.php 第 4 行.
+
+[ 2016-04-25T08:54:31+08:00 ] ::1 /smart_community/index.php/Admin/Public/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000315s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000304s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000383s ]
+NOTIC: [2] include(/wwwroot/Smart_Community/Application/Admin/Controller/PublicController.class.php): failed to open stream: Permission denied /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2] include(): Failed opening './Application/Admin/Controller/PublicController.class.php' for inclusion (include_path='.:/usr/local/php5/lib/php') /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2048] Declaration of Admin\Controller\EmptyController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/EmptyController.class.php 第 4 行.
+
+[ 2016-04-25T08:54:34+08:00 ] ::1 /smart_community/index.php/Admin/Public/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000367s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000519s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000697s ]
+NOTIC: [2] include(/wwwroot/Smart_Community/Application/Admin/Controller/PublicController.class.php): failed to open stream: Permission denied /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2] include(): Failed opening './Application/Admin/Controller/PublicController.class.php' for inclusion (include_path='.:/usr/local/php5/lib/php') /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2048] Declaration of Admin\Controller\EmptyController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/EmptyController.class.php 第 4 行.
+
+[ 2016-04-25T08:54:36+08:00 ] ::1 /smart_community/index.php/Admin/Public/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000307s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000574s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000731s ]
+NOTIC: [2] include(/wwwroot/Smart_Community/Application/Admin/Controller/PublicController.class.php): failed to open stream: Permission denied /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2] include(): Failed opening './Application/Admin/Controller/PublicController.class.php' for inclusion (include_path='.:/usr/local/php5/lib/php') /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2048] Declaration of Admin\Controller\EmptyController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/EmptyController.class.php 第 4 行.
+
+[ 2016-04-25T08:54:42+08:00 ] ::1 /smart_community/index.php/Admin/Public/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000391s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000441s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000543s ]
+NOTIC: [2] include(/wwwroot/Smart_Community/Application/Admin/Controller/PublicController.class.php): failed to open stream: Permission denied /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2] include(): Failed opening './Application/Admin/Controller/PublicController.class.php' for inclusion (include_path='.:/usr/local/php5/lib/php') /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2048] Declaration of Admin\Controller\EmptyController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/EmptyController.class.php 第 4 行.
+
+[ 2016-04-25T08:55:05+08:00 ] ::1 /smart_community/index.php/Admin/Public/show
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000285s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000336s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000425s ]
+NOTIC: [2] include(/wwwroot/Smart_Community/Application/Admin/Controller/PublicController.class.php): failed to open stream: Permission denied /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2] include(): Failed opening './Application/Admin/Controller/PublicController.class.php' for inclusion (include_path='.:/usr/local/php5/lib/php') /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2048] Declaration of Admin\Controller\EmptyController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/EmptyController.class.php 第 4 行.
+
+[ 2016-04-25T08:55:08+08:00 ] ::1 /smart_community/index.php/Admin/Public/show
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000383s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000362s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000458s ]
+NOTIC: [2] include(/wwwroot/Smart_Community/Application/Admin/Controller/PublicController.class.php): failed to open stream: Permission denied /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2] include(): Failed opening './Application/Admin/Controller/PublicController.class.php' for inclusion (include_path='.:/usr/local/php5/lib/php') /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2048] Declaration of Admin\Controller\EmptyController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/EmptyController.class.php 第 4 行.
+
+[ 2016-04-25T08:55:24+08:00 ] ::1 /smart_community/index.php/Admin/index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000292s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000411s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000491s ]
+NOTIC: [2048] Declaration of Admin\Controller\IndexController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/IndexController.class.php 第 4 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000152s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000280s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.318599s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.318691s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.027345s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.027468s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.016226s ]
+INFO: [ app_end ] --END-- [ RunTime:0.019322s ]
+
+[ 2016-04-25T08:55:29+08:00 ] ::1 /smart_community/index.php/Admin/index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000317s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000334s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000424s ]
+NOTIC: [2048] Declaration of Admin\Controller\IndexController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/IndexController.class.php 第 4 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000153s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000285s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011925s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012038s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000192s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000277s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000663s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000805s ]
+
+[ 2016-04-25T08:55:40+08:00 ] ::1 /smart_community/index.php/Admin/Index/logout
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000042s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000709s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000461s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000599s ]
+NOTIC: [2048] Declaration of Admin\Controller\IndexController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/IndexController.class.php 第 4 行.
+
+[ 2016-04-25T08:55:42+08:00 ] ::1 /smart_community/index.php/Admin/Public/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000324s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000420s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000618s ]
+NOTIC: [2] include(/wwwroot/Smart_Community/Application/Admin/Controller/PublicController.class.php): failed to open stream: Permission denied /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2] include(): Failed opening './Application/Admin/Controller/PublicController.class.php' for inclusion (include_path='.:/usr/local/php5/lib/php') /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2048] Declaration of Admin\Controller\EmptyController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/EmptyController.class.php 第 4 行.
+NOTIC: [8] Undefined index: e2891da2a3649928e102f211e2d63dfa /wwwroot/Smart_Community/ThinkPHP/Library/Org/Util/Rbac.class.php 第 170 行.
+NOTIC: [8] Undefined index: _ACCESS_LIST /wwwroot/Smart_Community/ThinkPHP/Library/Org/Util/Rbac.class.php 第 174 行.
+
+[ 2016-04-25T08:55:48+08:00 ] ::1 /smart_community/index.php/Admin/Public/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000537s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000432s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000558s ]
+NOTIC: [2] include(/wwwroot/Smart_Community/Application/Admin/Controller/PublicController.class.php): failed to open stream: Permission denied /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2] include(): Failed opening './Application/Admin/Controller/PublicController.class.php' for inclusion (include_path='.:/usr/local/php5/lib/php') /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2048] Declaration of Admin\Controller\EmptyController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/EmptyController.class.php 第 4 行.
+NOTIC: [8] Undefined index: _ACCESS_LIST /wwwroot/Smart_Community/ThinkPHP/Library/Org/Util/Rbac.class.php 第 174 行.
+
+[ 2016-04-25T08:55:51+08:00 ] ::1 /smart_community/index.php/Admin/Public/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000075s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000495s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000368s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000494s ]
+NOTIC: [2] include(/wwwroot/Smart_Community/Application/Admin/Controller/PublicController.class.php): failed to open stream: Permission denied /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2] include(): Failed opening './Application/Admin/Controller/PublicController.class.php' for inclusion (include_path='.:/usr/local/php5/lib/php') /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2048] Declaration of Admin\Controller\EmptyController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/EmptyController.class.php 第 4 行.
+NOTIC: [8] Undefined index: _ACCESS_LIST /wwwroot/Smart_Community/ThinkPHP/Library/Org/Util/Rbac.class.php 第 174 行.
+
+[ 2016-04-25T08:56:00+08:00 ] ::1 /smart_community/index.php/Admin/Public/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000329s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000342s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000430s ]
+NOTIC: [2] include(/wwwroot/Smart_Community/Application/Admin/Controller/PublicController.class.php): failed to open stream: Permission denied /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2] include(): Failed opening './Application/Admin/Controller/PublicController.class.php' for inclusion (include_path='.:/usr/local/php5/lib/php') /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2048] Declaration of Admin\Controller\EmptyController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/EmptyController.class.php 第 4 行.
+NOTIC: [8] Undefined index: _ACCESS_LIST /wwwroot/Smart_Community/ThinkPHP/Library/Org/Util/Rbac.class.php 第 174 行.
+
+[ 2016-04-25T08:56:05+08:00 ] ::1 /smart_community/index.php/Admin/Public/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000536s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000381s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000554s ]
+NOTIC: [2] include(/wwwroot/Smart_Community/Application/Admin/Controller/PublicController.class.php): failed to open stream: Permission denied /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2] include(): Failed opening './Application/Admin/Controller/PublicController.class.php' for inclusion (include_path='.:/usr/local/php5/lib/php') /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2048] Declaration of Admin\Controller\EmptyController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/EmptyController.class.php 第 4 行.
+NOTIC: [8] Undefined index: _ACCESS_LIST /wwwroot/Smart_Community/ThinkPHP/Library/Org/Util/Rbac.class.php 第 174 行.
+
+[ 2016-04-25T08:57:12+08:00 ] ::1 /smart_community/index.php/Admin/Public/checklogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000426s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000493s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000610s ]
+NOTIC: [2] include(/wwwroot/Smart_Community/Application/Admin/Controller/PublicController.class.php): failed to open stream: Permission denied /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2] include(): Failed opening './Application/Admin/Controller/PublicController.class.php' for inclusion (include_path='.:/usr/local/php5/lib/php') /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2048] Declaration of Admin\Controller\EmptyController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/EmptyController.class.php 第 4 行.
+NOTIC: [8] Undefined index: ae1accc72a2904ffa436a425d7b57237 /wwwroot/Smart_Community/ThinkPHP/Library/Org/Util/Rbac.class.php 第 170 行.
+NOTIC: [8] Undefined index: _ACCESS_LIST /wwwroot/Smart_Community/ThinkPHP/Library/Org/Util/Rbac.class.php 第 174 行.
+
+[ 2016-04-25T08:57:15+08:00 ] ::1 /smart_community/index.php/Admin/Public/checklogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000500s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000370s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000472s ]
+NOTIC: [2] include(/wwwroot/Smart_Community/Application/Admin/Controller/PublicController.class.php): failed to open stream: Permission denied /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2] include(): Failed opening './Application/Admin/Controller/PublicController.class.php' for inclusion (include_path='.:/usr/local/php5/lib/php') /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2048] Declaration of Admin\Controller\EmptyController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/EmptyController.class.php 第 4 行.
+NOTIC: [8] Undefined index: _ACCESS_LIST /wwwroot/Smart_Community/ThinkPHP/Library/Org/Util/Rbac.class.php 第 174 行.
+
+[ 2016-04-25T08:58:44+08:00 ] ::1 /smart_community/index.php/Admin/Public/checklogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000317s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000334s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000425s ]
+NOTIC: [2] include(/wwwroot/Smart_Community/Application/Admin/Controller/PublicController.class.php): failed to open stream: Permission denied /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2] include(): Failed opening './Application/Admin/Controller/PublicController.class.php' for inclusion (include_path='.:/usr/local/php5/lib/php') /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2048] Declaration of Admin\Controller\EmptyController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/EmptyController.class.php 第 4 行.
+NOTIC: [8] Undefined index: _ACCESS_LIST /wwwroot/Smart_Community/ThinkPHP/Library/Org/Util/Rbac.class.php 第 174 行.
+
+[ 2016-04-25T09:00:09+08:00 ] ::1 /smart_community/index.php/Admin/Public/checklogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000418s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000452s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000568s ]
+NOTIC: [2] include(/wwwroot/Smart_Community/Application/Admin/Controller/PublicController.class.php): failed to open stream: Permission denied /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2] include(): Failed opening './Application/Admin/Controller/PublicController.class.php' for inclusion (include_path='.:/usr/local/php5/lib/php') /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2048] Declaration of Admin\Controller\EmptyController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/EmptyController.class.php 第 4 行.
+NOTIC: [8] Undefined index: _ACCESS_LIST /wwwroot/Smart_Community/ThinkPHP/Library/Org/Util/Rbac.class.php 第 174 行.
+
+[ 2016-04-25T09:00:24+08:00 ] ::1 /smart_community/index.php/Admin/public/checklogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000285s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000433s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000551s ]
+NOTIC: [2] include(/wwwroot/Smart_Community/Application/Admin/Controller/PublicController.class.php): failed to open stream: Permission denied /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2] include(): Failed opening './Application/Admin/Controller/PublicController.class.php' for inclusion (include_path='.:/usr/local/php5/lib/php') /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2048] Declaration of Admin\Controller\EmptyController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/EmptyController.class.php 第 4 行.
+NOTIC: [8] Undefined index: _ACCESS_LIST /wwwroot/Smart_Community/ThinkPHP/Library/Org/Util/Rbac.class.php 第 174 行.
+
+[ 2016-04-25T09:00:27+08:00 ] ::1 /smart_community/index.php/Admin/public/checklogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000039s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000474s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000431s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000533s ]
+NOTIC: [2] include(/wwwroot/Smart_Community/Application/Admin/Controller/PublicController.class.php): failed to open stream: Permission denied /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2] include(): Failed opening './Application/Admin/Controller/PublicController.class.php' for inclusion (include_path='.:/usr/local/php5/lib/php') /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2048] Declaration of Admin\Controller\EmptyController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/EmptyController.class.php 第 4 行.
+NOTIC: [8] Undefined index: _ACCESS_LIST /wwwroot/Smart_Community/ThinkPHP/Library/Org/Util/Rbac.class.php 第 174 行.
+
+[ 2016-04-25T09:00:42+08:00 ] ::1 /smart_community/index.php/Admin/Public/checkLogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000365s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000293s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000360s ]
+NOTIC: [2] include(/wwwroot/Smart_Community/Application/Admin/Controller/PublicController.class.php): failed to open stream: Permission denied /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2] include(): Failed opening './Application/Admin/Controller/PublicController.class.php' for inclusion (include_path='.:/usr/local/php5/lib/php') /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2048] Declaration of Admin\Controller\EmptyController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/EmptyController.class.php 第 4 行.
+NOTIC: [8] Undefined index: 6170844f70f1e13c2092d182bbe184f5 /wwwroot/Smart_Community/ThinkPHP/Library/Org/Util/Rbac.class.php 第 170 行.
+NOTIC: [8] Undefined index: _ACCESS_LIST /wwwroot/Smart_Community/ThinkPHP/Library/Org/Util/Rbac.class.php 第 174 行.
+
+[ 2016-04-25T09:00:44+08:00 ] ::1 /smart_community/index.php/Admin/Public/checkLogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000438s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000466s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000554s ]
+NOTIC: [2] include(/wwwroot/Smart_Community/Application/Admin/Controller/PublicController.class.php): failed to open stream: Permission denied /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2] include(): Failed opening './Application/Admin/Controller/PublicController.class.php' for inclusion (include_path='.:/usr/local/php5/lib/php') /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2048] Declaration of Admin\Controller\EmptyController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/EmptyController.class.php 第 4 行.
+NOTIC: [8] Undefined index: _ACCESS_LIST /wwwroot/Smart_Community/ThinkPHP/Library/Org/Util/Rbac.class.php 第 174 行.
+
+[ 2016-04-25T09:00:45+08:00 ] ::1 /smart_community/index.php/Admin/Public/checkLogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000367s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000312s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000380s ]
+NOTIC: [2] include(/wwwroot/Smart_Community/Application/Admin/Controller/PublicController.class.php): failed to open stream: Permission denied /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2] include(): Failed opening './Application/Admin/Controller/PublicController.class.php' for inclusion (include_path='.:/usr/local/php5/lib/php') /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2048] Declaration of Admin\Controller\EmptyController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/EmptyController.class.php 第 4 行.
+NOTIC: [8] Undefined index: _ACCESS_LIST /wwwroot/Smart_Community/ThinkPHP/Library/Org/Util/Rbac.class.php 第 174 行.
+
+[ 2016-04-25T09:00:46+08:00 ] ::1 /smart_community/index.php/Admin/Public/checkLogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000316s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000426s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000503s ]
+NOTIC: [2] include(/wwwroot/Smart_Community/Application/Admin/Controller/PublicController.class.php): failed to open stream: Permission denied /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2] include(): Failed opening './Application/Admin/Controller/PublicController.class.php' for inclusion (include_path='.:/usr/local/php5/lib/php') /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2048] Declaration of Admin\Controller\EmptyController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/EmptyController.class.php 第 4 行.
+NOTIC: [8] Undefined index: _ACCESS_LIST /wwwroot/Smart_Community/ThinkPHP/Library/Org/Util/Rbac.class.php 第 174 行.
+
+[ 2016-04-25T09:00:46+08:00 ] ::1 /smart_community/index.php/Admin/Public/checkLogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000325s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000345s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000419s ]
+NOTIC: [2] include(/wwwroot/Smart_Community/Application/Admin/Controller/PublicController.class.php): failed to open stream: Permission denied /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2] include(): Failed opening './Application/Admin/Controller/PublicController.class.php' for inclusion (include_path='.:/usr/local/php5/lib/php') /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2048] Declaration of Admin\Controller\EmptyController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/EmptyController.class.php 第 4 行.
+NOTIC: [8] Undefined index: _ACCESS_LIST /wwwroot/Smart_Community/ThinkPHP/Library/Org/Util/Rbac.class.php 第 174 行.
+
+[ 2016-04-25T09:00:46+08:00 ] ::1 /smart_community/index.php/Admin/Public/checkLogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000438s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000363s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000452s ]
+NOTIC: [2] include(/wwwroot/Smart_Community/Application/Admin/Controller/PublicController.class.php): failed to open stream: Permission denied /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2] include(): Failed opening './Application/Admin/Controller/PublicController.class.php' for inclusion (include_path='.:/usr/local/php5/lib/php') /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2048] Declaration of Admin\Controller\EmptyController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/EmptyController.class.php 第 4 行.
+NOTIC: [8] Undefined index: _ACCESS_LIST /wwwroot/Smart_Community/ThinkPHP/Library/Org/Util/Rbac.class.php 第 174 行.
+
+[ 2016-04-25T09:00:46+08:00 ] ::1 /smart_community/index.php/Admin/Public/checkLogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000349s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000338s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000414s ]
+NOTIC: [2] include(/wwwroot/Smart_Community/Application/Admin/Controller/PublicController.class.php): failed to open stream: Permission denied /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2] include(): Failed opening './Application/Admin/Controller/PublicController.class.php' for inclusion (include_path='.:/usr/local/php5/lib/php') /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2048] Declaration of Admin\Controller\EmptyController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/EmptyController.class.php 第 4 行.
+NOTIC: [8] Undefined index: _ACCESS_LIST /wwwroot/Smart_Community/ThinkPHP/Library/Org/Util/Rbac.class.php 第 174 行.
+
+[ 2016-04-25T09:00:47+08:00 ] ::1 /smart_community/index.php/Admin/Public/checkLogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000314s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000321s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000396s ]
+NOTIC: [2] include(/wwwroot/Smart_Community/Application/Admin/Controller/PublicController.class.php): failed to open stream: Permission denied /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2] include(): Failed opening './Application/Admin/Controller/PublicController.class.php' for inclusion (include_path='.:/usr/local/php5/lib/php') /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2048] Declaration of Admin\Controller\EmptyController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/EmptyController.class.php 第 4 行.
+NOTIC: [8] Undefined index: _ACCESS_LIST /wwwroot/Smart_Community/ThinkPHP/Library/Org/Util/Rbac.class.php 第 174 行.
+
+[ 2016-04-25T09:00:47+08:00 ] ::1 /smart_community/index.php/Admin/Public/checkLogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000314s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000323s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000399s ]
+NOTIC: [2] include(/wwwroot/Smart_Community/Application/Admin/Controller/PublicController.class.php): failed to open stream: Permission denied /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2] include(): Failed opening './Application/Admin/Controller/PublicController.class.php' for inclusion (include_path='.:/usr/local/php5/lib/php') /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2048] Declaration of Admin\Controller\EmptyController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/EmptyController.class.php 第 4 行.
+NOTIC: [8] Undefined index: _ACCESS_LIST /wwwroot/Smart_Community/ThinkPHP/Library/Org/Util/Rbac.class.php 第 174 行.
+
+[ 2016-04-25T09:00:47+08:00 ] ::1 /smart_community/index.php/Admin/Public/checkLogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000310s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000292s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000361s ]
+NOTIC: [2] include(/wwwroot/Smart_Community/Application/Admin/Controller/PublicController.class.php): failed to open stream: Permission denied /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2] include(): Failed opening './Application/Admin/Controller/PublicController.class.php' for inclusion (include_path='.:/usr/local/php5/lib/php') /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2048] Declaration of Admin\Controller\EmptyController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/EmptyController.class.php 第 4 行.
+NOTIC: [8] Undefined index: _ACCESS_LIST /wwwroot/Smart_Community/ThinkPHP/Library/Org/Util/Rbac.class.php 第 174 行.
+
+[ 2016-04-25T09:00:47+08:00 ] ::1 /smart_community/index.php/Admin/Public/checkLogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000326s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000378s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000464s ]
+NOTIC: [2] include(/wwwroot/Smart_Community/Application/Admin/Controller/PublicController.class.php): failed to open stream: Permission denied /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2] include(): Failed opening './Application/Admin/Controller/PublicController.class.php' for inclusion (include_path='.:/usr/local/php5/lib/php') /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2048] Declaration of Admin\Controller\EmptyController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/EmptyController.class.php 第 4 行.
+NOTIC: [8] Undefined index: _ACCESS_LIST /wwwroot/Smart_Community/ThinkPHP/Library/Org/Util/Rbac.class.php 第 174 行.
+
+[ 2016-04-25T09:00:47+08:00 ] ::1 /smart_community/index.php/Admin/Public/checkLogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000313s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000324s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000398s ]
+NOTIC: [2] include(/wwwroot/Smart_Community/Application/Admin/Controller/PublicController.class.php): failed to open stream: Permission denied /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2] include(): Failed opening './Application/Admin/Controller/PublicController.class.php' for inclusion (include_path='.:/usr/local/php5/lib/php') /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2048] Declaration of Admin\Controller\EmptyController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/EmptyController.class.php 第 4 行.
+NOTIC: [8] Undefined index: _ACCESS_LIST /wwwroot/Smart_Community/ThinkPHP/Library/Org/Util/Rbac.class.php 第 174 行.
+
+[ 2016-04-25T09:00:47+08:00 ] ::1 /smart_community/index.php/Admin/Public/checkLogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000489s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000358s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000459s ]
+NOTIC: [2] include(/wwwroot/Smart_Community/Application/Admin/Controller/PublicController.class.php): failed to open stream: Permission denied /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2] include(): Failed opening './Application/Admin/Controller/PublicController.class.php' for inclusion (include_path='.:/usr/local/php5/lib/php') /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2048] Declaration of Admin\Controller\EmptyController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/EmptyController.class.php 第 4 行.
+NOTIC: [8] Undefined index: _ACCESS_LIST /wwwroot/Smart_Community/ThinkPHP/Library/Org/Util/Rbac.class.php 第 174 行.
+
+[ 2016-04-25T09:00:48+08:00 ] ::1 /smart_community/index.php/Admin/Public/checkLogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000495s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000351s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000431s ]
+NOTIC: [2] include(/wwwroot/Smart_Community/Application/Admin/Controller/PublicController.class.php): failed to open stream: Permission denied /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2] include(): Failed opening './Application/Admin/Controller/PublicController.class.php' for inclusion (include_path='.:/usr/local/php5/lib/php') /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2048] Declaration of Admin\Controller\EmptyController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/EmptyController.class.php 第 4 行.
+NOTIC: [8] Undefined index: _ACCESS_LIST /wwwroot/Smart_Community/ThinkPHP/Library/Org/Util/Rbac.class.php 第 174 行.
+
+[ 2016-04-25T09:00:48+08:00 ] ::1 /smart_community/index.php/Admin/Public/checkLogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000566s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000349s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000428s ]
+NOTIC: [2] include(/wwwroot/Smart_Community/Application/Admin/Controller/PublicController.class.php): failed to open stream: Permission denied /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2] include(): Failed opening './Application/Admin/Controller/PublicController.class.php' for inclusion (include_path='.:/usr/local/php5/lib/php') /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2048] Declaration of Admin\Controller\EmptyController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/EmptyController.class.php 第 4 行.
+NOTIC: [8] Undefined index: _ACCESS_LIST /wwwroot/Smart_Community/ThinkPHP/Library/Org/Util/Rbac.class.php 第 174 行.
+
+[ 2016-04-25T09:00:48+08:00 ] ::1 /smart_community/index.php/Admin/Public/checkLogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000349s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000469s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000548s ]
+NOTIC: [2] include(/wwwroot/Smart_Community/Application/Admin/Controller/PublicController.class.php): failed to open stream: Permission denied /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2] include(): Failed opening './Application/Admin/Controller/PublicController.class.php' for inclusion (include_path='.:/usr/local/php5/lib/php') /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2048] Declaration of Admin\Controller\EmptyController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/EmptyController.class.php 第 4 行.
+NOTIC: [8] Undefined index: _ACCESS_LIST /wwwroot/Smart_Community/ThinkPHP/Library/Org/Util/Rbac.class.php 第 174 行.
+
+[ 2016-04-25T09:00:48+08:00 ] ::1 /smart_community/index.php/Admin/Public/checkLogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000333s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000335s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000411s ]
+NOTIC: [2] include(/wwwroot/Smart_Community/Application/Admin/Controller/PublicController.class.php): failed to open stream: Permission denied /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2] include(): Failed opening './Application/Admin/Controller/PublicController.class.php' for inclusion (include_path='.:/usr/local/php5/lib/php') /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2048] Declaration of Admin\Controller\EmptyController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/EmptyController.class.php 第 4 行.
+NOTIC: [8] Undefined index: _ACCESS_LIST /wwwroot/Smart_Community/ThinkPHP/Library/Org/Util/Rbac.class.php 第 174 行.
+
+[ 2016-04-25T09:00:48+08:00 ] ::1 /smart_community/index.php/Admin/Public/checkLogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000360s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000306s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000375s ]
+NOTIC: [2] include(/wwwroot/Smart_Community/Application/Admin/Controller/PublicController.class.php): failed to open stream: Permission denied /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2] include(): Failed opening './Application/Admin/Controller/PublicController.class.php' for inclusion (include_path='.:/usr/local/php5/lib/php') /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2048] Declaration of Admin\Controller\EmptyController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/EmptyController.class.php 第 4 行.
+NOTIC: [8] Undefined index: _ACCESS_LIST /wwwroot/Smart_Community/ThinkPHP/Library/Org/Util/Rbac.class.php 第 174 行.
+
+[ 2016-04-25T09:00:49+08:00 ] ::1 /smart_community/index.php/Admin/Public/checkLogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000329s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000326s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000405s ]
+NOTIC: [2] include(/wwwroot/Smart_Community/Application/Admin/Controller/PublicController.class.php): failed to open stream: Permission denied /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2] include(): Failed opening './Application/Admin/Controller/PublicController.class.php' for inclusion (include_path='.:/usr/local/php5/lib/php') /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2048] Declaration of Admin\Controller\EmptyController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/EmptyController.class.php 第 4 行.
+NOTIC: [8] Undefined index: _ACCESS_LIST /wwwroot/Smart_Community/ThinkPHP/Library/Org/Util/Rbac.class.php 第 174 行.
+
+[ 2016-04-25T09:00:49+08:00 ] ::1 /smart_community/index.php/Admin/Public/checkLogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000354s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000324s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000399s ]
+NOTIC: [2] include(/wwwroot/Smart_Community/Application/Admin/Controller/PublicController.class.php): failed to open stream: Permission denied /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2] include(): Failed opening './Application/Admin/Controller/PublicController.class.php' for inclusion (include_path='.:/usr/local/php5/lib/php') /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2048] Declaration of Admin\Controller\EmptyController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/EmptyController.class.php 第 4 行.
+NOTIC: [8] Undefined index: _ACCESS_LIST /wwwroot/Smart_Community/ThinkPHP/Library/Org/Util/Rbac.class.php 第 174 行.
+
+[ 2016-04-25T09:00:49+08:00 ] ::1 /smart_community/index.php/Admin/Public/checkLogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000335s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000573s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000682s ]
+NOTIC: [2] include(/wwwroot/Smart_Community/Application/Admin/Controller/PublicController.class.php): failed to open stream: Permission denied /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2] include(): Failed opening './Application/Admin/Controller/PublicController.class.php' for inclusion (include_path='.:/usr/local/php5/lib/php') /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2048] Declaration of Admin\Controller\EmptyController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/EmptyController.class.php 第 4 行.
+NOTIC: [8] Undefined index: _ACCESS_LIST /wwwroot/Smart_Community/ThinkPHP/Library/Org/Util/Rbac.class.php 第 174 行.
+
+[ 2016-04-25T09:00:49+08:00 ] ::1 /smart_community/index.php/Admin/Public/checkLogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000338s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000291s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000358s ]
+NOTIC: [2] include(/wwwroot/Smart_Community/Application/Admin/Controller/PublicController.class.php): failed to open stream: Permission denied /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2] include(): Failed opening './Application/Admin/Controller/PublicController.class.php' for inclusion (include_path='.:/usr/local/php5/lib/php') /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2048] Declaration of Admin\Controller\EmptyController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/EmptyController.class.php 第 4 行.
+NOTIC: [8] Undefined index: _ACCESS_LIST /wwwroot/Smart_Community/ThinkPHP/Library/Org/Util/Rbac.class.php 第 174 行.
+
+[ 2016-04-25T09:00:49+08:00 ] ::1 /smart_community/index.php/Admin/Public/checkLogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000315s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000323s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000399s ]
+NOTIC: [2] include(/wwwroot/Smart_Community/Application/Admin/Controller/PublicController.class.php): failed to open stream: Permission denied /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2] include(): Failed opening './Application/Admin/Controller/PublicController.class.php' for inclusion (include_path='.:/usr/local/php5/lib/php') /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2048] Declaration of Admin\Controller\EmptyController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/EmptyController.class.php 第 4 行.
+NOTIC: [8] Undefined index: _ACCESS_LIST /wwwroot/Smart_Community/ThinkPHP/Library/Org/Util/Rbac.class.php 第 174 行.
+
+[ 2016-04-25T09:00:50+08:00 ] ::1 /smart_community/index.php/Admin/Public/checkLogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000333s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000326s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000402s ]
+NOTIC: [2] include(/wwwroot/Smart_Community/Application/Admin/Controller/PublicController.class.php): failed to open stream: Permission denied /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2] include(): Failed opening './Application/Admin/Controller/PublicController.class.php' for inclusion (include_path='.:/usr/local/php5/lib/php') /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2048] Declaration of Admin\Controller\EmptyController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/EmptyController.class.php 第 4 行.
+NOTIC: [8] Undefined index: _ACCESS_LIST /wwwroot/Smart_Community/ThinkPHP/Library/Org/Util/Rbac.class.php 第 174 行.
+
+[ 2016-04-25T09:00:50+08:00 ] ::1 /smart_community/index.php/Admin/Public/checkLogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000435s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000393s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000474s ]
+NOTIC: [2] include(/wwwroot/Smart_Community/Application/Admin/Controller/PublicController.class.php): failed to open stream: Permission denied /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2] include(): Failed opening './Application/Admin/Controller/PublicController.class.php' for inclusion (include_path='.:/usr/local/php5/lib/php') /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2048] Declaration of Admin\Controller\EmptyController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/EmptyController.class.php 第 4 行.
+NOTIC: [8] Undefined index: _ACCESS_LIST /wwwroot/Smart_Community/ThinkPHP/Library/Org/Util/Rbac.class.php 第 174 行.
+
+[ 2016-04-25T09:00:50+08:00 ] ::1 /smart_community/index.php/Admin/Public/checkLogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000374s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000612s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000785s ]
+NOTIC: [2] include(/wwwroot/Smart_Community/Application/Admin/Controller/PublicController.class.php): failed to open stream: Permission denied /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2] include(): Failed opening './Application/Admin/Controller/PublicController.class.php' for inclusion (include_path='.:/usr/local/php5/lib/php') /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2048] Declaration of Admin\Controller\EmptyController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/EmptyController.class.php 第 4 行.
+NOTIC: [8] Undefined index: _ACCESS_LIST /wwwroot/Smart_Community/ThinkPHP/Library/Org/Util/Rbac.class.php 第 174 行.
+
+[ 2016-04-25T09:00:50+08:00 ] ::1 /smart_community/index.php/Admin/Public/checkLogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000321s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000537s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000669s ]
+NOTIC: [2] include(/wwwroot/Smart_Community/Application/Admin/Controller/PublicController.class.php): failed to open stream: Permission denied /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2] include(): Failed opening './Application/Admin/Controller/PublicController.class.php' for inclusion (include_path='.:/usr/local/php5/lib/php') /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2048] Declaration of Admin\Controller\EmptyController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/EmptyController.class.php 第 4 行.
+NOTIC: [8] Undefined index: _ACCESS_LIST /wwwroot/Smart_Community/ThinkPHP/Library/Org/Util/Rbac.class.php 第 174 行.
+
+[ 2016-04-25T09:00:52+08:00 ] ::1 /smart_community/index.php/Admin/Public/checkLogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000049s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000649s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000392s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000485s ]
+NOTIC: [2] include(/wwwroot/Smart_Community/Application/Admin/Controller/PublicController.class.php): failed to open stream: Permission denied /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2] include(): Failed opening './Application/Admin/Controller/PublicController.class.php' for inclusion (include_path='.:/usr/local/php5/lib/php') /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2048] Declaration of Admin\Controller\EmptyController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/EmptyController.class.php 第 4 行.
+NOTIC: [8] Undefined index: _ACCESS_LIST /wwwroot/Smart_Community/ThinkPHP/Library/Org/Util/Rbac.class.php 第 174 行.
+
+[ 2016-04-25T09:00:53+08:00 ] ::1 /smart_community/index.php/Admin/Public/checkLogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000426s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000482s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000572s ]
+NOTIC: [2] include(/wwwroot/Smart_Community/Application/Admin/Controller/PublicController.class.php): failed to open stream: Permission denied /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2] include(): Failed opening './Application/Admin/Controller/PublicController.class.php' for inclusion (include_path='.:/usr/local/php5/lib/php') /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2048] Declaration of Admin\Controller\EmptyController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/EmptyController.class.php 第 4 行.
+NOTIC: [8] Undefined index: _ACCESS_LIST /wwwroot/Smart_Community/ThinkPHP/Library/Org/Util/Rbac.class.php 第 174 行.
+
+[ 2016-04-25T09:01:43+08:00 ] ::1 /smart_community/index.php/Admin/public/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000348s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000590s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000676s ]
+NOTIC: [2] include(/wwwroot/Smart_Community/Application/Admin/Controller/PublicController.class.php): failed to open stream: Permission denied /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2] include(): Failed opening './Application/Admin/Controller/PublicController.class.php' for inclusion (include_path='.:/usr/local/php5/lib/php') /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2048] Declaration of Admin\Controller\EmptyController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/EmptyController.class.php 第 4 行.
+NOTIC: [8] Undefined index: _ACCESS_LIST /wwwroot/Smart_Community/ThinkPHP/Library/Org/Util/Rbac.class.php 第 174 行.
+
+[ 2016-04-25T09:01:45+08:00 ] ::1 /smart_community/index.php/Admin/public/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000320s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000299s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000380s ]
+NOTIC: [2] include(/wwwroot/Smart_Community/Application/Admin/Controller/PublicController.class.php): failed to open stream: Permission denied /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2] include(): Failed opening './Application/Admin/Controller/PublicController.class.php' for inclusion (include_path='.:/usr/local/php5/lib/php') /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2048] Declaration of Admin\Controller\EmptyController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/EmptyController.class.php 第 4 行.
+NOTIC: [8] Undefined index: _ACCESS_LIST /wwwroot/Smart_Community/ThinkPHP/Library/Org/Util/Rbac.class.php 第 174 行.
+
+[ 2016-04-25T09:01:54+08:00 ] ::1 /smart_community/index.php/Admin/public
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000344s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000318s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000400s ]
+NOTIC: [2] include(/wwwroot/Smart_Community/Application/Admin/Controller/PublicController.class.php): failed to open stream: Permission denied /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2] include(): Failed opening './Application/Admin/Controller/PublicController.class.php' for inclusion (include_path='.:/usr/local/php5/lib/php') /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2048] Declaration of Admin\Controller\EmptyController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/EmptyController.class.php 第 4 行.
+NOTIC: [8] Undefined index: 9e78e807e0c2adfdcfa932616efb1798 /wwwroot/Smart_Community/ThinkPHP/Library/Org/Util/Rbac.class.php 第 170 行.
+NOTIC: [8] Undefined index: _ACCESS_LIST /wwwroot/Smart_Community/ThinkPHP/Library/Org/Util/Rbac.class.php 第 174 行.
+
+[ 2016-04-25T09:01:57+08:00 ] ::1 /smart_community/index.php/Admin/public/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000423s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000326s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000422s ]
+NOTIC: [2] include(/wwwroot/Smart_Community/Application/Admin/Controller/PublicController.class.php): failed to open stream: Permission denied /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2] include(): Failed opening './Application/Admin/Controller/PublicController.class.php' for inclusion (include_path='.:/usr/local/php5/lib/php') /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2048] Declaration of Admin\Controller\EmptyController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/EmptyController.class.php 第 4 行.
+NOTIC: [8] Undefined index: _ACCESS_LIST /wwwroot/Smart_Community/ThinkPHP/Library/Org/Util/Rbac.class.php 第 174 行.
+
+[ 2016-04-25T09:02:08+08:00 ] ::1 /smart_community/index.php/Admin/public/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000040s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000512s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000467s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000585s ]
+NOTIC: [2] include(/wwwroot/Smart_Community/Application/Admin/Controller/PublicController.class.php): failed to open stream: Permission denied /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2] include(): Failed opening './Application/Admin/Controller/PublicController.class.php' for inclusion (include_path='.:/usr/local/php5/lib/php') /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2048] Declaration of Admin\Controller\EmptyController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/EmptyController.class.php 第 4 行.
+NOTIC: [8] Undefined index: _ACCESS_LIST /wwwroot/Smart_Community/ThinkPHP/Library/Org/Util/Rbac.class.php 第 174 行.
+
+[ 2016-04-25T09:02:10+08:00 ] ::1 /smart_community/index.php/Admin/public/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000321s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000302s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000382s ]
+NOTIC: [2] include(/wwwroot/Smart_Community/Application/Admin/Controller/PublicController.class.php): failed to open stream: Permission denied /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2] include(): Failed opening './Application/Admin/Controller/PublicController.class.php' for inclusion (include_path='.:/usr/local/php5/lib/php') /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2048] Declaration of Admin\Controller\EmptyController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/EmptyController.class.php 第 4 行.
+NOTIC: [8] Undefined index: _ACCESS_LIST /wwwroot/Smart_Community/ThinkPHP/Library/Org/Util/Rbac.class.php 第 174 行.
+
+[ 2016-04-25T09:02:46+08:00 ] ::1 /smart_community/index.php/Admin/public/verify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000355s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000355s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000449s ]
+NOTIC: [2] include(/wwwroot/Smart_Community/Application/Admin/Controller/PublicController.class.php): failed to open stream: Permission denied /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2] include(): Failed opening './Application/Admin/Controller/PublicController.class.php' for inclusion (include_path='.:/usr/local/php5/lib/php') /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2048] Declaration of Admin\Controller\EmptyController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/EmptyController.class.php 第 4 行.
+NOTIC: [8] Undefined index: b7709e51f7fbc605405dfbaefcf03864 /wwwroot/Smart_Community/ThinkPHP/Library/Org/Util/Rbac.class.php 第 170 行.
+NOTIC: [8] Undefined index: _ACCESS_LIST /wwwroot/Smart_Community/ThinkPHP/Library/Org/Util/Rbac.class.php 第 174 行.
+
+[ 2016-04-25T09:02:48+08:00 ] ::1 /smart_community/index.php/Admin/public/verify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000306s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000565s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000719s ]
+NOTIC: [2] include(/wwwroot/Smart_Community/Application/Admin/Controller/PublicController.class.php): failed to open stream: Permission denied /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2] include(): Failed opening './Application/Admin/Controller/PublicController.class.php' for inclusion (include_path='.:/usr/local/php5/lib/php') /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2048] Declaration of Admin\Controller\EmptyController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/EmptyController.class.php 第 4 行.
+NOTIC: [8] Undefined index: _ACCESS_LIST /wwwroot/Smart_Community/ThinkPHP/Library/Org/Util/Rbac.class.php 第 174 行.
+
+[ 2016-04-25T09:03:29+08:00 ] ::1 /smart_community/index.php/Admin/public/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000288s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000298s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000378s ]
+NOTIC: [2] include(/wwwroot/Smart_Community/Application/Admin/Controller/PublicController.class.php): failed to open stream: Permission denied /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2] include(): Failed opening './Application/Admin/Controller/PublicController.class.php' for inclusion (include_path='.:/usr/local/php5/lib/php') /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2048] Declaration of Admin\Controller\EmptyController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/EmptyController.class.php 第 4 行.
+NOTIC: [8] Undefined index: _ACCESS_LIST /wwwroot/Smart_Community/ThinkPHP/Library/Org/Util/Rbac.class.php 第 174 行.
+
+[ 2016-04-25T09:03:32+08:00 ] ::1 /smart_community/index.php/Admin/public/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000536s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000316s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000393s ]
+NOTIC: [2] include(/wwwroot/Smart_Community/Application/Admin/Controller/PublicController.class.php): failed to open stream: Permission denied /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2] include(): Failed opening './Application/Admin/Controller/PublicController.class.php' for inclusion (include_path='.:/usr/local/php5/lib/php') /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2048] Declaration of Admin\Controller\EmptyController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/EmptyController.class.php 第 4 行.
+NOTIC: [8] Undefined index: _ACCESS_LIST /wwwroot/Smart_Community/ThinkPHP/Library/Org/Util/Rbac.class.php 第 174 行.
+
+[ 2016-04-25T09:03:41+08:00 ] ::1 /smart_community/index.php/Admin/public/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000355s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000366s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000466s ]
+NOTIC: [2] include(/wwwroot/Smart_Community/Application/Admin/Controller/PublicController.class.php): failed to open stream: Permission denied /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2] include(): Failed opening './Application/Admin/Controller/PublicController.class.php' for inclusion (include_path='.:/usr/local/php5/lib/php') /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2048] Declaration of Admin\Controller\EmptyController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/EmptyController.class.php 第 4 行.
+NOTIC: [8] Undefined index: _ACCESS_LIST /wwwroot/Smart_Community/ThinkPHP/Library/Org/Util/Rbac.class.php 第 174 行.
+
+[ 2016-04-25T09:04:38+08:00 ] ::1 /smart_community/index.php/Admin/public/login1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000297s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000358s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000465s ]
+NOTIC: [2] include(/wwwroot/Smart_Community/Application/Admin/Controller/PublicController.class.php): failed to open stream: Permission denied /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2] include(): Failed opening './Application/Admin/Controller/PublicController.class.php' for inclusion (include_path='.:/usr/local/php5/lib/php') /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2048] Declaration of Admin\Controller\EmptyController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/EmptyController.class.php 第 4 行.
+NOTIC: [8] Undefined index: 49651839d64ace16b46e2d026c529a46 /wwwroot/Smart_Community/ThinkPHP/Library/Org/Util/Rbac.class.php 第 170 行.
+NOTIC: [8] Undefined index: _ACCESS_LIST /wwwroot/Smart_Community/ThinkPHP/Library/Org/Util/Rbac.class.php 第 174 行.
+
+[ 2016-04-25T09:04:41+08:00 ] ::1 /smart_community/index.php/Admin/public/login1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000312s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000327s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000412s ]
+NOTIC: [2] include(/wwwroot/Smart_Community/Application/Admin/Controller/PublicController.class.php): failed to open stream: Permission denied /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2] include(): Failed opening './Application/Admin/Controller/PublicController.class.php' for inclusion (include_path='.:/usr/local/php5/lib/php') /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2048] Declaration of Admin\Controller\EmptyController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/EmptyController.class.php 第 4 行.
+NOTIC: [8] Undefined index: _ACCESS_LIST /wwwroot/Smart_Community/ThinkPHP/Library/Org/Util/Rbac.class.php 第 174 行.
+
+[ 2016-04-25T09:04:43+08:00 ] ::1 /smart_community/index.php/Admin/public/login1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000309s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000337s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000426s ]
+NOTIC: [2] include(/wwwroot/Smart_Community/Application/Admin/Controller/PublicController.class.php): failed to open stream: Permission denied /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2] include(): Failed opening './Application/Admin/Controller/PublicController.class.php' for inclusion (include_path='.:/usr/local/php5/lib/php') /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2048] Declaration of Admin\Controller\EmptyController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/EmptyController.class.php 第 4 行.
+NOTIC: [8] Undefined index: _ACCESS_LIST /wwwroot/Smart_Community/ThinkPHP/Library/Org/Util/Rbac.class.php 第 174 行.
+
+[ 2016-04-25T09:04:59+08:00 ] ::1 /smart_community/index.php/Admin/public/login1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000573s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000594s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000752s ]
+NOTIC: [2] include(/wwwroot/Smart_Community/Application/Admin/Controller/PublicController.class.php): failed to open stream: Permission denied /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2] include(): Failed opening './Application/Admin/Controller/PublicController.class.php' for inclusion (include_path='.:/usr/local/php5/lib/php') /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2048] Declaration of Admin\Controller\EmptyController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/EmptyController.class.php 第 4 行.
+
+[ 2016-04-25T09:05:01+08:00 ] ::1 /smart_community/index.php/Admin/public/login1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000325s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000332s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000420s ]
+NOTIC: [2] include(/wwwroot/Smart_Community/Application/Admin/Controller/PublicController.class.php): failed to open stream: Permission denied /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2] include(): Failed opening './Application/Admin/Controller/PublicController.class.php' for inclusion (include_path='.:/usr/local/php5/lib/php') /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2048] Declaration of Admin\Controller\EmptyController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/EmptyController.class.php 第 4 行.
+
+[ 2016-04-25T09:05:05+08:00 ] ::1 /smart_community/index.php/Admin/public/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000296s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000308s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000390s ]
+NOTIC: [2] include(/wwwroot/Smart_Community/Application/Admin/Controller/PublicController.class.php): failed to open stream: Permission denied /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2] include(): Failed opening './Application/Admin/Controller/PublicController.class.php' for inclusion (include_path='.:/usr/local/php5/lib/php') /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2048] Declaration of Admin\Controller\EmptyController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/EmptyController.class.php 第 4 行.
+
+[ 2016-04-25T09:05:09+08:00 ] ::1 /smart_community/index.php/Admin/public/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000317s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000328s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000414s ]
+NOTIC: [2] include(/wwwroot/Smart_Community/Application/Admin/Controller/PublicController.class.php): failed to open stream: Permission denied /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2] include(): Failed opening './Application/Admin/Controller/PublicController.class.php' for inclusion (include_path='.:/usr/local/php5/lib/php') /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2048] Declaration of Admin\Controller\EmptyController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/EmptyController.class.php 第 4 行.
+
+[ 2016-04-25T09:05:24+08:00 ] ::1 /smart_community/index.php/Admin/public/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000445s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000384s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000500s ]
+NOTIC: [2] include(/wwwroot/Smart_Community/Application/Admin/Controller/PublicController.class.php): failed to open stream: Permission denied /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2] include(): Failed opening './Application/Admin/Controller/PublicController.class.php' for inclusion (include_path='.:/usr/local/php5/lib/php') /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2048] Declaration of Admin\Controller\EmptyController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/EmptyController.class.php 第 4 行.
+NOTIC: [8] Undefined index: _ACCESS_LIST /wwwroot/Smart_Community/ThinkPHP/Library/Org/Util/Rbac.class.php 第 174 行.
+
+[ 2016-04-25T09:11:25+08:00 ] ::1 /smart_community/index.php/Admin/public/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000049s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000782s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000957s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001117s ]
+NOTIC: [2] include(/wwwroot/Smart_Community/Application/Admin/Controller/PublicController.class.php): failed to open stream: Permission denied /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2] include(): Failed opening './Application/Admin/Controller/PublicController.class.php' for inclusion (include_path='.:/usr/local/php5/lib/php') /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2048] Declaration of Admin\Controller\EmptyController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/EmptyController.class.php 第 4 行.
+NOTIC: [8] Undefined index: _ACCESS_LIST /wwwroot/Smart_Community/ThinkPHP/Library/Org/Util/Rbac.class.php 第 174 行.
+
+[ 2016-04-25T09:12:08+08:00 ] ::1 /smart_community/index.php/Admin/index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000366s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000340s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000430s ]
+NOTIC: [2048] Declaration of Admin\Controller\IndexController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/IndexController.class.php 第 4 行.
+NOTIC: [8] Undefined index: 7195a62edfd11a40a68c77ff40ee98a6 /wwwroot/Smart_Community/ThinkPHP/Library/Org/Util/Rbac.class.php 第 170 行.
+NOTIC: [8] Undefined index: _ACCESS_LIST /wwwroot/Smart_Community/ThinkPHP/Library/Org/Util/Rbac.class.php 第 174 行.
+
+[ 2016-04-25T09:12:11+08:00 ] ::1 /smart_community/index.php/Admin/index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000128s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000611s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000393s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000486s ]
+NOTIC: [2048] Declaration of Admin\Controller\IndexController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/IndexController.class.php 第 4 行.
+NOTIC: [8] Undefined index: _ACCESS_LIST /wwwroot/Smart_Community/ThinkPHP/Library/Org/Util/Rbac.class.php 第 174 行.
+
+[ 2016-04-25T09:12:13+08:00 ] ::1 /smart_community/index.php/Admin/index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000363s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000921s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001090s ]
+NOTIC: [2048] Declaration of Admin\Controller\IndexController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/IndexController.class.php 第 4 行.
+NOTIC: [8] Undefined index: _ACCESS_LIST /wwwroot/Smart_Community/ThinkPHP/Library/Org/Util/Rbac.class.php 第 174 行.
+
+[ 2016-04-25T09:12:23+08:00 ] ::1 /smart_community/index.php/Admin/public/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000320s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000337s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000419s ]
+NOTIC: [2] include(/wwwroot/Smart_Community/Application/Admin/Controller/PublicController.class.php): failed to open stream: Permission denied /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2] include(): Failed opening './Application/Admin/Controller/PublicController.class.php' for inclusion (include_path='.:/usr/local/php5/lib/php') /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2048] Declaration of Admin\Controller\EmptyController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/EmptyController.class.php 第 4 行.
+NOTIC: [8] Undefined index: _ACCESS_LIST /wwwroot/Smart_Community/ThinkPHP/Library/Org/Util/Rbac.class.php 第 174 行.
+
+[ 2016-04-25T09:12:26+08:00 ] ::1 /smart_community/index.php/Admin/public/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000315s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000344s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000435s ]
+NOTIC: [2] include(/wwwroot/Smart_Community/Application/Admin/Controller/PublicController.class.php): failed to open stream: Permission denied /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2] include(): Failed opening './Application/Admin/Controller/PublicController.class.php' for inclusion (include_path='.:/usr/local/php5/lib/php') /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2048] Declaration of Admin\Controller\EmptyController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/EmptyController.class.php 第 4 行.
+NOTIC: [8] Undefined index: _ACCESS_LIST /wwwroot/Smart_Community/ThinkPHP/Library/Org/Util/Rbac.class.php 第 174 行.
+
+[ 2016-04-25T09:12:39+08:00 ] ::1 /smart_community/index.php/Admin/public/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000421s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000413s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000511s ]
+NOTIC: [2] include(/wwwroot/Smart_Community/Application/Admin/Controller/PublicController.class.php): failed to open stream: Permission denied /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2] include(): Failed opening './Application/Admin/Controller/PublicController.class.php' for inclusion (include_path='.:/usr/local/php5/lib/php') /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2048] Declaration of Admin\Controller\EmptyController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/EmptyController.class.php 第 4 行.
+
+[ 2016-04-25T09:12:44+08:00 ] ::1 /smart_community/index.php/Admin/public/login1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000330s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000313s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000393s ]
+NOTIC: [2] include(/wwwroot/Smart_Community/Application/Admin/Controller/PublicController.class.php): failed to open stream: Permission denied /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2] include(): Failed opening './Application/Admin/Controller/PublicController.class.php' for inclusion (include_path='.:/usr/local/php5/lib/php') /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2048] Declaration of Admin\Controller\EmptyController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/EmptyController.class.php 第 4 行.
+
+[ 2016-04-25T09:12:47+08:00 ] ::1 /smart_community/index.php/Admin/public/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000334s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000355s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000450s ]
+NOTIC: [2] include(/wwwroot/Smart_Community/Application/Admin/Controller/PublicController.class.php): failed to open stream: Permission denied /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2] include(): Failed opening './Application/Admin/Controller/PublicController.class.php' for inclusion (include_path='.:/usr/local/php5/lib/php') /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2048] Declaration of Admin\Controller\EmptyController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/EmptyController.class.php 第 4 行.
+
+[ 2016-04-25T09:12:50+08:00 ] ::1 /smart_community/index.php/Admin/public/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000289s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000339s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000420s ]
+NOTIC: [2] include(/wwwroot/Smart_Community/Application/Admin/Controller/PublicController.class.php): failed to open stream: Permission denied /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2] include(): Failed opening './Application/Admin/Controller/PublicController.class.php' for inclusion (include_path='.:/usr/local/php5/lib/php') /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2048] Declaration of Admin\Controller\EmptyController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/EmptyController.class.php 第 4 行.
+
+[ 2016-04-25T09:12:53+08:00 ] ::1 /smart_community/index.php/Admin/public/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000292s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000311s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000392s ]
+NOTIC: [2] include(/wwwroot/Smart_Community/Application/Admin/Controller/PublicController.class.php): failed to open stream: Permission denied /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2] include(): Failed opening './Application/Admin/Controller/PublicController.class.php' for inclusion (include_path='.:/usr/local/php5/lib/php') /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2048] Declaration of Admin\Controller\EmptyController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/EmptyController.class.php 第 4 行.
+
+[ 2016-04-25T09:12:57+08:00 ] ::1 /smart_community/index.php/Admin/public/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000396s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000341s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000423s ]
+NOTIC: [2] include(/wwwroot/Smart_Community/Application/Admin/Controller/PublicController.class.php): failed to open stream: Permission denied /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2] include(): Failed opening './Application/Admin/Controller/PublicController.class.php' for inclusion (include_path='.:/usr/local/php5/lib/php') /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2048] Declaration of Admin\Controller\EmptyController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/EmptyController.class.php 第 4 行.
+
+[ 2016-04-25T09:13:03+08:00 ] ::1 /smart_community/index.php/Admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000321s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000312s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000393s ]
+NOTIC: [2048] Declaration of Admin\Controller\IndexController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/IndexController.class.php 第 4 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000100s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000211s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.176965s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.177051s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.051213s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.051385s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001298s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001561s ]
+
+[ 2016-04-25T09:13:13+08:00 ] ::1 /smart_community/index.php/Admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000344s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000366s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000461s ]
+NOTIC: [2048] Declaration of Admin\Controller\IndexController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/IndexController.class.php 第 4 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000123s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000233s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012717s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012868s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000224s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000376s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000596s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000765s ]
+
+[ 2016-04-25T09:13:15+08:00 ] ::1 /smart_community/index.php/Admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000339s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000504s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000629s ]
+NOTIC: [2048] Declaration of Admin\Controller\IndexController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/IndexController.class.php 第 4 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000112s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000214s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011436s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011524s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000160s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000233s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000524s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000669s ]
+
+[ 2016-04-25T09:14:14+08:00 ] ::1 /smart_community/index.php/admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000351s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000540s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000680s ]
+NOTIC: [2048] Declaration of Admin\Controller\IndexController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/IndexController.class.php 第 4 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000138s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000267s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.143736s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.143845s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000178s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000266s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000590s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000744s ]
+
+[ 2016-04-25T09:14:20+08:00 ] ::1 /smart_community/index.php/admin/index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000337s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000443s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000540s ]
+NOTIC: [2048] Declaration of Admin\Controller\IndexController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/IndexController.class.php 第 4 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000101s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000222s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011679s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011821s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000257s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000351s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000795s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000996s ]
+
+[ 2016-04-25T09:14:31+08:00 ] ::1 /smart_community/index.php/admin/public/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000329s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000352s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000442s ]
+NOTIC: [2] include(/wwwroot/Smart_Community/Application/Admin/Controller/PublicController.class.php): failed to open stream: Permission denied /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2] include(): Failed opening './Application/Admin/Controller/PublicController.class.php' for inclusion (include_path='.:/usr/local/php5/lib/php') /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2048] Declaration of Admin\Controller\EmptyController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/EmptyController.class.php 第 4 行.
+
+[ 2016-04-25T09:35:18+08:00 ] ::1 /smart_community/index.php/admin/public/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000664s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001179s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001353s ]
+NOTIC: [2] include(/wwwroot/Smart_Community/Application/Admin/Controller/PublicController.class.php): failed to open stream: Permission denied /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2] include(): Failed opening './Application/Admin/Controller/PublicController.class.php' for inclusion (include_path='.:/usr/local/php5/lib/php') /wwwroot/Smart_Community/ThinkPHP/Library/Think/Think.class.php 第 168 行.
+NOTIC: [2048] Declaration of Admin\Controller\EmptyController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/EmptyController.class.php 第 4 行.
+
