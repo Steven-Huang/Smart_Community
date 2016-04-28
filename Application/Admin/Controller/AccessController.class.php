@@ -12,95 +12,113 @@ class AccessController extends CommonController{
         exit(urldecode(json_encode($output)));
     }
 
+    //引入角色列表页面
+    public function index_list(){
+        $this->display();
+    }    
+    
 	/**
 	 * 用户角色列表
 	 * @return [type] 
 	 */
 	public function index(){
-	    //获取每页展示行数
-	    $num = I('post.num') ? I('post.num') : C('PAGE_NUM');
-	    //接收角色数据
-	    $role = I('post.role');
-	    $role = 'users';
-	    if ($role == 'users') {
-	        //获取总记录数
-	        $count = D('role_user')->where("user_type = 'U'")->count();
-	        //实例化分类页
-	        $Page = new \Think\Page($count,$num);
-	        //调用show显示分页链接
-	        $show = $Page->show();
-	        	        
-	        $data = M('users')->field('a.id,a.nick_name,b.role_id')->join('as a join sc_role_user as b on a.id = b.user_id')->where("user_type = 'U'")->limit($Page->firstRow,$Page->listRows)->select();        
-	    }elseif ($role == 'mgrs'){
-	        //获取总记录数
-	        $count = D('role_user')->where("user_type = 'M'")->count();
-	        //实例化分类页
-	        $Page = new \Think\Page($count,$num);
-	        //调用show显示分页链接
-	        $show = $Page->show();
-	        	        
-	        $data = M('users')->field('a.id,a.nick_name,b.role_id')->join('as a join sc_role_user as b on a.id = b.user_id')->where("user_type = 'M'")->limit($Page->firstRow,$Page->listRows)->select();	    
-	    }elseif ($role == 'admin'){
-	        //获取总记录数
-	        $count = D('role_user')->where("user_type = 'A'")->count();
-	        //实例化分类页
-	        $Page = new \Think\Page($count,$num);
-	        //调用show显示分页链接
-	        $show = $Page->show();
-	        	        
-	        $data = M('users')->field('a.id,a.nick_name,b.role_id')->join('as a join sc_role_user as b on a.id = b.user_id')->where("user_type = 'A'")->limit($Page->firstRow,$Page->listRows)->select();	    
-	    }
-	    
-	    foreach ($data as $key => &$value) {
-	        $value['role'] = urlencode(M('role')->where(array('id'=>$value['role_id']))->getField('name'));
-	    }
-	    $output = array('data' => array('data' => $data, 'count' => $count, 'page' => urlencode($show)),'info' => urlencode('用户列表'),'code' => 200);
-	    exit(urldecode(json_encode($output)));
+	    if (IS_POST){
+	        //获取每页展示行数
+	        $num = I('post.num') ? I('post.num') : C('PAGE_NUM');
+	        //接收角色数据
+	        $role = I('post.role');
+	        if ($role == 'users') {
+	            //获取总记录数
+	            $count = D('role_user')->where("user_type = 'U'")->count();
+	            //实例化分类页
+	            $Page = new \Think\Page($count,$num);
+	            //调用show显示分页链接
+	            $show = $Page->show();
+	        
+	            $data = M('users')->field('a.id,a.nick_name,b.role_id')->join('as a join sc_role_user as b on a.id = b.user_id')->where("user_type = 'U'")->limit($Page->firstRow,$Page->listRows)->select();
+	        }elseif ($role == 'mgrs'){
+	            //获取总记录数
+	            $count = D('role_user')->where("user_type = 'M'")->count();
+	            //实例化分类页
+	            $Page = new \Think\Page($count,$num);
+	            //调用show显示分页链接
+	            $show = $Page->show();
+	        
+	            $data = M('mgrs')->field('a.id,a.nick_name,b.role_id')->join('as a join sc_role_user as b on a.id = b.user_id')->where("user_type = 'M'")->limit($Page->firstRow,$Page->listRows)->select();
+	        }elseif ($role == 'admin'){
+	            //获取总记录数
+	            $count = D('role_user')->where("user_type = 'A'")->count();
+	            //实例化分类页
+	            $Page = new \Think\Page($count,$num);
+	            //调用show显示分页链接
+	            $show = $Page->show();
+	        
+	            $data = M('admin')->field('a.id,a.nick_name,b.role_id')->join('as a join sc_role_user as b on a.id = b.user_id')->where("user_type = 'A'")->limit($Page->firstRow,$Page->listRows)->select();
+	        }
+	         
+	        foreach ($data as $key => &$value) {
+	            $value['role'] = urlencode(M('role')->where(array('id'=>$value['role_id']))->getField('name'));
+	        }
+	        $output = array('data' => array('data' => $data, 'count' => $count, 'page' => urlencode($show)),'info' => urlencode('用户列表'),'code' => 200);
+	        exit(urldecode(json_encode($output)));	        
+	    }else{
+            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Index/index'), 'sec' => 3),'info' => urlencode('请求失败，请重新登录！'),'code' => -205);
+            exit(urldecode(json_encode($output)));        
+        }
+	}
+	
+	//显示edit页面
+	public function edit_user(){
+	    $this->display();
 	}
 	
 	/**
 	 * 编辑用户角色
 	 */
-	public function edit_user(){
-	    //接收角色数据
-	    $role = I('post.role');	    
-		$user_id = I('post.user_id');
-		$role_id = I('post.role_id');
-		//获取用户名
-		$data = M($role)->field('nick_name')->where(array('id'=>$user_id))->find();
-		//获取角色列表
-		$role = M('role')->field('id,name')->select();
+// 	public function role_list(){
+// 	    //接收角色数据
+// 	    $role = I('role');	    
+// // 		$user_id = I('user_id');
+// 		$role_id = I('role_id');
+// // 		//获取用户名
+// // 		$data = M($role)->field('nick_name')->where(array('id'=>$user_id))->find();
+// 		//获取角色列表
+// 		$role = M('role')->field('id,name')->select();
 		
-		foreach ($role as $key => &$value) {
-		    $value['name'] = urlencode($value['name']);
-		}
-		$output = array('data' => array('nick_name' => $data, 'role_list' => $role),'info' => urlencode('添加编辑用户'),'code' => 200);
-		exit(urldecode(json_encode($output)));		
-	}
+// 		foreach ($role as $key => &$value) {
+// 		    $value['name'] = urlencode($value['name']);
+// 		}
+// 		$output = array('data' => array('role_list' => $role),'info' => urlencode('添加编辑用户'),'code' => 200);
+// 		exit(urldecode(json_encode($output)));		
+// 	}
 
 	/**
 	 * 添加动作
 	 * @return [type] [description]
 	 */
 	public function do_user(){
-		$user_id = I('post.user_id');
-		$role_id = I('post.role_id');
-		if(!empty($user_id)){
-			M('role_user')->where(array('user_id'=>$user_id))->delete();
-			$data = array(
-				'role_id' => $role_id,
-				'user_id' => $user_id,
-				);
-			$status = M('role_user')->add($data);
-			if($status){
-				$output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Access/index'), 'sec' => 2),'info' => urlencode('修改用户角色成功！'),'code' => 200);
-				exit(urldecode(json_encode($output)));	
-			}else{
-			    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Access/add_user'), 'sec' => 3),'info' => urlencode('修改用户角色失败！'),'code' => -200);
-			    exit(urldecode(json_encode($output)));
-			}
+	    if (IS_POST){
+    		$user_id = (int)(I('post.user_id'));
+    		$new_role_id = (int)(I('post.new_role_id'));
+    		$role = I('post.role');
+    		$role = $role == 'users' ? 'U' : ($role == 'mgrs' ? 'M' :($role == 'admin' ? 'A' : '0'));
+    		if(!empty($user_id)){
+    			$data = array(
+    				'role_id' => $new_role_id,
+    				);
+    			$status = M('role_user')->where(array('user_id'=>$user_id,'user_type'=>$role))->save($data);
+    			if($status){
+    				$output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Access/index_list'), 'sec' => 2),'info' => urlencode('修改用户角色成功！'),'code' => 200);
+    				exit(urldecode(json_encode($output)));
+    			}else{
+    			    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Access/edit_user'), 'sec' => 3),'info' => urlencode('修改用户角色失败！'),'code' => -200);
+    			    exit(urldecode(json_encode($output)));
+    			}
+    		}
+	    }else{
+		    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Access/index'), 'sec' => 3),'info' => urlencode('请求失败，请重新登录！'),'code' => -205);
+		    exit(urldecode(json_encode($output)));
 		}
-		
 	}
 
 
@@ -127,6 +145,11 @@ class AccessController extends CommonController{
 // 		}
 // 	}
 
+	//引入角色列表页面
+	public function node_list(){
+	    $this->display();
+	}
+	
    /**
     * 节点列表
     * @return [type] [description]
@@ -142,27 +165,38 @@ class AccessController extends CommonController{
 	}
 
 	/**
-	 * 添加编辑节点
+	 * 添加编辑节点页面
 	 */
 	public function add_node(){
-		$pid = I('post.pid','0');
-		$level = I('post.level','1');
-		switch ($level) {
-			case '1':
-				$view = '模块';
-				break;
-			case '2':
-				$view = '控制器';
-				break;
-			case '3':
-				$view = '方法';
-				break;
-			default:
-				$view = '模块';
-				break;
-		}
-		$output = array('data' => array('view' => urlencode($view), 'pid' => $pid, 'level' => $level),'info' => urlencode('添加/编辑节点'),'code' => 200);
-		exit(urldecode(json_encode($output)));
+	    $this->display();
+	}
+	/**
+	 * 添加编辑节点
+	 */
+	public function add_node_list(){
+	    if (IS_POST){
+    		$pid = I('post.pid','0');
+    		$level = I('post.level','1');
+    		switch ($level) {
+    			case '1':
+    				$view = '模块';
+    				break;
+    			case '2':
+    				$view = '控制器';
+    				break;
+    			case '3':
+    				$view = '方法';
+    				break;
+    			default:
+    				$view = '模块';
+    				break;
+    		}
+    		$output = array('data' => array('view' => urlencode($view), 'pid' => $pid, 'level' => $level),'info' => urlencode('添加/编辑节点'),'code' => 200);
+    		exit(urldecode(json_encode($output)));
+    		}else{
+    		    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Access/index'), 'sec' => 3),'info' => urlencode('请求失败，请重新登录！'),'code' => -205);
+    		    exit(urldecode(json_encode($output)));
+    		}
 	}
 
 	/**
@@ -206,7 +240,12 @@ class AccessController extends CommonController{
 		    exit(urldecode(json_encode($output)));			
 		}
 	}
-
+    
+	//引入角色列表页面
+	public function role_list(){
+	    $this->display();
+	}
+	
     /**
      * 角色列表
      * @return [type] [description]
@@ -220,31 +259,46 @@ class AccessController extends CommonController{
 		$output = array('data' => $data,'info' => urlencode('角色列表'),'code' => 200);
 		exit(urldecode(json_encode($output)));		
 	}
-
-	/**
-	 * 添加编辑角色
-	 */
+    
+	//编辑角色页面
 	public function add_role(){
+	    $this->display();
+	}
+	
+	/**
+	 * 处理添加编辑角色
+	 */
+	public function do_add_role(){
 		if(IS_POST){
+		    $name = I('post.name');
+		    $remark = I('post.remark');
+		    
+		    $role = M('role');
+		    //判断角色名是否存在
+		    $check_name = $role->where(array('name'=>$name))->select();
+		    if ($check_name){
+		        $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Access/add_role'), 'sec' => 3),'info' => urlencode('角色名已存在！'),'code' => -200);
+		        exit(urldecode(json_encode($output)));		        
+		    }
+		    //角色名不存在时添加
 			$data = array(
-				'name' => I('post.name'),
+				'name' => $name,
 				'status' => '1',
-				'remark' => I('post.remark')
+				'remark' => $remark
 				);
-			$status = M('role')->add($data);
+			$status = $role->add($data);
 			if($status){
-			    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Access/role'), 'sec' => 2),'info' => urlencode('添加角色成功！'),'code' => 200);
+			    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Access/role_list'), 'sec' => 2),'info' => urlencode('添加角色成功！'),'code' => 200);
 			    exit(urldecode(json_encode($output)));				
 			}else{
-			    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Access/role'), 'sec' => 3),'info' => urlencode('添加角色失败！'),'code' => -200);
+			    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Access/add_role'), 'sec' => 3),'info' => urlencode('添加角色失败！'),'code' => -200);
 			    exit(urldecode(json_encode($output)));
 			}
 
 		}else{
-	        $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Access/role'), 'sec' => 3),'info' => urlencode('请求错误！请重新再试！'),'code' => -205);
+	        $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Access/role_list'), 'sec' => 3),'info' => urlencode('请求错误！请重新再试！'),'code' => -205);
 	        exit(urldecode(json_encode($output)));	
 		}
-		
 	}
 
 	/**
@@ -259,12 +313,16 @@ class AccessController extends CommonController{
 		        'role_id' => 0 //为分配角色
 		    );		    
 		    M('role_user')->where(array('role_id'=>$id))->setField($data);	    
-			$output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Access/role'), 'sec' => 2),'info' => urlencode('删除角色成功！'),'code' => 200);
+			$output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Access/role_list'), 'sec' => 2),'info' => urlencode('删除角色成功！'),'code' => 200);
 			exit(urldecode(json_encode($output)));				
 		}else{
-		    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Access/role'), 'sec' => 3),'info' => urlencode('删除角色失败！'),'code' => -200);
+		    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Access/role_list'), 'sec' => 3),'info' => urlencode('删除角色失败！'),'code' => -200);
 			exit(urldecode(json_encode($output)));
 		}
+	}
+	
+	public function access_list(){
+	    $this->display();
 	}
 
 	/**

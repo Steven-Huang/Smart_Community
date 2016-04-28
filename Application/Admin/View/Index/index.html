@@ -8,7 +8,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>JoyRill智慧社区后台</title>
 	<!-- Public core css/js -->
-	<include file="Public/public"/>
+	<include file="Public/public_head"/>
 </head>
 <body class="nav-md">
 	<include file="Public/menu"/>
@@ -20,36 +20,6 @@
 	<!-- /page content -->
 	
 	<include file="Public/footer"/>
-<!--     <div class="dialog">
-        <div class="head">
-            <a href="#" class="active login">登陆</a>
-            <a href="#" class="register">注册</a>
-        </div>
-        <div class="content">
-            <ul class="register">
-                <form class="form-horizontal" method="post" action="{:U('Admin/Login/signup')}">
-                    <li><input type="text" name="name" placeholder="用户名"/></li>
-                    <li><input type="password" name="passwd" placeholder="密码"></li>
-                    <li><input type="password" name="confirm" placeholder="确认密码"></li>
-                    <li>
-                        <input type="text" name="code" style="width:80px">
-                        <img class="captcha" src="{:U('Admin/Login/captcha')}" alt="">
-                    </li>
-                    <li><input type="submit" value="提交"></li>
-                </form>
-            </ul>
-            <ul class="login">
-                <form class="form-horizontal" method="post" action="{:U('Admin/Login/signin')}">
-                    <li><input type="text" name="name" placeholder="用户名"/></li>
-                    <li><input type="password" name="passwd" placeholder="密码"></li>
-                    <li>
-                        <input type="text" name="code"  style="width:80px">
-                        <img class="captcha" src="{:U('Admin/Login/captcha')}" alt="">
-                    </li>
-                    <li><input type="submit" value="提交"></li>
-                </form>
-            </ul>
-        </div>
-    </div> -->
+	<include file="Public/public_bottom"/>
 </body>
 </html>

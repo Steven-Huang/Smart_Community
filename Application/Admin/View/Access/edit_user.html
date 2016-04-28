@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<!-- Meta, title, CSS, favicons, etc. -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JoyRill智慧社区后台</title>
+	<!-- Public core css/js -->
+	<include file="Public/public_head"/>
+</head>
+<body class="nav-md">
+	<include file="Public/menu"/>
+	<include file="Public/top"/>
+	<!-- page content -->
+	<div class="right_col" role="main">
+		<div class="col-md-12 col-sm-12 col-xs-12">
+        	<div class="x_panel">
+			<div class="title">更新用户角色</div>
+			    <div class="container-fluid">
+			        <form class="form-horizontal" method="post" action="{:U('Admin/Access/do_user')}">
+			        	<input type="hidden" id="user_id" name="user_id" value="<php> echo I('user_id')</php>">
+			        	<input type="hidden" id="role_id" name="role_id" value="<php> echo I('role_id')</php>">
+			        	<input type="hidden" id="role" name="role" value="<php> echo I('role')</php>">
+			            <div class="form-group">
+			                <label for="inputEmail3" class="col-md-1 control-label">名称:</label>
+			                <div class="col-md-3">
+			                    <input type="text" class="form-control" name="username" value="<php> echo I('username')</php>" readonly>
+			                </div>
+			            </div>
+			            <div class="form-group">
+			                <label for="inputPassword3" class="col-md-1 control-label">角色:</label>
+			                <div class="col-md-3">
+			                    <select class="form-control" id="role_list" name="new_role_id">
+
+			                    </select>
+			                </div>
+			            </div>
+			            <div class="form-group">
+			                <div class="col-md-offset-1 col-md-3">
+<!-- 			                    <button type="submit" class="btn btn-default">保存</button> -->
+	           					<a href="javascript:;" class="btn btn-default submit savedata" >保存</a>			                    
+			                </div>
+			            </div>
+			        </form>
+			    </div>
+	  		</div>
+	  	</div>
+	  </div>
+	  
+	  	<!-- /page content -->
+	<include file="Public/footer"/>
+	<include file="Public/public_bottom"/>
+	<script type="text/javascript">
+		window.onload = function(){
+	    	$.ajax({
+	            type: "post",
+	            url: "__CONTROLLER__/role",
+	            data: {
+	            	
+	            },
+	            dataType: "json",
+	            success: function(data) {
+	            	if(data['code'] == 200){
+						var len = data['data'].length;
+						for(var i = 0; i < len; i++){
+							if(data['data'][i]['id'] == $('#role_id').val()){
+								$("#role_list").append("<option value=\'"+data['data'][i]['id']+"\'"+"selected=\"selected\">"+data['data'][i]['name']+"</option>");								
+							}else{
+								$("#role_list").append("<option value=\'"+data['data'][i]['id']+"\'"+">"+data['data'][i]['name']+"</option>");								
+							}
+						}
+	            	}
+
+	            },
+	            error: function(xhr, type, errorThrown) {
+	              //异常处理
+	              console.log(type);
+	            }
+	          }); 			
+			}
+		    $('body').on('click','.savedata',function(){
+		    	$.ajax({
+ 		            type: "post",
+		            url: "__CONTROLLER__/do_user",
+		            data: {
+		              user_id : $('#user_id').val(),
+		              new_role_id : $('#role_list').val(),
+		              role : $('#role').val() 
+		            },
+		            dataType: "json",
+		            success: function(data) {
+  		            	if(data['code'] == '200'){
+		            		alert(data['info']);
+		            		location.href = 'http://' + data['data']['redirect_url'];
+		            	}
+  		            	if(data['code'] == '-200' || data['code'] == '-205'){
+		            		alert(data['info']);
+		            		window.location.reload();
+		            		//location.href = 'http://' + data['data']['redirect_url'];
+		            	}
+		            },
+		            error: function(xhr, type, errorThrown) {
+		              //异常处理
+		              console.log(type);
+		            }
+		          });    
+		    })	    
+	</script>
+    
+</body>
+</html>

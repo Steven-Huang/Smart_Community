@@ -10,10 +10,10 @@
 	<!-- Public core css/js -->
 	<!-- Bootstrap core CSS -->
 
-<link href="../../../Public/Admin/css/bootstrap.min.css" rel="stylesheet">
+<link href="/smart_community/Public/admin/css/bootstrap.min.css" rel="stylesheet">
 
-<link href="../../../Public/Admin/fonts/css/font-awesome.min.css" rel="stylesheet">
-<link href="../../../Public/Admin/css/animate.min.css" rel="stylesheet">
+<link href="/smart_community/Public/admin/fonts/css/font-awesome.min.css" rel="stylesheet">
+<link href="/smart_community/Public/admin/css/animate.min.css" rel="stylesheet">
 
 <!--[if lt IE 9]>
       <script src="../assets/js/ie8-responsive-file-warning.js"></script>
@@ -26,13 +26,12 @@
       <![endif]-->
       
 <!-- Custom styling plus plugins -->
-<link href="../../../Public/Admin/css/custom.css" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="../../../Public/Admin/css/maps/jquery-jvectormap-2.0.3.css" />
-<link href="../../../Public/Admin/css/icheck/flat/green.css" rel="stylesheet" />
-<link href="../../../Public/Admin/css/floatexamples.css" rel="stylesheet" type="text/css" />
-
-<script src="../../../Public/Admin/js/jquery.min.js"></script>
-<script src="../../../Public/Admin/js/nprogress.js"></script>      
+<link href="/smart_community/Public/admin/css/custom.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/smart_community/Public/admin/css/maps/jquery-jvectormap-2.0.3.css" />
+<link href="/smart_community/Public/admin/css/icheck/flat/green.css" rel="stylesheet" />
+<link href="/smart_community/Public/admin/css/floatexamples.css" rel="stylesheet" type="text/css" />    
+<script src="/smart_community/Public/admin/js/jquery.min.js"></script>
+<script src="/smart_community/Public/admin/js/nprogress.js"></script>      
 </head>
 <body class="nav-md">
 	<div class="container body">
@@ -49,7 +48,7 @@
     <!-- menu prile quick info -->
     <div class="profile">
       <div class="profile_pic">
-        <img src="../../../Public/Admin/images/img.jpg" alt="..." class="img-circle profile_img">
+        <img src="/smart_community/Public/admin/images/img.jpg" alt="..." class="img-circle profile_img">
       </div>
       <div class="profile_info">
         <span>Welcome,</span>
@@ -68,7 +67,7 @@
         <ul class="nav side-menu">
           <li><a><i class="fa fa-home"></i> 主页 <span class="fa fa-chevron-down"></span></a>
             <ul class="nav child_menu" style="display: none">
-              <li><a href="index.html">控制台</a>
+              <li><a href="<?php echo U('Admin/Index/index');?>">控制台</a>
               </li>
             </ul>
           </li>
@@ -169,11 +168,11 @@
           </li>                          
           <li><a><i class="fa fa-windows"></i> 权限管理 <span class="fa fa-chevron-down"></span></a>
             <ul class="nav child_menu" style="display: none">
-              <li><a href="#">用户列表</a>
+              <li><a href="<?php echo U('Admin/Access/index_list');?>">用户列表</a>
               </li>
-              <li><a href="#">角色列表</a>
+              <li><a href="<?php echo U('Admin/Access/role_list');?>">角色列表</a>
               </li>
-              <li><a href="#">节点列表</a>
+              <li><a href="<?php echo U('Admin/Access/node_list');?>">节点列表</a>
               </li>
             </ul>
           </li>
@@ -213,7 +212,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li class="">
           <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-            <img src="../../../Public/Admin/images/img.jpg" alt="">Admin
+            <img src="/smart_community/Public/admin/images/img.jpg" alt="">Admin
             <span class=" fa fa-angle-down"></span>
           </a>
           <ul class="dropdown-menu dropdown-usermenu pull-right">
@@ -228,7 +227,7 @@
             <li>
               <a href="javascript:;"> 帮助</a>
             </li>
-            <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> 退出系统</a>
+            <li><a onclick="logout()"><i class="fa fa-sign-out pull-right"></i> 退出系统</a>
             </li>
           </ul>
         </li>
@@ -242,7 +241,7 @@
             <li>
               <a>
                 <span class="image">
-                                  <img src="../../../Public/Admin/images/img.jpg" alt="Profile Image" />
+                                  <img src="/smart_community/Public/admin/images/img.jpg" alt="Profile Image" />
                               </span>
                 <span>
                                   <span>Admin</span>
@@ -256,7 +255,7 @@
             <li>
               <a>
                 <span class="image">
-                                  <img src="../../../Public/Admin/images/img.jpg" alt="Profile Image" />
+                                  <img src="/smart_community/Public/admin/images/img.jpg" alt="Profile Image" />
                               </span>
                 <span>
                                   <span>Admin</span>
@@ -285,12 +284,99 @@
 </div>
 <!-- /top navigation -->
 
+  <script>
+    //触发退出事件
+    function logout(){
+      $.ajax({
+        type: "post",
+        url: "/smart_community/index.php/Admin/Access/logout",
+        data: {
+          },
+        dataType: "json",
+        success: function(data) {
+        	alert(data['info']);
+        	location.href = 'http://' + data['data']['redirect_url'];
+        },
+        error: function(xhr, type, errorThrown) {
+          //异常处理
+          console.log(type);
+        }
+      });
+    }
+  </script>
+
 	
 	<!-- page content -->
 	<div class="right_col" role="main">
-	</div>
-	<!-- /page content -->
-	
+		<div class="col-md-12 col-sm-12 col-xs-12">
+        	<div class="x_panel">
+                <ul id="myTab" class="nav nav-tabs " role="tablist">
+                  <li role="presentation" class="active"><a href="#tab_content1" role="tab" id="users-tab" data-toggle="tab" aria-expanded="true">业主</a>
+                  </li>
+                  <li role="presentation" class=""><a href="#tab_content2" role="tab" id="mgrs-tab" data-toggle="tab" aria-expanded="false">物业</a>
+                  </li>
+                  <li role="presentation" class=""><a href="#tab_content3" role="tab" id="admin-tab" data-toggle="tab" aria-expanded="false">管理员</a>
+                  </li>
+                </ul>
+                <div id="myTabContent" class="tab-content">
+                	<div role="tabpanel" class="tab-pane fade active in" id="tab_content1" aria-labelledby="home-tab">
+					    <div class="container-fluid">
+					        <table class="table table-hover">
+					            <thead>
+					                <tr>
+					                    <th>ID</th>
+					                    <th>名称</th>
+					                    <th>角色</th>
+					                    <th>操作</th>
+					                </tr>
+					            </thead>
+					            <tbody id="tab1">
+			                					                
+					            </tbody>
+					        </table>
+					    </div>
+                	</div>
+                    <div role="tabpanel" class="tab-pane fade" id="tab_content2" aria-labelledby="profile-tab">
+					    <div class="container-fluid">
+					        <table class="table table-hover">
+					            <thead>
+					                <tr>
+					                    <th>ID</th>
+					                    <th>名称</th>
+					                    <th>角色</th>
+					                    <th>操作</th>
+					                </tr>
+					            </thead>
+					            <tbody id="tab2">
+			                					                
+					            </tbody>
+					        </table>
+					    </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="tab_content3" aria-labelledby="profile-tab">
+					    <div class="container-fluid">
+					        <table class="table table-hover">
+					            <thead>
+					                <tr>
+					                    <th>ID</th>
+					                    <th>名称</th>
+					                    <th>角色</th>
+					                    <th>操作</th>
+					                </tr>
+					            </thead>
+					            <tbody id="tab3">
+			                					                
+					            </tbody>
+					        </table>
+					    </div>
+                    </div>
+                </div>
+
+	  		</div>
+	  	</div>
+	  </div>
+	  
+	  	<!-- /page content -->
 	<!-- footer content -->
 <footer>
   <div class="pull-right">
@@ -310,7 +396,7 @@
   <div id="notif-group" class="tabbed_notifications"></div>
 </div>
 
-<script type="text/javascript" src="../../../Public/Admin/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/smart_community/Public/admin/js/bootstrap.min.js"></script>
 <!-- /footer content -->
 
 <!-- gauge js -->
@@ -326,7 +412,7 @@
   chart js
   <script src="js/chartjs/chart.min.js"></script> -->
 
-  <script src="../../../Public/Admin/js/custom.js"></script>
+  <script src="/smart_community/Public/admin/js/custom.js"></script>
 
   <!-- flot js -->
   <!--[if lte IE 8]><script type="text/javascript" src="../../../Public/Admin/js/excanvas.min.js"></script><![endif]-->
@@ -339,36 +425,99 @@
   <script type="text/javascript" src="js/flot/jquery.flot.stack.js"></script>
   <script type="text/javascript" src="js/flot/curvedLines.js"></script>
   <script type="text/javascript" src="js/flot/jquery.flot.resize.js"></script> -->
-<!--     <div class="dialog">
-        <div class="head">
-            <a href="#" class="active login">登陆</a>
-            <a href="#" class="register">注册</a>
-        </div>
-        <div class="content">
-            <ul class="register">
-                <form class="form-horizontal" method="post" action="<?php echo U('Admin/Login/signup');?>">
-                    <li><input type="text" name="name" placeholder="用户名"/></li>
-                    <li><input type="password" name="passwd" placeholder="密码"></li>
-                    <li><input type="password" name="confirm" placeholder="确认密码"></li>
-                    <li>
-                        <input type="text" name="code" style="width:80px">
-                        <img class="captcha" src="<?php echo U('Admin/Login/captcha');?>" alt="">
-                    </li>
-                    <li><input type="submit" value="提交"></li>
-                </form>
-            </ul>
-            <ul class="login">
-                <form class="form-horizontal" method="post" action="<?php echo U('Admin/Login/signin');?>">
-                    <li><input type="text" name="name" placeholder="用户名"/></li>
-                    <li><input type="password" name="passwd" placeholder="密码"></li>
-                    <li>
-                        <input type="text" name="code"  style="width:80px">
-                        <img class="captcha" src="<?php echo U('Admin/Login/captcha');?>" alt="">
-                    </li>
-                    <li><input type="submit" value="提交"></li>
-                </form>
-            </ul>
-        </div>
-    </div> -->
+	<script src="/smart_community/Public/admin/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+		window.onload = function(){
+	    	$.ajax({
+	            type: "post",
+	            url: "/smart_community/index.php/Admin/Access/index",
+	            data: {
+	              num : '5',
+	              role : 'users'
+	            },
+	            dataType: "json",
+	            success: function(data) {
+	            	if(data['code'] == 200){
+	            		if(data['data']['count'] == 0){
+	            			$("#tab1").append("<font color='red'><h5>无用户信息！</h5></font>");
+	            		}	            		
+ 		            	var len = data['data']['data'].length;
+		            	for(var i=0; i < len; i++){
+		            	 	var array = "/role/users/user_id/"+data['data']['data'][i]['id']+"/username/"+data['data']['data'][i]['nick_name']+"/role_id/"+data['data']['data'][i]['role_id'];
+		            		$("#tab1").append("<tr><td>U"+data['data']['data'][i]['id']+"</td><td>"+data['data']['data'][i]['nick_name']+"</td><td>"+data['data']['data'][i]['role']+"</td><td><a class=\"btn btn-info btn-xs\" href=\""+"<?php echo U('Admin/Access/edit_user"+array+"');?>\"><i class=\"fa fa-pencil\"></i>更新用户角色</a></td>"+"</tr>");
+		            	 }
+	            	}
+ 	            	if(data['code'] == '-205'){
+	            		location.href = 'http://' + data['data']['redirect_url'];	            		
+	            	}
+	            },
+	            error: function(xhr, type, errorThrown) {
+	              //异常处理
+	              console.log(type);
+	            }
+	          }); 			
+		}
+	    $('#mgrs-tab').one('click',function(){
+	    	$.ajax({
+	            type: "post",
+	            url: "/smart_community/index.php/Admin/Access/index",
+	            data: {
+	              num : '5',
+	              role : 'mgrs'
+	            },
+	            dataType: "json",
+	            success: function(data) {
+	            	if(data['code'] == 200){
+	            		if(data['data']['count'] == 0){
+	            			$("#tab2").append("<font color='red'><h5>无用户信息！</h5></font>");
+	            		}	            		
+ 		            	var len = data['data']['data'].length;
+		            	for(var i=0; i < len; i++){
+		            	 	var array = "/role/mgrs/user_id/"+data['data']['data'][i]['id']+"/username/"+data['data']['data'][i]['nick_name']+"/role_id/"+data['data']['data'][i]['role_id'];
+		            	 	$("#tab2").append("<tr><td>M"+data['data']['data'][i]['id']+"</td><td>"+data['data']['data'][i]['nick_name']+"</td><td>"+data['data']['data'][i]['role']+"</td><td><a class=\"btn btn-info btn-xs\" href=\""+"<?php echo U('Admin/Access/edit_user"+array+"');?>\"><i class=\"fa fa-pencil\"></i>更新用户角色</a></td>"+"</tr>");
+		            	 }
+	            	}
+ 	            	if(data['code'] == '-205'){
+	            		location.href = 'http://' + data['data']['redirect_url'];	            		
+	            	}
+	            },
+	            error: function(xhr, type, errorThrown) {
+	              //异常处理
+	              console.log(type);
+	            }
+	          }); 
+	    })
+	    $('#admin-tab').one('click',function(){
+	    	$.ajax({
+	            type: "post",
+	            url: "/smart_community/index.php/Admin/Access/index",
+	            data: {
+	              num : '5',
+	              role : 'admin'
+	            },
+	            dataType: "json",
+	            success: function(data) {
+	            	if(data['code'] == 200){
+	            		if(data['data']['count'] == 0){
+	            			$("#tab3").append("<font color='red'><h5>无用户信息！</h5></font>");
+	            		}
+ 		            	var len = data['data']['data'].length;
+		            	for(var i=0; i < len; i++){
+		            	 	var array = "/role/admin/user_id/"+data['data']['data'][i]['id']+"/username/"+data['data']['data'][i]['nick_name']+"/role_id/"+data['data']['data'][i]['role_id'];
+		            	 	$("#tab3").append("<tr><td>A"+data['data']['data'][i]['id']+"</td><td>"+data['data']['data'][i]['nick_name']+"</td><td>"+data['data']['data'][i]['role']+"</td><td><a class=\"btn btn-info btn-xs\" href=\""+"<?php echo U('Admin/Access/edit_user"+array+"');?>\"><i class=\"fa fa-pencil\"></i>更新用户角色</a></td>"+"</tr>");
+		            	 }
+	            	}
+ 	            	if(data['code'] == '-205'){
+	            		location.href = 'http://' + data['data']['redirect_url'];	            		
+	            	}
+	            },
+	            error: function(xhr, type, errorThrown) {
+	              //异常处理
+	              console.log(type);
+	            }
+	          }); 
+	    })	    
+	</script>
+    
 </body>
 </html>

@@ -5,17 +5,27 @@ use Think\Controller;
 class CommonController extends Controller{
 	public function _initialize(){
 		//判断用户是否登陆
-// 		if (!session('?user_id')) {
-// 			//$this->redirect('Admin/Public/login');
-// 		    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Public/login'), 'sec' => 3),'info' => urlencode('您没有登录或登录已过期，请重新登录！'),'code' => -206);
-// 		    echo urldecode(json_encode($output));
-// 		}
-// 		//判断是否有权限
-// 		$access = \Org\Util\Rbac::AccessDecision();
-// 		if(!$access){
-// 		    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Public/login'), 'sec' => 3),'info' => urlencode('您没有权限访问！！'),'code' => -207);
-// 		    exit(urldecode(json_encode($output)));
-// 		}
+		if (!session('?user_id')) {
+			//$this->redirect('Admin/Public/login');
+		    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Public/login'), 'sec' => 3),'info' => urlencode('您没有登录或登录已过期，请重新登录！'),'code' => -206);
+		    exit(urldecode(json_encode($output)));
+		}
+
+	    //针对APP 客户端，超过3天需重新登录
+	    if(!isset($_SESSION['time']) || (time()-$_SESSION['time'])>259200){
+	        //设置access_token为空
+	        session('access_token',NULL);
+	        $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Public/login'), 'sec' => 3),'info' => urlencode('ACCESS_TOKEN超时，请重新登录！'),'code' => -208);
+	        exit(urldecode(json_encode($output)));
+	    }
+	    
+		//判断是否有权限
+		$access = \Org\Util\Rbac::AccessDecision();
+		if(!$access){
+		    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Public/login'), 'sec' => 3),'info' => urlencode('您没有权限访问！！'),'code' => -207);
+		    exit(urldecode(json_encode($output)));
+		}
+
 // 		$access = \Org\Util\Rbac::AccessDecision();
 // 		if(!$access){
 // 		    $this->error('你没有权限');

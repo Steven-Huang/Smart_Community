@@ -56,9 +56,12 @@ class UsersController extends CommonController {
 	//处理业主信息
 	public function do_add(){
 		if (IS_POST) {
-		    $pwd_confirm = I('post.user_password_confirmed');
+		    $pwd_confirm = strtolower(trim(I('post.user_password_confirmed')));
 			$users = D('Users');
 			$data = $users->create();
+			foreach ($data as $key => $value){
+			    $data[$key] = strtolower(trim($value));
+			}
 			//当用户信息为空时，返回错误信息（需前端配合过滤）
 			if (empty($data['nick_name']) || empty($data['true_name']) || empty($data['password']) || empty($data['h_pocn']) || empty($data['mobile']) || empty($data['email']) || empty($data['id_card_num'])){
 		        $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Users/add'), 'sec' => 3),'info' => urlencode('业主信息不能为空！'),'code' => -200);
@@ -118,13 +121,13 @@ class UsersController extends CommonController {
 	}
 	
 	//更改昵称
-	public function edit_nick_name(){
-	    $id = I('post.user_id');
-	    $users = D('users');
-	    $data = $users->field('id,nick_name')->where("id = '{$id}'")->select();
-	    $output = array('data' => array($data[0]['id'],$data[0]['nick_name']),'info' => urlencode('用户昵称'),'code' => 200);
-	    exit(urldecode(json_encode($output)));	     
-	}	
+// 	public function edit_nick_name(){
+// 	    $id = I('post.user_id');
+// 	    $users = D('users');
+// 	    $data = $users->field('id,nick_name')->where("id = '{$id}'")->select();
+// 	    $output = array('data' => array($data[0]['id'],$data[0]['nick_name']),'info' => urlencode('用户昵称'),'code' => 200);
+// 	    exit(urldecode(json_encode($output)));	     
+// 	}	
     
 	//更新密码
 	public function edit_password(){
@@ -162,7 +165,7 @@ class UsersController extends CommonController {
 	    $edit_type = I('post.edit_type');
 	    if ($edit_type == 'edit_icon'){
 	        $id = I('post.user_id');
-	        $icon_url = I('post.icon_url');
+	        $icon_url = strtolower(trim(I('post.icon_url')));
 	        $data = array(
 	            'icon_url' => $icon_url,
 	            'id' => $id
@@ -170,7 +173,7 @@ class UsersController extends CommonController {
 	        D('users')->save($data);
 	    }elseif ($edit_type == 'edit_nick_name'){
 	        $id = I('post.user_id');
-	        $nick_name = I('post.nick_name');
+	        $nick_name = strtolower(trim(I('post.nick_name')));
 	        if (D('users')->field('id')->where("nick_name = '{$nick_name}'")->select()){
 	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Users/edit_nick_name'), 'sec' => 3),'info' => urlencode('用户名已存在！'),'code' => -200);
 	            exit(urldecode(json_encode($output)));	            
@@ -182,28 +185,31 @@ class UsersController extends CommonController {
 	        D('users')->save($data);	        
 	    }elseif ($edit_type == 'edit_password'){
 	        $id = I('post.user_id');
-	        $old_password = MD5(I('post.old_password'));
-	        $new_password = MD5(I('post.new_password'));
-	        $confirm_password = MD5(I('post.confirm_password'));
+	        $old_password = strtolower(trim(I('post.old_password')));
+	        $new_password = strtolower(trim(I('post.new_password')));
+	        $confirm_password = strtolower(trim(I('post.confirm_password')));
 	        //获取当前用户密码
-	        $current_password = D('users')->field('password')->where("id = '{$id}'")->select();
+	        $row = D('users')->field('password,id_card_num')->where("id = '{$id}'")->select();
 	        //判断错误
-	        if ($current_password != $old_password) {
-				$output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Users/edit_password'), 'sec' => 3),'info' => urlencode('输入的当前密码错误！'),'code' => -200);
-				exit(urldecode(json_encode($output)));		            
-	        }elseif ($new_password != $confirm_password){
+	        if ($new_password != $confirm_password){
 	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Users/edit_password'), 'sec' => 3),'info' => urlencode('输入的新密码不一致！'),'code' => -200);
-	            exit(urldecode(json_encode($output)));	             
+	            exit(urldecode(json_encode($output)));
+	        }else{
+	            if ($row['password'] != create_hash($old_password, $row['id_card_num'])) {
+	                $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Users/edit_password'), 'sec' => 3),'info' => urlencode('输入的旧密码错误！'),'code' => -200);
+	                exit(urldecode(json_encode($output)));
+	            }else{
+	                //执行
+	                $data = array(
+	                    'password' => create_hash($new_password, $row['id_card_num']),
+	                    'id' => $id
+	                );
+	                D('users')->save($data);
+	            }
 	        }
-	        //执行
-	        $data = array(
-	            'password' => $new_password,
-	            'id' => $id
-	        );
-	        D('users')->save($data);
 	    }elseif ($edit_type == 'edit_mobile'){
 	        $id = I('post.user_id');
-	        $mobile = I('post.mobile');
+	        $mobile = strtolower(trim(I('post.mobile')));
 	        
 	        if (D('users')->field('id')->where("mobile = '{$mobile}'")->select()){
 	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Users/edit_mobile'), 'sec' => 3),'info' => urlencode('手机号已存在！'),'code' => -200);
@@ -217,7 +223,7 @@ class UsersController extends CommonController {
 	        D('users')->save($data);	        
 	    }elseif ($edit_type == 'edit_email'){
 	        $id = I('post.user_id');
-	        $email = I('post.email');
+	        $email = strtolower(trim(I('post.email')));
 	        
 	        if (D('users')->field('id')->where("email = '{$email}'")->select()){
 	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Users/edit_email'), 'sec' => 3),'info' => urlencode('邮箱已存在！'),'code' => -200);
@@ -230,13 +236,13 @@ class UsersController extends CommonController {
 	        D('users')->save($data);	        
 	    }elseif ($edit_type == 'edit_all'){
 	        $id = I('post.user_id');
-	        $icon_url = I('post.icon_url');
-	        $nick_name = I('post.nick_name');
-	        $old_password = MD5(I('post.old_password'));
-	        $new_password = MD5(I('post.new_password'));
-	        $confirm_password = MD5(I('post.confirm_password'));
-	        $mobile = I('post.mobile');
-	        $email = I('post.email');
+	        $icon_url = strtolower(trim(I('post.icon_url')));
+	        $nick_name = strtolower(trim(I('post.nick_name')));
+	        $old_password = MD5(strtolower(trim(I('post.old_password'))));
+	        $new_password = MD5(strtolower(trim(I('post.new_password'))));
+	        $confirm_password = MD5(strtolower(trim(I('post.confirm_password'))));
+	        $mobile = strtolower(trim(I('post.mobile')));
+	        $email = strtolower(trim(I('post.email')));
 	        
 	        //当用户信息为空时，返回错误信息（需前端配合过滤）
 	        if (empty($icon_url) || empty($nick_name) || empty($old_password) || empty($new_password) || empty($confirm_password) || empty($mobile) || empty($email)){

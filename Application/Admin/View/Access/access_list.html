@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<!-- Meta, title, CSS, favicons, etc. -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JoyRill智慧社区后台</title>
+	<!-- Public core css/js -->
+	<include file="Public/public_head"/>
+</head>
+<body class="nav-md">
+	<include file="Public/menu"/>
+	<include file="Public/top"/>
+	
+	<!-- page content -->
+	<div class="right_col" role="main">
+		<div class="col-md-12 col-sm-12 col-xs-12">
+        	<div class="x_panel">
+			    <div class="title">权限列表</div>
+			    <div class="container-fluid">
+			        <form action="" method="post">
+			            <foreach name="data" item="v">
+			                <div style="margin:5px;border-bottom:1px dotted #ccc">
+			                    <button type="button" class="btn btn-primary">{$v['title']}</button>
+			                    <input type="checkbox" name="access[]" class="level1" value="{$v['id']}" <?php if(in_array($v['id'], $ids))echo "checked"?>>
+			                    <foreach name="v['child']" item="con">
+			                        <div style="margin:5px;border-top:1px solid #555">
+			                            <button type="button" class="btn btn-success">{$con['title']}</button>
+			                            <input type="checkbox" name="access[]" class="level2" value="{$con['id']}" <?php if(in_array($con['id'], $ids))echo "checked"?>>
+			                        </div>
+			                        <div style="margin:5px;">
+			                            <foreach name="con['child']" item="act">
+			                                <button type="button" class="btn btn-info" >{$act['title']}</button>
+			                                <input type="checkbox" name="access[]" class="level3" value="{$act['id']}" <?php if(in_array($act['id'], $ids))echo "checked"?>>
+			                            </foreach>
+			                        </div>
+			                    </foreach>
+			                </div>
+			            </foreach>
+			            <input type="hidden" name="id" value="{$id}">
+			            <button style="margin-left:10px" type="submit" class="btn btn-default">保存</button>
+			
+			        </form>
+			    </div>
+			</div>
+		</div>			    
+	  </div>
+	  	<!-- /page content -->
+	<include file="Public/footer"/>
+	<include file="Public/public_bottom"/>
+    <script type="text/javascript">
+        $(function(){
+            $('.level1').click(function(){
+                if($(this).prop('checked')){
+                    $(this).parent().find("input[type='checkbox']").prop('checked',true);
+                }else{
+                    $(this).parent().find("input[type='checkbox']").prop('checked',false);
+                }   
+            })
+            $('.level2').click(function(){
+                if($(this).prop('checked')){
+                    $(this).parent().next().find("input[type='checkbox']").prop('checked',true);
+                }else{
+                   $(this).parent().next().find("input[type='checkbox']").prop('checked',false); 
+                }
+                
+            })
+            $('.level3').click(function(){
+                var is = $(this).prop('checked');
+                if(is){
+                    $(this).prop('checked',true);
+                }else{
+                    $(this).prop('checked',false);
+                }
+            })
+        })
+    </script>
+</body>
+</html>

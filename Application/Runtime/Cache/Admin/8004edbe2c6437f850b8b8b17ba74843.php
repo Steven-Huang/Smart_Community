@@ -10,10 +10,10 @@
 	<!-- Public core css/js -->
 	<!-- Bootstrap core CSS -->
 
-<link href="../../../Public/Admin/css/bootstrap.min.css" rel="stylesheet">
+<link href="/smart_community/Public/admin/css/bootstrap.min.css" rel="stylesheet">
 
-<link href="../../../Public/Admin/fonts/css/font-awesome.min.css" rel="stylesheet">
-<link href="../../../Public/Admin/css/animate.min.css" rel="stylesheet">
+<link href="/smart_community/Public/admin/fonts/css/font-awesome.min.css" rel="stylesheet">
+<link href="/smart_community/Public/admin/css/animate.min.css" rel="stylesheet">
 
 <!--[if lt IE 9]>
       <script src="../assets/js/ie8-responsive-file-warning.js"></script>
@@ -26,13 +26,12 @@
       <![endif]-->
       
 <!-- Custom styling plus plugins -->
-<link href="../../../Public/Admin/css/custom.css" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="../../../Public/Admin/css/maps/jquery-jvectormap-2.0.3.css" />
-<link href="../../../Public/Admin/css/icheck/flat/green.css" rel="stylesheet" />
-<link href="../../../Public/Admin/css/floatexamples.css" rel="stylesheet" type="text/css" />
-
-<script src="../../../Public/Admin/js/jquery.min.js"></script>
-<script src="../../../Public/Admin/js/nprogress.js"></script>      
+<link href="/smart_community/Public/admin/css/custom.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/smart_community/Public/admin/css/maps/jquery-jvectormap-2.0.3.css" />
+<link href="/smart_community/Public/admin/css/icheck/flat/green.css" rel="stylesheet" />
+<link href="/smart_community/Public/admin/css/floatexamples.css" rel="stylesheet" type="text/css" />    
+<script src="/smart_community/Public/admin/js/jquery.min.js"></script>
+<script src="/smart_community/Public/admin/js/nprogress.js"></script>      
 </head>
 <body class="nav-md">
 	<div class="container body">
@@ -49,7 +48,7 @@
     <!-- menu prile quick info -->
     <div class="profile">
       <div class="profile_pic">
-        <img src="../../../Public/Admin/images/img.jpg" alt="..." class="img-circle profile_img">
+        <img src="/smart_community/Public/admin/images/img.jpg" alt="..." class="img-circle profile_img">
       </div>
       <div class="profile_info">
         <span>Welcome,</span>
@@ -68,7 +67,7 @@
         <ul class="nav side-menu">
           <li><a><i class="fa fa-home"></i> 主页 <span class="fa fa-chevron-down"></span></a>
             <ul class="nav child_menu" style="display: none">
-              <li><a href="index.html">控制台</a>
+              <li><a href="<?php echo U('Admin/Index/index');?>">控制台</a>
               </li>
             </ul>
           </li>
@@ -169,11 +168,11 @@
           </li>                          
           <li><a><i class="fa fa-windows"></i> 权限管理 <span class="fa fa-chevron-down"></span></a>
             <ul class="nav child_menu" style="display: none">
-              <li><a href="#">用户列表</a>
+              <li><a href="<?php echo U('Admin/Access/index_list');?>">用户列表</a>
               </li>
-              <li><a href="#">角色列表</a>
+              <li><a href="<?php echo U('Admin/Access/role_list');?>">角色列表</a>
               </li>
-              <li><a href="#">节点列表</a>
+              <li><a href="<?php echo U('Admin/Access/node_list');?>">节点列表</a>
               </li>
             </ul>
           </li>
@@ -213,7 +212,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li class="">
           <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-            <img src="../../../Public/Admin/images/img.jpg" alt="">Admin
+            <img src="/smart_community/Public/admin/images/img.jpg" alt="">Admin
             <span class=" fa fa-angle-down"></span>
           </a>
           <ul class="dropdown-menu dropdown-usermenu pull-right">
@@ -242,7 +241,7 @@
             <li>
               <a>
                 <span class="image">
-                                  <img src="../../../Public/Admin/images/img.jpg" alt="Profile Image" />
+                                  <img src="/smart_community/Public/admin/images/img.jpg" alt="Profile Image" />
                               </span>
                 <span>
                                   <span>Admin</span>
@@ -256,7 +255,7 @@
             <li>
               <a>
                 <span class="image">
-                                  <img src="../../../Public/Admin/images/img.jpg" alt="Profile Image" />
+                                  <img src="/smart_community/Public/admin/images/img.jpg" alt="Profile Image" />
                               </span>
                 <span>
                                   <span>Admin</span>
@@ -290,7 +289,7 @@
     function logout(){
       $.ajax({
         type: "post",
-        url: "/smart_community/index.php/Admin/Index/logout",
+        url: "/smart_community/index.php/Admin/Access/logout",
         data: {
           },
         dataType: "json",
@@ -306,12 +305,43 @@
     }
   </script>
 
-	
 	<!-- page content -->
 	<div class="right_col" role="main">
-	</div>
-	<!-- /page content -->
-	
+		<div class="col-md-12 col-sm-12 col-xs-12">
+        	<div class="x_panel">
+			<div class="title">更新用户角色</div>
+			    <div class="container-fluid">
+			        <form class="form-horizontal" method="post" action="<?php echo U('Admin/Access/do_user');?>">
+			        	<input type="hidden" id="user_id" name="user_id" value="<?php echo I('user_id') ?>">
+			        	<input type="hidden" id="role_id" name="role_id" value="<?php echo I('role_id') ?>">
+			        	<input type="hidden" id="role" name="role" value="<?php echo I('role') ?>">
+			            <div class="form-group">
+			                <label for="inputEmail3" class="col-md-1 control-label">名称:</label>
+			                <div class="col-md-3">
+			                    <input type="text" class="form-control" name="username" value="<?php echo I('username') ?>" readonly>
+			                </div>
+			            </div>
+			            <div class="form-group">
+			                <label for="inputPassword3" class="col-md-1 control-label">角色:</label>
+			                <div class="col-md-3">
+			                    <select class="form-control" id="role_list" name="new_role_id">
+
+			                    </select>
+			                </div>
+			            </div>
+			            <div class="form-group">
+			                <div class="col-md-offset-1 col-md-3">
+<!-- 			                    <button type="submit" class="btn btn-default">保存</button> -->
+	           					<a href="javascript:;" class="btn btn-default submit savedata" >保存</a>			                    
+			                </div>
+			            </div>
+			        </form>
+			    </div>
+	  		</div>
+	  	</div>
+	  </div>
+	  
+	  	<!-- /page content -->
 	<!-- footer content -->
 <footer>
   <div class="pull-right">
@@ -331,7 +361,7 @@
   <div id="notif-group" class="tabbed_notifications"></div>
 </div>
 
-<script type="text/javascript" src="../../../Public/Admin/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/smart_community/Public/admin/js/bootstrap.min.js"></script>
 <!-- /footer content -->
 
 <!-- gauge js -->
@@ -347,7 +377,7 @@
   chart js
   <script src="js/chartjs/chart.min.js"></script> -->
 
-  <script src="../../../Public/Admin/js/custom.js"></script>
+  <script src="/smart_community/Public/admin/js/custom.js"></script>
 
   <!-- flot js -->
   <!--[if lte IE 8]><script type="text/javascript" src="../../../Public/Admin/js/excanvas.min.js"></script><![endif]-->
@@ -360,36 +390,63 @@
   <script type="text/javascript" src="js/flot/jquery.flot.stack.js"></script>
   <script type="text/javascript" src="js/flot/curvedLines.js"></script>
   <script type="text/javascript" src="js/flot/jquery.flot.resize.js"></script> -->
-<!--     <div class="dialog">
-        <div class="head">
-            <a href="#" class="active login">登陆</a>
-            <a href="#" class="register">注册</a>
-        </div>
-        <div class="content">
-            <ul class="register">
-                <form class="form-horizontal" method="post" action="<?php echo U('Admin/Login/signup');?>">
-                    <li><input type="text" name="name" placeholder="用户名"/></li>
-                    <li><input type="password" name="passwd" placeholder="密码"></li>
-                    <li><input type="password" name="confirm" placeholder="确认密码"></li>
-                    <li>
-                        <input type="text" name="code" style="width:80px">
-                        <img class="captcha" src="<?php echo U('Admin/Login/captcha');?>" alt="">
-                    </li>
-                    <li><input type="submit" value="提交"></li>
-                </form>
-            </ul>
-            <ul class="login">
-                <form class="form-horizontal" method="post" action="<?php echo U('Admin/Login/signin');?>">
-                    <li><input type="text" name="name" placeholder="用户名"/></li>
-                    <li><input type="password" name="passwd" placeholder="密码"></li>
-                    <li>
-                        <input type="text" name="code"  style="width:80px">
-                        <img class="captcha" src="<?php echo U('Admin/Login/captcha');?>" alt="">
-                    </li>
-                    <li><input type="submit" value="提交"></li>
-                </form>
-            </ul>
-        </div>
-    </div> -->
+	<script src="/smart_community/Public/admin/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+		window.onload = function(){
+	    	$.ajax({
+	            type: "post",
+	            url: "/smart_community/index.php/Admin/Access/role",
+	            data: {
+	            	
+	            },
+	            dataType: "json",
+	            success: function(data) {
+	            	if(data['code'] == 200){
+						var len = data['data'].length;
+						for(var i = 0; i < len; i++){
+							if(data['data'][i]['id'] == $('#role_id').val()){
+								$("#role_list").append("<option value=\'"+data['data'][i]['id']+"\'"+"selected=\"selected\">"+data['data'][i]['name']+"</option>");								
+							}else{
+								$("#role_list").append("<option value=\'"+data['data'][i]['id']+"\'"+">"+data['data'][i]['name']+"</option>");								
+							}
+						}
+	            	}
+
+	            },
+	            error: function(xhr, type, errorThrown) {
+	              //异常处理
+	              console.log(type);
+	            }
+	          }); 			
+			}
+		    $('body').on('click','.savedata',function(){
+		    	$.ajax({
+ 		            type: "post",
+		            url: "/smart_community/index.php/Admin/Access/do_user",
+		            data: {
+		              user_id : $('#user_id').val(),
+		              new_role_id : $('#role_list').val(),
+		              role : $('#role').val() 
+		            },
+		            dataType: "json",
+		            success: function(data) {
+  		            	if(data['code'] == '200'){
+		            		alert(data['info']);
+		            		location.href = 'http://' + data['data']['redirect_url'];
+		            	}
+  		            	if(data['code'] == '-200' || data['code'] == '-205'){
+		            		alert(data['info']);
+		            		window.location.reload();
+		            		//location.href = 'http://' + data['data']['redirect_url'];
+		            	}
+		            },
+		            error: function(xhr, type, errorThrown) {
+		              //异常处理
+		              console.log(type);
+		            }
+		          });    
+		    })	    
+	</script>
+    
 </body>
 </html>

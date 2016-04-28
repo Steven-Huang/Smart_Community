@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<!-- Meta, title, CSS, favicons, etc. -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JoyRill智慧社区后台</title>
+	<!-- Public core css/js -->
+	<include file="Public/public_head"/>
+</head>
+<body class="nav-md">
+	<include file="Public/menu"/>
+	<include file="Public/top"/>
+	
+	<!-- page content -->
+	<div class="right_col" role="main">
+		<div class="col-md-12 col-sm-12 col-xs-12">
+        	<div class="x_panel">	
+			    <div class="title">
+			        <a class="btn btn-default" href="{:U('Admin/Access/add_role')}" >添加角色</a>
+			    </div>
+			    <div class="container-fluid">
+			        <table class="table table-hover">
+			            <thead>
+			                <tr>
+			                    <th>ID</th>
+			                    <th>名称</th>
+			                    <th>描述</th>
+			                    <th>操作</th>
+			                </tr>
+			            </thead>
+			            <tbody id="role_list">
+
+			            </tbody>
+			        </table>
+			    </div>
+			</div>
+		</div>			    
+	  </div>
+	  	<!-- /page content -->
+	<include file="Public/footer"/>
+	<include file="Public/public_bottom"/>
+	<script type="text/javascript">
+		window.onload = function(){
+	    	$.ajax({
+	            type: "post",
+	            url: "__CONTROLLER__/role",
+	            data: {
+	            	
+	            },
+	            dataType: "json",
+	            success: function(data) {
+	            	if(data['code'] == 200){
+			            var len = data['data'].length;
+	            		if(len == 0){
+	            			$("#role_list").append("<font color='red'><h5>无角色信息！</h5></font>");
+	            		}	            		
+		            	for(var i=0; i < len; i++){
+		            	 	var array = "/id/"+data['data'][i]['id'];
+		            		$("#role_list").append("<tr><td>"+data['data'][i]['id']+"</td><td>"+data['data'][i]['name']+"</td><td>"+data['data'][i]['remark']+"</td><td><a class=\"btn btn-info btn-xs\" href=\""+"{:U(\'Admin/Access/access_list"+array+"\')}\"><i class=\"fa fa-pencil\"></i>权限配置</a><a class=\"btn btn-danger btn-xs\" href=\"javascript:;\" name= \"delete\" id=\""+data['data'][i]['id']+"\"><i class=\"fa fa-trash-o\"></i>删除角色</a></td>"+"</tr>");
+		            	 }
+	            	}
+	            },
+	            error: function(xhr, type, errorThrown) {
+	              //异常处理
+	              console.log(type);
+	            }
+	          }); 			
+		}
+		//$("#role_list a[name='delete']").on('click',function(){
+/* 			$("a[name='delete']").on('click',function(){
+/* 	    	$.ajax({
+	            type: "post",
+	            url: "__CONTROLLER__/del_role",
+	            data: {
+	            	id : $(this).attr('id')
+	            },
+	            dataType: "json",
+	            success: function(data) {
+	            	if(data['code'] == 200 || data['code'] == '-200'){
+	            		alert(data['info']);
+	            		location.href = 'http://' + data['data']['redirect_url'];
+	            	}
+	            },
+	            error: function(xhr, type, errorThrown) {
+	              //异常处理
+	              console.log(type);
+	            }
+	       }); 
+		}); */
+	</script>
+</body>
+</html>

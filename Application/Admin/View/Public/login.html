@@ -12,17 +12,17 @@
 
   <!-- Bootstrap core CSS -->
 
-  <link href="__ADMIN__/css/bootstrap.min.css" rel="stylesheet">
+  <link href="__PUBLIC__/admin/css/bootstrap.min.css" rel="stylesheet">
 
-  <link href="__ADMIN__/fonts/css/font-awesome.min.css" rel="stylesheet">
-  <link href="__ADMIN__/css/animate.min.css" rel="stylesheet">
+  <link href="__PUBLIC__/admin/fonts/css/font-awesome.min.css" rel="stylesheet">
+  <link href="__PUBLIC__/admin/css/animate.min.css" rel="stylesheet">
 
   <!-- Custom styling plus plugins -->
-  <link href="__ADMIN__/css/custom.css" rel="stylesheet">
-  <link href="__ADMIN__/css/icheck/flat/green.css" rel="stylesheet">
+  <link href="__PUBLIC__/admin/css/custom.css" rel="stylesheet">
+  <link href="__PUBLIC__/admin/css/icheck/flat/green.css" rel="stylesheet">
 
 
-  <script src="__ADMIN__/js/jquery.min.js"></script>
+  <script src="__PUBLIC__/admin/js/jquery.min.js"></script>
 
   <!--[if lt IE 9]>
         <script src="../assets/js/ie8-responsive-file-warning.js"></script>
@@ -60,15 +60,15 @@
             <div class="form-group">
               <input type="password" class="form-control" id="password" placeholder="密码" required="" />
             </div>
-<!--             <div class="form-group">
+            <div class="form-group">
               <input type="text" class="form-control" id="code" placeholder="请输入下面的验证码" required="" />
             </div>
             <div class="form-group">
                 <img id="code_img" src="__CONTROLLER__/verify" alt="CAPTCHA" style="cursor: pointer;" title="看不清？点击更换另一个验证码。" onclick="this.src='__CONTROLLER__/verify/'+Math.random()" />
-            </div>  -->                
+            </div>                  
             <div>
                <!-- <input type="submit" class="btn btn-success" value="登录" /> -->
-	           <a href="javascript:;" class="showModel btn btn-default submit" >登录</a>
+	           <a href="javascript:;" class="btn btn-default submit loginsubmit" >登录</a>
                <a class="reset_pass" href="#">忘记密码?</a>
             </div>
             <div class="clearfix"></div>
@@ -210,9 +210,8 @@
     </div>
   </div>
 	
-  <script src="__ADMIN__/js/bootstrap.min.js"></script>
   <!-- form validation -->
-  <script src="__ADMIN__/js/validator/validator.js"></script>
+  <script src="__PUBLIC__/admin/js/validator/validator.js"></script>
   <script>
     // initialize the validator function
     validator.message['date'] = 'not a real date';
@@ -292,7 +291,7 @@
         }
       });
     } */
-    $('body').on('click','.showModel',function(){
+    $('body').on('click','.loginsubmit',function(){
     	$.ajax({
             type: "post",
             url: "__CONTROLLER__/checkLogin",
@@ -300,8 +299,8 @@
               username : $('#username').val(),
               password : $('#password').val(),
               role : $('#role').val(),
-              code : $('#code').val()
-              },
+              code : $('#code').val() 
+            },
             dataType: "json",
             success: function(data) {
             	if(data['code'] == '-201'){
@@ -309,10 +308,10 @@
             	}
             	if(data['code'] == '-202'){
             		alert(data['info']);
-             		var verify=document.getElementById('code_img');
-            		verify.setAttribute('src','__CONTROLLER__/verify/'+Math.random());
+              		var verify=document.getElementById('code_img');
+            		verify.setAttribute('src','__CONTROLLER__/verify/'+Math.random()); 
             	}
-            	if(data['code'] == '-203' || data['code'] == '-204'){
+            	if(data['code'] == '200' || data['code'] == '-200' || data['code'] == '-203' || data['code'] == '-204'){
             		alert(data['info']);
             		location.href = 'http://' + data['data']['redirect_url'];
             	}        	
