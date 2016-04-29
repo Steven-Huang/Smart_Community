@@ -38,3 +38,12 @@ function get_token( $len = 32, $md5 = true ) {
         }
         return $token;
 }
+
+//检查token是否一致
+function check_token($token){
+    if ($token == $_SESSION['access_token']){
+        return true;
+    }else{
+        return false;
+    }
+}

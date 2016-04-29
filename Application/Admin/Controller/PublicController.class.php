@@ -88,8 +88,10 @@ class PublicController extends Controller {
                 $access_token = create_hash(get_token(), $row['id_card_num']);
                 
                 //设置session
+                session_set_cookie_params(259200);
                 session('user_id',$row['id']);
                 session('access_token',$access_token);
+                session('last_log_ip',$_SERVER['REMOTE_ADDR']);
                 session('time',time());
              
                 if($username == C('ADMIN_AUTH_KEY')){
@@ -118,8 +120,6 @@ class PublicController extends Controller {
             }
         }else{
 //测试模式， 上线后务必删除
-            $user_agent = $_SERVER['HTTP_USER_AGENT'];
-            echo $user_agent;
 VAR_DUMP(session());
 
             $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Public/login'), 'sec' => 3),'info' => urlencode('请求失败，请重新登录！'),'code' => -205);
