@@ -92,29 +92,29 @@ class MgrsController extends CommonController {
 			}
 			//当用户信息为空时，返回错误信息（需前端配合过滤）
 			if (empty($data['nick_name']) || empty($data['true_name']) || empty($data['password']) || empty($data['h_pocn']) || empty($data['mobile']) || empty($data['email']) || empty($data['id_card_num'])){
-		        $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Mgrs/add'), 'sec' => 3),'info' => urlencode('物业信息不能为空！'),'code' => -200);
+		        $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Mgrs/add'), 'sec' => 3),'info' => urlencode('更新信息不能为空！'),'code' => -201);
 		        exit(urldecode(json_encode($output)));
 			}
 			//检查信息(nick_name,mobile,email,id_card_num)是否重复,需前端配合过滤
 			if ($users->field('id')->where("nick_name = '{$data['nick_name']}'")->select()){
-			    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Mgrs/add'), 'sec' => 3),'info' => urlencode('昵称已存在！'),'code' => -200);
+			    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Mgrs/add'), 'sec' => 3),'info' => urlencode('昵称已存在！'),'code' => '-202A');
 			    exit(urldecode(json_encode($output)));			    
 			}
 			if ($users->field('id')->where("mobile = '{$data['mobile']}'")->select()){
-			    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Mgrs/add'), 'sec' => 3),'info' => urlencode('手机号已存在！'),'code' => -200);
+			    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Mgrs/add'), 'sec' => 3),'info' => urlencode('手机号已存在！'),'code' => '-202B');
 			    exit(urldecode(json_encode($output)));
 			}
 			if ($users->field('id')->where("email = '{$data['email']}'")->select()){
-			    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Mgrs/add'), 'sec' => 3),'info' => urlencode('邮箱已存在！'),'code' => -200);
+			    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Mgrs/add'), 'sec' => 3),'info' => urlencode('邮箱已存在！'),'code' => '-202C');
 			    exit(urldecode(json_encode($output)));
 			}			
 			if ($users->field('id')->where("id_card_num = '{$data['id_card_num']}'")->select()){
-			    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Mgrs/add'), 'sec' => 3),'info' => urlencode('身份证号已存在！'),'code' => -200);
+			    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Mgrs/add'), 'sec' => 3),'info' => urlencode('身份证号已存在！'),'code' => '-202D');
 			    exit(urldecode(json_encode($output)));
 			}									
 			//当两次密码输入错误时，返回错误（需前端配合过滤）
 			if ($data['password'] != $pwd_confirm){
-			    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Mgrs/add'), 'sec' => 3),'info' => urlencode('两次输入的密码不一致！'),'code' => -200);
+			    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Mgrs/add'), 'sec' => 3),'info' => urlencode('两次输入的密码不一致！'),'code' => -203);
 			    exit(urldecode(json_encode($output)));
 			}
 			//密码加密
@@ -151,7 +151,7 @@ class MgrsController extends CommonController {
     	    $users = D('mgrs');
     	    //$data = $users->field('icon_url,nick_name,true_name,gender,h_pocn,mobile,email,id_card_num')->select();
     	    $data = $users->field('id,icon_url')->where("id = '{$id}'")->select();
-    	    $output = array('data' => array($data[0]['id'],$data[0]['icon_url']),'info' => urlencode('用户头像'),'code' => 200);
+    	    $output = array('data' => array('id' => $data[0]['id'],'icon_url' => $data[0]['icon_url']),'info' => urlencode('用户头像'),'code' => 200);
     	    exit(urldecode(json_encode($output)));
 	    }else{
 	        $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Mgrs/edit'), 'sec' => 3),'info' => urlencode('请求错误！请重新再试！'),'code' => -205);
@@ -160,24 +160,24 @@ class MgrsController extends CommonController {
 	}
 	
 	//更改昵称
-	public function edit_nick_name(){
-	    if (IS_POST) {
-	        //获取TOKEN
-	        $token = I('post.access_token');
-	        if (!check_token($token)){
-	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Public/login'), 'sec' => 3),'info' => urlencode('ACCESS_TOKEN超时，请重新登录！'),'code' => -208);
-	            exit(urldecode(json_encode($output)));
-	        }
-    	    $id = I('post.user_id');
-    	    $users = D('mgrs');
-    	    $data = $users->field('id,nick_name')->where("id = '{$id}'")->select();
-    	    $output = array('data' => array($data[0]['id'],$data[0]['nick_name']),'info' => urlencode('用户昵称'),'code' => 200);
-    	    exit(urldecode(json_encode($output)));
-	    }else{
-	        $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Mgrs/edit'), 'sec' => 3),'info' => urlencode('请求错误！请重新再试！'),'code' => -205);
-	        exit(urldecode(json_encode($output)));
-	    }
-	}	
+// 	public function edit_nick_name(){
+// 	    if (IS_POST) {
+// 	        //获取TOKEN
+// 	        $token = I('post.access_token');
+// 	        if (!check_token($token)){
+// 	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Public/login'), 'sec' => 3),'info' => urlencode('ACCESS_TOKEN超时，请重新登录！'),'code' => -208);
+// 	            exit(urldecode(json_encode($output)));
+// 	        }
+//     	    $id = I('post.user_id');
+//     	    $users = D('mgrs');
+//     	    $data = $users->field('id,nick_name')->where("id = '{$id}'")->select();
+//     	    $output = array('data' => array('id' => $data[0]['id'],'nick_name' => $data[0]['nick_name']),'info' => urlencode('用户昵称'),'code' => 200);
+//     	    exit(urldecode(json_encode($output)));
+// 	    }else{
+// 	        $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Mgrs/edit'), 'sec' => 3),'info' => urlencode('请求错误！请重新再试！'),'code' => -205);
+// 	        exit(urldecode(json_encode($output)));
+// 	    }
+// 	}	
     
 	//更新密码
 	public function edit_password(){
@@ -196,7 +196,7 @@ class MgrsController extends CommonController {
     	    $id = I('post.user_id');
     	    $users = D('mgrs');
     	    $data = $users->field('id,mobile')->where("id = '{$id}'")->select();
-    	    $output = array('data' => array($data[0]['id'],$data[0]['mobile']),'info' => urlencode('用户手机号'),'code' => 200);
+    	    $output = array('data' => array('id' => $data[0]['id'],'mobile' => $data[0]['mobile']),'info' => urlencode('用户手机号'),'code' => 200);
     	    exit(urldecode(json_encode($output)));
 	    }else{
 	        $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Mgrs/edit'), 'sec' => 3),'info' => urlencode('请求错误！请重新再试！'),'code' => -205);
@@ -216,7 +216,7 @@ class MgrsController extends CommonController {
     	    $id = I('post.user_id');
     	    $users = D('mgrs');
     	    $data = $users->field('id,email')->where("id = '{$id}'")->select();
-    	    $output = array('data' => array($data[0]['id'],$data[0]['email']),'info' => urlencode('用户邮箱'),'code' => 200);
+    	    $output = array('data' => array('id' => $data[0]['id'],'email' => $data[0]['email']),'info' => urlencode('用户邮箱'),'code' => 200);
     	    exit(urldecode(json_encode($output)));
 	    }else{
 	        $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Mgrs/edit'), 'sec' => 3),'info' => urlencode('请求错误！请重新再试！'),'code' => -205);
@@ -260,19 +260,19 @@ class MgrsController extends CommonController {
     	            'icon_url' => $icon_url,
     	            'id' => $id
     	        );
-    	        D('mgrs')->save($data);
-    	    }elseif ($edit_type == 'edit_nick_name'){
-    	        $id = I('post.user_id');
-    	        $nick_name = strtolower(trim(I('post.nick_name')));
-    	        if (D('mgrs')->field('id')->where("nick_name = '{$nick_name}'")->select()){
-    	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Mgrs/edit_nick_name'), 'sec' => 3),'info' => urlencode('用户名已存在！'),'code' => -200);
-    	            exit(urldecode(json_encode($output)));
-    	        }
-    	        $data = array(
-    	            'nick_name' => $nick_name,
-    	            'id' => $id
-    	        );
-    	        D('mgrs')->save($data);	        
+    	        $status = D('mgrs')->save($data);
+//     	    }elseif ($edit_type == 'edit_nick_name'){
+//     	        $id = I('post.user_id');
+//     	        $nick_name = strtolower(trim(I('post.nick_name')));
+//     	        if (D('mgrs')->field('id')->where("nick_name = '{$nick_name}'")->select()){
+//     	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Mgrs/edit_nick_name'), 'sec' => 3),'info' => urlencode('用户名已存在！'),'code' => -200);
+//     	            exit(urldecode(json_encode($output)));
+//     	        }
+//     	        $data = array(
+//     	            'nick_name' => $nick_name,
+//     	            'id' => $id
+//     	        );
+//     	        D('mgrs')->save($data);	        
     	    }elseif ($edit_type == 'edit_password'){
     	        $id = I('post.user_id');
     	    	$old_password = strtolower(trim(I('post.old_password')));
@@ -282,11 +282,11 @@ class MgrsController extends CommonController {
     	        $row = D('mgrs')->field('password,id_card_num')->where("id = '{$id}'")->select();
     	        //判断错误
     	        if ($new_password != $confirm_password){
-    	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Users/edit_password'), 'sec' => 3),'info' => urlencode('输入的新密码不一致！'),'code' => -200);
+    	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Users/edit'), 'sec' => 3),'info' => urlencode('两次输入的新密码不一致！'),'code' => '-202A');
     	            exit(urldecode(json_encode($output)));
     	        }else{
     	            if ($row['password'] != create_hash($old_password, $row['id_card_num'])) {
-    	                $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Users/edit_password'), 'sec' => 3),'info' => urlencode('输入的旧密码错误！'),'code' => -200);
+    	                $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Users/edit'), 'sec' => 3),'info' => urlencode('输入的旧密码错误！'),'code' => '-202B');
     	                exit(urldecode(json_encode($output)));
     	            }else{
     	                //执行
@@ -294,33 +294,33 @@ class MgrsController extends CommonController {
     	                    'password' => create_hash($new_password, $row['id_card_num']),
     	                    'id' => $id
     	                );
-    	                D('mgrs')->save($data);
+    	                $status = D('mgrs')->save($data);
     	            }
     	        }
     	    }elseif ($edit_type == 'edit_mobile'){
     	        $id = I('post.user_id');
     	        $mobile = strtolower(trim(I('post.mobile')));
     	        if (D('mgrs')->field('id')->where("mobile = '{$mobile}'")->select()){
-    	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Mgrs/edit_mobile'), 'sec' => 3),'info' => urlencode('手机号已存在！'),'code' => -200);
+    	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Mgrs/edit'), 'sec' => 3),'info' => urlencode('手机号已存在！'),'code' => '-202C');
     	            exit(urldecode(json_encode($output)));
     	        }
     	        $data = array(
     	            'mobile' => $mobile,
     	            'id' => $id
     	        );
-    	        D('mgrs')->save($data);	        
+    	        $status = D('mgrs')->save($data);	        
     	    }elseif ($edit_type == 'edit_email'){
     	        $id = I('post.user_id');
     	        $email = strtolower(trim(I('post.email')));
     	        if (D('mgrs')->field('id')->where("email = '{$email}'")->select()){
-    	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Mgrs/edit_email'), 'sec' => 3),'info' => urlencode('邮箱已存在！'),'code' => -200);
+    	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Mgrs/edit'), 'sec' => 3),'info' => urlencode('邮箱已存在！'),'code' => '-202D');
     	            exit(urldecode(json_encode($output)));
     	        }    
     	        $data = array(
     	            'email' => $email,
     	            'id' => $id
     	        );
-    	        D('mgrs')->save($data);	        
+    	        $status = D('mgrs')->save($data);	        
     	    }elseif ($edit_type == 'edit_all'){
     	        $id = strtolower(trim(I('post.user_id')));
     	        $icon_url = strtolower(trim(I('post.icon_url')));
@@ -333,30 +333,30 @@ class MgrsController extends CommonController {
     	        
     	        //当用户信息为空时，返回错误信息（需前端配合过滤）
     	        if (empty($icon_url) || empty($nick_name) || empty($old_password) || empty($new_password) || empty($confirm_password) || empty($mobile) || empty($email)){
-    	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Mgrs/edit_all'), 'sec' => 3),'info' => urlencode('业主信息不能为空！'),'code' => -200);
+    	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Mgrs/edit'), 'sec' => 3),'info' => urlencode('业主信息不能为空！'),'code' => -201);
     	            exit(urldecode(json_encode($output)));
     	        }
     	        //检查信息(nick_name,mobile,email,id_card_num)是否重复,需前端配合过滤
     	        if (D('mgrs')->field('id')->where("nick_name = '{$nick_name}'")->select()){
-    	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Mgrs/edit_all'), 'sec' => 3),'info' => urlencode('昵称已存在！'),'code' => -200);
+    	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Mgrs/edit'), 'sec' => 3),'info' => urlencode('昵称已存在！'),'code' => '-202E');
     	            exit(urldecode(json_encode($output)));
     	        }
     	        if (D('mgrs')->field('id')->where("mobile = '{$mobile}'")->select()){
-    	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Mgrs/edit_all'), 'sec' => 3),'info' => urlencode('手机号已存在！'),'code' => -200);
+    	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Mgrs/edit'), 'sec' => 3),'info' => urlencode('手机号已存在！'),'code' => '-202C');
     	            exit(urldecode(json_encode($output)));
     	        }
     	        if (D('mgrs')->field('id')->where("email = '{$email}'")->select()){
-    	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Mgrs/edit_all'), 'sec' => 3),'info' => urlencode('邮箱已存在！'),'code' => -200);
+    	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Mgrs/edit'), 'sec' => 3),'info' => urlencode('邮箱已存在！'),'code' => '-202D');
     	            exit(urldecode(json_encode($output)));
     	        }    
     	        //获取当前用户密码
-    	        $current_password = D('mgrs')->field('password')->where("id = '{$id}'")->select();
+    	        $row = D('admin')->field('password,id_card_num')->where("id = '{$id}'")->select();
     	        //判断错误
-    	        if ($current_password != $old_password) {
-    	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Mgrs/edit_password'), 'sec' => 3),'info' => urlencode('输入的当前密码错误！'),'code' => -200);
+    	        if ($row['password'] != create_hash($old_password, $row['id_card_num'])) {
+    	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Mgrs/edit'), 'sec' => 3),'info' => urlencode('输入的旧密码错误！'),'code' => '-202B');
     	            exit(urldecode(json_encode($output)));
     	        }elseif ($new_password != $confirm_password){
-    	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Mgrs/edit_password'), 'sec' => 3),'info' => urlencode('输入的新密码不一致！'),'code' => -200);
+    	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Mgrs/edit'), 'sec' => 3),'info' => urlencode('两次输入的新密码不一致!'),'code' => '-202A');
     	            exit(urldecode(json_encode($output)));
     	        }
     	        //执行	        
@@ -364,12 +364,20 @@ class MgrsController extends CommonController {
     	            'id' => $id,
     	            'icon_url' => $icon_url,
     	            'nick_name' => $nick_name,
-    	            'password' => $new_password,
+    	            'password' => create_hash($new_password, $row['id_card_num']),
     	            'mobile' => $mobile,
     	            'email' => $email
     	        );
     
-    	        D('mgrs')->save($data);	        
+    	        $status = D('mgrs')->save($data);	        
+    	    }
+    	    //判断修改状态
+    	    if ($status){
+    	        $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Mgrs/edit'), 'sec' => 2),'info' => urlencode('更新成功！'),'code' => 200);
+    	        exit(urldecode(json_encode($output)));
+    	    }else{
+    	        $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Mgrs/edit'), 'sec' => 3),'info' => urlencode('更新失败！'),'code' => 200);
+    	        exit(urldecode(json_encode($output)));
     	    }
     	}else{
             $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Mgrs/edit'), 'sec' => 3),'info' => urlencode('请求错误！请重新再试！'),'code' => -205);

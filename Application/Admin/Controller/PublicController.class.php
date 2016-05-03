@@ -43,19 +43,19 @@ class PublicController extends Controller {
             //$remember = I('post.remember');
             //判断数据合法性
             if ($role == '-1'){
-                $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Public/login'), 'sec' => 3),'info' => urlencode('请选择用户角色！'),'code' => -201);
+                $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Public/login'), 'sec' => 3),'info' => urlencode('请选择用户角色！'),'code' => '-201A');
                 exit(urldecode(json_encode($output)));
             }            
             if (empty($username)) {
-                $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Public/login'), 'sec' => 3),'info' => urlencode('用户名不能为空！'),'code' => -201);
+                $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Public/login'), 'sec' => 3),'info' => urlencode('用户名不能为空！'),'code' => '-201B');
                 exit(urldecode(json_encode($output)));
             }
             if (empty($password)) {
-                $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Public/login'), 'sec' => 3),'info' => urlencode('密码不能为空！'),'code' => -201);
+                $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Public/login'), 'sec' => 3),'info' => urlencode('密码不能为空！'),'code' => '-201C');
                 exit(urldecode(json_encode($output)));
             }
             if (empty($code)) {
-                $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Public/login'), 'sec' => 3),'info' => urlencode('验证码不能为空！'),'code' => -201);
+                $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Public/login'), 'sec' => 3),'info' => urlencode('验证码不能为空！'),'code' => '-201D');
                 exit(urldecode(json_encode($output)));
             }            
             //判断验证码是否正确
@@ -140,5 +140,5 @@ VAR_DUMP(session());
             //跳转到登陆页面
             $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Public/login'), 'sec' => 2),'info' => urlencode('退出成功！'),'code' => 200);
             exit(urldecode(json_encode($output)));
-        }    
+    }    
 }
