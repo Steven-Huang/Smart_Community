@@ -303,44 +303,42 @@
     }
   </script>
 
-	
 	<!-- page content -->
 	<div class="right_col" role="main">
 		<div class="col-md-12 col-sm-12 col-xs-12">
-			 <div class="x_panel">
-				<div class="title">添加节点</div>
-				<div class="container-fluid">
-					<form class="form-horizontal">
-					  	<div class="form-group">
-					    	<label for="name" class="col-md-1 control-label" id="node_name"></label>
-					    	<div class="col-md-3">
-					      		<input type="text" class="form-control" id="name">
-					    	</div>
-					  	</div>
-					  	<div class="form-group">
-					    	<label for="title" class="col-md-1 control-label">描述:</label>
-					    	<div class="col-md-3">
-					      		<input type="text" class="form-control" id="title">
-					    	</div>
-					  	</div>
-					  	<div class="form-group">
-					    	<label for="sort" class="col-md-1 control-label">排序:</label>
-					    	<div class="col-md-3">
-					      		<input type="text" class="form-control" value="100" id="sort">
-					      		<input type="hidden" id="level" value="">
-					      		<input type="hidden" id="pid" value="">
-					    	</div>
-					  	</div>
-					  	<div class="form-group">
-					    	<div class="col-md-offset-1 col-md-3">
-					      		<a href="javascript:;" class="btn btn-default submit savedata" >保存</a>
-					    	</div>
-					  	</div>
-					</form>
-				</div>
-			</div>
-		</div>			    
+        	<div class="x_panel">
+			<div class="title">更新用户角色</div>
+			    <div class="container-fluid">
+			        <form class="form-horizontal" method="post" action="<?php echo U('Admin/Access/do_user');?>">
+			        	<input type="hidden" id="user_id" name="user_id" value="<?php echo I('user_id') ?>">
+			        	<input type="hidden" id="role_id" name="role_id" value="<?php echo I('role_id') ?>">
+			        	<input type="hidden" id="role" name="role" value="<?php echo I('role') ?>">
+			            <div class="form-group">
+			                <label for="inputEmail3" class="col-md-1 control-label">名称:</label>
+			                <div class="col-md-3">
+			                    <input type="text" class="form-control" name="username" value="<?php echo I('username') ?>" readonly>
+			                </div>
+			            </div>
+			            <div class="form-group">
+			                <label for="inputPassword3" class="col-md-1 control-label">角色:</label>
+			                <div class="col-md-3">
+			                    <select class="form-control" id="role_list" name="new_role_id">
+
+			                    </select>
+			                </div>
+			            </div>
+			            <div class="form-group">
+			                <div class="col-md-offset-1 col-md-3">
+<!-- 			                    <button type="submit" class="btn btn-default">保存</button> -->
+	           					<a href="javascript:;" class="btn btn-default submit savedata" >保存</a>			                    
+			                </div>
+			            </div>
+			        </form>
+			    </div>
+	  		</div>
+	  	</div>
 	  </div>
+	  
 	  	<!-- /page content -->
 	<!-- footer content -->
 <footer>
@@ -445,54 +443,59 @@
 		window.onload = function(){
 	    	$.ajax({
 	            type: "post",
-	            url: "/smart_community/index.php/Admin/Access/add_node_list",
+	            url: "/smart_community/index.php/Admin/Access/role",
 	            data: {
-	            	'access_token' : getCookie('access_token')
+	            	access_token : getCookie('access_token')
 	            },
 	            dataType: "json",
 	            success: function(data) {
 	            	if(data['code'] == 200){
-	            		$('#node_name').append(data['data']['view']+':');
-	            		$('#level').val(data['data']['level']);
-	            		$('#pid').val(data['data']['pid']);
+						var len = data['data'].length;
+						for(var i = 0; i < len; i++){
+							if(data['data'][i]['id'] == $('#role_id').val()){
+								$("#role_list").append("<option value=\'"+data['data'][i]['id']+"\'"+"selected=\"selected\">"+data['data'][i]['name']+"</option>");								
+							}else{
+								$("#role_list").append("<option value=\'"+data['data'][i]['id']+"\'"+">"+data['data'][i]['name']+"</option>");								
+							}
+						}
 	            	}
-	            	if(data['code'] == '-205' || data['code'] == '-208'){
-	            		alert(data['info']);
-	            		location.href = 'http://' + data['data']['redirect_url'];
-	            	}
+
 	            },
 	            error: function(xhr, type, errorThrown) {
 	              //异常处理
 	              console.log(type);
 	            }
 	          }); 			
-		}
-		
-		$('body').on('click','.savedata',function(){
-	    	$.ajax({
-	            type: "post",
-	            url: "/smart_community/index.php/Admin/Access/do_node",
-	            data: {
-	            	'access_token' : getCookie('access_token'),
-	            	'name' : $('#name').val(),
-	            	'title' : $('#title').val(),
-	            	'sort' : $('#sort').val(),
-	            	'level' : $('#level').val(),
-	            	'pid' : $('#pid').val()
-	            },
-	            dataType: "json",
-	            success: function(data) {
-	            	if(data['code'] == '200' || data['code'] == '-200' || data['code'] == '-201' || data['code'] == '-205' || data['code'] == '-208'){
-	            		alert(data['info']);
-	            		location.href = 'http://' + data['data']['redirect_url'];
-	            	}
-	            },
-	            error: function(xhr, type, errorThrown) {
-	              //异常处理
-	              console.log(type);
-	            }
-	          }); 			
-		})
+			}
+		    $('body').on('click','.savedata',function(){
+		    	$.ajax({
+ 		            type: "post",
+		            url: "/smart_community/index.php/Admin/Access/do_user_role",
+		            data: {
+		            	'access_token' : getCookie('access_token'),
+			            'user_id' : $('#user_id').val(),
+			            'new_role_id' : $('#role_list').val(),
+			            'role' : $('#role').val() 
+		            },
+		            dataType: "json",
+		            success: function(data) {
+  		            	if(data['code'] == '200' || data['code'] == '-205'){
+		            		alert(data['info']);
+		            		location.href = 'http://' + data['data']['redirect_url'];
+		            	}
+  		            	if(data['code'] == '-200'){
+		            		alert(data['info']);
+		            		window.location.reload();
+		            		//location.href = 'http://' + data['data']['redirect_url'];
+		            	}
+		            },
+		            error: function(xhr, type, errorThrown) {
+		              //异常处理
+		              console.log(type);
+		            }
+		          });    
+		    })	    
 	</script>
+    
 </body>
 </html>

@@ -16,4 +16,20 @@ class IndexController extends CommonController {
     public function index(){
     	$this->display();
     }   
+    
+    //用户退出
+    public function logout(){
+        //清理session
+        session(null);
+    
+        //清除COOKIE
+        if(isset($_COOKIE['access_token'])){
+            //删除cookie
+            setcookie('access_token','',0,'/');
+        }
+         
+        //跳转到登陆页面
+        $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Public/login'), 'sec' => 2),'info' => urlencode('退出成功！'),'code' => 200);
+        exit(urldecode(json_encode($output)));
+    }
 }

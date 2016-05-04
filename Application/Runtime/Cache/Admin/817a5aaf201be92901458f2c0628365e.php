@@ -307,37 +307,29 @@
 	<!-- page content -->
 	<div class="right_col" role="main">
 		<div class="col-md-12 col-sm-12 col-xs-12">
-			 <div class="x_panel">
-				<div class="title">添加节点</div>
-				<div class="container-fluid">
-					<form class="form-horizontal">
-					  	<div class="form-group">
-					    	<label for="name" class="col-md-1 control-label" id="node_name"></label>
-					    	<div class="col-md-3">
-					      		<input type="text" class="form-control" id="name">
-					    	</div>
-					  	</div>
-					  	<div class="form-group">
-					    	<label for="title" class="col-md-1 control-label">描述:</label>
-					    	<div class="col-md-3">
-					      		<input type="text" class="form-control" id="title">
-					    	</div>
-					  	</div>
-					  	<div class="form-group">
-					    	<label for="sort" class="col-md-1 control-label">排序:</label>
-					    	<div class="col-md-3">
-					      		<input type="text" class="form-control" value="100" id="sort">
-					      		<input type="hidden" id="level" value="">
-					      		<input type="hidden" id="pid" value="">
-					    	</div>
-					  	</div>
-					  	<div class="form-group">
-					    	<div class="col-md-offset-1 col-md-3">
-					      		<a href="javascript:;" class="btn btn-default submit savedata" >保存</a>
-					    	</div>
-					  	</div>
-					</form>
-				</div>
+        	<div class="x_panel">
+			    <div class="title">添加角色</div>
+			    <div class="container-fluid">
+			        <form class="form-horizontal">
+			            <div class="form-group">
+			                <label for="inputEmail3" class="col-md-1 control-label">名称:</label>
+			                <div class="col-md-3">
+			                    <input type="text" class="form-control" id="name">
+			                </div>
+			            </div>
+			            <div class="form-group">
+			                <label for="inputPassword3" class="col-md-1 control-label">描述:</label>
+			                <div class="col-md-3">
+			                    <textarea class="form-control" rows="3" id="remark"></textarea>
+			                </div>
+			            </div>
+			            <div class="form-group">
+			                <div class="col-md-offset-1 col-md-3">
+			                    <a href="javascript:;" class="btn btn-default submit savedata" >保存</a>
+			                </div>
+			            </div>
+			        </form>
+			    </div>
 			</div>
 		</div>			    
 	  </div>
@@ -442,43 +434,14 @@
 	})
 </script>
 	<script type="text/javascript">
-		window.onload = function(){
-	    	$.ajax({
-	            type: "post",
-	            url: "/smart_community/index.php/Admin/Access/add_node_list",
-	            data: {
-	            	'access_token' : getCookie('access_token')
-	            },
-	            dataType: "json",
-	            success: function(data) {
-	            	if(data['code'] == 200){
-	            		$('#node_name').append(data['data']['view']+':');
-	            		$('#level').val(data['data']['level']);
-	            		$('#pid').val(data['data']['pid']);
-	            	}
-	            	if(data['code'] == '-205' || data['code'] == '-208'){
-	            		alert(data['info']);
-	            		location.href = 'http://' + data['data']['redirect_url'];
-	            	}
-	            },
-	            error: function(xhr, type, errorThrown) {
-	              //异常处理
-	              console.log(type);
-	            }
-	          }); 			
-		}
-		
 		$('body').on('click','.savedata',function(){
 	    	$.ajax({
 	            type: "post",
-	            url: "/smart_community/index.php/Admin/Access/do_node",
+	            url: "/smart_community/index.php/Admin/Access/do_add_role",
 	            data: {
 	            	'access_token' : getCookie('access_token'),
 	            	'name' : $('#name').val(),
-	            	'title' : $('#title').val(),
-	            	'sort' : $('#sort').val(),
-	            	'level' : $('#level').val(),
-	            	'pid' : $('#pid').val()
+	            	'remark' : $('#remark').val()
 	            },
 	            dataType: "json",
 	            success: function(data) {

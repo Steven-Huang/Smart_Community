@@ -52,12 +52,13 @@
 	            type: "post",
 	            url: "__CONTROLLER__/do_add_role",
 	            data: {
+	            	'access_token' : getCookie('access_token'),
 	            	'name' : $('#name').val(),
 	            	'remark' : $('#remark').val()
 	            },
 	            dataType: "json",
 	            success: function(data) {
-	            	if(data['code'] == '200' || data['code'] == '-200' || data['code'] == '-205'){
+	            	if(data['code'] == '200' || data['code'] == '-200' || data['code'] == '-201' || data['code'] == '-205' || data['code'] == '-208'){
 	            		alert(data['info']);
 	            		location.href = 'http://' + data['data']['redirect_url'];
 	            	}

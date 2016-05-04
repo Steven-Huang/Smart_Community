@@ -40,7 +40,7 @@ class PublicController extends Controller {
             $code = trim(I('post.code'));
             //不同的角色：users(业主) / mgrs(物业) / admin(管理员)
             $role = I('post.role');
-            //$remember = I('post.remember');
+            $remember = I('post.remember');
             //判断数据合法性
             if ($role == '-1'){
                 $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Public/login'), 'sec' => 3),'info' => urlencode('请选择用户角色！'),'code' => '-201A');
@@ -99,12 +99,16 @@ class PublicController extends Controller {
                 }else{
                     \Org\Util\Rbac::saveAccessList($row['id']);
                 }                
-//                 //判断用户是否记住了用户信息
-//                 if($remember == 'on'){
-//                     //用户选择了保存用户信息
-//                     //设置cookie，记住用户的信息，把用户信息保存到浏览器（保存用户ID）
-//                     setcookie('user_id',$row['id'],time()+7*3600*24);
-//                 }
+                
+                //判断用户是否记住了用户信息
+                if($remember == 'on'){
+                    //用户选择了保存用户信息
+                    //设置cookie，记住用户的信息，把用户信息保存到浏览器（保存用户ID）
+                    setcookie('access_token',$access_token,time()+7*3600*24,'/');
+                }else{
+                    setcookie('access_token',$access_token,0,'/');
+                }
+
                 //更新用户IP及登录时间信息
                 $data = array(
                     'id' => $row['id'],
@@ -130,15 +134,16 @@ VAR_DUMP(session());
     //用户退出
     public function logout(){
         //清理session
-        //         session('user_id',null);
         session(null);
-        //     	//清除COOKIE
-        //     	if(isset($_COOKIE['user_id'])){
-        //     	    //删除cookie
-            //     	    setcookie('user_id','',1);
-            //     	}
-            //跳转到登陆页面
-            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Public/login'), 'sec' => 2),'info' => urlencode('退出成功！'),'code' => 200);
-            exit(urldecode(json_encode($output)));
+        
+    	//清除COOKIE
+    	if(isset($_COOKIE['access_token'])){
+    	    //删除cookie
+    	    setcookie('access_token','',0,'/');
+    	}
+    	
+        //跳转到登陆页面
+        $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Public/login'), 'sec' => 2),'info' => urlencode('退出成功！'),'code' => 200);
+        exit(urldecode(json_encode($output)));
     }    
 }

@@ -58,7 +58,7 @@
 	            type: "post",
 	            url: "__CONTROLLER__/role",
 	            data: {
-	            	
+	            	access_token : getCookie('access_token')
 	            },
 	            dataType: "json",
 	            success: function(data) {
@@ -83,19 +83,20 @@
 		    $('body').on('click','.savedata',function(){
 		    	$.ajax({
  		            type: "post",
-		            url: "__CONTROLLER__/do_user",
+		            url: "__CONTROLLER__/do_user_role",
 		            data: {
-		              user_id : $('#user_id').val(),
-		              new_role_id : $('#role_list').val(),
-		              role : $('#role').val() 
+		            	'access_token' : getCookie('access_token'),
+			            'user_id' : $('#user_id').val(),
+			            'new_role_id' : $('#role_list').val(),
+			            'role' : $('#role').val() 
 		            },
 		            dataType: "json",
 		            success: function(data) {
-  		            	if(data['code'] == '200'){
+  		            	if(data['code'] == '200' || data['code'] == '-205'){
 		            		alert(data['info']);
 		            		location.href = 'http://' + data['data']['redirect_url'];
 		            	}
-  		            	if(data['code'] == '-200' || data['code'] == '-205'){
+  		            	if(data['code'] == '-200'){
 		            		alert(data['info']);
 		            		window.location.reload();
 		            		//location.href = 'http://' + data['data']['redirect_url'];

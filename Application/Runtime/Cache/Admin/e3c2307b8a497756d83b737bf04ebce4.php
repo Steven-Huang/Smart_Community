@@ -31,7 +31,7 @@
 <link href="/smart_community/Public/admin/css/icheck/flat/green.css" rel="stylesheet" />
 <link href="/smart_community/Public/admin/css/floatexamples.css" rel="stylesheet" type="text/css" />    
 <script src="/smart_community/Public/admin/js/jquery.min.js"></script>
-<script src="/smart_community/Public/admin/js/nprogress.js"></script>      
+
 </head>
 <body class="nav-md">
 	<div class="container body">
@@ -183,7 +183,8 @@
     <!-- /sidebar menu -->
 
     <!-- /menu footer buttons -->
-    <div class="sidebar-footer hidden-small">
+    <!-- <div class="sidebar-footer hidden-small"> -->
+    <div class="sidebar-footer">
       <a data-toggle="tooltip" data-placement="top" title="Settings">
         <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
       </a>
@@ -202,7 +203,6 @@
 </div>
 	<!-- top navigation -->
 <div class="top_nav">
-
   <div class="nav_menu">
     <nav class="" role="navigation">
       <div class="nav toggle">
@@ -210,7 +210,7 @@
       </div>
 
       <ul class="nav navbar-nav navbar-right">
-        <li class="">
+        <li id="user-profile" class="">
           <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
             <img src="/smart_community/Public/admin/images/img.jpg" alt="">Admin
             <span class=" fa fa-angle-down"></span>
@@ -232,7 +232,7 @@
           </ul>
         </li>
 
-        <li role="presentation" class="dropdown">
+        <li id="presentation" role="presentation" class="dropdown">
           <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
             <i class="fa fa-envelope-o"></i>
             <span class="badge bg-green">6</span>
@@ -276,11 +276,9 @@
             </li>
           </ul>
         </li>
-
       </ul>
     </nav>
   </div>
-
 </div>
 <!-- /top navigation -->
 
@@ -383,5 +381,55 @@
   <script type="text/javascript" src="js/flot/curvedLines.js"></script>
   <script type="text/javascript" src="js/flot/jquery.flot.resize.js"></script> -->
 	<script src="/smart_community/Public/admin/js/bootstrap.min.js"></script>
+<!-- <script src="/smart_community/Public/admin/js/nprogress.js"></script> -->
+<!-- bootstrap progress js -->
+<script src="/smart_community/Public/admin/js/progressbar/bootstrap-progressbar.min.js"></script>
+<!-- icheck -->
+<script src="/smart_community/Public/admin/js/icheck/icheck.min.js"></script>
+
+<!-- <script src="/smart_community/Public/admin/js/custom.js"></script> -->
+
+<!-- pace -->
+<script src="/smart_community/Public/admin/js/pace/pace.min.js"></script>
+<script>
+/* 	function getCookie(cookie_name)
+	{
+	    var allcookies = document.cookie;
+	    var cookie_pos = allcookies.indexOf(cookie_name);   //索引的长度
+	 
+	    // 如果找到了索引，就代表cookie存在，
+	    // 反之，就说明不存在。
+	    if (cookie_pos != -1)
+	    {
+	        // 把cookie_pos放在值的开始，只要给值加1即可。
+	        cookie_pos += cookie_name.length + 1;      //这里容易出问题，所以请大家参考的时候自己好好研究一下
+	        var cookie_end = allcookies.indexOf(";", cookie_pos);
+	 
+	        if (cookie_end == -1)
+	        {
+	            cookie_end = allcookies.length;
+	        }
+	 
+	        var value = unescape(allcookies.substring(cookie_pos, cookie_end));         //这里就可以得到你想要的cookie的值了。。。
+	    }
+	    return value;
+	} */
+
+	function getCookie(name){
+		var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");
+		if(arr=document.cookie.match(reg)){
+			return unescape(arr[2]);		
+		}else{
+			return null;
+		}
+	}
+	
+	$('#user-profile').on('click',function(){
+		$('#user-profile').addClass('open');
+	})
+	$('#presentation').on('click',function(){
+		$('#presentation').addClass('open');
+	})
+</script>
 </body>
 </html>

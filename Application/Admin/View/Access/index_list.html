@@ -93,8 +93,9 @@
 	            type: "post",
 	            url: "__CONTROLLER__/index",
 	            data: {
-	              num : '5',
-	              role : 'users'
+	            	access_token : getCookie('access_token'),
+	              	num : '5',
+	              	role : 'users'
 	            },
 	            dataType: "json",
 	            success: function(data) {
@@ -105,10 +106,11 @@
  		            	var len = data['data']['data'].length;
 		            	for(var i=0; i < len; i++){
 		            	 	var array = "/role/users/user_id/"+data['data']['data'][i]['id']+"/username/"+data['data']['data'][i]['nick_name']+"/role_id/"+data['data']['data'][i]['role_id'];
-		            		$("#tab1").append("<tr><td>U"+data['data']['data'][i]['id']+"</td><td>"+data['data']['data'][i]['nick_name']+"</td><td>"+data['data']['data'][i]['role']+"</td><td><a class=\"btn btn-info btn-xs\" href=\""+"{:U(\'Admin/Access/edit_user"+array+"\')}\"><i class=\"fa fa-pencil\"></i>更新用户角色</a></td>"+"</tr>");
+		            		$("#tab1").append("<tr><td>U"+data['data']['data'][i]['id']+"</td><td>"+data['data']['data'][i]['nick_name']+"</td><td>"+data['data']['data'][i]['role']+"</td><td><a class=\"btn btn-info btn-xs\" href=\""+"{:U(\'Admin/Access/edit_user_role"+array+"\')}\"><i class=\"fa fa-pencil\"></i>更新用户角色</a></td>"+"</tr>");
 		            	 }
 	            	}
- 	            	if(data['code'] == '-205'){
+	            	if(data['code'] == '-205' || data['code'] == '-208'){
+ 	            		alert(data['info']);
 	            		location.href = 'http://' + data['data']['redirect_url'];	            		
 	            	}
 	            },
@@ -123,8 +125,9 @@
 	            type: "post",
 	            url: "__CONTROLLER__/index",
 	            data: {
-	              num : '5',
-	              role : 'mgrs'
+			     	access_token : getCookie('access_token'),
+			        num : '5',
+			        role : 'mgrs'
 	            },
 	            dataType: "json",
 	            success: function(data) {
@@ -135,10 +138,11 @@
  		            	var len = data['data']['data'].length;
 		            	for(var i=0; i < len; i++){
 		            	 	var array = "/role/mgrs/user_id/"+data['data']['data'][i]['id']+"/username/"+data['data']['data'][i]['nick_name']+"/role_id/"+data['data']['data'][i]['role_id'];
-		            	 	$("#tab2").append("<tr><td>M"+data['data']['data'][i]['id']+"</td><td>"+data['data']['data'][i]['nick_name']+"</td><td>"+data['data']['data'][i]['role']+"</td><td><a class=\"btn btn-info btn-xs\" href=\""+"{:U(\'Admin/Access/edit_user"+array+"\')}\"><i class=\"fa fa-pencil\"></i>更新用户角色</a></td>"+"</tr>");
+		            	 	$("#tab2").append("<tr><td>M"+data['data']['data'][i]['id']+"</td><td>"+data['data']['data'][i]['nick_name']+"</td><td>"+data['data']['data'][i]['role']+"</td><td><a class=\"btn btn-info btn-xs\" href=\""+"{:U(\'Admin/Access/edit_user_role"+array+"\')}\"><i class=\"fa fa-pencil\"></i>更新用户角色</a></td>"+"</tr>");
 		            	 }
 	            	}
- 	            	if(data['code'] == '-205'){
+ 	            	if(data['code'] == '-205' || data['code'] == '-208'){
+ 	            		alert(data['info']);
 	            		location.href = 'http://' + data['data']['redirect_url'];	            		
 	            	}
 	            },
@@ -153,8 +157,9 @@
 	            type: "post",
 	            url: "__CONTROLLER__/index",
 	            data: {
-	              num : '5',
-	              role : 'admin'
+	            	'access_token' : getCookie('access_token'),
+	            	'num' : '5',
+	                'role' : 'admin'
 	            },
 	            dataType: "json",
 	            success: function(data) {
@@ -165,10 +170,11 @@
  		            	var len = data['data']['data'].length;
 		            	for(var i=0; i < len; i++){
 		            	 	var array = "/role/admin/user_id/"+data['data']['data'][i]['id']+"/username/"+data['data']['data'][i]['nick_name']+"/role_id/"+data['data']['data'][i]['role_id'];
-		            	 	$("#tab3").append("<tr><td>A"+data['data']['data'][i]['id']+"</td><td>"+data['data']['data'][i]['nick_name']+"</td><td>"+data['data']['data'][i]['role']+"</td><td><a class=\"btn btn-info btn-xs\" href=\""+"{:U(\'Admin/Access/edit_user"+array+"\')}\"><i class=\"fa fa-pencil\"></i>更新用户角色</a></td>"+"</tr>");
+		            	 	$("#tab3").append("<tr><td>A"+data['data']['data'][i]['id']+"</td><td>"+data['data']['data'][i]['nick_name']+"</td><td>"+data['data']['data'][i]['role']+"</td><td><a class=\"btn btn-info btn-xs\" href=\""+"{:U(\'Admin/Access/edit_user_role"+array+"\')}\"><i class=\"fa fa-pencil\"></i>更新用户角色</a></td>"+"</tr>");
 		            	 }
 	            	}
- 	            	if(data['code'] == '-205'){
+	            	if(data['code'] == '-205' || data['code'] == '-208'){
+ 	            		alert(data['info']);
 	            		location.href = 'http://' + data['data']['redirect_url'];	            		
 	            	}
 	            },

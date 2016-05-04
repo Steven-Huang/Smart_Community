@@ -183,8 +183,7 @@
     <!-- /sidebar menu -->
 
     <!-- /menu footer buttons -->
-    <!-- <div class="sidebar-footer hidden-small"> -->
-    <div class="sidebar-footer">
+    <div class="sidebar-footer hidden-small">
       <a data-toggle="tooltip" data-placement="top" title="Settings">
         <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
       </a>
@@ -307,37 +306,27 @@
 	<!-- page content -->
 	<div class="right_col" role="main">
 		<div class="col-md-12 col-sm-12 col-xs-12">
-			 <div class="x_panel">
-				<div class="title">添加节点</div>
-				<div class="container-fluid">
-					<form class="form-horizontal">
-					  	<div class="form-group">
-					    	<label for="name" class="col-md-1 control-label" id="node_name"></label>
-					    	<div class="col-md-3">
-					      		<input type="text" class="form-control" id="name">
-					    	</div>
-					  	</div>
-					  	<div class="form-group">
-					    	<label for="title" class="col-md-1 control-label">描述:</label>
-					    	<div class="col-md-3">
-					      		<input type="text" class="form-control" id="title">
-					    	</div>
-					  	</div>
-					  	<div class="form-group">
-					    	<label for="sort" class="col-md-1 control-label">排序:</label>
-					    	<div class="col-md-3">
-					      		<input type="text" class="form-control" value="100" id="sort">
-					      		<input type="hidden" id="level" value="">
-					      		<input type="hidden" id="pid" value="">
-					    	</div>
-					  	</div>
-					  	<div class="form-group">
-					    	<div class="col-md-offset-1 col-md-3">
-					      		<a href="javascript:;" class="btn btn-default submit savedata" >保存</a>
-					    	</div>
-					  	</div>
-					</form>
-				</div>
+        	<div class="x_panel">
+			    <div class="title">权限列表</div>
+			    <div class="container-fluid">
+			        <form action="" method="post">
+			            <?php if(is_array($data)): foreach($data as $key=>$v): ?><div style="margin:5px;border-bottom:1px dotted #ccc">
+			                    <button type="button" class="btn btn-primary"><?php echo ($v['title']); ?></button>
+			                    <input type="checkbox" name="access[]" class="level1" value="<?php echo ($v['id']); ?>" <?php if(in_array($v['id'], $ids))echo "checked"?>>
+			                    <?php if(is_array($v['child'])): foreach($v['child'] as $key=>$con): ?><div style="margin:5px;border-top:1px solid #555">
+			                            <button type="button" class="btn btn-success"><?php echo ($con['title']); ?></button>
+			                            <input type="checkbox" name="access[]" class="level2" value="<?php echo ($con['id']); ?>" <?php if(in_array($con['id'], $ids))echo "checked"?>>
+			                        </div>
+			                        <div style="margin:5px;">
+			                            <?php if(is_array($con['child'])): foreach($con['child'] as $key=>$act): ?><button type="button" class="btn btn-info" ><?php echo ($act['title']); ?></button>
+			                                <input type="checkbox" name="access[]" class="level3" value="<?php echo ($act['id']); ?>" <?php if(in_array($act['id'], $ids))echo "checked"?>><?php endforeach; endif; ?>
+			                        </div><?php endforeach; endif; ?>
+			                </div><?php endforeach; endif; ?>
+			            <input type="hidden" name="id" value="<?php echo ($id); ?>">
+			            <button style="margin-left:10px" type="submit" class="btn btn-default">保存</button>
+			
+			        </form>
+			    </div>
 			</div>
 		</div>			    
 	  </div>
@@ -441,58 +430,32 @@
 		$('#presentation').addClass('open');
 	})
 </script>
-	<script type="text/javascript">
-		window.onload = function(){
-	    	$.ajax({
-	            type: "post",
-	            url: "/smart_community/index.php/Admin/Access/add_node_list",
-	            data: {
-	            	'access_token' : getCookie('access_token')
-	            },
-	            dataType: "json",
-	            success: function(data) {
-	            	if(data['code'] == 200){
-	            		$('#node_name').append(data['data']['view']+':');
-	            		$('#level').val(data['data']['level']);
-	            		$('#pid').val(data['data']['pid']);
-	            	}
-	            	if(data['code'] == '-205' || data['code'] == '-208'){
-	            		alert(data['info']);
-	            		location.href = 'http://' + data['data']['redirect_url'];
-	            	}
-	            },
-	            error: function(xhr, type, errorThrown) {
-	              //异常处理
-	              console.log(type);
-	            }
-	          }); 			
-		}
-		
-		$('body').on('click','.savedata',function(){
-	    	$.ajax({
-	            type: "post",
-	            url: "/smart_community/index.php/Admin/Access/do_node",
-	            data: {
-	            	'access_token' : getCookie('access_token'),
-	            	'name' : $('#name').val(),
-	            	'title' : $('#title').val(),
-	            	'sort' : $('#sort').val(),
-	            	'level' : $('#level').val(),
-	            	'pid' : $('#pid').val()
-	            },
-	            dataType: "json",
-	            success: function(data) {
-	            	if(data['code'] == '200' || data['code'] == '-200' || data['code'] == '-201' || data['code'] == '-205' || data['code'] == '-208'){
-	            		alert(data['info']);
-	            		location.href = 'http://' + data['data']['redirect_url'];
-	            	}
-	            },
-	            error: function(xhr, type, errorThrown) {
-	              //异常处理
-	              console.log(type);
-	            }
-	          }); 			
-		})
-	</script>
+    <script type="text/javascript">
+        $(function(){
+            $('.level1').click(function(){
+                if($(this).prop('checked')){
+                    $(this).parent().find("input[type='checkbox']").prop('checked',true);
+                }else{
+                    $(this).parent().find("input[type='checkbox']").prop('checked',false);
+                }   
+            })
+            $('.level2').click(function(){
+                if($(this).prop('checked')){
+                    $(this).parent().next().find("input[type='checkbox']").prop('checked',true);
+                }else{
+                   $(this).parent().next().find("input[type='checkbox']").prop('checked',false); 
+                }
+                
+            })
+            $('.level3').click(function(){
+                var is = $(this).prop('checked');
+                if(is){
+                    $(this).prop('checked',true);
+                }else{
+                    $(this).prop('checked',false);
+                }
+            })
+        })
+    </script>
 </body>
 </html>

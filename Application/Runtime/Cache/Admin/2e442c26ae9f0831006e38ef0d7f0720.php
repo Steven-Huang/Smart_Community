@@ -307,37 +307,25 @@
 	<!-- page content -->
 	<div class="right_col" role="main">
 		<div class="col-md-12 col-sm-12 col-xs-12">
-			 <div class="x_panel">
-				<div class="title">添加节点</div>
-				<div class="container-fluid">
-					<form class="form-horizontal">
-					  	<div class="form-group">
-					    	<label for="name" class="col-md-1 control-label" id="node_name"></label>
-					    	<div class="col-md-3">
-					      		<input type="text" class="form-control" id="name">
-					    	</div>
-					  	</div>
-					  	<div class="form-group">
-					    	<label for="title" class="col-md-1 control-label">描述:</label>
-					    	<div class="col-md-3">
-					      		<input type="text" class="form-control" id="title">
-					    	</div>
-					  	</div>
-					  	<div class="form-group">
-					    	<label for="sort" class="col-md-1 control-label">排序:</label>
-					    	<div class="col-md-3">
-					      		<input type="text" class="form-control" value="100" id="sort">
-					      		<input type="hidden" id="level" value="">
-					      		<input type="hidden" id="pid" value="">
-					    	</div>
-					  	</div>
-					  	<div class="form-group">
-					    	<div class="col-md-offset-1 col-md-3">
-					      		<a href="javascript:;" class="btn btn-default submit savedata" >保存</a>
-					    	</div>
-					  	</div>
-					</form>
-				</div>
+        	<div class="x_panel">	
+			    <div class="title">
+			        <a class="btn btn-default" href="<?php echo U('Admin/Access/add_role');?>" >添加角色</a>
+			    </div>
+			    <div class="container-fluid">
+			        <table class="table table-hover">
+			            <thead>
+			                <tr>
+			                    <th>ID</th>
+			                    <th>名称</th>
+			                    <th>描述</th>
+			                    <th>操作</th>
+			                </tr>
+			            </thead>
+			            <tbody id="role_list">
+
+			            </tbody>
+			        </table>
+			    </div>
 			</div>
 		</div>			    
 	  </div>
@@ -445,16 +433,21 @@
 		window.onload = function(){
 	    	$.ajax({
 	            type: "post",
-	            url: "/smart_community/index.php/Admin/Access/add_node_list",
+	            url: "/smart_community/index.php/Admin/Access/role",
 	            data: {
 	            	'access_token' : getCookie('access_token')
 	            },
 	            dataType: "json",
 	            success: function(data) {
 	            	if(data['code'] == 200){
-	            		$('#node_name').append(data['data']['view']+':');
-	            		$('#level').val(data['data']['level']);
-	            		$('#pid').val(data['data']['pid']);
+			            var len = data['data'].length;
+	            		if(len == 0){
+	            			$("#role_list").append("<font color='red'><h5>无角色信息！</h5></font>");
+	            		}	            		
+		            	for(var i=0; i < len; i++){
+		            	 	var array = "/id/"+data['data'][i]['id'];
+		            		$("#role_list").append("<tr><td>"+data['data'][i]['id']+"</td><td>"+data['data'][i]['name']+"</td><td>"+data['data'][i]['remark']+"</td><td><a class=\"btn btn-info btn-xs\" href=\""+"<?php echo U('Admin/Access/access_list"+array+"');?>\"><i class=\"fa fa-pencil\"></i>权限配置</a><a class=\"btn btn-danger btn-xs\" href=\"javascript:;\" name= \"delete\" id=\""+data['data'][i]['id']+"\"><i class=\"fa fa-trash-o\"></i>删除角色</a></td>"+"</tr>");
+		            	 }
 	            	}
 	            	if(data['code'] == '-205' || data['code'] == '-208'){
 	            		alert(data['info']);
@@ -467,22 +460,18 @@
 	            }
 	          }); 			
 		}
-		
-		$('body').on('click','.savedata',function(){
-	    	$.ajax({
+ 		//$("#role_list a[name='delete']").on('click',function(){
+ 			$("#role_list~a:odd").on('click',function(){
+ 	    	$.ajax({
 	            type: "post",
-	            url: "/smart_community/index.php/Admin/Access/do_node",
+	            url: "/smart_community/index.php/Admin/Access/del_role",
 	            data: {
-	            	'access_token' : getCookie('access_token'),
-	            	'name' : $('#name').val(),
-	            	'title' : $('#title').val(),
-	            	'sort' : $('#sort').val(),
-	            	'level' : $('#level').val(),
-	            	'pid' : $('#pid').val()
+	            	'id' : $(this).attr('id'),
+	            	'access_token' : getCookie('access_token')
 	            },
 	            dataType: "json",
 	            success: function(data) {
-	            	if(data['code'] == '200' || data['code'] == '-200' || data['code'] == '-201' || data['code'] == '-205' || data['code'] == '-208'){
+	            	if(data['code'] == 200 || data['code'] == '-200' || data['code'] == '-205' || data['code'] == '-208'){
 	            		alert(data['info']);
 	            		location.href = 'http://' + data['data']['redirect_url'];
 	            	}
@@ -491,8 +480,8 @@
 	              //异常处理
 	              console.log(type);
 	            }
-	          }); 			
-		})
+	       }); 
+		}); 
 	</script>
 </body>
 </html>

@@ -48,7 +48,7 @@
 	            type: "post",
 	            url: "__CONTROLLER__/role",
 	            data: {
-	            	
+	            	'access_token' : getCookie('access_token')
 	            },
 	            dataType: "json",
 	            success: function(data) {
@@ -62,6 +62,10 @@
 		            		$("#role_list").append("<tr><td>"+data['data'][i]['id']+"</td><td>"+data['data'][i]['name']+"</td><td>"+data['data'][i]['remark']+"</td><td><a class=\"btn btn-info btn-xs\" href=\""+"{:U(\'Admin/Access/access_list"+array+"\')}\"><i class=\"fa fa-pencil\"></i>权限配置</a><a class=\"btn btn-danger btn-xs\" href=\"javascript:;\" name= \"delete\" id=\""+data['data'][i]['id']+"\"><i class=\"fa fa-trash-o\"></i>删除角色</a></td>"+"</tr>");
 		            	 }
 	            	}
+	            	if(data['code'] == '-205' || data['code'] == '-208'){
+	            		alert(data['info']);
+	            		location.href = 'http://' + data['data']['redirect_url'];
+	            	}
 	            },
 	            error: function(xhr, type, errorThrown) {
 	              //异常处理
@@ -69,17 +73,18 @@
 	            }
 	          }); 			
 		}
-		//$("#role_list a[name='delete']").on('click',function(){
-/* 			$("a[name='delete']").on('click',function(){
-/* 	    	$.ajax({
+ 		//$("#role_list a[name='delete']").on('click',function(){
+ 			$("#role_list~a:odd").on('click',function(){
+ 	    	$.ajax({
 	            type: "post",
 	            url: "__CONTROLLER__/del_role",
 	            data: {
-	            	id : $(this).attr('id')
+	            	'id' : $(this).attr('id'),
+	            	'access_token' : getCookie('access_token')
 	            },
 	            dataType: "json",
 	            success: function(data) {
-	            	if(data['code'] == 200 || data['code'] == '-200'){
+	            	if(data['code'] == 200 || data['code'] == '-200' || data['code'] == '-205' || data['code'] == '-208'){
 	            		alert(data['info']);
 	            		location.href = 'http://' + data['data']['redirect_url'];
 	            	}
@@ -89,7 +94,7 @@
 	              console.log(type);
 	            }
 	       }); 
-		}); */
+		}); 
 	</script>
 </body>
 </html>

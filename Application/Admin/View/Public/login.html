@@ -69,6 +69,7 @@
             <div>
                <!-- <input type="submit" class="btn btn-success" value="登录" /> -->
 	           <a href="javascript:;" class="btn btn-default submit loginsubmit" >登录</a>
+	           <input type="checkbox" id="remember" class="flat" value="on" />记住我一个星期
                <a class="reset_pass" href="#">忘记密码?</a>
             </div>
             <div class="clearfix"></div>
@@ -299,7 +300,8 @@
               username : $('#username').val(),
               password : $('#password').val(),
               role : $('#role').val(),
-              code : $('#code').val() 
+              code : $('#code').val(),
+              remember : $('#remember:checked').val()
             },
             dataType: "json",
             success: function(data) {
