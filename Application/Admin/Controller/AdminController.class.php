@@ -13,8 +13,13 @@ class AdminController extends CommonController {
         exit(urldecode(json_encode($output)));
     }
     
+    //显示物业信息页面
+    public function index(){
+        $this->display();
+    }
+    
     //展示管理员基本信息（需做分页功能）
-	public function index(){
+	public function index_list(){
 	    if (IS_POST) {
 	        //获取TOKEN
 	        $token = I('post.access_token');

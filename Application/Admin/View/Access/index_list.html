@@ -42,6 +42,7 @@
 			                					                
 					            </tbody>
 					        </table>
+					        <div id="pages1"></div>
 					    </div>
                 	</div>
                     <div role="tabpanel" class="tab-pane fade" id="tab_content2" aria-labelledby="profile-tab">
@@ -59,6 +60,7 @@
 			                					                
 					            </tbody>
 					        </table>
+					        <div id="pages2"></div>
 					    </div>
                     </div>
                     <div role="tabpanel" class="tab-pane fade" id="tab_content3" aria-labelledby="profile-tab">
@@ -73,9 +75,10 @@
 					                </tr>
 					            </thead>
 					            <tbody id="tab3">
-			                					                
+           					 		              
 					            </tbody>
 					        </table>
+					        <div id="pages3"></div>
 					    </div>
                     </div>
                 </div>
@@ -100,6 +103,11 @@
 	            dataType: "json",
 	            success: function(data) {
 	            	if(data['code'] == 200){
+	            		//测试
+	            		alert(data['data']['count']);
+	            		alert(data['data']['page']);
+	            		alert(data['data']['data']);
+	            		//
 	            		if(data['data']['count'] == 0){
 	            			$("#tab1").append("<font color='red'><h5>无用户信息！</h5></font>");
 	            		}	            		
@@ -108,6 +116,7 @@
 		            	 	var array = "/role/users/user_id/"+data['data']['data'][i]['id']+"/username/"+data['data']['data'][i]['nick_name']+"/role_id/"+data['data']['data'][i]['role_id'];
 		            		$("#tab1").append("<tr><td>U"+data['data']['data'][i]['id']+"</td><td>"+data['data']['data'][i]['nick_name']+"</td><td>"+data['data']['data'][i]['role']+"</td><td><a class=\"btn btn-info btn-xs\" href=\""+"{:U(\'Admin/Access/edit_user_role"+array+"\')}\"><i class=\"fa fa-pencil\"></i>更新用户角色</a></td>"+"</tr>");
 		            	 }
+		            	$('#pages1').append(data['data']['page']);
 	            	}
 	            	if(data['code'] == '-205' || data['code'] == '-208'){
  	            		alert(data['info']);
@@ -140,6 +149,7 @@
 		            	 	var array = "/role/mgrs/user_id/"+data['data']['data'][i]['id']+"/username/"+data['data']['data'][i]['nick_name']+"/role_id/"+data['data']['data'][i]['role_id'];
 		            	 	$("#tab2").append("<tr><td>M"+data['data']['data'][i]['id']+"</td><td>"+data['data']['data'][i]['nick_name']+"</td><td>"+data['data']['data'][i]['role']+"</td><td><a class=\"btn btn-info btn-xs\" href=\""+"{:U(\'Admin/Access/edit_user_role"+array+"\')}\"><i class=\"fa fa-pencil\"></i>更新用户角色</a></td>"+"</tr>");
 		            	 }
+		            	$('#pages2').append(data['data']['page']);
 	            	}
  	            	if(data['code'] == '-205' || data['code'] == '-208'){
  	            		alert(data['info']);
@@ -172,6 +182,7 @@
 		            	 	var array = "/role/admin/user_id/"+data['data']['data'][i]['id']+"/username/"+data['data']['data'][i]['nick_name']+"/role_id/"+data['data']['data'][i]['role_id'];
 		            	 	$("#tab3").append("<tr><td>A"+data['data']['data'][i]['id']+"</td><td>"+data['data']['data'][i]['nick_name']+"</td><td>"+data['data']['data'][i]['role']+"</td><td><a class=\"btn btn-info btn-xs\" href=\""+"{:U(\'Admin/Access/edit_user_role"+array+"\')}\"><i class=\"fa fa-pencil\"></i>更新用户角色</a></td>"+"</tr>");
 		            	 }
+		            	$('#pages3').append(data['data']['page']);
 	            	}
 	            	if(data['code'] == '-205' || data['code'] == '-208'){
  	            		alert(data['info']);

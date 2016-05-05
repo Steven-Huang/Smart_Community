@@ -41,7 +41,7 @@ class AccessController extends CommonController{
 	            //调用show显示分页链接
 	            $show = $Page->show();
 	        
-	            $data = M('users')->field('a.id,a.nick_name,b.role_id')->join('as a join sc_role_user as b on a.id = b.user_id')->where("user_type = 'U'")->limit($Page->firstRow,$Page->listRows)->select();
+	            $data = M('users')->field('a.id,a.nick_name,b.role_id')->join('as a join sc_role_user as b on a.id = b.user_id')->where("user_type = 'U'")->limit($Page->firstRow.','.$Page->listRows)->select();
 	        }elseif ($role == 'mgrs'){
 	            //获取总记录数
 	            $count = D('role_user')->where("user_type = 'M'")->count();
@@ -50,7 +50,7 @@ class AccessController extends CommonController{
 	            //调用show显示分页链接
 	            $show = $Page->show();
 	        
-	            $data = M('mgrs')->field('a.id,a.nick_name,b.role_id')->join('as a join sc_role_user as b on a.id = b.user_id')->where("user_type = 'M'")->limit($Page->firstRow,$Page->listRows)->select();
+	            $data = M('mgrs')->field('a.id,a.nick_name,b.role_id')->join('as a join sc_role_user as b on a.id = b.user_id')->where("user_type = 'M'")->limit($Page->firstRow.','.$Page->listRows)->select();
 	        }elseif ($role == 'admin'){
 	            //获取总记录数
 	            $count = D('role_user')->where("user_type = 'A'")->count();
@@ -59,7 +59,7 @@ class AccessController extends CommonController{
 	            //调用show显示分页链接
 	            $show = $Page->show();
 	        
-	            $data = M('admin')->field('a.id,a.nick_name,b.role_id')->join('as a join sc_role_user as b on a.id = b.user_id')->where("user_type = 'A'")->limit($Page->firstRow,$Page->listRows)->select();
+	            $data = M('admin')->field('a.id,a.nick_name,b.role_id')->join('as a join sc_role_user as b on a.id = b.user_id')->where("user_type = 'A'")->limit($Page->firstRow.','.$Page->listRows)->select();
 	        }
 	         
 	        foreach ($data as $key => &$value) {
@@ -162,6 +162,18 @@ class AccessController extends CommonController{
 	    $this->display();
 	}
 	
+	function category($items){
+	    $tree = array();
+	    foreach($items as $item){
+	        if(isset($items[$item['pid']])){
+	            $items[$item['pid']]['child'][] = &$items[$item['id']];
+	        }else{
+	            $tree[] = &$items[$item['id']];
+	        }
+	    }
+	    return $tree;
+	}
+	
    /**
     * 节点列表
     * @return [type] [description]
@@ -178,8 +190,60 @@ class AccessController extends CommonController{
     		foreach ($data as $key => &$value){
     		    $value['title'] = urlencode($value['title']);
     		}		
-    		$info = category($data);
-    		$output = array('data' => $info,'info' => urlencode('节点列表'),'code' => 200);
+    		//$info = category($data);
+    		$data = $this->category($data);
+    		$str = '';
+            foreach ($data as $v){
+                $str .= <<<Eof
+                        	<div style="margin:5px;border-bottom:1px dotted #ccc">
+                        		<button type="button" class="btn btn-primary">{$v['title']}</button>
+                        		<a href="{:U('Admin/Access/add_node',array('pid'=>{$v['id']},'level'=>{$v['level']} + 1))}">添加</a>
+                        		<a href="{:U('Admin/Access/del_node',array('id'=>{$v['id']}))}">删除</a>
+                        	</div>
+Eof;
+                foreach ($v['child'] as $con){
+                    $str .= <<<Eof
+                    		<div style="margin:5px;border-top:1px solid #555">
+                    			<button type="button" class="btn btn-success">{$con['title']}</button>
+                    			<a href="{:U('Admin/Access/add_node',array('pid'=>{$con['id']},'level'=>{$con['level']} + 1))}">添加</a>
+                    			<a href="{:U('Admin/Access/del_node',array('id'=>{$con['id']}))}">删除2</a>
+                    		</div>
+                    		<div style="margin:5px;">
+Eof;
+                    foreach ($con['child'] as $act){
+                        $str .= <<<Eof
+            				<button type="button" class="btn btn-info" >{$act['title']}</button>
+            				<a style="margin-right:10px" href="{:U('Admin/Access/del_node',array('id'=>{$act['id']}))}">删除3</a>
+Eof;
+                    }
+                    $str .= "</div>";
+                }
+            }
+
+    		$infos = <<<Eof
+    		            
+                        <foreach name="data" item="v">
+                        	<div style="margin:5px;border-bottom:1px dotted #ccc">
+                        		<button type="button" class="btn btn-primary">{$v['title']}</button>
+                        		<a href="{:U('Admin/Access/add_node',array('pid'=>{$v['id']},'level'=>{$v['level']} + 1))}">添加</a>
+                        		<a href="{:U('Admin/Access/del_node',array('id'=>{$v['id']}))}">删除</a>
+                        	</div>
+                        	<foreach name="v['child']" item="con">
+                        		<div style="margin:5px;border-top:1px solid #555">
+                        			<button type="button" class="btn btn-success">{$con['title']}</button>
+                        			<a href="{:U('Admin/Access/add_node',array('pid'=>{$con['id']},'level'=>{$con['level']} + 1))}">添加</a>
+                        			<a href="{:U('Admin/Access/del_node',array('id'=>{$con['id']}))}">删除</a>
+                        		</div>
+                        		<div style="margin:5px;">
+                        			<foreach name="con['child']" item="act">
+                        				<button type="button" class="btn btn-info" >{$act['title']}</button>
+                        				<a style="margin-right:10px" href="{:U('Admin/Access/del_node',array('id'=>{$act['id']}))}">删除</a>
+                        			</foreach>
+                        		</div>
+                        	</foreach>
+                        </foreach>
+Eof;
+    		$output = array('data' => $str,'info' => urlencode('节点列表'),'code' => 200);
     		exit(urldecode(json_encode($output)));		
 		}else{
 		    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Access/index_list'), 'sec' => 3),'info' => urlencode('请求失败，请重新再试！'),'code' => -205);
@@ -428,7 +492,7 @@ class AccessController extends CommonController{
     	    foreach ($data as $key => &$value){
     	        $value['title'] = urlencode($value['title']);
     	    }
-    	    $info = category($data);
+    	    $info = $this->category($data);
     	    $output = array('data' => array(
     	        'ids' => $ids,
     	        'id' => $id,

@@ -21,8 +21,8 @@
 				<div class="title">
 					<a class="btn btn-default" href="{:U('Admin/Access/add_node')}" >添加节点</a>
 				</div>
-				<div class="container-fluid">
-					<foreach name="data" item="v">
+				<div id="node_list" class="container-fluid">
+<!-- 					<foreach name="data" item="v">
 						<div style="margin:5px;border-bottom:1px dotted #ccc">
 							<button type="button" class="btn btn-primary">{$v['title']}</button>
 							<a href="{:U('Admin/Access/add_node',array('pid'=>$v['id'],'level'=>$v['level'] + 1))}">添加</a>
@@ -40,10 +40,8 @@
 									<a style="margin-right:10px" href="{:U('Admin/Access/del_node',array('id'=>$act['id']))}">删除</a>
 								</foreach>
 							</div>
-							
 						</foreach>
-					</foreach>
-					
+					</foreach> -->
 				</div>
 			</div>
 		</div>		
@@ -51,5 +49,33 @@
 	  	<!-- /page content -->
 	<include file="Public/footer"/>
 	<include file="Public/public_bottom"/>
+	<script type="text/javascript">
+		window.onload = function(){
+	    	$.ajax({
+	            type: "post",
+	            url: "__CONTROLLER__/node",
+	            data: {
+	            	access_token : getCookie('access_token'),
+	            },
+	            dataType: "json",
+	            success: function(data) {
+	            	if(data['code'] == 200){
+	            		//测试
+	            		alert(data['data']);
+	            		
+		            	$('#node_list').append(data['data']);
+	            	}
+	            	if(data['code'] == '-205' || data['code'] == '-208'){
+		            		alert(data['info']);
+	            		location.href = 'http://' + data['data']['redirect_url'];	            		
+	            	}
+	            },
+	            error: function(xhr, type, errorThrown) {
+	              //异常处理
+	              console.log(type);
+	            }
+	          }); 			
+		}
+	</script>
 </body>
 </html>

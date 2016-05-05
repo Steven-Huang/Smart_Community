@@ -79,58 +79,8 @@
               </li>
               <li><a href="#">办事指南</a>
               </li>
-<!--               <li><a href="form_wizards.html">Form Wizard</a>
-              </li>
-              <li><a href="form_upload.html">Form Upload</a>
-              </li>
-              <li><a href="form_buttons.html">Form Buttons</a>
-              </li> -->
             </ul>
           </li>
-<!--           <li><a><i class="fa fa-desktop"></i> UI Elements <span class="fa fa-chevron-down"></span></a>
-            <ul class="nav child_menu" style="display: none">
-              <li><a href="general_elements.html">General Elements</a>
-              </li>
-              <li><a href="media_gallery.html">Media Gallery</a>
-              </li>
-              <li><a href="typography.html">Typography</a>
-              </li>
-              <li><a href="icons.html">Icons</a>
-              </li>
-              <li><a href="glyphicons.html">Glyphicons</a>
-              </li>
-              <li><a href="widgets.html">Widgets</a>
-              </li>
-              <li><a href="invoice.html">Invoice</a>
-              </li>
-              <li><a href="inbox.html">Inbox</a>
-              </li>
-              <li><a href="calendar.html">Calendar</a>
-              </li>
-            </ul>
-          </li>
-          <li><a><i class="fa fa-table"></i> Tables <span class="fa fa-chevron-down"></span></a>
-            <ul class="nav child_menu" style="display: none">
-              <li><a href="tables.html">Tables</a>
-              </li>
-              <li><a href="tables_dynamic.html">Table Dynamic</a>
-              </li>
-            </ul>
-          </li>
-          <li><a><i class="fa fa-bar-chart-o"></i> Data Presentation <span class="fa fa-chevron-down"></span></a>
-            <ul class="nav child_menu" style="display: none">
-              <li><a href="chartjs.html">Chart JS</a>
-              </li>
-              <li><a href="chartjs2.html">Chart JS2</a>
-              </li>
-              <li><a href="morisjs.html">Moris JS</a>
-              </li>
-              <li><a href="echarts.html">ECharts </a>
-              </li>
-              <li><a href="other_charts.html">Other Charts </a>
-              </li>
-            </ul>
-          </li> -->
         </ul>
       </div>
       <div class="menu_section">
@@ -138,31 +88,25 @@
         <ul class="nav side-menu">
           <li><a><i class="fa fa-bug"></i> 业主管理 <span class="fa fa-chevron-down"></span></a>
             <ul class="nav child_menu" style="display: none">
-              <li><a href="#">业主信息</a>
+              <li><a href="<?php echo U('Admin/Users/index');?>">业主信息</a>
               </li>
-              <li><a href="#">添加业主信息</a>
-              </li>
-              <li><a href="#">更新业主信息</a>
+              <li><a href="<?php echo U('Admin/Users/add');?>">添加业主信息</a>
               </li>
             </ul>
           </li>
           <li><a><i class="fa fa-bug"></i> 物业人员管理 <span class="fa fa-chevron-down"></span></a>
             <ul class="nav child_menu" style="display: none">
-              <li><a href="#">物业人员信息</a>
+              <li><a href="<?php echo U('Admin/Mgrs/index');?>">物业人员信息</a>
               </li>
-              <li><a href="#">添加物业人员信息</a>
-              </li>
-              <li><a href="#">更新物业人员信息</a>
+              <li><a href="<?php echo U('Admin/Mgrs/add');?>">添加物业人员信息</a>
               </li>
             </ul>
           </li>
           <li><a><i class="fa fa-bug"></i> 超级管理员管理 <span class="fa fa-chevron-down"></span></a>
             <ul class="nav child_menu" style="display: none">
-              <li><a href="#">超级管理员信息</a>
+              <li><a href="<?php echo U('Admin/Admin/index');?>">超级管理员信息</a>
               </li>
-              <li><a href="#">添加超级管理员信息</a>
-              </li>
-              <li><a href="#">更新超级管理员信息</a>
+              <li><a href="<?php echo U('Admin/Admin/add');?>">添加超级管理员信息</a>
               </li>
             </ul>
           </li>                          
@@ -332,6 +276,7 @@
 			                					                
 					            </tbody>
 					        </table>
+					        <div id="pages1"></div>
 					    </div>
                 	</div>
                     <div role="tabpanel" class="tab-pane fade" id="tab_content2" aria-labelledby="profile-tab">
@@ -349,6 +294,7 @@
 			                					                
 					            </tbody>
 					        </table>
+					        <div id="pages2"></div>
 					    </div>
                     </div>
                     <div role="tabpanel" class="tab-pane fade" id="tab_content3" aria-labelledby="profile-tab">
@@ -363,9 +309,10 @@
 					                </tr>
 					            </thead>
 					            <tbody id="tab3">
-			                					                
+           					 		              
 					            </tbody>
 					        </table>
+					        <div id="pages3"></div>
 					    </div>
                     </div>
                 </div>
@@ -487,6 +434,11 @@
 	            dataType: "json",
 	            success: function(data) {
 	            	if(data['code'] == 200){
+	            		//测试
+	            		alert(data['data']['count']);
+	            		alert(data['data']['page']);
+	            		alert(data['data']['data']);
+	            		//
 	            		if(data['data']['count'] == 0){
 	            			$("#tab1").append("<font color='red'><h5>无用户信息！</h5></font>");
 	            		}	            		
@@ -495,6 +447,7 @@
 		            	 	var array = "/role/users/user_id/"+data['data']['data'][i]['id']+"/username/"+data['data']['data'][i]['nick_name']+"/role_id/"+data['data']['data'][i]['role_id'];
 		            		$("#tab1").append("<tr><td>U"+data['data']['data'][i]['id']+"</td><td>"+data['data']['data'][i]['nick_name']+"</td><td>"+data['data']['data'][i]['role']+"</td><td><a class=\"btn btn-info btn-xs\" href=\""+"<?php echo U('Admin/Access/edit_user_role"+array+"');?>\"><i class=\"fa fa-pencil\"></i>更新用户角色</a></td>"+"</tr>");
 		            	 }
+		            	$('#pages1').append(data['data']['page']);
 	            	}
 	            	if(data['code'] == '-205' || data['code'] == '-208'){
  	            		alert(data['info']);
@@ -527,6 +480,7 @@
 		            	 	var array = "/role/mgrs/user_id/"+data['data']['data'][i]['id']+"/username/"+data['data']['data'][i]['nick_name']+"/role_id/"+data['data']['data'][i]['role_id'];
 		            	 	$("#tab2").append("<tr><td>M"+data['data']['data'][i]['id']+"</td><td>"+data['data']['data'][i]['nick_name']+"</td><td>"+data['data']['data'][i]['role']+"</td><td><a class=\"btn btn-info btn-xs\" href=\""+"<?php echo U('Admin/Access/edit_user_role"+array+"');?>\"><i class=\"fa fa-pencil\"></i>更新用户角色</a></td>"+"</tr>");
 		            	 }
+		            	$('#pages2').append(data['data']['page']);
 	            	}
  	            	if(data['code'] == '-205' || data['code'] == '-208'){
  	            		alert(data['info']);
@@ -559,6 +513,7 @@
 		            	 	var array = "/role/admin/user_id/"+data['data']['data'][i]['id']+"/username/"+data['data']['data'][i]['nick_name']+"/role_id/"+data['data']['data'][i]['role_id'];
 		            	 	$("#tab3").append("<tr><td>A"+data['data']['data'][i]['id']+"</td><td>"+data['data']['data'][i]['nick_name']+"</td><td>"+data['data']['data'][i]['role']+"</td><td><a class=\"btn btn-info btn-xs\" href=\""+"<?php echo U('Admin/Access/edit_user_role"+array+"');?>\"><i class=\"fa fa-pencil\"></i>更新用户角色</a></td>"+"</tr>");
 		            	 }
+		            	$('#pages3').append(data['data']['page']);
 	            	}
 	            	if(data['code'] == '-205' || data['code'] == '-208'){
  	            		alert(data['info']);

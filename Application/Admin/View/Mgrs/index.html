@@ -19,9 +19,9 @@
 		<div class="col-md-12 col-sm-12 col-xs-12">
         	<div class="x_panel">
                 <ul id="myTab" class="nav nav-tabs " role="tablist">
-                  <li role="presentation" class="active"><a href="#tab_content1" role="tab" id="approved-tab" data-toggle="tab" aria-expanded="true">业主（已审批）</a>
+                  <li role="presentation" class="active"><a href="#tab_content1" role="tab" id="approved-tab" data-toggle="tab" aria-expanded="true">物业人员（已审批）</a>
                   </li>
-                  <li role="presentation" class=""><a href="#tab_content2" role="tab" id="pending-tab" data-toggle="tab" aria-expanded="false">业主（待审批）</a>
+                  <li role="presentation" class=""><a href="#tab_content2" role="tab" id="pending-tab" data-toggle="tab" aria-expanded="false">物业人员（待审批）</a>
                   </li>
                 </ul>
                 <div id="myTabContent" class="tab-content">
@@ -35,7 +35,6 @@
 					                    <th>用户名</th>
 					                    <th>真实姓名</th>
 					                    <th>性别</th>
-					                    <th>房产证号</th>
 					                    <th>手机号</th>
 					                    <th>邮箱</th>
 					                    <th>身份证号</th>
@@ -62,7 +61,6 @@
 					                    <th>用户名</th>
 					                    <th>真实姓名</th>
 					                    <th>性别</th>
-					                    <th>房产证号</th>
 					                    <th>手机号</th>
 					                    <th>邮箱</th>
 					                    <th>身份证号</th>
@@ -89,7 +87,7 @@
 		window.onload = function(){
 	    	$.ajax({
 	            type: "post",
-	            url: "__CONTROLLER__/approved_users",
+	            url: "__CONTROLLER__/approved_mgrs",
 	            data: {
 	            	access_token : getCookie('access_token'),
 	              	num : '5',
@@ -103,7 +101,7 @@
  		            	var len = data['data']['data'].length;
 		            	for(var i=0; i < len; i++){
 		            	 	var array = "/role/users/user_id/"+data['data']['data'][i]['id']+"/username/"+data['data']['data'][i]['nick_name']+"/role_id/"+data['data']['data'][i]['role_id'];
-		            		$("#tab1").append("<tr><td>U"+data['data']['data'][i]['id']+"</td><td>"+data['data']['data'][i]['icon_url']+"</td><td>"+data['data']['data'][i]['nick_name']+"</td><td>"+data['data']['data'][i]['true_name']+"</td><td>"+data['data']['data'][i]['gender']+"</td><td>"+data['data']['data'][i]['h_pocn']+"</td><td>"+data['data']['data'][i]['mobile']+"</td><td>"+data['data']['data'][i]['email']+"</td><td>"+data['data']['data'][i]['id_card_num']+"</td><td>"+data['data']['data'][i]['create_time']+"</td><td>"+data['data']['data'][i]['last_log_ip']+"</td><td>"+data['data']['data'][i]['last_log_time']+"</td><td><a class=\"btn btn-info btn-xs\" href=\""+"{:U(\'Admin/Users/edit"+array+"\')}\"><i class=\"fa fa-pencil\"></i>更新</a>"+"<a class=\"btn btn-danger btn-xs\" href=\""+"{:U(\'Admin/Users/edit"+array+"\')}\"><i class=\"fa fa-trash\"></i>删除</a></td>"+"</tr>");
+		            		$("#tab1").append("<tr><td>U"+data['data']['data'][i]['id']+"</td><td>"+data['data']['data'][i]['icon_url']+"</td><td>"+data['data']['data'][i]['nick_name']+"</td><td>"+data['data']['data'][i]['true_name']+"</td><td>"+data['data']['data'][i]['gender']+"</td><td>"+data['data']['data'][i]['mobile']+"</td><td>"+data['data']['data'][i]['email']+"</td><td>"+data['data']['data'][i]['id_card_num']+"</td><td>"+data['data']['data'][i]['create_time']+"</td><td>"+data['data']['data'][i]['last_log_ip']+"</td><td>"+data['data']['data'][i]['last_log_time']+"</td><td><a class=\"btn btn-info btn-xs\" href=\""+"{:U(\'Admin/Users/edit"+array+"\')}\"><i class=\"fa fa-pencil\"></i>更新</a>"+"<a class=\"btn btn-danger btn-xs\" href=\""+"{:U(\'Admin/Users/edit"+array+"\')}\"><i class=\"fa fa-trash\"></i>删除</a></td>"+"</tr>");
 		            	 }
 		            	$('#pages1').append(data['data']['page']);
 	            	}
@@ -121,7 +119,7 @@
 	    $('#pending-tab').one('click',function(){
 	    	$.ajax({
 	            type: "post",
-	            url: "__CONTROLLER__/pending_users",
+	            url: "__CONTROLLER__/pending_mgrs",
 	            data: {
 			     	access_token : getCookie('access_token'),
 			        num : '5',
@@ -135,7 +133,7 @@
  		            	var len = data['data']['data'].length;
 		            	for(var i=0; i < len; i++){
 		            	 	var array = "/role/users/user_id/"+data['data']['data'][i]['id']+"/username/"+data['data']['data'][i]['nick_name']+"/role_id/"+data['data']['data'][i]['role_id'];
-		            		$("#tab2").append("<tr><td>U"+data['data']['data'][i]['id']+"</td><td>"+data['data']['data'][i]['icon_url']+"</td><td>"+data['data']['data'][i]['nick_name']+"</td><td>"+data['data']['data'][i]['true_name']+"</td><td>"+data['data']['data'][i]['gender']+"</td><td>"+data['data']['data'][i]['h_pocn']+"</td><td>"+data['data']['data'][i]['mobile']+"</td><td>"+data['data']['data'][i]['email']+"</td><td>"+data['data']['data'][i]['id_card_num']+"</td><td>"+data['data']['data'][i]['create_time']+"</td><td><a class=\"btn btn-success btn-xs\" href=\""+"{:U(\'Admin/Users/edit"+array+"\')}\"><i class=\"fa fa-check\"></i>审批通过</a>"+"<a class=\"btn btn-danger btn-xs\" href=\""+"{:U(\'Admin/Users/edit"+array+"\')}\"><i class=\"fa fa-close\"></i>拒绝</a></td>"+"</tr>");
+		            		$("#tab2").append("<tr><td>U"+data['data']['data'][i]['id']+"</td><td>"+data['data']['data'][i]['icon_url']+"</td><td>"+data['data']['data'][i]['nick_name']+"</td><td>"+data['data']['data'][i]['true_name']+"</td><td>"+data['data']['data'][i]['gender']+"</td><td>"+data['data']['data'][i]['mobile']+"</td><td>"+data['data']['data'][i]['email']+"</td><td>"+data['data']['data'][i]['id_card_num']+"</td><td>"+data['data']['data'][i]['create_time']+"</td><td><a class=\"btn btn-success btn-xs\" href=\""+"{:U(\'Admin/Users/edit"+array+"\')}\"><i class=\"fa fa-check\"></i>审批通过</a>"+"<a class=\"btn btn-danger btn-xs\" href=\""+"{:U(\'Admin/Users/edit"+array+"\')}\"><i class=\"fa fa-close\"></i>拒绝</a></td>"+"</tr>");
 		            	 }
 		            	$('#pages2').append(data['data']['page']);
 	            	}

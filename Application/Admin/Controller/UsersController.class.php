@@ -12,6 +12,11 @@ class UsersController extends CommonController {
         exit(urldecode(json_encode($output)));
     }
     
+    //显示用户信息页面
+    public function index(){
+        $this->display();
+    }
+    
     //展示业主基本信息(已审批通过的)
 	public function approved_users(){
 	    if (IS_POST) {
@@ -28,7 +33,7 @@ class UsersController extends CommonController {
     		//获取总记录数
     		$count = $users->where("if_aprvd='1'")->count();
     		//实例化分类页
-    		$Page = new \Think\Page($count,$num);
+    		$Page = new \Think\Page($count,$count);
     		//调用show显示分页链接
     		$show = $Page->show();
     		//实现数据分页

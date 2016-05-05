@@ -79,58 +79,8 @@
               </li>
               <li><a href="#">办事指南</a>
               </li>
-<!--               <li><a href="form_wizards.html">Form Wizard</a>
-              </li>
-              <li><a href="form_upload.html">Form Upload</a>
-              </li>
-              <li><a href="form_buttons.html">Form Buttons</a>
-              </li> -->
             </ul>
           </li>
-<!--           <li><a><i class="fa fa-desktop"></i> UI Elements <span class="fa fa-chevron-down"></span></a>
-            <ul class="nav child_menu" style="display: none">
-              <li><a href="general_elements.html">General Elements</a>
-              </li>
-              <li><a href="media_gallery.html">Media Gallery</a>
-              </li>
-              <li><a href="typography.html">Typography</a>
-              </li>
-              <li><a href="icons.html">Icons</a>
-              </li>
-              <li><a href="glyphicons.html">Glyphicons</a>
-              </li>
-              <li><a href="widgets.html">Widgets</a>
-              </li>
-              <li><a href="invoice.html">Invoice</a>
-              </li>
-              <li><a href="inbox.html">Inbox</a>
-              </li>
-              <li><a href="calendar.html">Calendar</a>
-              </li>
-            </ul>
-          </li>
-          <li><a><i class="fa fa-table"></i> Tables <span class="fa fa-chevron-down"></span></a>
-            <ul class="nav child_menu" style="display: none">
-              <li><a href="tables.html">Tables</a>
-              </li>
-              <li><a href="tables_dynamic.html">Table Dynamic</a>
-              </li>
-            </ul>
-          </li>
-          <li><a><i class="fa fa-bar-chart-o"></i> Data Presentation <span class="fa fa-chevron-down"></span></a>
-            <ul class="nav child_menu" style="display: none">
-              <li><a href="chartjs.html">Chart JS</a>
-              </li>
-              <li><a href="chartjs2.html">Chart JS2</a>
-              </li>
-              <li><a href="morisjs.html">Moris JS</a>
-              </li>
-              <li><a href="echarts.html">ECharts </a>
-              </li>
-              <li><a href="other_charts.html">Other Charts </a>
-              </li>
-            </ul>
-          </li> -->
         </ul>
       </div>
       <div class="menu_section">
@@ -138,31 +88,25 @@
         <ul class="nav side-menu">
           <li><a><i class="fa fa-bug"></i> 业主管理 <span class="fa fa-chevron-down"></span></a>
             <ul class="nav child_menu" style="display: none">
-              <li><a href="#">业主信息</a>
+              <li><a href="<?php echo U('Admin/Users/index');?>">业主信息</a>
               </li>
-              <li><a href="#">添加业主信息</a>
-              </li>
-              <li><a href="#">更新业主信息</a>
+              <li><a href="<?php echo U('Admin/Users/add');?>">添加业主信息</a>
               </li>
             </ul>
           </li>
           <li><a><i class="fa fa-bug"></i> 物业人员管理 <span class="fa fa-chevron-down"></span></a>
             <ul class="nav child_menu" style="display: none">
-              <li><a href="#">物业人员信息</a>
+              <li><a href="<?php echo U('Admin/Mgrs/index');?>">物业人员信息</a>
               </li>
-              <li><a href="#">添加物业人员信息</a>
-              </li>
-              <li><a href="#">更新物业人员信息</a>
+              <li><a href="<?php echo U('Admin/Mgrs/add');?>">添加物业人员信息</a>
               </li>
             </ul>
           </li>
           <li><a><i class="fa fa-bug"></i> 超级管理员管理 <span class="fa fa-chevron-down"></span></a>
             <ul class="nav child_menu" style="display: none">
-              <li><a href="#">超级管理员信息</a>
+              <li><a href="<?php echo U('Admin/Admin/index');?>">超级管理员信息</a>
               </li>
-              <li><a href="#">添加超级管理员信息</a>
-              </li>
-              <li><a href="#">更新超级管理员信息</a>
+              <li><a href="<?php echo U('Admin/Admin/add');?>">添加超级管理员信息</a>
               </li>
             </ul>
           </li>                          
@@ -287,7 +231,7 @@
     function logout(){
       $.ajax({
         type: "post",
-        url: "/smart_community/index.php/Admin/Access/logout",
+        url: "/smart_community/index.php/Admin/Users/logout",
         data: {
           },
         dataType: "json",
@@ -305,33 +249,114 @@
 
 	
 	<!-- page content -->
-	<div class="right_col" role="main">
-		<div class="col-md-12 col-sm-12 col-xs-12">
-        	<div class="x_panel">
-			    <div class="title">权限列表</div>
-			    <div class="container-fluid">
-			        <form action="" method="post">
-			            <?php if(is_array($data)): foreach($data as $key=>$v): ?><div style="margin:5px;border-bottom:1px dotted #ccc">
-			                    <button type="button" class="btn btn-primary"><?php echo ($v['title']); ?></button>
-			                    <input type="checkbox" name="access[]" class="level1" value="<?php echo ($v['id']); ?>" <?php if(in_array($v['id'], $ids))echo "checked"?>>
-			                    <?php if(is_array($v['child'])): foreach($v['child'] as $key=>$con): ?><div style="margin:5px;border-top:1px solid #555">
-			                            <button type="button" class="btn btn-success"><?php echo ($con['title']); ?></button>
-			                            <input type="checkbox" name="access[]" class="level2" value="<?php echo ($con['id']); ?>" <?php if(in_array($con['id'], $ids))echo "checked"?>>
-			                        </div>
-			                        <div style="margin:5px;">
-			                            <?php if(is_array($con['child'])): foreach($con['child'] as $key=>$act): ?><button type="button" class="btn btn-info" ><?php echo ($act['title']); ?></button>
-			                                <input type="checkbox" name="access[]" class="level3" value="<?php echo ($act['id']); ?>" <?php if(in_array($act['id'], $ids))echo "checked"?>><?php endforeach; endif; ?>
-			                        </div><?php endforeach; endif; ?>
-			                </div><?php endforeach; endif; ?>
-			            <input type="hidden" name="id" value="<?php echo ($id); ?>">
-			            <button style="margin-left:10px" type="submit" class="btn btn-default">保存</button>
-			
-			        </form>
-			    </div>
+<div class="right_col" role="main">
+	<div id="wrapper" style="min-width:900px">
+<!-- 		<div id="register" class="animate form"> -->
+			   <section class="login_content">
+			      <div class="row">
+			        <div class="col-md-12 col-sm-12 col-xs-12">
+			          <div class="x_panel">
+			            <div class="x_content">
+			              <form class="form-horizontal form-label-left" id="register_form" novalidate>
+			                <h1>添加业主信息</h1>
+			                <div class="item form-group">
+			                  <label class="control-label col-md-3 col-sm-3 col-xs-12" for="user_nick_name">用户名 <span class="required">*</span>
+			                  </label>
+			                  <div class="col-md-6 col-sm-6 col-xs-9">
+			                    <input id="user_nick_name" name="user_nick_name" class="form-control col-md-7 col-xs-12" maxlength="10" placeholder="" required="required" type="text">
+			                  </div>
+			                </div>
+			                <div class="item form-group">
+			                  <label class="control-label col-md-3 col-sm-3 col-xs-12" for="user_true_name">真实姓名 <span class="required">*</span>
+			                  </label>
+			                  <div class="col-md-6 col-sm-6 col-xs-9">
+			                    <input id="user_true_name" name="user_true_name" class="form-control col-md-7 col-xs-12" maxlength="10" placeholder="" required="required" type="text">
+			                  </div>
+			                </div>
+			                <div class="item form-group">
+			                  <label class="control-label col-md-3 col-sm-3 col-xs-12" for="user_gender">性别 <span class="required">*</span>
+			                  </label>
+			                  <div class="col-md-6 col-sm-6 col-xs-9" style="text-align:left">
+			                <div id="gender" class="btn-group" data-toggle="buttons">
+			                  <label class="btn btn-default" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+			                    <input type="radio" name="gender" value="1"> &nbsp; 男 &nbsp;
+			                  </label>
+			                  <label class="btn btn-default" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+			                    <input type="radio" name="gender" value="2"> &nbsp; 女 &nbsp;
+			                  </label>
+			                </div>
+			              </div>
+			            </div>                    
+			            <div class="item form-group">
+			              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="user_id_card_num">身份证号 <span class="required">*</span>
+			              </label>
+			              <div class="col-md-6 col-sm-6 col-xs-9">
+			                <input id="user_id_card_num" name="user_id_card_num" class="form-control col-md-7 col-xs-12" maxlength="18" placeholder="" required="required" type="text">
+			              </div>
+			            </div>   
+			            <div class="item form-group">
+			              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="user_pocn">房产证号 <span class="required">*</span>
+			              </label>
+			              <div class="col-md-6 col-sm-6 col-xs-9">
+			                <input id="user_pocn" name="user_pocn" class="form-control col-md-7 col-xs-12" maxlength="18" placeholder="" required="required" type="text">
+			              </div>
+			            </div>                                                                        
+			            <div class="item form-group">
+			              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="email">邮箱地址 <span class="required">*</span>
+			              </label>
+			              <div class="col-md-6 col-sm-6 col-xs-9">
+			                <input type="email" id="email" name="email" required="required" class="form-control col-md-7 col-xs-12">
+			              </div>
+			            </div>
+			            <div class="item form-group">
+			              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="email">确认邮箱地址 <span class="required">*</span>
+			              </label>
+			              <div class="col-md-6 col-sm-6 col-xs-9">
+			                <input type="email" id="email2" name="confirm_email" data-validate-linked="email" required="required" class="form-control col-md-7 col-xs-12">
+			              </div>
+			            </div>
+			            <div class="item form-group">
+			              <label for="password" class="control-label col-md-3 col-sm-3 col-xs-12">密码 <span class="required">*</span>
+			              </label>
+			              <div class="col-md-6 col-sm-6 col-xs-9">
+			                <input id="password" type="password" name="password" data-validate-length="6,8" class="form-control col-md-7 col-xs-12" required="required">
+			              </div>
+			            </div>
+			            <div class="item form-group">
+			              <label for="password2" class="control-label col-md-3 col-sm-3 col-xs-12">再次输入密码 <span class="required">*</span>
+			              </label>
+			              <div class="col-md-6 col-sm-6 col-xs-9">
+			                <input id="password2" type="password" name="password2" data-validate-linked="password" class="form-control col-md-7 col-xs-12" required="required">
+			              </div>
+			            </div>
+			            <div class="item form-group">
+			              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="telephone">手机号 <span class="required">*</span>
+			              </label>
+			              <div class="col-md-6 col-sm-6 col-xs-9">
+			                <input type="tel" id="telephone" name="phone" required="required" data-validate-length-range="8,20" class="form-control col-md-7 col-xs-12">
+			              </div>
+			            </div>
+			            <div class="ln_solid"></div>
+			            <div class="form-group">
+			              <div class="col-md-6 col-md-offset-3">
+			                <button type="reset" class="btn btn-primary">清除</button>
+			                <button id="send" type="submit" class="btn btn-success">提交</button>
+			              </div>
+			            </div>
+			            <div class="clearfix"></div>
+			          </form>
+			        </div>
+			      </div>
+				</div>
 			</div>
-		</div>			    
-	  </div>
-	  	<!-- /page content -->
+			  <!-- form -->
+			</section>
+			<!-- content -->
+<!-- 	      </div> -->
+    </div>
+</div>
+	<!-- /page content -->
+	
 	<!-- footer content -->
 <footer>
   <div class="pull-right">
@@ -431,32 +456,5 @@
 		$('#presentation').addClass('open');
 	})
 </script>
-    <script type="text/javascript">
-        $(function(){
-            $('.level1').click(function(){
-                if($(this).prop('checked')){
-                    $(this).parent().find("input[type='checkbox']").prop('checked',true);
-                }else{
-                    $(this).parent().find("input[type='checkbox']").prop('checked',false);
-                }   
-            })
-            $('.level2').click(function(){
-                if($(this).prop('checked')){
-                    $(this).parent().next().find("input[type='checkbox']").prop('checked',true);
-                }else{
-                   $(this).parent().next().find("input[type='checkbox']").prop('checked',false); 
-                }
-                
-            })
-            $('.level3').click(function(){
-                var is = $(this).prop('checked');
-                if(is){
-                    $(this).prop('checked',true);
-                }else{
-                    $(this).prop('checked',false);
-                }
-            })
-        })
-    </script>
 </body>
 </html>

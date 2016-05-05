@@ -79,58 +79,8 @@
               </li>
               <li><a href="#">办事指南</a>
               </li>
-<!--               <li><a href="form_wizards.html">Form Wizard</a>
-              </li>
-              <li><a href="form_upload.html">Form Upload</a>
-              </li>
-              <li><a href="form_buttons.html">Form Buttons</a>
-              </li> -->
             </ul>
           </li>
-<!--           <li><a><i class="fa fa-desktop"></i> UI Elements <span class="fa fa-chevron-down"></span></a>
-            <ul class="nav child_menu" style="display: none">
-              <li><a href="general_elements.html">General Elements</a>
-              </li>
-              <li><a href="media_gallery.html">Media Gallery</a>
-              </li>
-              <li><a href="typography.html">Typography</a>
-              </li>
-              <li><a href="icons.html">Icons</a>
-              </li>
-              <li><a href="glyphicons.html">Glyphicons</a>
-              </li>
-              <li><a href="widgets.html">Widgets</a>
-              </li>
-              <li><a href="invoice.html">Invoice</a>
-              </li>
-              <li><a href="inbox.html">Inbox</a>
-              </li>
-              <li><a href="calendar.html">Calendar</a>
-              </li>
-            </ul>
-          </li>
-          <li><a><i class="fa fa-table"></i> Tables <span class="fa fa-chevron-down"></span></a>
-            <ul class="nav child_menu" style="display: none">
-              <li><a href="tables.html">Tables</a>
-              </li>
-              <li><a href="tables_dynamic.html">Table Dynamic</a>
-              </li>
-            </ul>
-          </li>
-          <li><a><i class="fa fa-bar-chart-o"></i> Data Presentation <span class="fa fa-chevron-down"></span></a>
-            <ul class="nav child_menu" style="display: none">
-              <li><a href="chartjs.html">Chart JS</a>
-              </li>
-              <li><a href="chartjs2.html">Chart JS2</a>
-              </li>
-              <li><a href="morisjs.html">Moris JS</a>
-              </li>
-              <li><a href="echarts.html">ECharts </a>
-              </li>
-              <li><a href="other_charts.html">Other Charts </a>
-              </li>
-            </ul>
-          </li> -->
         </ul>
       </div>
       <div class="menu_section">
@@ -138,31 +88,25 @@
         <ul class="nav side-menu">
           <li><a><i class="fa fa-bug"></i> 业主管理 <span class="fa fa-chevron-down"></span></a>
             <ul class="nav child_menu" style="display: none">
-              <li><a href="#">业主信息</a>
+              <li><a href="<?php echo U('Admin/Users/index');?>">业主信息</a>
               </li>
-              <li><a href="#">添加业主信息</a>
-              </li>
-              <li><a href="#">更新业主信息</a>
+              <li><a href="<?php echo U('Admin/Users/add');?>">添加业主信息</a>
               </li>
             </ul>
           </li>
           <li><a><i class="fa fa-bug"></i> 物业人员管理 <span class="fa fa-chevron-down"></span></a>
             <ul class="nav child_menu" style="display: none">
-              <li><a href="#">物业人员信息</a>
+              <li><a href="<?php echo U('Admin/Mgrs/index');?>">物业人员信息</a>
               </li>
-              <li><a href="#">添加物业人员信息</a>
-              </li>
-              <li><a href="#">更新物业人员信息</a>
+              <li><a href="<?php echo U('Admin/Mgrs/add');?>">添加物业人员信息</a>
               </li>
             </ul>
           </li>
           <li><a><i class="fa fa-bug"></i> 超级管理员管理 <span class="fa fa-chevron-down"></span></a>
             <ul class="nav child_menu" style="display: none">
-              <li><a href="#">超级管理员信息</a>
+              <li><a href="<?php echo U('Admin/Admin/index');?>">超级管理员信息</a>
               </li>
-              <li><a href="#">添加超级管理员信息</a>
-              </li>
-              <li><a href="#">更新超级管理员信息</a>
+              <li><a href="<?php echo U('Admin/Admin/add');?>">添加超级管理员信息</a>
               </li>
             </ul>
           </li>                          
@@ -311,8 +255,8 @@
 				<div class="title">
 					<a class="btn btn-default" href="<?php echo U('Admin/Access/add_node');?>" >添加节点</a>
 				</div>
-				<div class="container-fluid">
-					<?php if(is_array($data)): foreach($data as $key=>$v): ?><div style="margin:5px;border-bottom:1px dotted #ccc">
+				<div id="node_list" class="container-fluid">
+<!-- 					<?php if(is_array($data)): foreach($data as $key=>$v): ?><div style="margin:5px;border-bottom:1px dotted #ccc">
 							<button type="button" class="btn btn-primary"><?php echo ($v['title']); ?></button>
 							<a href="<?php echo U('Admin/Access/add_node',array('pid'=>$v['id'],'level'=>$v['level'] + 1));?>">添加</a>
 							<a href="<?php echo U('Admin/Access/del_node',array('id'=>$v['id']));?>">删除</a>
@@ -325,8 +269,7 @@
 							<div style="margin:5px;">
 								<?php if(is_array($con['child'])): foreach($con['child'] as $key=>$act): ?><button type="button" class="btn btn-info" ><?php echo ($act['title']); ?></button>
 									<a style="margin-right:10px" href="<?php echo U('Admin/Access/del_node',array('id'=>$act['id']));?>">删除</a><?php endforeach; endif; ?>
-							</div><?php endforeach; endif; endforeach; endif; ?>
-					
+							</div><?php endforeach; endif; endforeach; endif; ?> -->
 				</div>
 			</div>
 		</div>		
@@ -431,5 +374,33 @@
 		$('#presentation').addClass('open');
 	})
 </script>
+	<script type="text/javascript">
+		window.onload = function(){
+	    	$.ajax({
+	            type: "post",
+	            url: "/smart_community/index.php/Admin/Access/node",
+	            data: {
+	            	access_token : getCookie('access_token'),
+	            },
+	            dataType: "json",
+	            success: function(data) {
+	            	if(data['code'] == 200){
+	            		//测试
+	            		alert(data['data']);
+	            		
+		            	$('#node_list').append(data['data']);
+	            	}
+	            	if(data['code'] == '-205' || data['code'] == '-208'){
+		            		alert(data['info']);
+	            		location.href = 'http://' + data['data']['redirect_url'];	            		
+	            	}
+	            },
+	            error: function(xhr, type, errorThrown) {
+	              //异常处理
+	              console.log(type);
+	            }
+	          }); 			
+		}
+	</script>
 </body>
 </html>

@@ -1,0 +1,2471 @@
+[ 2016-05-05T16:31:01+08:00 ] ::1 /smart_community/index.php/Admin/Mgrs/approved_mgrs
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000291s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000500s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000589s ]
+NOTIC: [2048] Declaration of Admin\Controller\MgrsController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/MgrsController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `sc_mgrs` [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sc_mgrs` WHERE ( if_aprvd='1' ) LIMIT 1   [ RunTime:0.0003s ]
+ERR: 1054:Unknown column 'h_pocn' in 'field list'
+ [ SQL语句 ] : SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`h_pocn`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_mgrs` WHERE ( if_aprvd='1' ) LIMIT 0,5  
+ERR: 1054:Unknown column 'h_pocn' in 'field list'
+ [ SQL语句 ] : SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`h_pocn`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_mgrs` WHERE ( if_aprvd='1' ) LIMIT 0,5  
+
+[ 2016-05-05T16:31:01+08:00 ] ::1 /smart_community/index.php/Admin/Mgrs/pending_mgrs
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000279s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000603s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000707s ]
+NOTIC: [2048] Declaration of Admin\Controller\MgrsController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/MgrsController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `sc_mgrs` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sc_mgrs` WHERE ( if_aprvd='0' ) LIMIT 1   [ RunTime:0.0002s ]
+ERR: 1054:Unknown column 'h_pocn' in 'field list'
+ [ SQL语句 ] : SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`h_pocn`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_mgrs` WHERE ( if_aprvd='0' ) LIMIT 0,5  
+ERR: 1054:Unknown column 'h_pocn' in 'field list'
+ [ SQL语句 ] : SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`h_pocn`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_mgrs` WHERE ( if_aprvd='0' ) LIMIT 0,5  
+
+[ 2016-05-05T16:33:20+08:00 ] ::1 /smart_community/index.php/Admin/Mgrs/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000057s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001251s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000837s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000957s ]
+NOTIC: [2048] Declaration of Admin\Controller\MgrsController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/MgrsController.class.php 第 4 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000306s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000490s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.275974s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.276162s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.015221s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.031246s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.046724s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.035704s ]
+INFO: [ app_end ] --END-- [ RunTime:0.035904s ]
+
+[ 2016-05-05T16:33:21+08:00 ] ::1 /smart_community/index.php/Admin/Mgrs/approved_mgrs
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000499s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000477s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000577s ]
+NOTIC: [2048] Declaration of Admin\Controller\MgrsController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/MgrsController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `sc_mgrs` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sc_mgrs` WHERE ( if_aprvd='1' ) LIMIT 1   [ RunTime:0.0003s ]
+ERR: 1054:Unknown column 'h_pocn' in 'field list'
+ [ SQL语句 ] : SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`h_pocn`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_mgrs` WHERE ( if_aprvd='1' ) LIMIT 0,5  
+ERR: 1054:Unknown column 'h_pocn' in 'field list'
+ [ SQL语句 ] : SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`h_pocn`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_mgrs` WHERE ( if_aprvd='1' ) LIMIT 0,5  
+
+[ 2016-05-05T16:33:21+08:00 ] ::1 /smart_community/index.php/Admin/Mgrs/pending_mgrs
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000380s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000384s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000472s ]
+NOTIC: [2048] Declaration of Admin\Controller\MgrsController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/MgrsController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `sc_mgrs` [ RunTime:0.0018s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sc_mgrs` WHERE ( if_aprvd='0' ) LIMIT 1   [ RunTime:0.0005s ]
+ERR: 1054:Unknown column 'h_pocn' in 'field list'
+ [ SQL语句 ] : SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`h_pocn`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_mgrs` WHERE ( if_aprvd='0' ) LIMIT 0,5  
+ERR: 1054:Unknown column 'h_pocn' in 'field list'
+ [ SQL语句 ] : SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`h_pocn`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_mgrs` WHERE ( if_aprvd='0' ) LIMIT 0,5  
+
+[ 2016-05-05T16:33:25+08:00 ] ::1 /smart_community/index.php/Admin/Mgrs/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000296s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000316s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000418s ]
+NOTIC: [2048] Declaration of Admin\Controller\MgrsController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/MgrsController.class.php 第 4 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000111s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000205s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012223s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012302s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000130s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000430s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000674s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000540s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000721s ]
+
+[ 2016-05-05T16:33:25+08:00 ] ::1 /smart_community/index.php/Admin/Mgrs/approved_mgrs
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000374s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000474s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000588s ]
+NOTIC: [2048] Declaration of Admin\Controller\MgrsController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/MgrsController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `sc_mgrs` [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sc_mgrs` WHERE ( if_aprvd='1' ) LIMIT 1   [ RunTime:0.0003s ]
+ERR: 1054:Unknown column 'h_pocn' in 'field list'
+ [ SQL语句 ] : SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`h_pocn`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_mgrs` WHERE ( if_aprvd='1' ) LIMIT 0,5  
+ERR: 1054:Unknown column 'h_pocn' in 'field list'
+ [ SQL语句 ] : SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`h_pocn`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_mgrs` WHERE ( if_aprvd='1' ) LIMIT 0,5  
+
+[ 2016-05-05T16:33:27+08:00 ] ::1 /smart_community/index.php/Admin/Mgrs/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000364s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000289s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000366s ]
+NOTIC: [2048] Declaration of Admin\Controller\MgrsController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/MgrsController.class.php 第 4 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000111s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000204s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011478s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011562s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000124s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000426s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000662s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000379s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000483s ]
+
+[ 2016-05-05T16:33:27+08:00 ] ::1 /smart_community/index.php/Admin/Mgrs/approved_mgrs
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000320s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000298s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000364s ]
+NOTIC: [2048] Declaration of Admin\Controller\MgrsController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/MgrsController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `sc_mgrs` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sc_mgrs` WHERE ( if_aprvd='1' ) LIMIT 1   [ RunTime:0.0002s ]
+ERR: 1054:Unknown column 'h_pocn' in 'field list'
+ [ SQL语句 ] : SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`h_pocn`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_mgrs` WHERE ( if_aprvd='1' ) LIMIT 0,5  
+ERR: 1054:Unknown column 'h_pocn' in 'field list'
+ [ SQL语句 ] : SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`h_pocn`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_mgrs` WHERE ( if_aprvd='1' ) LIMIT 0,5  
+
+[ 2016-05-05T16:33:30+08:00 ] ::1 /smart_community/index.php/Admin/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000268s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000284s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000376s ]
+NOTIC: [2048] Declaration of Admin\Controller\IndexController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/IndexController.class.php 第 4 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000111s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000220s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.101212s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.101343s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000340s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000622s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001150s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000684s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000874s ]
+
+[ 2016-05-05T16:33:38+08:00 ] ::1 /smart_community/index.php/Admin/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000384s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000329s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000416s ]
+NOTIC: [2048] Declaration of Admin\Controller\IndexController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/IndexController.class.php 第 4 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000111s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000232s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009555s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009634s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000142s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000375s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000627s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000453s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000618s ]
+
+[ 2016-05-05T16:33:46+08:00 ] ::1 /smart_community/index.php/Admin/Users/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000393s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000471s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000559s ]
+NOTIC: [2048] Declaration of Admin\Controller\UsersController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/UsersController.class.php 第 4 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000240s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000350s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.058642s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.058774s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000230s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000830s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001228s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000823s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000990s ]
+
+[ 2016-05-05T16:33:47+08:00 ] ::1 /smart_community/index.php/Admin/Users/approved_users
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000417s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000871s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001088s ]
+NOTIC: [2048] Declaration of Admin\Controller\UsersController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/UsersController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sc_users` WHERE ( if_aprvd='1' ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`h_pocn`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_users` WHERE ( if_aprvd='1' ) LIMIT 0,7   [ RunTime:0.0005s ]
+
+[ 2016-05-05T16:33:50+08:00 ] ::1 /smart_community/index.php/Admin/Mgrs/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000273s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000312s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000389s ]
+NOTIC: [2048] Declaration of Admin\Controller\MgrsController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/MgrsController.class.php 第 4 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000124s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000233s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.070177s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.070294s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000208s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000641s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001019s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000574s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000788s ]
+
+[ 2016-05-05T16:33:51+08:00 ] ::1 /smart_community/index.php/Admin/Mgrs/approved_mgrs
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000771s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000601s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000769s ]
+NOTIC: [2048] Declaration of Admin\Controller\MgrsController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/MgrsController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `sc_mgrs` [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sc_mgrs` WHERE ( if_aprvd='1' ) LIMIT 1   [ RunTime:0.0003s ]
+ERR: 1054:Unknown column 'h_pocn' in 'field list'
+ [ SQL语句 ] : SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`h_pocn`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_mgrs` WHERE ( if_aprvd='1' ) LIMIT 0,5  
+ERR: 1054:Unknown column 'h_pocn' in 'field list'
+ [ SQL语句 ] : SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`h_pocn`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_mgrs` WHERE ( if_aprvd='1' ) LIMIT 0,5  
+
+[ 2016-05-05T16:33:55+08:00 ] ::1 /smart_community/index.php/Admin/Mgrs/pending_mgrs
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000101s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000559s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000477s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000614s ]
+NOTIC: [2048] Declaration of Admin\Controller\MgrsController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/MgrsController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `sc_mgrs` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sc_mgrs` WHERE ( if_aprvd='0' ) LIMIT 1   [ RunTime:0.0002s ]
+ERR: 1054:Unknown column 'h_pocn' in 'field list'
+ [ SQL语句 ] : SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`h_pocn`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_mgrs` WHERE ( if_aprvd='0' ) LIMIT 0,5  
+ERR: 1054:Unknown column 'h_pocn' in 'field list'
+ [ SQL语句 ] : SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`h_pocn`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_mgrs` WHERE ( if_aprvd='0' ) LIMIT 0,5  
+
+[ 2016-05-05T16:44:38+08:00 ] ::1 /smart_community/index.php/Admin/Mgrs/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000806s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.016222s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.016384s ]
+NOTIC: [2048] Declaration of Admin\Controller\MgrsController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/MgrsController.class.php 第 4 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000200s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000309s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.086258s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.086370s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000824s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.028034s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.029127s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000928s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001092s ]
+
+[ 2016-05-05T16:44:38+08:00 ] ::1 /smart_community/index.php/Admin/Mgrs/approved_mgrs
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000299s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000306s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000378s ]
+NOTIC: [2048] Declaration of Admin\Controller\MgrsController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/MgrsController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `sc_mgrs` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sc_mgrs` WHERE ( if_aprvd='1' ) LIMIT 1   [ RunTime:0.0003s ]
+ERR: 1054:Unknown column 'h_pocn' in 'field list'
+ [ SQL语句 ] : SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`h_pocn`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_mgrs` WHERE ( if_aprvd='1' ) LIMIT 0,5  
+ERR: 1054:Unknown column 'h_pocn' in 'field list'
+ [ SQL语句 ] : SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`h_pocn`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_mgrs` WHERE ( if_aprvd='1' ) LIMIT 0,5  
+
+[ 2016-05-05T16:44:41+08:00 ] ::1 /smart_community/index.php/Admin/Mgrs/pending_mgrs
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000075s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000637s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000783s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000962s ]
+NOTIC: [2048] Declaration of Admin\Controller\MgrsController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/MgrsController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `sc_mgrs` [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sc_mgrs` WHERE ( if_aprvd='0' ) LIMIT 1   [ RunTime:0.0005s ]
+ERR: 1054:Unknown column 'h_pocn' in 'field list'
+ [ SQL语句 ] : SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`h_pocn`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_mgrs` WHERE ( if_aprvd='0' ) LIMIT 0,5  
+ERR: 1054:Unknown column 'h_pocn' in 'field list'
+ [ SQL语句 ] : SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`h_pocn`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_mgrs` WHERE ( if_aprvd='0' ) LIMIT 0,5  
+
+[ 2016-05-05T16:45:04+08:00 ] ::1 /smart_community/index.php/Admin/Mgrs/pending_mgrs
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000683s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000643s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000761s ]
+NOTIC: [2048] Declaration of Admin\Controller\MgrsController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/MgrsController.class.php 第 4 行.
+
+[ 2016-05-05T16:45:17+08:00 ] ::1 /smart_community/index.php/Admin/Users/pending_mgrs
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000275s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000285s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000361s ]
+NOTIC: [2048] Declaration of Admin\Controller\UsersController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/UsersController.class.php 第 4 行.
+
+[ 2016-05-05T16:45:25+08:00 ] ::1 /smart_community/index.php/Admin/Users/pending_users
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000442s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000422s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000536s ]
+NOTIC: [2048] Declaration of Admin\Controller\UsersController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/UsersController.class.php 第 4 行.
+
+[ 2016-05-05T16:51:10+08:00 ] ::1 /smart_community/index.php/Admin/Mgrs/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000041s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001037s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000849s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000975s ]
+NOTIC: [2048] Declaration of Admin\Controller\MgrsController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/MgrsController.class.php 第 4 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000229s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000335s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.076203s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.076369s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000477s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.037763s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.038445s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000639s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000759s ]
+
+[ 2016-05-05T16:51:10+08:00 ] ::1 /smart_community/index.php/Admin/Mgrs/approved_mgrs
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000317s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000340s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000425s ]
+NOTIC: [2048] Declaration of Admin\Controller\MgrsController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/MgrsController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `sc_mgrs` [ RunTime:0.0013s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sc_mgrs` WHERE ( if_aprvd='1' ) LIMIT 1   [ RunTime:0.0005s ]
+ERR: 1054:Unknown column 'h_pocn' in 'field list'
+ [ SQL语句 ] : SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`h_pocn`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_mgrs` WHERE ( if_aprvd='1' ) LIMIT 0,5  
+ERR: 1054:Unknown column 'h_pocn' in 'field list'
+ [ SQL语句 ] : SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`h_pocn`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_mgrs` WHERE ( if_aprvd='1' ) LIMIT 0,5  
+
+[ 2016-05-05T16:51:17+08:00 ] ::1 /smart_community/index.php/Admin/Mgrs/index_list.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000310s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000297s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000378s ]
+NOTIC: [2048] Declaration of Admin\Controller\MgrsController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/MgrsController.class.php 第 4 行.
+
+[ 2016-05-05T16:51:39+08:00 ] ::1 /smart_community/index.php/Admin/Mgrs/approved_mgrs
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003059s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000650s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000745s ]
+NOTIC: [2048] Declaration of Admin\Controller\MgrsController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/MgrsController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `sc_mgrs` [ RunTime:0.0014s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sc_mgrs` WHERE ( if_aprvd='1' ) LIMIT 1   [ RunTime:0.0004s ]
+ERR: 1054:Unknown column 'h_pocn' in 'field list'
+ [ SQL语句 ] : SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`h_pocn`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_mgrs` WHERE ( if_aprvd='1' ) LIMIT 0,5  
+ERR: 1054:Unknown column 'h_pocn' in 'field list'
+ [ SQL语句 ] : SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`h_pocn`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_mgrs` WHERE ( if_aprvd='1' ) LIMIT 0,5  
+
+[ 2016-05-05T16:51:39+08:00 ] ::1 /smart_community/index.php/Admin/Mgrs/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000323s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000452s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000565s ]
+NOTIC: [2048] Declaration of Admin\Controller\MgrsController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/MgrsController.class.php 第 4 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000140s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000251s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.080706s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.080821s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000494s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.027113s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.027779s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.035302s ]
+INFO: [ app_end ] --END-- [ RunTime:0.035491s ]
+
+[ 2016-05-05T16:51:39+08:00 ] ::1 /smart_community/index.php/Admin/Mgrs/approved_mgrs
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000044s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000615s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000635s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000794s ]
+NOTIC: [2048] Declaration of Admin\Controller\MgrsController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/MgrsController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `sc_mgrs` [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sc_mgrs` WHERE ( if_aprvd='1' ) LIMIT 1   [ RunTime:0.0002s ]
+ERR: 1054:Unknown column 'h_pocn' in 'field list'
+ [ SQL语句 ] : SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`h_pocn`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_mgrs` WHERE ( if_aprvd='1' ) LIMIT 0,5  
+ERR: 1054:Unknown column 'h_pocn' in 'field list'
+ [ SQL语句 ] : SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`h_pocn`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_mgrs` WHERE ( if_aprvd='1' ) LIMIT 0,5  
+
+[ 2016-05-05T16:51:42+08:00 ] ::1 /smart_community/index.php/Admin/Admin/index_list.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000316s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000287s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000367s ]
+NOTIC: [2048] Declaration of Admin\Controller\AdminController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/AdminController.class.php 第 5 行.
+
+[ 2016-05-05T16:52:01+08:00 ] ::1 /smart_community/index.php/Admin/Admin/index_list.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000050s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000736s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000731s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000862s ]
+NOTIC: [2048] Declaration of Admin\Controller\AdminController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/AdminController.class.php 第 5 行.
+
+[ 2016-05-05T16:52:16+08:00 ] ::1 /smart_community/index.php/Admin/Mgrs/approved_mgrs
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000527s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000502s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000584s ]
+NOTIC: [2048] Declaration of Admin\Controller\MgrsController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/MgrsController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `sc_mgrs` [ RunTime:0.0012s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sc_mgrs` WHERE ( if_aprvd='1' ) LIMIT 1   [ RunTime:0.0007s ]
+ERR: 1054:Unknown column 'h_pocn' in 'field list'
+ [ SQL语句 ] : SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`h_pocn`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_mgrs` WHERE ( if_aprvd='1' ) LIMIT 0,5  
+ERR: 1054:Unknown column 'h_pocn' in 'field list'
+ [ SQL语句 ] : SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`h_pocn`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_mgrs` WHERE ( if_aprvd='1' ) LIMIT 0,5  
+
+[ 2016-05-05T16:52:16+08:00 ] ::1 /smart_community/index.php/Admin/Mgrs/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000327s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000295s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000372s ]
+NOTIC: [2048] Declaration of Admin\Controller\MgrsController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/MgrsController.class.php 第 4 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000133s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000233s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.125650s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.125746s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.028527s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.007983s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.036838s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000862s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001005s ]
+
+[ 2016-05-05T16:52:16+08:00 ] ::1 /smart_community/index.php/Admin/Mgrs/approved_mgrs
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000285s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001448s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000876s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001053s ]
+NOTIC: [2048] Declaration of Admin\Controller\MgrsController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/MgrsController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `sc_mgrs` [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sc_mgrs` WHERE ( if_aprvd='1' ) LIMIT 1   [ RunTime:0.0004s ]
+ERR: 1054:Unknown column 'h_pocn' in 'field list'
+ [ SQL语句 ] : SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`h_pocn`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_mgrs` WHERE ( if_aprvd='1' ) LIMIT 0,5  
+ERR: 1054:Unknown column 'h_pocn' in 'field list'
+ [ SQL语句 ] : SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`h_pocn`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_mgrs` WHERE ( if_aprvd='1' ) LIMIT 0,5  
+
+[ 2016-05-05T16:52:18+08:00 ] ::1 /smart_community/index.php/Admin/Admin/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000297s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000325s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000413s ]
+NOTIC: [2048] Declaration of Admin\Controller\AdminController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/AdminController.class.php 第 5 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000151s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000266s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.062269s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.062388s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000199s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000525s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000852s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000426s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000581s ]
+
+[ 2016-05-05T16:52:19+08:00 ] ::1 /smart_community/index.php/Admin/Admin/index_list
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000282s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000282s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000348s ]
+NOTIC: [2048] Declaration of Admin\Controller\AdminController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/AdminController.class.php 第 5 行.
+SQL: SHOW COLUMNS FROM `sc_admin` [ RunTime:0.0011s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sc_admin` LIMIT 1   [ RunTime:0.0266s ]
+SQL: SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_admin` LIMIT 0,5   [ RunTime:0.0004s ]
+
+[ 2016-05-05T16:52:20+08:00 ] ::1 /smart_community/index.php/Admin/Admin/pending_mgrs
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000046s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000524s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000484s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000595s ]
+NOTIC: [2048] Declaration of Admin\Controller\AdminController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/AdminController.class.php 第 5 行.
+
+[ 2016-05-05T16:53:52+08:00 ] ::1 /smart_community/index.php/Admin/Admin/index_list
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000051s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000864s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001016s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001233s ]
+NOTIC: [2048] Declaration of Admin\Controller\AdminController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/AdminController.class.php 第 5 行.
+SQL: SHOW COLUMNS FROM `sc_admin` [ RunTime:0.0105s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sc_admin` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_admin` LIMIT 0,5   [ RunTime:0.0005s ]
+
+[ 2016-05-05T16:53:53+08:00 ] ::1 /smart_community/index.php/Admin/Admin/index_list
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000275s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000282s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000348s ]
+NOTIC: [2048] Declaration of Admin\Controller\AdminController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/AdminController.class.php 第 5 行.
+SQL: SHOW COLUMNS FROM `sc_admin` [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sc_admin` LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_admin` LIMIT 0,5   [ RunTime:0.0006s ]
+
+[ 2016-05-05T16:53:54+08:00 ] ::1 /smart_community/index.php/Admin/Admin/index_list
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000048s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000616s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000694s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000938s ]
+NOTIC: [2048] Declaration of Admin\Controller\AdminController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/AdminController.class.php 第 5 行.
+SQL: SHOW COLUMNS FROM `sc_admin` [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sc_admin` LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_admin` LIMIT 0,5   [ RunTime:0.0005s ]
+
+[ 2016-05-05T16:53:56+08:00 ] ::1 /smart_community/index.php/Admin/Admin/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000275s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000287s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000364s ]
+NOTIC: [2048] Declaration of Admin\Controller\AdminController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/AdminController.class.php 第 5 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000142s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000248s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.156672s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.156807s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.041271s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.008141s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.049810s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.016465s ]
+INFO: [ app_end ] --END-- [ RunTime:0.016589s ]
+
+[ 2016-05-05T16:53:56+08:00 ] ::1 /smart_community/index.php/Admin/Admin/index_list
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000569s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000447s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000589s ]
+NOTIC: [2048] Declaration of Admin\Controller\AdminController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/AdminController.class.php 第 5 行.
+SQL: SHOW COLUMNS FROM `sc_admin` [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sc_admin` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_admin` LIMIT 0,5   [ RunTime:0.0007s ]
+
+[ 2016-05-05T16:54:06+08:00 ] ::1 /smart_community/index.php/Admin/Admin/index_list
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000655s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000407s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000498s ]
+NOTIC: [2048] Declaration of Admin\Controller\AdminController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/AdminController.class.php 第 5 行.
+SQL: SHOW COLUMNS FROM `sc_admin` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sc_admin` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_admin` LIMIT 0,5   [ RunTime:0.0004s ]
+
+[ 2016-05-05T16:54:08+08:00 ] ::1 /smart_community/index.php/Admin/Mgrs/approved_mgrs
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000317s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000672s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000817s ]
+NOTIC: [2048] Declaration of Admin\Controller\MgrsController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/MgrsController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `sc_mgrs` [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sc_mgrs` WHERE ( if_aprvd='1' ) LIMIT 1   [ RunTime:0.0005s ]
+ERR: 1054:Unknown column 'h_pocn' in 'field list'
+ [ SQL语句 ] : SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`h_pocn`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_mgrs` WHERE ( if_aprvd='1' ) LIMIT 0,5  
+ERR: 1054:Unknown column 'h_pocn' in 'field list'
+ [ SQL语句 ] : SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`h_pocn`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_mgrs` WHERE ( if_aprvd='1' ) LIMIT 0,5  
+
+[ 2016-05-05T16:54:09+08:00 ] ::1 /smart_community/index.php/Admin/Mgrs/pending_mgrs
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000376s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000639s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000815s ]
+NOTIC: [2048] Declaration of Admin\Controller\MgrsController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/MgrsController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `sc_mgrs` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sc_mgrs` WHERE ( if_aprvd='0' ) LIMIT 1   [ RunTime:0.0002s ]
+ERR: 1054:Unknown column 'h_pocn' in 'field list'
+ [ SQL语句 ] : SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`h_pocn`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_mgrs` WHERE ( if_aprvd='0' ) LIMIT 0,5  
+ERR: 1054:Unknown column 'h_pocn' in 'field list'
+ [ SQL语句 ] : SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`h_pocn`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_mgrs` WHERE ( if_aprvd='0' ) LIMIT 0,5  
+
+[ 2016-05-05T16:54:13+08:00 ] ::1 /smart_community/index.php/Admin/Admin/index_list
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000050s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000715s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000478s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000601s ]
+NOTIC: [2048] Declaration of Admin\Controller\AdminController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/AdminController.class.php 第 5 行.
+SQL: SHOW COLUMNS FROM `sc_admin` [ RunTime:0.0011s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sc_admin` LIMIT 1   [ RunTime:0.0014s ]
+SQL: SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_admin` LIMIT 0,5   [ RunTime:0.0007s ]
+
+[ 2016-05-05T16:56:49+08:00 ] ::1 /smart_community/index.php/Admin/Admin/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015973s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000807s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000922s ]
+NOTIC: [2048] Declaration of Admin\Controller\AdminController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/AdminController.class.php 第 5 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000211s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000319s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.131024s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.131195s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.028559s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.008094s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.036967s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.016468s ]
+INFO: [ app_end ] --END-- [ RunTime:0.016713s ]
+
+[ 2016-05-05T16:56:50+08:00 ] ::1 /smart_community/index.php/Admin/Admin/index_list
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000401s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000647s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000845s ]
+NOTIC: [2048] Declaration of Admin\Controller\AdminController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/AdminController.class.php 第 5 行.
+SQL: SHOW COLUMNS FROM `sc_admin` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sc_admin` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_admin` LIMIT 0,5   [ RunTime:0.0006s ]
+
+[ 2016-05-05T16:56:51+08:00 ] ::1 /smart_community/index.php/Admin/Admin/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000327s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000316s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000397s ]
+NOTIC: [2048] Declaration of Admin\Controller\AdminController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/AdminController.class.php 第 5 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000122s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000218s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012216s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012306s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000132s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000446s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000692s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000444s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000547s ]
+
+[ 2016-05-05T16:56:52+08:00 ] ::1 /smart_community/index.php/Admin/Admin/index_list
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000520s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000370s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000473s ]
+NOTIC: [2048] Declaration of Admin\Controller\AdminController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/AdminController.class.php 第 5 行.
+SQL: SHOW COLUMNS FROM `sc_admin` [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sc_admin` LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_admin` LIMIT 0,5   [ RunTime:0.0004s ]
+
+[ 2016-05-05T16:56:57+08:00 ] ::1 /smart_community/index.php/Admin/Admin/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000274s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000291s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000368s ]
+NOTIC: [2048] Declaration of Admin\Controller\AdminController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/AdminController.class.php 第 5 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000230s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000397s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012761s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012874s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000230s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000502s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000859s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000630s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000754s ]
+
+[ 2016-05-05T16:56:57+08:00 ] ::1 /smart_community/index.php/Admin/Admin/index_list
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000042s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000617s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000382s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000474s ]
+NOTIC: [2048] Declaration of Admin\Controller\AdminController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/AdminController.class.php 第 5 行.
+SQL: SHOW COLUMNS FROM `sc_admin` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sc_admin` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_admin` LIMIT 0,5   [ RunTime:0.0006s ]
+
+[ 2016-05-05T16:57:01+08:00 ] ::1 /smart_community/index.php/Admin/Mgrs/approved_mgrs
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000349s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000294s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000361s ]
+NOTIC: [2048] Declaration of Admin\Controller\MgrsController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/MgrsController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `sc_mgrs` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sc_mgrs` WHERE ( if_aprvd='1' ) LIMIT 1   [ RunTime:0.0004s ]
+ERR: 1054:Unknown column 'h_pocn' in 'field list'
+ [ SQL语句 ] : SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`h_pocn`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_mgrs` WHERE ( if_aprvd='1' ) LIMIT 0,5  
+ERR: 1054:Unknown column 'h_pocn' in 'field list'
+ [ SQL语句 ] : SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`h_pocn`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_mgrs` WHERE ( if_aprvd='1' ) LIMIT 0,5  
+
+[ 2016-05-05T16:57:05+08:00 ] ::1 /smart_community/index.php/Admin/Users/approved_users
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000409s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000736s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000876s ]
+NOTIC: [2048] Declaration of Admin\Controller\UsersController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/UsersController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sc_users` WHERE ( if_aprvd='1' ) LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`h_pocn`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_users` WHERE ( if_aprvd='1' ) LIMIT 0,7   [ RunTime:0.0005s ]
+
+[ 2016-05-05T16:57:07+08:00 ] ::1 /smart_community/index.php/Admin/Users/pending_users
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000321s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000391s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000476s ]
+NOTIC: [2048] Declaration of Admin\Controller\UsersController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/UsersController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sc_users` WHERE ( if_aprvd='0' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`h_pocn`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_users` WHERE ( if_aprvd='0' ) LIMIT 0,5   [ RunTime:0.0003s ]
+
+[ 2016-05-05T16:57:10+08:00 ] ::1 /smart_community/index.php/Admin/Users/edit/role/users/user_id/00000041/username/456456/role_id/undefined.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000275s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000335s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000428s ]
+NOTIC: [2048] Declaration of Admin\Controller\UsersController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/UsersController.class.php 第 4 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000060s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000150s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024624s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024725s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000150s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000269s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000534s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000316s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000389s ]
+
+[ 2016-05-05T16:57:16+08:00 ] ::1 /smart_community/index.php/Admin/Users/approved_users
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000469s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000565s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000705s ]
+NOTIC: [2048] Declaration of Admin\Controller\UsersController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/UsersController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sc_users` WHERE ( if_aprvd='1' ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`h_pocn`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_users` WHERE ( if_aprvd='1' ) LIMIT 0,7   [ RunTime:0.0005s ]
+
+[ 2016-05-05T16:57:18+08:00 ] ::1 /smart_community/index.php/Admin/Users/edit/role/users/user_id/00000027/username/admin/role_id/undefined.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000347s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000478s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000605s ]
+NOTIC: [2048] Declaration of Admin\Controller\UsersController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/UsersController.class.php 第 4 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000057s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000143s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004064s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004153s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000126s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000367s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000612s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000361s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000440s ]
+
+[ 2016-05-05T16:57:20+08:00 ] ::1 /smart_community/index.php/Admin/Users/approved_users
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000456s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000791s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000889s ]
+NOTIC: [2048] Declaration of Admin\Controller\UsersController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/UsersController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sc_users` WHERE ( if_aprvd='1' ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`h_pocn`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_users` WHERE ( if_aprvd='1' ) LIMIT 0,7   [ RunTime:0.0006s ]
+
+[ 2016-05-05T16:57:22+08:00 ] ::1 /smart_community/index.php/Admin/Users/approved_users
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000336s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000466s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000608s ]
+NOTIC: [2048] Declaration of Admin\Controller\UsersController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/UsersController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sc_users` WHERE ( if_aprvd='1' ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`h_pocn`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_users` WHERE ( if_aprvd='1' ) LIMIT 0,7   [ RunTime:0.0004s ]
+
+[ 2016-05-05T16:57:23+08:00 ] ::1 /smart_community/index.php/Admin/Users/pending_users
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000348s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000369s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000498s ]
+NOTIC: [2048] Declaration of Admin\Controller\UsersController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/UsersController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sc_users` WHERE ( if_aprvd='0' ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`h_pocn`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_users` WHERE ( if_aprvd='0' ) LIMIT 0,5   [ RunTime:0.0003s ]
+
+[ 2016-05-05T16:57:26+08:00 ] ::1 /smart_community/index.php/Admin/Users/approved_users
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000275s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000351s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000417s ]
+NOTIC: [2048] Declaration of Admin\Controller\UsersController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/UsersController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sc_users` WHERE ( if_aprvd='1' ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`h_pocn`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_users` WHERE ( if_aprvd='1' ) LIMIT 0,7   [ RunTime:0.0006s ]
+
+[ 2016-05-05T16:57:27+08:00 ] ::1 /smart_community/index.php/Admin/Users/pending_users
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000333s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000377s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000472s ]
+NOTIC: [2048] Declaration of Admin\Controller\UsersController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/UsersController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sc_users` WHERE ( if_aprvd='0' ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`h_pocn`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_users` WHERE ( if_aprvd='0' ) LIMIT 0,5   [ RunTime:0.0006s ]
+
+[ 2016-05-05T16:57:31+08:00 ] ::1 /smart_community/index.php/Admin/Mgrs/approved_mgrs
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000039s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000593s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000566s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000737s ]
+NOTIC: [2048] Declaration of Admin\Controller\MgrsController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/MgrsController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `sc_mgrs` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sc_mgrs` WHERE ( if_aprvd='1' ) LIMIT 1   [ RunTime:0.0003s ]
+ERR: 1054:Unknown column 'h_pocn' in 'field list'
+ [ SQL语句 ] : SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`h_pocn`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_mgrs` WHERE ( if_aprvd='1' ) LIMIT 0,5  
+ERR: 1054:Unknown column 'h_pocn' in 'field list'
+ [ SQL语句 ] : SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`h_pocn`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_mgrs` WHERE ( if_aprvd='1' ) LIMIT 0,5  
+
+[ 2016-05-05T16:57:33+08:00 ] ::1 /smart_community/index.php/Admin/Mgrs/pending_mgrs
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000039s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000605s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000461s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000603s ]
+NOTIC: [2048] Declaration of Admin\Controller\MgrsController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/MgrsController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `sc_mgrs` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sc_mgrs` WHERE ( if_aprvd='0' ) LIMIT 1   [ RunTime:0.0002s ]
+ERR: 1054:Unknown column 'h_pocn' in 'field list'
+ [ SQL语句 ] : SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`h_pocn`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_mgrs` WHERE ( if_aprvd='0' ) LIMIT 0,5  
+ERR: 1054:Unknown column 'h_pocn' in 'field list'
+ [ SQL语句 ] : SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`h_pocn`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_mgrs` WHERE ( if_aprvd='0' ) LIMIT 0,5  
+
+[ 2016-05-05T16:59:01+08:00 ] ::1 /smart_community/index.php/Admin/Mgrs/approved_mgrs
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000285s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000338s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000412s ]
+NOTIC: [2048] Declaration of Admin\Controller\MgrsController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/MgrsController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `sc_mgrs` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sc_mgrs` WHERE ( if_aprvd='1' ) LIMIT 1   [ RunTime:0.0002s ]
+ERR: 1054:Unknown column 'h_pocn' in 'field list'
+ [ SQL语句 ] : SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`h_pocn`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_mgrs` WHERE ( if_aprvd='1' ) LIMIT 0,5  
+ERR: 1054:Unknown column 'h_pocn' in 'field list'
+ [ SQL语句 ] : SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`h_pocn`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_mgrs` WHERE ( if_aprvd='1' ) LIMIT 0,5  
+
+[ 2016-05-05T16:59:03+08:00 ] ::1 /smart_community/index.php/Admin/Users/approved_users
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000410s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000312s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000380s ]
+NOTIC: [2048] Declaration of Admin\Controller\UsersController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/UsersController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sc_users` WHERE ( if_aprvd='1' ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`h_pocn`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_users` WHERE ( if_aprvd='1' ) LIMIT 0,7   [ RunTime:0.0004s ]
+
+[ 2016-05-05T16:59:04+08:00 ] ::1 /smart_community/index.php/Admin/Users/pending_users
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000314s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000415s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000504s ]
+NOTIC: [2048] Declaration of Admin\Controller\UsersController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/UsersController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sc_users` WHERE ( if_aprvd='0' ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`h_pocn`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_users` WHERE ( if_aprvd='0' ) LIMIT 0,5   [ RunTime:0.0004s ]
+
+[ 2016-05-05T16:59:17+08:00 ] ::1 /smart_community/index.php/Admin/Users/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000273s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000286s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000364s ]
+NOTIC: [2048] Declaration of Admin\Controller\UsersController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/UsersController.class.php 第 4 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000122s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000225s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.080764s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.080848s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000146s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000549s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000822s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000449s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000584s ]
+
+[ 2016-05-05T16:59:17+08:00 ] ::1 /smart_community/index.php/Admin/Users/approved_users
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000039s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000616s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000388s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000506s ]
+NOTIC: [2048] Declaration of Admin\Controller\UsersController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/UsersController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sc_users` WHERE ( if_aprvd='1' ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`h_pocn`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_users` WHERE ( if_aprvd='1' ) LIMIT 0,7   [ RunTime:0.0006s ]
+
+[ 2016-05-05T17:00:08+08:00 ] ::1 /smart_community/index.php/Admin/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000275s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000315s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000392s ]
+NOTIC: [2048] Declaration of Admin\Controller\IndexController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/IndexController.class.php 第 4 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000100s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000196s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016516s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016610s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000124s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000343s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000581s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000396s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000553s ]
+
+[ 2016-05-05T17:00:13+08:00 ] ::1 /smart_community/index.php/Admin/Admin/index_list
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000410s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000383s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000496s ]
+NOTIC: [2048] Declaration of Admin\Controller\AdminController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/AdminController.class.php 第 5 行.
+SQL: SHOW COLUMNS FROM `sc_admin` [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sc_admin` LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_admin` LIMIT 0,5   [ RunTime:0.0003s ]
+
+[ 2016-05-05T17:00:15+08:00 ] ::1 /smart_community/index.php/Admin/Admin/index_list
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000354s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000361s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000430s ]
+NOTIC: [2048] Declaration of Admin\Controller\AdminController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/AdminController.class.php 第 5 行.
+SQL: SHOW COLUMNS FROM `sc_admin` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sc_admin` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_admin` LIMIT 0,5   [ RunTime:0.0005s ]
+
+[ 2016-05-05T17:00:18+08:00 ] ::1 /smart_community/index.php/Admin/Mgrs/approved_mgrs
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000039s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000326s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000309s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000411s ]
+NOTIC: [2048] Declaration of Admin\Controller\MgrsController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/MgrsController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `sc_mgrs` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sc_mgrs` WHERE ( if_aprvd='1' ) LIMIT 1   [ RunTime:0.0002s ]
+ERR: 1054:Unknown column 'h_pocn' in 'field list'
+ [ SQL语句 ] : SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`h_pocn`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_mgrs` WHERE ( if_aprvd='1' ) LIMIT 0,5  
+ERR: 1054:Unknown column 'h_pocn' in 'field list'
+ [ SQL语句 ] : SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`h_pocn`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_mgrs` WHERE ( if_aprvd='1' ) LIMIT 0,5  
+
+[ 2016-05-05T17:00:20+08:00 ] ::1 /smart_community/index.php/Admin/Admin/index_list
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000041s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000530s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000393s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000500s ]
+NOTIC: [2048] Declaration of Admin\Controller\AdminController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/AdminController.class.php 第 5 行.
+SQL: SHOW COLUMNS FROM `sc_admin` [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sc_admin` LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_admin` LIMIT 0,5   [ RunTime:0.0005s ]
+
+[ 2016-05-05T17:00:26+08:00 ] ::1 /smart_community/index.php/Admin/Admin/index_list
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000402s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000292s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000360s ]
+NOTIC: [2048] Declaration of Admin\Controller\AdminController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/AdminController.class.php 第 5 行.
+SQL: SHOW COLUMNS FROM `sc_admin` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sc_admin` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_admin` LIMIT 0,5   [ RunTime:0.0005s ]
+
+[ 2016-05-05T17:00:29+08:00 ] ::1 /smart_community/index.php/Admin/Admin/index_list
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000059s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000909s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000416s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000534s ]
+NOTIC: [2048] Declaration of Admin\Controller\AdminController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/AdminController.class.php 第 5 行.
+SQL: SHOW COLUMNS FROM `sc_admin` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sc_admin` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_admin` LIMIT 0,5   [ RunTime:0.0006s ]
+
+[ 2016-05-05T17:00:31+08:00 ] ::1 /smart_community/index.php/Admin/Admin/index_list
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000302s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000283s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000351s ]
+NOTIC: [2048] Declaration of Admin\Controller\AdminController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/AdminController.class.php 第 5 行.
+SQL: SHOW COLUMNS FROM `sc_admin` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sc_admin` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_admin` LIMIT 0,5   [ RunTime:0.0004s ]
+
+[ 2016-05-05T17:06:53+08:00 ] ::1 /smart_community/index.php/Admin/Admin/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000059s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000898s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000920s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001061s ]
+NOTIC: [2048] Declaration of Admin\Controller\AdminController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/AdminController.class.php 第 5 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000252s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000381s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.057153s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.057263s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000547s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.022287s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.023093s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001141s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001396s ]
+
+[ 2016-05-05T17:06:53+08:00 ] ::1 /smart_community/index.php/Admin/Admin/index_list
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000328s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000485s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000594s ]
+NOTIC: [2048] Declaration of Admin\Controller\AdminController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/AdminController.class.php 第 5 行.
+SQL: SHOW COLUMNS FROM `sc_admin` [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sc_admin` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_admin` LIMIT 0,5   [ RunTime:0.0005s ]
+
+[ 2016-05-05T17:06:56+08:00 ] ::1 /smart_community/index.php/Admin/Users/approved_users
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000040s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000469s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000303s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000371s ]
+NOTIC: [2048] Declaration of Admin\Controller\UsersController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/UsersController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sc_users` WHERE ( if_aprvd='1' ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`h_pocn`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_users` WHERE ( if_aprvd='1' ) LIMIT 0,7   [ RunTime:0.0003s ]
+
+[ 2016-05-05T17:06:58+08:00 ] ::1 /smart_community/index.php/Admin/Users/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000272s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000292s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000369s ]
+NOTIC: [2048] Declaration of Admin\Controller\UsersController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/UsersController.class.php 第 4 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000120s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000228s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.055365s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.055457s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000145s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000455s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000725s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000562s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000710s ]
+
+[ 2016-05-05T17:06:59+08:00 ] ::1 /smart_community/index.php/Admin/Users/approved_users
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000438s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000341s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000429s ]
+NOTIC: [2048] Declaration of Admin\Controller\UsersController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/UsersController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sc_users` WHERE ( if_aprvd='1' ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`h_pocn`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_users` WHERE ( if_aprvd='1' ) LIMIT 0,7   [ RunTime:0.0004s ]
+
+[ 2016-05-05T17:07:00+08:00 ] ::1 /smart_community/index.php/Admin/Users/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000313s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000325s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000411s ]
+NOTIC: [2048] Declaration of Admin\Controller\UsersController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/UsersController.class.php 第 4 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000114s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000219s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.125920s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.126008s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000151s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000510s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000785s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000491s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000624s ]
+
+[ 2016-05-05T17:12:19+08:00 ] ::1 /smart_community/index.php/Admin/Users/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000433s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000560s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000659s ]
+NOTIC: [2048] Declaration of Admin\Controller\UsersController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/UsersController.class.php 第 4 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000256s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000427s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013877s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013977s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000152s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000584s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000853s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000551s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000744s ]
+
+[ 2016-05-05T17:12:40+08:00 ] ::1 /smart_community/index.php/Admin/Users/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000487s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000466s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000574s ]
+NOTIC: [2048] Declaration of Admin\Controller\UsersController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/UsersController.class.php 第 4 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000182s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000274s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011559s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011653s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000138s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000606s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000858s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000439s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000541s ]
+
+[ 2016-05-05T17:12:55+08:00 ] ::1 /smart_community/index.php/Admin/Users/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000401s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000429s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000520s ]
+NOTIC: [2048] Declaration of Admin\Controller\UsersController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/UsersController.class.php 第 4 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000263s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000378s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031338s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031459s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000316s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000918s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001411s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000594s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000747s ]
+
+[ 2016-05-05T17:13:30+08:00 ] ::1 /smart_community/index.php/Admin/Users/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000270s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000294s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000371s ]
+NOTIC: [2048] Declaration of Admin\Controller\UsersController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/UsersController.class.php 第 4 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000121s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000240s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012681s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012789s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000240s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000671s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001110s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000791s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000934s ]
+
+[ 2016-05-05T17:14:07+08:00 ] ::1 /smart_community/index.php/Admin/Users/approved_users
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000065s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000657s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000730s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000840s ]
+NOTIC: [2048] Declaration of Admin\Controller\UsersController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/UsersController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sc_users` WHERE ( if_aprvd='1' ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`h_pocn`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_users` WHERE ( if_aprvd='1' ) LIMIT 0,7   [ RunTime:0.0007s ]
+
+[ 2016-05-05T17:14:51+08:00 ] ::1 /smart_community/index.php/Admin/Users/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000466s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000881s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001002s ]
+NOTIC: [2048] Declaration of Admin\Controller\UsersController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/UsersController.class.php 第 4 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000207s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000364s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.114086s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.114207s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.009269s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.007684s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.017138s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.016904s ]
+INFO: [ app_end ] --END-- [ RunTime:0.017069s ]
+
+[ 2016-05-05T17:14:53+08:00 ] ::1 /smart_community/index.php/Admin/Users/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000302s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000552s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000685s ]
+NOTIC: [2048] Declaration of Admin\Controller\UsersController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/UsersController.class.php 第 4 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000127s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000317s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012670s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012794s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000171s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000484s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000810s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000412s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000545s ]
+
+[ 2016-05-05T17:14:56+08:00 ] ::1 /smart_community/index.php/Admin/Users/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000285s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000319s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000399s ]
+NOTIC: [2048] Declaration of Admin\Controller\UsersController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/UsersController.class.php 第 4 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000120s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000223s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011932s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012020s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000134s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000422s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000672s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000600s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000754s ]
+
+[ 2016-05-05T17:15:02+08:00 ] ::1 /smart_community/index.php/Admin/Users/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000493s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000864s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001031s ]
+NOTIC: [2048] Declaration of Admin\Controller\UsersController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/UsersController.class.php 第 4 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000188s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000286s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012820s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012989s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000234s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000646s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001005s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000494s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000602s ]
+
+[ 2016-05-05T17:15:05+08:00 ] ::1 /smart_community/index.php/Admin/Users/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000300s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000317s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000404s ]
+NOTIC: [2048] Declaration of Admin\Controller\UsersController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/UsersController.class.php 第 4 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000117s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000220s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012216s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012297s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000141s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000426s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000683s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000384s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000484s ]
+
+[ 2016-05-05T17:15:36+08:00 ] ::1 /smart_community/index.php/Admin/Users/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000275s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000310s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000397s ]
+NOTIC: [2048] Declaration of Admin\Controller\UsersController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/UsersController.class.php 第 4 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000119s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000232s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012018s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012152s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000147s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000431s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000693s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000393s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000506s ]
+
+[ 2016-05-05T17:15:43+08:00 ] ::1 /smart_community/index.php/Admin/Users/approved_users
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000336s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000360s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000474s ]
+NOTIC: [2048] Declaration of Admin\Controller\UsersController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/UsersController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sc_users` WHERE ( if_aprvd='1' ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`h_pocn`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_users` WHERE ( if_aprvd='1' ) LIMIT 0,7   [ RunTime:0.0006s ]
+
+[ 2016-05-05T17:15:48+08:00 ] ::1 /smart_community/index.php/Admin/Users/approved_users
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000774s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000485s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000590s ]
+NOTIC: [2048] Declaration of Admin\Controller\UsersController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/UsersController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sc_users` WHERE ( if_aprvd='1' ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`h_pocn`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_users` WHERE ( if_aprvd='1' ) LIMIT 0,7   [ RunTime:0.0005s ]
+
+[ 2016-05-05T17:16:28+08:00 ] ::1 /smart_community/index.php/Admin/Users/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000824s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000766s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000888s ]
+NOTIC: [2048] Declaration of Admin\Controller\UsersController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/UsersController.class.php 第 4 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000324s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000460s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.077339s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.077442s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000482s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000786s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001415s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000826s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000991s ]
+
+[ 2016-05-05T17:16:28+08:00 ] ::1 /smart_community/index.php/Admin/Users/approved_users
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000045s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000607s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000537s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000705s ]
+NOTIC: [2048] Declaration of Admin\Controller\UsersController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/UsersController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sc_users` WHERE ( if_aprvd='1' ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`h_pocn`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_users` WHERE ( if_aprvd='1' ) LIMIT 0,7   [ RunTime:0.0005s ]
+
+[ 2016-05-05T17:16:31+08:00 ] ::1 /smart_community/index.php/Admin/Users/approved_users
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000327s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000297s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000382s ]
+NOTIC: [2048] Declaration of Admin\Controller\UsersController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/UsersController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sc_users` WHERE ( if_aprvd='1' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`h_pocn`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_users` WHERE ( if_aprvd='1' ) LIMIT 0,7   [ RunTime:0.0003s ]
+
+[ 2016-05-05T17:16:36+08:00 ] ::1 /smart_community/index.php/Admin/Users/approved_users
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000360s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000390s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000477s ]
+NOTIC: [2048] Declaration of Admin\Controller\UsersController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/UsersController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sc_users` WHERE ( if_aprvd='1' ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`h_pocn`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_users` WHERE ( if_aprvd='1' ) LIMIT 0,7   [ RunTime:0.0005s ]
+
+[ 2016-05-05T17:16:54+08:00 ] ::1 /smart_community/index.php/Admin/Access/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000415s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001349s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001523s ]
+NOTIC: [2048] Declaration of Admin\Controller\AccessController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `sc_role_user` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sc_role_user` WHERE ( user_type = 'U' ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0012s ]
+SQL: SELECT a.id,a.nick_name,b.role_id FROM `sc_users` as a join sc_role_user as b on a.id = b.user_id  WHERE ( user_type = 'U' ) LIMIT 0,5   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `sc_role` [ RunTime:0.0008s ]
+SQL: SELECT `name` FROM `sc_role` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `name` FROM `sc_role` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `name` FROM `sc_role` WHERE `id` = 107 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `name` FROM `sc_role` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `name` FROM `sc_role` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-05-05T17:16:56+08:00 ] ::1 /smart_community/index.php/Admin/Access/role
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000041s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000627s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000483s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000609s ]
+NOTIC: [2048] Declaration of Admin\Controller\AccessController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `sc_role` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `sc_role`  [ RunTime:0.0006s ]
+
+[ 2016-05-05T17:16:59+08:00 ] ::1 /smart_community/index.php/Admin/Access/role
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000607s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000382s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000529s ]
+NOTIC: [2048] Declaration of Admin\Controller\AccessController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `sc_role` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `sc_role`  [ RunTime:0.0002s ]
+
+[ 2016-05-05T17:17:43+08:00 ] ::1 /smart_community/index.php/Admin/Users/approved_users
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000524s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000641s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000734s ]
+NOTIC: [2048] Declaration of Admin\Controller\UsersController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/UsersController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sc_users` WHERE ( if_aprvd='1' ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`h_pocn`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_users` WHERE ( if_aprvd='1' ) LIMIT 0,7   [ RunTime:0.0006s ]
+
+[ 2016-05-05T17:17:52+08:00 ] ::1 /smart_community/index.php/Admin/Users/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000275s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000361s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000439s ]
+NOTIC: [2048] Declaration of Admin\Controller\UsersController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/UsersController.class.php 第 4 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000105s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000204s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.175687s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.175917s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.041965s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.030595s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.072889s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.048275s ]
+INFO: [ app_end ] --END-- [ RunTime:0.048442s ]
+
+[ 2016-05-05T17:18:37+08:00 ] ::1 /smart_community/index.php/Admin/Users/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000510s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000620s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000715s ]
+NOTIC: [2048] Declaration of Admin\Controller\UsersController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/UsersController.class.php 第 4 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000176s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000406s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.195130s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.195264s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.042610s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.008245s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.051130s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.018933s ]
+INFO: [ app_end ] --END-- [ RunTime:0.019137s ]
+
+[ 2016-05-05T17:18:39+08:00 ] ::1 /smart_community/index.php/Admin/Users/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000272s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000321s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000398s ]
+NOTIC: [2048] Declaration of Admin\Controller\UsersController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/UsersController.class.php 第 4 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000105s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000203s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011925s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012014s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000140s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000427s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000683s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000458s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000555s ]
+
+[ 2016-05-05T17:18:41+08:00 ] ::1 /smart_community/index.php/Admin/Users/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000346s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000352s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000444s ]
+NOTIC: [2048] Declaration of Admin\Controller\UsersController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/UsersController.class.php 第 4 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000115s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000226s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012548s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012661s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000196s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000569s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000920s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000720s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000877s ]
+
+[ 2016-05-05T17:18:59+08:00 ] ::1 /smart_community/index.php/Admin/Users/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000338s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000644s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000887s ]
+NOTIC: [2048] Declaration of Admin\Controller\UsersController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/UsersController.class.php 第 4 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000124s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000234s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012475s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012560s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000144s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000464s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000732s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000684s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000871s ]
+
+[ 2016-05-05T17:20:49+08:00 ] ::1 /smart_community/index.php/Admin/Users/approved_users
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000041s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000879s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000853s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000998s ]
+NOTIC: [2048] Declaration of Admin\Controller\UsersController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/UsersController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sc_users` WHERE ( if_aprvd='1' ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`h_pocn`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_users` WHERE ( if_aprvd='1' ) LIMIT 0,7   [ RunTime:0.0005s ]
+
+[ 2016-05-05T17:20:50+08:00 ] ::1 /smart_community/index.php/Admin/Users/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000309s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000450s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000581s ]
+NOTIC: [2048] Declaration of Admin\Controller\UsersController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/UsersController.class.php 第 4 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000121s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000226s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.093908s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.094011s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.033364s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.019154s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.052711s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.016821s ]
+INFO: [ app_end ] --END-- [ RunTime:0.016943s ]
+
+[ 2016-05-05T17:20:50+08:00 ] ::1 /smart_community/index.php/Admin/Users/approved_users
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000302s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000294s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000362s ]
+NOTIC: [2048] Declaration of Admin\Controller\UsersController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/UsersController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0021s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sc_users` WHERE ( if_aprvd='1' ) LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`h_pocn`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_users` WHERE ( if_aprvd='1' ) LIMIT 0,7   [ RunTime:0.0007s ]
+
+[ 2016-05-05T17:20:53+08:00 ] ::1 /smart_community/index.php/Admin/Mgrs/approved_mgrs
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000039s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000529s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000720s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000940s ]
+NOTIC: [2048] Declaration of Admin\Controller\MgrsController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/MgrsController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `sc_mgrs` [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sc_mgrs` WHERE ( if_aprvd='1' ) LIMIT 1   [ RunTime:0.0003s ]
+ERR: 1054:Unknown column 'h_pocn' in 'field list'
+ [ SQL语句 ] : SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`h_pocn`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_mgrs` WHERE ( if_aprvd='1' ) LIMIT 0,5  
+ERR: 1054:Unknown column 'h_pocn' in 'field list'
+ [ SQL语句 ] : SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`h_pocn`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_mgrs` WHERE ( if_aprvd='1' ) LIMIT 0,5  
+
+[ 2016-05-05T17:20:55+08:00 ] ::1 /smart_community/index.php/Admin/Mgrs/approved_mgrs
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000427s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000313s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000381s ]
+NOTIC: [2048] Declaration of Admin\Controller\MgrsController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/MgrsController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `sc_mgrs` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sc_mgrs` WHERE ( if_aprvd='1' ) LIMIT 1   [ RunTime:0.0003s ]
+ERR: 1054:Unknown column 'h_pocn' in 'field list'
+ [ SQL语句 ] : SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`h_pocn`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_mgrs` WHERE ( if_aprvd='1' ) LIMIT 0,5  
+ERR: 1054:Unknown column 'h_pocn' in 'field list'
+ [ SQL语句 ] : SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`h_pocn`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_mgrs` WHERE ( if_aprvd='1' ) LIMIT 0,5  
+
+[ 2016-05-05T17:20:57+08:00 ] ::1 /smart_community/index.php/Admin/Mgrs/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000298s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000541s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000688s ]
+NOTIC: [2048] Declaration of Admin\Controller\MgrsController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/MgrsController.class.php 第 4 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000115s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000220s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.330094s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.330184s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000142s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000427s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000683s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000605s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000759s ]
+
+[ 2016-05-05T17:20:57+08:00 ] ::1 /smart_community/index.php/Admin/Mgrs/approved_mgrs
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000505s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000545s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000647s ]
+NOTIC: [2048] Declaration of Admin\Controller\MgrsController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/MgrsController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `sc_mgrs` [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sc_mgrs` WHERE ( if_aprvd='1' ) LIMIT 1   [ RunTime:0.0004s ]
+ERR: 1054:Unknown column 'h_pocn' in 'field list'
+ [ SQL语句 ] : SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`h_pocn`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_mgrs` WHERE ( if_aprvd='1' ) LIMIT 0,5  
+ERR: 1054:Unknown column 'h_pocn' in 'field list'
+ [ SQL语句 ] : SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`h_pocn`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_mgrs` WHERE ( if_aprvd='1' ) LIMIT 0,5  
+
+[ 2016-05-05T17:20:59+08:00 ] ::1 /smart_community/index.php/Admin/Mgrs/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000273s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000303s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000379s ]
+NOTIC: [2048] Declaration of Admin\Controller\MgrsController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/MgrsController.class.php 第 4 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000105s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000212s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.040640s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.040740s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000147s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000445s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000706s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000462s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000604s ]
+
+[ 2016-05-05T17:21:03+08:00 ] ::1 /smart_community/index.php/Admin/Admin/index_list
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000578s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000443s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000577s ]
+NOTIC: [2048] Declaration of Admin\Controller\AdminController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/AdminController.class.php 第 5 行.
+SQL: SHOW COLUMNS FROM `sc_admin` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sc_admin` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_admin` LIMIT 0,5   [ RunTime:0.0006s ]
+
+[ 2016-05-05T17:21:05+08:00 ] ::1 /smart_community/index.php/Admin/Admin/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000281s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000290s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000382s ]
+NOTIC: [2048] Declaration of Admin\Controller\AdminController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/AdminController.class.php 第 5 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000103s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000202s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.187628s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.187736s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000231s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000538s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000908s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000579s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000743s ]
+
+[ 2016-05-05T17:21:26+08:00 ] ::1 /smart_community/index.php/Admin/Users/approved_users
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000487s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003528s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003660s ]
+NOTIC: [2048] Declaration of Admin\Controller\UsersController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/UsersController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sc_users` WHERE ( if_aprvd='1' ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`h_pocn`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_users` WHERE ( if_aprvd='1' ) LIMIT 0,7   [ RunTime:0.0005s ]
+
+[ 2016-05-05T17:21:30+08:00 ] ::1 /smart_community/index.php/Admin/Users/approved_users
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000039s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000620s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000452s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000581s ]
+NOTIC: [2048] Declaration of Admin\Controller\UsersController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/UsersController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sc_users` WHERE ( if_aprvd='1' ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`h_pocn`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_users` WHERE ( if_aprvd='1' ) LIMIT 0,7   [ RunTime:0.0006s ]
+
+[ 2016-05-05T17:21:48+08:00 ] ::1 /smart_community/index.php/Admin/Admin/index_list
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000494s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000667s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000757s ]
+NOTIC: [2048] Declaration of Admin\Controller\AdminController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/AdminController.class.php 第 5 行.
+SQL: SHOW COLUMNS FROM `sc_admin` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sc_admin` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_admin` LIMIT 0,5   [ RunTime:0.0004s ]
+
+[ 2016-05-05T17:21:55+08:00 ] ::1 /smart_community/index.php/Admin/Access/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000373s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000506s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000664s ]
+NOTIC: [2048] Declaration of Admin\Controller\AccessController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `sc_role_user` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sc_role_user` WHERE ( user_type = 'U' ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0009s ]
+SQL: SELECT a.id,a.nick_name,b.role_id FROM `sc_users` as a join sc_role_user as b on a.id = b.user_id  WHERE ( user_type = 'U' ) LIMIT 0,5   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `sc_role` [ RunTime:0.0007s ]
+SQL: SELECT `name` FROM `sc_role` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `name` FROM `sc_role` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `name` FROM `sc_role` WHERE `id` = 107 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `name` FROM `sc_role` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `name` FROM `sc_role` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-05-05T17:21:57+08:00 ] ::1 /smart_community/index.php/Admin/Access/role
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000467s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000558s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000685s ]
+NOTIC: [2048] Declaration of Admin\Controller\AccessController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `sc_role` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `sc_role`  [ RunTime:0.0004s ]
+
+[ 2016-05-05T17:22:04+08:00 ] ::1 /smart_community/index.php/Admin/Access/role
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000043s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000547s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000368s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000455s ]
+NOTIC: [2048] Declaration of Admin\Controller\AccessController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `sc_role` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `sc_role`  [ RunTime:0.0002s ]
+
+[ 2016-05-05T17:22:05+08:00 ] ::1 /smart_community/index.php/Admin/Access/node
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000375s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000294s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000363s ]
+NOTIC: [2048] Declaration of Admin\Controller\AccessController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `sc_node` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `sc_node`  [ RunTime:0.0003s ]
+NOTIC: [2] Invalid argument supplied for foreach() /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 204 行.
+NOTIC: [2] Invalid argument supplied for foreach() /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 204 行.
+NOTIC: [2] Invalid argument supplied for foreach() /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 204 行.
+NOTIC: [2] Invalid argument supplied for foreach() /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 204 行.
+NOTIC: [2] Invalid argument supplied for foreach() /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 204 行.
+NOTIC: [2] Invalid argument supplied for foreach() /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 204 行.
+NOTIC: [2] Invalid argument supplied for foreach() /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 204 行.
+NOTIC: [2] Invalid argument supplied for foreach() /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 204 行.
+NOTIC: [2] Invalid argument supplied for foreach() /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 204 行.
+NOTIC: [2] Invalid argument supplied for foreach() /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 204 行.
+NOTIC: [8] Undefined variable: con /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 233 行.
+NOTIC: [8] Undefined variable: con /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 234 行.
+NOTIC: [8] Undefined variable: con /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 234 行.
+NOTIC: [8] Undefined variable: con /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 235 行.
+NOTIC: [8] Undefined variable: act /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 239 行.
+NOTIC: [8] Undefined variable: act /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 240 行.
+
+[ 2016-05-05T17:22:15+08:00 ] ::1 /smart_community/index.php/Admin/Users/approved_users
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000307s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000295s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000361s ]
+NOTIC: [2048] Declaration of Admin\Controller\UsersController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/UsersController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0012s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sc_users` WHERE ( if_aprvd='1' ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`h_pocn`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_users` WHERE ( if_aprvd='1' ) LIMIT 0,7   [ RunTime:0.0006s ]
+
+[ 2016-05-05T17:29:09+08:00 ] ::1 /smart_community/index.php/Admin/Admin/index_list
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000506s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000668s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000758s ]
+NOTIC: [2048] Declaration of Admin\Controller\AdminController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/AdminController.class.php 第 5 行.
+SQL: SHOW COLUMNS FROM `sc_admin` [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sc_admin` LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_admin` LIMIT 0,5   [ RunTime:0.0007s ]
+
+[ 2016-05-05T17:51:50+08:00 ] ::1 /smart_community/index.php/Admin/Users/approved_users
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000805s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001019s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001216s ]
+NOTIC: [2048] Declaration of Admin\Controller\UsersController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/UsersController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sc_users` WHERE ( if_aprvd='1' ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`h_pocn`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_users` WHERE ( if_aprvd='1' ) LIMIT 0,7   [ RunTime:0.0005s ]
+
+[ 2016-05-05T17:51:55+08:00 ] ::1 /smart_community/index.php/Admin/Admin/index_list
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000376s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000384s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000475s ]
+NOTIC: [2048] Declaration of Admin\Controller\AdminController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/AdminController.class.php 第 5 行.
+SQL: SHOW COLUMNS FROM `sc_admin` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sc_admin` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_admin` LIMIT 0,5   [ RunTime:0.0004s ]
+
+[ 2016-05-05T17:51:58+08:00 ] ::1 /smart_community/index.php/Admin/Access/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000328s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000295s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000362s ]
+NOTIC: [2048] Declaration of Admin\Controller\AccessController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `sc_role_user` [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sc_role_user` WHERE ( user_type = 'U' ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0005s ]
+SQL: SELECT a.id,a.nick_name,b.role_id FROM `sc_users` as a join sc_role_user as b on a.id = b.user_id  WHERE ( user_type = 'U' ) LIMIT 0,5   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sc_role` [ RunTime:0.0006s ]
+SQL: SELECT `name` FROM `sc_role` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `name` FROM `sc_role` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `name` FROM `sc_role` WHERE `id` = 107 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `name` FROM `sc_role` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `name` FROM `sc_role` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-05-05T17:52:00+08:00 ] ::1 /smart_community/index.php/Admin/Access/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000054s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000592s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000437s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000539s ]
+NOTIC: [2048] Declaration of Admin\Controller\AccessController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `sc_role_user` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sc_role_user` WHERE ( user_type = 'M' ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `sc_mgrs` [ RunTime:0.0006s ]
+SQL: SELECT a.id,a.nick_name,b.role_id FROM `sc_mgrs` as a join sc_role_user as b on a.id = b.user_id  WHERE ( user_type = 'M' ) LIMIT 0,5   [ RunTime:0.0003s ]
+
+[ 2016-05-05T17:52:01+08:00 ] ::1 /smart_community/index.php/Admin/Access/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000404s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000322s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000393s ]
+NOTIC: [2048] Declaration of Admin\Controller\AccessController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `sc_role_user` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sc_role_user` WHERE ( user_type = 'A' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sc_admin` [ RunTime:0.0006s ]
+SQL: SELECT a.id,a.nick_name,b.role_id FROM `sc_admin` as a join sc_role_user as b on a.id = b.user_id  WHERE ( user_type = 'A' ) LIMIT 0,5   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sc_role` [ RunTime:0.0004s ]
+SQL: SELECT `name` FROM `sc_role` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `name` FROM `sc_role` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `name` FROM `sc_role` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `name` FROM `sc_role` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `name` FROM `sc_role` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2016-05-05T17:52:02+08:00 ] ::1 /smart_community/index.php/Admin/Access/role
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000369s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000294s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000361s ]
+NOTIC: [2048] Declaration of Admin\Controller\AccessController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `sc_role` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `sc_role`  [ RunTime:0.0003s ]
+
+[ 2016-05-05T17:52:06+08:00 ] ::1 /smart_community/index.php/Admin/Access/node
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000512s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000515s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000681s ]
+NOTIC: [2048] Declaration of Admin\Controller\AccessController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `sc_node` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `sc_node`  [ RunTime:0.0003s ]
+NOTIC: [2] Invalid argument supplied for foreach() /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 204 行.
+NOTIC: [2] Invalid argument supplied for foreach() /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 204 行.
+NOTIC: [2] Invalid argument supplied for foreach() /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 204 行.
+NOTIC: [2] Invalid argument supplied for foreach() /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 204 行.
+NOTIC: [2] Invalid argument supplied for foreach() /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 204 行.
+NOTIC: [2] Invalid argument supplied for foreach() /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 204 行.
+NOTIC: [2] Invalid argument supplied for foreach() /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 204 行.
+NOTIC: [2] Invalid argument supplied for foreach() /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 204 行.
+NOTIC: [2] Invalid argument supplied for foreach() /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 204 行.
+NOTIC: [2] Invalid argument supplied for foreach() /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 204 行.
+NOTIC: [8] Undefined variable: con /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 233 行.
+NOTIC: [8] Undefined variable: con /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 234 行.
+NOTIC: [8] Undefined variable: con /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 234 行.
+NOTIC: [8] Undefined variable: con /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 235 行.
+NOTIC: [8] Undefined variable: act /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 239 行.
+NOTIC: [8] Undefined variable: act /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 240 行.
+
+[ 2016-05-05T17:52:10+08:00 ] ::1 /smart_community/index.php/Admin/Access/%7B:U('Admin/Access/add_node',array('pid'=%3E,'level'=%3E%20%20%201))%7D
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000308s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000308s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000386s ]
+NOTIC: [2048] Declaration of Admin\Controller\AccessController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 4 行.
+
+[ 2016-05-05T17:52:26+08:00 ] ::1 /smart_community/index.php/Admin/Access/node
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000210s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000893s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000972s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001154s ]
+NOTIC: [2048] Declaration of Admin\Controller\AccessController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `sc_node` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `sc_node`  [ RunTime:0.0003s ]
+NOTIC: [2] Invalid argument supplied for foreach() /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 204 行.
+NOTIC: [2] Invalid argument supplied for foreach() /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 204 行.
+NOTIC: [2] Invalid argument supplied for foreach() /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 204 行.
+NOTIC: [2] Invalid argument supplied for foreach() /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 204 行.
+NOTIC: [2] Invalid argument supplied for foreach() /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 204 行.
+NOTIC: [2] Invalid argument supplied for foreach() /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 204 行.
+NOTIC: [2] Invalid argument supplied for foreach() /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 204 行.
+NOTIC: [2] Invalid argument supplied for foreach() /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 204 行.
+NOTIC: [2] Invalid argument supplied for foreach() /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 204 行.
+NOTIC: [2] Invalid argument supplied for foreach() /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 204 行.
+NOTIC: [8] Undefined variable: con /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 233 行.
+NOTIC: [8] Undefined variable: con /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 234 行.
+NOTIC: [8] Undefined variable: con /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 234 行.
+NOTIC: [8] Undefined variable: con /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 235 行.
+NOTIC: [8] Undefined variable: act /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 239 行.
+NOTIC: [8] Undefined variable: act /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 240 行.
+
+[ 2016-05-05T17:52:40+08:00 ] ::1 /smart_community/index.php/Admin/Access/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000778s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001045s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001270s ]
+NOTIC: [2048] Declaration of Admin\Controller\AccessController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `sc_role_user` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sc_role_user` WHERE ( user_type = 'U' ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0007s ]
+SQL: SELECT a.id,a.nick_name,b.role_id FROM `sc_users` as a join sc_role_user as b on a.id = b.user_id  WHERE ( user_type = 'U' ) LIMIT 0,5   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sc_role` [ RunTime:0.0004s ]
+SQL: SELECT `name` FROM `sc_role` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `name` FROM `sc_role` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `name` FROM `sc_role` WHERE `id` = 107 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `name` FROM `sc_role` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `name` FROM `sc_role` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-05-05T17:52:48+08:00 ] ::1 /smart_community/index.php/Admin/Access/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000062s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000699s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000713s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000858s ]
+NOTIC: [2048] Declaration of Admin\Controller\AccessController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `sc_role_user` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sc_role_user` WHERE ( user_type = 'U' ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0011s ]
+SQL: SELECT a.id,a.nick_name,b.role_id FROM `sc_users` as a join sc_role_user as b on a.id = b.user_id  WHERE ( user_type = 'U' ) LIMIT 0,5   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `sc_role` [ RunTime:0.0005s ]
+SQL: SELECT `name` FROM `sc_role` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `name` FROM `sc_role` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `name` FROM `sc_role` WHERE `id` = 107 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `name` FROM `sc_role` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `name` FROM `sc_role` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2016-05-05T17:52:49+08:00 ] ::1 /smart_community/index.php/Admin/Access/index_list.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000282s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000300s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000382s ]
+NOTIC: [2048] Declaration of Admin\Controller\AccessController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 4 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000149s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000362s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.144048s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.144259s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.031484s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.008059s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.039757s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.016286s ]
+INFO: [ app_end ] --END-- [ RunTime:0.016433s ]
+
+[ 2016-05-05T17:52:49+08:00 ] ::1 /smart_community/index.php/Admin/Access/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000343s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000300s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000367s ]
+NOTIC: [2048] Declaration of Admin\Controller\AccessController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `sc_role_user` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sc_role_user` WHERE ( user_type = 'U' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0005s ]
+SQL: SELECT a.id,a.nick_name,b.role_id FROM `sc_users` as a join sc_role_user as b on a.id = b.user_id  WHERE ( user_type = 'U' ) LIMIT 0,5   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sc_role` [ RunTime:0.0004s ]
+SQL: SELECT `name` FROM `sc_role` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `name` FROM `sc_role` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `name` FROM `sc_role` WHERE `id` = 107 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `name` FROM `sc_role` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `name` FROM `sc_role` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2016-05-05T17:52:50+08:00 ] ::1 /smart_community/index.php/Admin/Access/role
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000040s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000535s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000792s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001015s ]
+NOTIC: [2048] Declaration of Admin\Controller\AccessController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `sc_role` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `sc_role`  [ RunTime:0.0004s ]
+
+[ 2016-05-05T17:52:51+08:00 ] ::1 /smart_community/index.php/Admin/Access/role_list.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000274s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000291s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000423s ]
+NOTIC: [2048] Declaration of Admin\Controller\AccessController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 4 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000110s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000235s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.030347s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030486s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000167s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000427s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000719s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000475s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000590s ]
+
+[ 2016-05-05T17:52:51+08:00 ] ::1 /smart_community/index.php/Admin/Access/role
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000062s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000567s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000463s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000596s ]
+NOTIC: [2048] Declaration of Admin\Controller\AccessController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `sc_role` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `sc_role`  [ RunTime:0.0002s ]
+
+[ 2016-05-05T17:52:53+08:00 ] ::1 /smart_community/index.php/Admin/Access/node
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000468s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000512s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000640s ]
+NOTIC: [2048] Declaration of Admin\Controller\AccessController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `sc_node` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `sc_node`  [ RunTime:0.0005s ]
+NOTIC: [2] Invalid argument supplied for foreach() /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 204 行.
+NOTIC: [2] Invalid argument supplied for foreach() /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 204 行.
+NOTIC: [2] Invalid argument supplied for foreach() /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 204 行.
+NOTIC: [2] Invalid argument supplied for foreach() /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 204 行.
+NOTIC: [2] Invalid argument supplied for foreach() /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 204 行.
+NOTIC: [2] Invalid argument supplied for foreach() /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 204 行.
+NOTIC: [2] Invalid argument supplied for foreach() /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 204 行.
+NOTIC: [2] Invalid argument supplied for foreach() /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 204 行.
+NOTIC: [2] Invalid argument supplied for foreach() /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 204 行.
+NOTIC: [2] Invalid argument supplied for foreach() /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 204 行.
+NOTIC: [8] Undefined variable: con /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 233 行.
+NOTIC: [8] Undefined variable: con /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 234 行.
+NOTIC: [8] Undefined variable: con /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 234 行.
+NOTIC: [8] Undefined variable: con /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 235 行.
+NOTIC: [8] Undefined variable: act /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 239 行.
+NOTIC: [8] Undefined variable: act /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 240 行.
+
+[ 2016-05-05T17:52:54+08:00 ] ::1 /smart_community/index.php/Admin/Access/node_list.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000361s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000346s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000434s ]
+NOTIC: [2048] Declaration of Admin\Controller\AccessController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 4 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000109s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000201s ]
+NOTIC: [8] Undefined variable: data /wwwroot/Smart_Community/Application/Runtime/Cache/Admin/e3c2307b8a497756d83b737bf04ebce4.php 第 259 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.052525s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.052692s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000515s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000623s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001437s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000448s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000536s ]
+
+[ 2016-05-05T17:52:55+08:00 ] ::1 /smart_community/index.php/Admin/Access/node
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000433s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000426s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000517s ]
+NOTIC: [2048] Declaration of Admin\Controller\AccessController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `sc_node` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `sc_node`  [ RunTime:0.0004s ]
+NOTIC: [2] Invalid argument supplied for foreach() /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 204 行.
+NOTIC: [2] Invalid argument supplied for foreach() /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 204 行.
+NOTIC: [2] Invalid argument supplied for foreach() /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 204 行.
+NOTIC: [2] Invalid argument supplied for foreach() /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 204 行.
+NOTIC: [2] Invalid argument supplied for foreach() /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 204 行.
+NOTIC: [2] Invalid argument supplied for foreach() /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 204 行.
+NOTIC: [2] Invalid argument supplied for foreach() /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 204 行.
+NOTIC: [2] Invalid argument supplied for foreach() /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 204 行.
+NOTIC: [2] Invalid argument supplied for foreach() /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 204 行.
+NOTIC: [2] Invalid argument supplied for foreach() /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 204 行.
+NOTIC: [8] Undefined variable: con /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 233 行.
+NOTIC: [8] Undefined variable: con /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 234 行.
+NOTIC: [8] Undefined variable: con /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 234 行.
+NOTIC: [8] Undefined variable: con /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 235 行.
+NOTIC: [8] Undefined variable: act /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 239 行.
+NOTIC: [8] Undefined variable: act /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 240 行.
+
+[ 2016-05-05T17:52:57+08:00 ] ::1 /smart_community/index.php/Admin/Access/node_list.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000304s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000327s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000414s ]
+NOTIC: [2048] Declaration of Admin\Controller\AccessController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 4 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000109s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000203s ]
+NOTIC: [8] Undefined variable: data /wwwroot/Smart_Community/Application/Runtime/Cache/Admin/e3c2307b8a497756d83b737bf04ebce4.php 第 259 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016825s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016938s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000219s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000497s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000888s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000724s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000885s ]
+
+[ 2016-05-05T17:52:57+08:00 ] ::1 /smart_community/index.php/Admin/Access/node
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000266s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000309s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000385s ]
+NOTIC: [2048] Declaration of Admin\Controller\AccessController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `sc_node` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `sc_node`  [ RunTime:0.0003s ]
+NOTIC: [2] Invalid argument supplied for foreach() /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 204 行.
+NOTIC: [2] Invalid argument supplied for foreach() /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 204 行.
+NOTIC: [2] Invalid argument supplied for foreach() /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 204 行.
+NOTIC: [2] Invalid argument supplied for foreach() /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 204 行.
+NOTIC: [2] Invalid argument supplied for foreach() /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 204 行.
+NOTIC: [2] Invalid argument supplied for foreach() /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 204 行.
+NOTIC: [2] Invalid argument supplied for foreach() /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 204 行.
+NOTIC: [2] Invalid argument supplied for foreach() /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 204 行.
+NOTIC: [2] Invalid argument supplied for foreach() /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 204 行.
+NOTIC: [2] Invalid argument supplied for foreach() /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 204 行.
+NOTIC: [8] Undefined variable: con /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 233 行.
+NOTIC: [8] Undefined variable: con /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 234 行.
+NOTIC: [8] Undefined variable: con /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 234 行.
+NOTIC: [8] Undefined variable: con /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 235 行.
+NOTIC: [8] Undefined variable: act /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 239 行.
+NOTIC: [8] Undefined variable: act /wwwroot/Smart_Community/Application/Admin/Controller/AccessController.class.php 第 240 行.
+
+[ 2016-05-05T17:53:03+08:00 ] ::1 /smart_community/index.php/Admin/Mgrs/approved_mgrs
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000407s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000804s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001018s ]
+NOTIC: [2048] Declaration of Admin\Controller\MgrsController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/MgrsController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `sc_mgrs` [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sc_mgrs` WHERE ( if_aprvd='1' ) LIMIT 1   [ RunTime:0.0003s ]
+ERR: 1054:Unknown column 'h_pocn' in 'field list'
+ [ SQL语句 ] : SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`h_pocn`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_mgrs` WHERE ( if_aprvd='1' ) LIMIT 0,5  
+ERR: 1054:Unknown column 'h_pocn' in 'field list'
+ [ SQL语句 ] : SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`h_pocn`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_mgrs` WHERE ( if_aprvd='1' ) LIMIT 0,5  
+
+[ 2016-05-05T17:53:05+08:00 ] ::1 /smart_community/index.php/Admin/Users/approved_users
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000564s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000374s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000470s ]
+NOTIC: [2048] Declaration of Admin\Controller\UsersController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/UsersController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sc_users` WHERE ( if_aprvd='1' ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`h_pocn`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_users` WHERE ( if_aprvd='1' ) LIMIT 0,7   [ RunTime:0.0004s ]
+

@@ -79,58 +79,8 @@
               </li>
               <li><a href="#">办事指南</a>
               </li>
-<!--               <li><a href="form_wizards.html">Form Wizard</a>
-              </li>
-              <li><a href="form_upload.html">Form Upload</a>
-              </li>
-              <li><a href="form_buttons.html">Form Buttons</a>
-              </li> -->
             </ul>
           </li>
-<!--           <li><a><i class="fa fa-desktop"></i> UI Elements <span class="fa fa-chevron-down"></span></a>
-            <ul class="nav child_menu" style="display: none">
-              <li><a href="general_elements.html">General Elements</a>
-              </li>
-              <li><a href="media_gallery.html">Media Gallery</a>
-              </li>
-              <li><a href="typography.html">Typography</a>
-              </li>
-              <li><a href="icons.html">Icons</a>
-              </li>
-              <li><a href="glyphicons.html">Glyphicons</a>
-              </li>
-              <li><a href="widgets.html">Widgets</a>
-              </li>
-              <li><a href="invoice.html">Invoice</a>
-              </li>
-              <li><a href="inbox.html">Inbox</a>
-              </li>
-              <li><a href="calendar.html">Calendar</a>
-              </li>
-            </ul>
-          </li>
-          <li><a><i class="fa fa-table"></i> Tables <span class="fa fa-chevron-down"></span></a>
-            <ul class="nav child_menu" style="display: none">
-              <li><a href="tables.html">Tables</a>
-              </li>
-              <li><a href="tables_dynamic.html">Table Dynamic</a>
-              </li>
-            </ul>
-          </li>
-          <li><a><i class="fa fa-bar-chart-o"></i> Data Presentation <span class="fa fa-chevron-down"></span></a>
-            <ul class="nav child_menu" style="display: none">
-              <li><a href="chartjs.html">Chart JS</a>
-              </li>
-              <li><a href="chartjs2.html">Chart JS2</a>
-              </li>
-              <li><a href="morisjs.html">Moris JS</a>
-              </li>
-              <li><a href="echarts.html">ECharts </a>
-              </li>
-              <li><a href="other_charts.html">Other Charts </a>
-              </li>
-            </ul>
-          </li> -->
         </ul>
       </div>
       <div class="menu_section">
@@ -138,31 +88,25 @@
         <ul class="nav side-menu">
           <li><a><i class="fa fa-bug"></i> 业主管理 <span class="fa fa-chevron-down"></span></a>
             <ul class="nav child_menu" style="display: none">
-              <li><a href="#">业主信息</a>
+              <li><a href="<?php echo U('Admin/Users/index');?>">业主信息</a>
               </li>
-              <li><a href="#">添加业主信息</a>
-              </li>
-              <li><a href="#">更新业主信息</a>
+              <li><a href="<?php echo U('Admin/Users/add');?>">添加业主信息</a>
               </li>
             </ul>
           </li>
           <li><a><i class="fa fa-bug"></i> 物业人员管理 <span class="fa fa-chevron-down"></span></a>
             <ul class="nav child_menu" style="display: none">
-              <li><a href="#">物业人员信息</a>
+              <li><a href="<?php echo U('Admin/Mgrs/index');?>">物业人员信息</a>
               </li>
-              <li><a href="#">添加物业人员信息</a>
-              </li>
-              <li><a href="#">更新物业人员信息</a>
+              <li><a href="<?php echo U('Admin/Mgrs/add');?>">添加物业人员信息</a>
               </li>
             </ul>
           </li>
           <li><a><i class="fa fa-bug"></i> 超级管理员管理 <span class="fa fa-chevron-down"></span></a>
             <ul class="nav child_menu" style="display: none">
-              <li><a href="#">超级管理员信息</a>
+              <li><a href="<?php echo U('Admin/Admin/index');?>">超级管理员信息</a>
               </li>
-              <li><a href="#">添加超级管理员信息</a>
-              </li>
-              <li><a href="#">更新超级管理员信息</a>
+              <li><a href="<?php echo U('Admin/Admin/add');?>">添加超级管理员信息</a>
               </li>
             </ul>
           </li>                          
@@ -287,7 +231,7 @@
     function logout(){
       $.ajax({
         type: "post",
-        url: "/smart_community/index.php/Admin/Access/logout",
+        url: "/smart_community/index.php/Admin/Mgrs/logout",
         data: {
           },
         dataType: "json",
@@ -308,29 +252,68 @@
 	<div class="right_col" role="main">
 		<div class="col-md-12 col-sm-12 col-xs-12">
         	<div class="x_panel">
-			    <div class="title">权限列表</div>
-			    <div class="container-fluid">
-			        <form action="" method="post">
-			            <?php if(is_array($data)): foreach($data as $key=>$v): ?><div style="margin:5px;border-bottom:1px dotted #ccc">
-			                    <button type="button" class="btn btn-primary"><?php echo ($v['title']); ?></button>
-			                    <input type="checkbox" name="access[]" class="level1" value="<?php echo ($v['id']); ?>" <?php if(in_array($v['id'], $ids))echo "checked"?>>
-			                    <?php if(is_array($v['child'])): foreach($v['child'] as $key=>$con): ?><div style="margin:5px;border-top:1px solid #555">
-			                            <button type="button" class="btn btn-success"><?php echo ($con['title']); ?></button>
-			                            <input type="checkbox" name="access[]" class="level2" value="<?php echo ($con['id']); ?>" <?php if(in_array($con['id'], $ids))echo "checked"?>>
-			                        </div>
-			                        <div style="margin:5px;">
-			                            <?php if(is_array($con['child'])): foreach($con['child'] as $key=>$act): ?><button type="button" class="btn btn-info" ><?php echo ($act['title']); ?></button>
-			                                <input type="checkbox" name="access[]" class="level3" value="<?php echo ($act['id']); ?>" <?php if(in_array($act['id'], $ids))echo "checked"?>><?php endforeach; endif; ?>
-			                        </div><?php endforeach; endif; ?>
-			                </div><?php endforeach; endif; ?>
-			            <input type="hidden" name="id" value="<?php echo ($id); ?>">
-			            <button style="margin-left:10px" type="submit" class="btn btn-default">保存</button>
-			
-			        </form>
-			    </div>
-			</div>
-		</div>			    
+                <ul id="myTab" class="nav nav-tabs " role="tablist">
+                  <li role="presentation" class="active"><a href="#tab_content1" role="tab" id="approved-tab" data-toggle="tab" aria-expanded="true">物业人员（已审批）</a>
+                  </li>
+                  <li role="presentation" class=""><a href="#tab_content2" role="tab" id="pending-tab" data-toggle="tab" aria-expanded="false">物业人员（待审批）</a>
+                  </li>
+                </ul>
+                <div id="myTabContent" class="tab-content">
+                	<div role="tabpanel" class="tab-pane fade active in" id="tab_content1" aria-labelledby="home-tab">
+					    <div class="container-fluid">
+					        <table class="table table-hover">
+					            <thead>
+					                <tr>
+					                    <th>ID</th>
+					                    <th>头像</th>
+					                    <th>用户名</th>
+					                    <th>真实姓名</th>
+					                    <th>性别</th>
+					                    <th>手机号</th>
+					                    <th>邮箱</th>
+					                    <th>身份证号</th>
+					                    <th>创建时间</th>
+					                    <th>上次登录IP</th>
+					                    <th>上次登录时间</th>
+					                    <th>操作</th>
+					                </tr>
+					            </thead>
+					            <tbody id="tab1">
+			                					                
+					            </tbody>
+					        </table>
+					        <div id="pages1"></div>
+					    </div>
+                	</div>
+                    <div role="tabpanel" class="tab-pane fade" id="tab_content2" aria-labelledby="profile-tab">
+					    <div class="container-fluid">
+					        <table class="table table-hover">
+					            <thead>
+					                <tr>
+					                    <th>ID</th>
+					                    <th>头像</th>
+					                    <th>用户名</th>
+					                    <th>真实姓名</th>
+					                    <th>性别</th>
+					                    <th>手机号</th>
+					                    <th>邮箱</th>
+					                    <th>身份证号</th>
+					                    <th>创建时间</th>
+					                    <th>操作</th>
+					                </tr>
+					            </thead>
+					            <tbody id="tab2">
+			                					                
+					            </tbody>
+					        </table>
+					        <div id="pages2"></div>
+					    </div>
+                    </div>
+                </div>
+	  		</div>
+	  	</div>
 	  </div>
+	  
 	  	<!-- /page content -->
 	<!-- footer content -->
 <footer>
@@ -431,32 +414,72 @@
 		$('#presentation').addClass('open');
 	})
 </script>
-    <script type="text/javascript">
-        $(function(){
-            $('.level1').click(function(){
-                if($(this).prop('checked')){
-                    $(this).parent().find("input[type='checkbox']").prop('checked',true);
-                }else{
-                    $(this).parent().find("input[type='checkbox']").prop('checked',false);
-                }   
-            })
-            $('.level2').click(function(){
-                if($(this).prop('checked')){
-                    $(this).parent().next().find("input[type='checkbox']").prop('checked',true);
-                }else{
-                   $(this).parent().next().find("input[type='checkbox']").prop('checked',false); 
-                }
-                
-            })
-            $('.level3').click(function(){
-                var is = $(this).prop('checked');
-                if(is){
-                    $(this).prop('checked',true);
-                }else{
-                    $(this).prop('checked',false);
-                }
-            })
-        })
-    </script>
+	<script type="text/javascript">
+		window.onload = function(){
+	    	$.ajax({
+	            type: "post",
+	            url: "/smart_community/index.php/Admin/Mgrs/approved_mgrs",
+	            data: {
+	            	access_token : getCookie('access_token'),
+	              	num : '5',
+	            },
+	            dataType: "json",
+	            success: function(data) {
+	            	if(data['code'] == 200){
+	            		if(data['data']['count'] == 0){
+	            			$("#tab1").append("<font color='red'><h5>无用户信息！</h5></font>");
+	            		}	            		
+ 		            	var len = data['data']['data'].length;
+		            	for(var i=0; i < len; i++){
+		            	 	var array = "/role/users/user_id/"+data['data']['data'][i]['id']+"/username/"+data['data']['data'][i]['nick_name']+"/role_id/"+data['data']['data'][i]['role_id'];
+		            		$("#tab1").append("<tr><td>U"+data['data']['data'][i]['id']+"</td><td>"+data['data']['data'][i]['icon_url']+"</td><td>"+data['data']['data'][i]['nick_name']+"</td><td>"+data['data']['data'][i]['true_name']+"</td><td>"+data['data']['data'][i]['gender']+"</td><td>"+data['data']['data'][i]['mobile']+"</td><td>"+data['data']['data'][i]['email']+"</td><td>"+data['data']['data'][i]['id_card_num']+"</td><td>"+data['data']['data'][i]['create_time']+"</td><td>"+data['data']['data'][i]['last_log_ip']+"</td><td>"+data['data']['data'][i]['last_log_time']+"</td><td><a class=\"btn btn-info btn-xs\" href=\""+"<?php echo U('Admin/Users/edit"+array+"');?>\"><i class=\"fa fa-pencil\"></i>更新</a>"+"<a class=\"btn btn-danger btn-xs\" href=\""+"<?php echo U('Admin/Users/edit"+array+"');?>\"><i class=\"fa fa-trash\"></i>删除</a></td>"+"</tr>");
+		            	 }
+		            	$('#pages1').append(data['data']['page']);
+	            	}
+	            	if(data['code'] == '-205' || data['code'] == '-208'){
+ 	            		alert(data['info']);
+	            		location.href = 'http://' + data['data']['redirect_url'];	            		
+	            	}
+	            },
+	            error: function(xhr, type, errorThrown) {
+	              //异常处理
+	              console.log(type);
+	            }
+	          }); 			
+		}
+	    $('#pending-tab').one('click',function(){
+	    	$.ajax({
+	            type: "post",
+	            url: "/smart_community/index.php/Admin/Mgrs/pending_mgrs",
+	            data: {
+			     	access_token : getCookie('access_token'),
+			        num : '5',
+	            },
+	            dataType: "json",
+	            success: function(data) {
+	            	if(data['code'] == 200){
+	            		if(data['data']['count'] == 0){
+	            			$("#tab2").append("<font color='red'><h5>无用户信息！</h5></font>");
+	            		}	            		
+ 		            	var len = data['data']['data'].length;
+		            	for(var i=0; i < len; i++){
+		            	 	var array = "/role/users/user_id/"+data['data']['data'][i]['id']+"/username/"+data['data']['data'][i]['nick_name']+"/role_id/"+data['data']['data'][i]['role_id'];
+		            		$("#tab2").append("<tr><td>U"+data['data']['data'][i]['id']+"</td><td>"+data['data']['data'][i]['icon_url']+"</td><td>"+data['data']['data'][i]['nick_name']+"</td><td>"+data['data']['data'][i]['true_name']+"</td><td>"+data['data']['data'][i]['gender']+"</td><td>"+data['data']['data'][i]['mobile']+"</td><td>"+data['data']['data'][i]['email']+"</td><td>"+data['data']['data'][i]['id_card_num']+"</td><td>"+data['data']['data'][i]['create_time']+"</td><td><a class=\"btn btn-success btn-xs\" href=\""+"<?php echo U('Admin/Users/edit"+array+"');?>\"><i class=\"fa fa-check\"></i>审批通过</a>"+"<a class=\"btn btn-danger btn-xs\" href=\""+"<?php echo U('Admin/Users/edit"+array+"');?>\"><i class=\"fa fa-close\"></i>拒绝</a></td>"+"</tr>");
+		            	 }
+		            	$('#pages2').append(data['data']['page']);
+	            	}
+ 	            	if(data['code'] == '-205' || data['code'] == '-208'){
+ 	            		alert(data['info']);
+	            		location.href = 'http://' + data['data']['redirect_url'];	            		
+	            	}
+	            },
+	            error: function(xhr, type, errorThrown) {
+	              //异常处理
+	              console.log(type);
+	            }
+	          }); 
+	    })
+	</script>
+    
 </body>
 </html>

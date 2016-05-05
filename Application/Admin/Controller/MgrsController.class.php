@@ -12,6 +12,11 @@ class MgrsController extends CommonController {
         exit(urldecode(json_encode($output)));
     }
     
+    //显示物业信息页面
+    public function index(){
+        $this->display();
+    }
+    
     //展示物业基本信息(已审批通过的)
 	public function approved_mgrs(){
 	    if (IS_POST) {
