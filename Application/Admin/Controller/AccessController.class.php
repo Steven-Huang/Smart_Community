@@ -162,18 +162,6 @@ class AccessController extends CommonController{
 	    $this->display();
 	}
 	
-	function category($items){
-	    $tree = array();
-	    foreach($items as $item){
-	        if(isset($items[$item['pid']])){
-	            $items[$item['pid']]['child'][] = &$items[$item['id']];
-	        }else{
-	            $tree[] = &$items[$item['id']];
-	        }
-	    }
-	    return $tree;
-	}
-	
    /**
     * 节点列表
     * @return [type] [description]
@@ -191,58 +179,34 @@ class AccessController extends CommonController{
     		    $value['title'] = urlencode($value['title']);
     		}		
     		//$info = category($data);
-    		$data = $this->category($data);
+     		$data = category($data);
     		$str = '';
             foreach ($data as $v){
                 $str .= <<<Eof
                         	<div style="margin:5px;border-bottom:1px dotted #ccc">
                         		<button type="button" class="btn btn-primary">{$v['title']}</button>
-                        		<a href="{:U('Admin/Access/add_node',array('pid'=>{$v['id']},'level'=>{$v['level']} + 1))}">添加</a>
-                        		<a href="{:U('Admin/Access/del_node',array('id'=>{$v['id']}))}">删除</a>
+                        		<a href="add_node/pid/{$v['id']}/level/2"><i class="fa fa-plus"></i></a>
+                        		<a href="javascript:;" name="del" id="{$v['id']}"><i class="fa fa-trash-o"></i></a>
                         	</div>
 Eof;
                 foreach ($v['child'] as $con){
                     $str .= <<<Eof
                     		<div style="margin:5px;border-top:1px solid #555">
                     			<button type="button" class="btn btn-success">{$con['title']}</button>
-                    			<a href="{:U('Admin/Access/add_node',array('pid'=>{$con['id']},'level'=>{$con['level']} + 1))}">添加</a>
-                    			<a href="{:U('Admin/Access/del_node',array('id'=>{$con['id']}))}">删除2</a>
+                    			<a href="add_node/pid/{$con['id']}/level/3"><i class="fa fa-plus"></i></a>
+                    			<a href="javascript:;" name="del" id="{$con['id']}"><i class="fa fa-trash-o"></i></a>
                     		</div>
                     		<div style="margin:5px;">
 Eof;
                     foreach ($con['child'] as $act){
                         $str .= <<<Eof
             				<button type="button" class="btn btn-info" >{$act['title']}</button>
-            				<a style="margin-right:10px" href="{:U('Admin/Access/del_node',array('id'=>{$act['id']}))}">删除3</a>
+            				<a style="margin-right:10px" href="javascript:;" name="del" id="{$act['id']}"><i class="fa fa-trash-o"></i></a>
 Eof;
                     }
                     $str .= "</div>";
                 }
             }
-
-    		$infos = <<<Eof
-    		            
-                        <foreach name="data" item="v">
-                        	<div style="margin:5px;border-bottom:1px dotted #ccc">
-                        		<button type="button" class="btn btn-primary">{$v['title']}</button>
-                        		<a href="{:U('Admin/Access/add_node',array('pid'=>{$v['id']},'level'=>{$v['level']} + 1))}">添加</a>
-                        		<a href="{:U('Admin/Access/del_node',array('id'=>{$v['id']}))}">删除</a>
-                        	</div>
-                        	<foreach name="v['child']" item="con">
-                        		<div style="margin:5px;border-top:1px solid #555">
-                        			<button type="button" class="btn btn-success">{$con['title']}</button>
-                        			<a href="{:U('Admin/Access/add_node',array('pid'=>{$con['id']},'level'=>{$con['level']} + 1))}">添加</a>
-                        			<a href="{:U('Admin/Access/del_node',array('id'=>{$con['id']}))}">删除</a>
-                        		</div>
-                        		<div style="margin:5px;">
-                        			<foreach name="con['child']" item="act">
-                        				<button type="button" class="btn btn-info" >{$act['title']}</button>
-                        				<a style="margin-right:10px" href="{:U('Admin/Access/del_node',array('id'=>{$act['id']}))}">删除</a>
-                        			</foreach>
-                        		</div>
-                        	</foreach>
-                        </foreach>
-Eof;
     		$output = array('data' => $str,'info' => urlencode('节点列表'),'code' => 200);
     		exit(urldecode(json_encode($output)));		
 		}else{
@@ -313,8 +277,12 @@ Eof;
     			'status'=> '1'
     			);
     		$node = M('node');
+    		if (empty($data['name']) || empty($data['title']) || empty($data['sort'])){
+    		    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Access/node_list'), 'sec' => 3),'info' => urlencode('节点信息不能为空！'),'code' => -201);
+    		    exit(urldecode(json_encode($output)));
+    		}
     		if ($node->where(array('name'=>$data['name'],'level'=>$data['level'],'pid'=>$data['pid']))->select()){
-    		    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Access/node_list'), 'sec' => 3),'info' => urlencode('节点已存在,请重新再试！'),'code' => -201);
+    		    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Access/node_list'), 'sec' => 3),'info' => urlencode('节点已存在,请重新再试！'),'code' => -202);
     		    exit(urldecode(json_encode($output)));
     		}
     		$status = $node->add($data);
@@ -492,11 +460,36 @@ Eof;
     	    foreach ($data as $key => &$value){
     	        $value['title'] = urlencode($value['title']);
     	    }
-    	    $info = $this->category($data);
+    	    $data = category($data);
+    	    $str = '';
+    	    foreach ($data as $v){
+    	        $str .= <<<Eof
+                        <div style="margin:5px;border-bottom:1px dotted #ccc">
+                        <button type="button" class="btn btn-primary">{$v['title']}</button>
+                        <input type="checkbox" name="access[]" class="level1" value="{$v['id']}" <?php if(in_array({$v['id']}, {$ids}))echo "checked"?>>
+Eof;
+    	        foreach ($v['child'] as $con){
+    	            $str .= <<<Eof
+                            <div style="margin:5px;border-top:1px solid #555">
+                                <button type="button" class="btn btn-success">{$con['title']}</button>
+                                <input type="checkbox" name="access[]" class="level2" value="{$con['id']}" <?php if(in_array({$con['id']}, {$ids}))echo "checked"?>>
+                            </div>
+                            <div style="margin:5px;">
+Eof;
+    	            foreach ($con['child'] as $act){
+    	                $str .= <<<Eof
+                                <button type="button" class="btn btn-info" >{$act['title']}</button>
+                                <input type="checkbox" name="access[]" class="level3" value="{$act['id']}" <?php if(in_array({$act['id']}, {$ids}))echo "checked"?>>
+Eof;
+    	            }
+    	            $str .= "</div></div>";
+    	        }
+    	    }
+    	    
     	    $output = array('data' => array(
     	        'ids' => $ids,
     	        'id' => $id,
-    	        'data' => $info
+    	        'data' => $data
     	    ),'info' => urlencode('权限列表'),'code' => 200);
     	    exit(urldecode(json_encode($output)));
 	    }else{

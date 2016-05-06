@@ -59,14 +59,11 @@
 	            },
 	            dataType: "json",
 	            success: function(data) {
-	            	if(data['code'] == 200){
-	            		//测试
-	            		alert(data['data']);
-	            		
+	            	if(data['code'] == 200){            		
 		            	$('#node_list').append(data['data']);
 	            	}
 	            	if(data['code'] == '-205' || data['code'] == '-208'){
-		            		alert(data['info']);
+		            	alert(data['info']);
 	            		location.href = 'http://' + data['data']['redirect_url'];	            		
 	            	}
 	            },
@@ -74,8 +71,15 @@
 	              //异常处理
 	              console.log(type);
 	            }
-	          }); 			
+	        }); 		
 		}
+		//测试不成功
+		$(function(){
+			$("a[name='del']").click(function(){
+				alert('1');
+			});
+		});
+
 	</script>
 </body>
 </html>

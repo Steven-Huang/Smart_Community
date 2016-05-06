@@ -21,7 +21,7 @@
 			    <div class="title">权限列表</div>
 			    <div class="container-fluid">
 			        <form action="" method="post">
-			            <foreach name="data" item="v">
+<!-- 			            <foreach name="data" item="v">
 			                <div style="margin:5px;border-bottom:1px dotted #ccc">
 			                    <button type="button" class="btn btn-primary">{$v['title']}</button>
 			                    <input type="checkbox" name="access[]" class="level1" value="{$v['id']}" <?php if(in_array($v['id'], $ids))echo "checked"?>>
@@ -38,7 +38,7 @@
 			                        </div>
 			                    </foreach>
 			                </div>
-			            </foreach>
+			            </foreach> -->
 			            <input type="hidden" name="id" value="{$id}">
 			            <button style="margin-left:10px" type="submit" class="btn btn-default">保存</button>
 			

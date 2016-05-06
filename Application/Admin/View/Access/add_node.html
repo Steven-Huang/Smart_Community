@@ -13,7 +13,6 @@
 <body class="nav-md">
 	<include file="Public/menu"/>
 	<include file="Public/top"/>
-	
 	<!-- page content -->
 	<div class="right_col" role="main">
 		<div class="col-md-12 col-sm-12 col-xs-12">
@@ -21,6 +20,8 @@
 				<div class="title">添加节点</div>
 				<div class="container-fluid">
 					<form class="form-horizontal">
+ 						<input type="hidden" id="level" value="<?php echo $_GET['level'] ? $_GET['level'] : 1; ?>">
+			      		<input type="hidden" id="pid" value="<?php echo $_GET['pid'] ? $_GET['pid'] : 0; ?>">
 					  	<div class="form-group">
 					    	<label for="name" class="col-md-1 control-label" id="node_name"></label>
 					    	<div class="col-md-3">
@@ -37,8 +38,8 @@
 					    	<label for="sort" class="col-md-1 control-label">排序:</label>
 					    	<div class="col-md-3">
 					      		<input type="text" class="form-control" value="100" id="sort">
-					      		<input type="hidden" id="level" value="">
-					      		<input type="hidden" id="pid" value="">
+<!-- 					      		<input type="hidden" id="save_level" value="">
+					      		<input type="hidden" id="save_pid" value=""> -->
 					    	</div>
 					  	</div>
 					  	<div class="form-group">
@@ -60,14 +61,16 @@
 	            type: "post",
 	            url: "__CONTROLLER__/add_node_list",
 	            data: {
-	            	'access_token' : getCookie('access_token')
+	            	'access_token' : getCookie('access_token'),
+	            	'pid' : $('#pid').val(),
+	            	'level': $('#level').val()
 	            },
 	            dataType: "json",
 	            success: function(data) {
 	            	if(data['code'] == 200){
 	            		$('#node_name').append(data['data']['view']+':');
-	            		$('#level').val(data['data']['level']);
-	            		$('#pid').val(data['data']['pid']);
+/*  	            		$('#save_level').val(data['data']['level']);
+	            		$('#save_pid').val(data['data']['pid']); */
 	            	}
 	            	if(data['code'] == '-205' || data['code'] == '-208'){
 	            		alert(data['info']);

@@ -37,11 +37,11 @@ class MgrsController extends CommonController {
     		//调用show显示分页链接
     		$show = $Page->show();
     		//实现数据分页
-    		$data = $users->field('id,icon_url,nick_name,true_name,gender,h_pocn,mobile,email,id_card_num,create_time,last_log_ip,last_log_time')->where("if_aprvd='1'")->limit($Page->firstRow,$Page->listRows)->select();
+    		$data = $users->field('id,icon_url,nick_name,true_name,gender,mobile,email,id_card_num,create_time,last_log_ip,last_log_time')->where("if_aprvd='1'")->limit($Page->firstRow,$Page->listRows)->select();
     		$output = array('data' => array('data' => $data, 'count' => $count, 'page' => urlencode($show)),'info' => urlencode('已审核通过的物业信息！'),'code' => 200);
     		exit(urldecode(json_encode($output)));
 		}else{
-		    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Mgrs/index'), 'sec' => 3),'info' => urlencode('请求错误！请重新再试！'),'code' => -205);
+		    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Index/index'), 'sec' => 3),'info' => urlencode('请求错误！请重新再试！'),'code' => -205);
 		    exit(urldecode(json_encode($output)));
 		}
 	}
@@ -66,7 +66,7 @@ class MgrsController extends CommonController {
     	    //调用show显示分页链接
     	    $show = $Page->show();
     	    //实现数据分页
-    	    $data = $users->field('id,icon_url,nick_name,true_name,gender,h_pocn,mobile,email,id_card_num,create_time,last_log_ip,last_log_time')->where("if_aprvd='0'")->limit($Page->firstRow,$Page->listRows)->select();
+    	    $data = $users->field('id,icon_url,nick_name,true_name,gender,mobile,email,id_card_num,create_time,last_log_ip,last_log_time')->where("if_aprvd='0'")->limit($Page->firstRow,$Page->listRows)->select();
     	    $output = array('data' => array('data' => $data, 'count' => $count, 'page' => urlencode($show)),'info' => urlencode('等待审批的物业信息！'),'code' => 200);
     	    exit(urldecode(json_encode($output)));
 	    }else{
