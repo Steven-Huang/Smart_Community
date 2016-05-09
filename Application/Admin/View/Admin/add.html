@@ -23,48 +23,48 @@
 			        <div class="col-md-12 col-sm-12 col-xs-12">
 			          <div class="x_panel">
 			            <div class="x_content">
-			              <form class="form-horizontal form-label-left" id="register_form" novalidate>
-			                <h1>添加超级管理员信息</h1>
+			              <form class="form-horizontal form-label-left" id="register_form">
+			                <h1>超级管理员信息</h1>
 			                <div class="item form-group">
-			                  <label class="control-label col-md-3 col-sm-3 col-xs-12" for="user_nick_name">用户名 <span class="required">*</span>
+			                  <label class="control-label col-md-3 col-sm-3 col-xs-12" for="admin_nick_name">用户名 <span class="required">*</span>
 			                  </label>
 			                  <div class="col-md-6 col-sm-6 col-xs-9">
-			                    <input id="user_nick_name" name="user_nick_name" class="form-control col-md-7 col-xs-12" maxlength="10" placeholder="" required="required" type="text">
+			                    <input id="admin_nick_name" name="admin_nick_name" class="form-control col-md-7 col-xs-12" maxlength="10" placeholder="" required="required" type="text">
 			                  </div>
 			                </div>
 			                <div class="item form-group">
-			                  <label class="control-label col-md-3 col-sm-3 col-xs-12" for="user_true_name">真实姓名 <span class="required">*</span>
+			                  <label class="control-label col-md-3 col-sm-3 col-xs-12" for="admin_true_name">真实姓名 <span class="required">*</span>
 			                  </label>
 			                  <div class="col-md-6 col-sm-6 col-xs-9">
-			                    <input id="user_true_name" name="user_true_name" class="form-control col-md-7 col-xs-12" maxlength="10" placeholder="" required="required" type="text">
+			                    <input id="admin_true_name" name="admin_true_name" class="form-control col-md-7 col-xs-12" maxlength="10" placeholder="" required="required" type="text">
 			                  </div>
 			                </div>
 			                <div class="item form-group">
-			                  <label class="control-label col-md-3 col-sm-3 col-xs-12" for="user_gender">性别 <span class="required">*</span>
+			                  <label class="control-label col-md-3 col-sm-3 col-xs-12" for="admin_gender">性别 <span class="required">*</span>
 			                  </label>
 			                  <div class="col-md-6 col-sm-6 col-xs-9" style="text-align:left">
-			                <div id="gender" class="btn-group" data-toggle="buttons">
+			                <div class="btn-group" data-toggle="buttons">
 			                  <label class="btn btn-default" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
-			                    <input type="radio" name="gender" value="1"> &nbsp; 男 &nbsp;
+			                    <input type="radio" id="admin_gender" name="admin_gender" value="1"> &nbsp; 男 &nbsp;
 			                  </label>
 			                  <label class="btn btn-default" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
-			                    <input type="radio" name="gender" value="2"> &nbsp; 女 &nbsp;
+			                    <input type="radio" id="admin_gender" name="admin_gender" value="2"> &nbsp; 女 &nbsp;
 			                  </label>
 			                </div>
 			              </div>
 			            </div>                    
 			            <div class="item form-group">
-			              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="user_id_card_num">身份证号 <span class="required">*</span>
+			              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="admin_id_card_num">身份证号 <span class="required">*</span>
 			              </label>
 			              <div class="col-md-6 col-sm-6 col-xs-9">
-			                <input id="user_id_card_num" name="user_id_card_num" class="form-control col-md-7 col-xs-12" maxlength="18" placeholder="" required="required" type="text">
+			                <input id="admin_id_card_num" name="admin_id_card_num" class="form-control col-md-7 col-xs-12" maxlength="18" placeholder="" required="required" type="text">
 			              </div>
-			            </div>                                                                       
+			            </div>                                                                        
 			            <div class="item form-group">
-			              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="email">邮箱地址 <span class="required">*</span>
+			              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="admin_email">邮箱地址 <span class="required">*</span>
 			              </label>
 			              <div class="col-md-6 col-sm-6 col-xs-9">
-			                <input type="email" id="email" name="email" required="required" class="form-control col-md-7 col-xs-12">
+			                <input type="email" id="admin_email" name="admin_email" required="required" class="form-control col-md-7 col-xs-12">
 			              </div>
 			            </div>
 			            <div class="item form-group">
@@ -82,16 +82,17 @@
 			              </div>
 			            </div>
 			            <div class="item form-group">
-			              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="telephone">手机号 <span class="required">*</span>
+			              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="admin_mobile">手机号 <span class="required">*</span>
 			              </label>
 			              <div class="col-md-6 col-sm-6 col-xs-9">
-			                <input type="tel" id="telephone" name="phone" required="required" data-validate-length-range="8,20" class="form-control col-md-7 col-xs-12">
+			                <input type="text" id="admin_mobile" name="admin_mobile" required="required" class="form-control col-md-7 col-xs-12">
 			              </div>
 			            </div>
 			            <div class="ln_solid"></div>
 			            <div class="form-group">
 			              <div class="col-md-6 col-md-offset-3">
-			                <button type="reset" class="btn btn-primary">清除</button>
+ 			                <button type="reset" class="btn btn-primary">清除</button>
+			                <!-- <a href="javascript:;" class="btn btn-default submit savedata" >保存</a> -->
 			                <button id="send" type="submit" class="btn btn-success">提交</button>
 			              </div>
 			            </div>
@@ -111,5 +112,62 @@
 	
 	<include file="Public/footer"/>
 	<include file="Public/public_bottom"/>
+  <!-- form validation -->
+  <script src="__PUBLIC__/admin/js/validator/validator.js"></script>
+  <script>
+    // initialize the validator function
+    validator.message['date'] = 'not a real date';
+
+    // validate a field on "blur" event, a 'select' on 'change' event & a '.reuired' classed multifield on 'keyup':
+    $('form')
+      .on('blur', 'input[required], input.optional, select.required', validator.checkField)
+      .on('change', 'select.required', validator.checkField)
+      .on('keypress', 'input[required][pattern]', validator.keypress);
+
+    $('.multi.required')
+      .on('keyup blur', 'input', function() {
+        validator.checkField.apply($(this).siblings().last()[0]);
+      });
+    
+     $('form').submit(function(e) {
+        e.preventDefault();
+        var submit = true;
+        // evaluate the form using generic validaing
+        if (!validator.checkAll($(this))) {
+          	submit = false;
+        }
+        if (submit){
+	    	$.ajax({
+	            type: "post",
+	            url: "__CONTROLLER__/do_add",
+	            data: {
+	            	'access_token' : getCookie('access_token'),
+	            	'admin_nick_name' : $('#admin_nick_name').val(),
+	            	'admin_true_name' : $('#admin_true_name').val(),
+	            	'admin_gender' : $("input[name='admin_gender']:checked").val(),
+	            	'admin_id_card_num' : $('#admin_id_card_num').val(),
+	            	'admin_email' : $('#admin_email').val(),
+	            	'admin_password' : $('#password').val(),
+	            	'admin_password_confirmed' : $('#password2').val(),
+	            	'admin_mobile' : $('#admin_mobile').val()
+	            },
+	            dataType: "json",
+	            success: function(data) {
+	            	if(data['code'] == '200' || data['code'] == '-200' || data['code'] == '-205' || data['code'] == '-208'){
+	            		alert(data['info']);
+	            		location.href = 'http://' + data['data']['redirect_url'];
+	            	}else if(data['code'] == '-201A' || data['code'] == '-201B' || data['code'] == '-201C' || data['code'] == '-201D' || data['code'] == '-202A' || data['code'] == '-202B' || data['code'] == '-202C' || data['code'] == '-202D' || data['code'] == '-203'){
+	            		alert(data['info']);
+	            	}
+	            },
+	            error: function(xhr, type, errorThrown) {
+	              //异常处理
+	              console.log(type);
+	            }
+	          }); 
+        }       
+        return false;
+      }); 
+	</script>
 </body>
 </html>

@@ -61,16 +61,39 @@ class AdminController extends CommonController {
 		        $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Public/login'), 'sec' => 3),'info' => urlencode('ACCESS_TOKEN超时，请重新登录！'),'code' => -208);
 		        exit(urldecode(json_encode($output)));
 		    }
-		    $pwd_confirm = strtolower(trim(I('post.user_password_confirmed')));
+	        $data = array(
+	            'nick_name' => strtolower(trim(I('post.admin_nick_name'))),
+	            'true_name' => strtolower(trim(I('post.admin_true_name'))),
+	            'gender' => trim(I('post.admin_gender')),
+	            'id_card_num' => strtolower(trim(I('post.admin_id_card_num'))),
+	            'email' => strtolower(trim(I('post.admin_email'))),
+	            'password' => strtolower(trim(I('post.admin_password'))),
+	            'mobile' => trim(I('post.admin_mobile'))
+	        );
+	        $pwd_confirm = strtolower(trim(I('post.admin_password_confirmed')));
+	        //实例化Users对象
 			$users = D('admin');
 			$data = $users->create();
 			foreach ($data as $key => $value){
 			    $data[$key] = strtolower(trim($value));
 			}			
 			//当用户信息为空时，返回错误信息（需前端配合过滤）
-			if (empty($data['nick_name']) || empty($data['true_name']) || empty($data['password']) || empty($data['mobile']) || empty($data['email']) || empty($data['id_card_num'])){
-		        $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Admin/add'), 'sec' => 3),'info' => urlencode('超级管理员信息不能为空！'),'code' => -201);
+			if (empty($data['nick_name']) || empty($data['true_name']) || empty($data['password']) || empty($pwd_confirm) || empty($data['mobile']) || empty($data['email']) || empty($data['id_card_num'])){
+		        $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Admin/add'), 'sec' => 3),'info' => urlencode('超级管理员信息不能为空！'),'code' => '-201A');
 		        exit(urldecode(json_encode($output)));
+			}
+			//判断是否有效
+			if(!preg_match('^\d{15}|\d{18}$',$data['id_card_num'])){
+			    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Admin/add'), 'sec' => 3),'info' => '身份证号错误！','code' => '-201B');
+			    exit(urldecode(json_encode($output)));
+			}
+			if(!preg_match('^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$',$data['id_card_num'])){
+			    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Admin/add'), 'sec' => 3),'info' => '邮箱格式错误！','code' => '-201C');
+			    exit(urldecode(json_encode($output)));
+			}
+			if(!preg_match('^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$',$data['email'])){
+			    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Admin/add'), 'sec' => 3),'info' => '手机号格式错误！','code' => '-201D');
+			    exit(urldecode(json_encode($output)));
 			}
 			//检查信息(nick_name,mobile,email,id_card_num)是否重复,需前端配合过滤
 			if ($users->field('id')->where("nick_name = '{$data['nick_name']}'")->select()){
@@ -256,9 +279,16 @@ class AdminController extends CommonController {
 	        }
     	    $id = I('post.user_id');
     	    $users = D('admin');
-    	    $data = $users->field('id,icon_url,nick_name,mobile,email')->where("id = '{$id}'")->select();
-    	    $output = array('data' => $data,'info' => urlencode('需更新的用户信息'),'code' => 200);
-    	    exit(urldecode(json_encode($output)));
+	        $data = $users->field('id,icon_url,nick_name,true_name,gender,id_card_num,mobile,email')->where("id = '{$id}'")->select();
+            //身份证号加*号隐藏部分信息
+            $data[0]['id_card_num'] = strlen($data[0]['id_card_num']) == 15 ? substr_replace($data[0]['id_card_num'],"****",8,4) : (strlen($data[0]['id_card_num']) == 18 ? substr_replace($data[0]['id_card_num'],"****",10,4) : "身份证位数不正常！");
+            if ($data){
+                $output = array('data' => $data,'info' => urlencode('需更新的用户信息'),'code' => 200);
+                exit(urldecode(json_encode($output)));                
+            }else{
+                $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Admin/edit'), 'sec' => 3),'info' => urlencode('获取用户信息失败！'),'code' => -200);
+                exit(urldecode(json_encode($output)));                
+            }
 	    }else{
 	        $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Admin/edit'), 'sec' => 3),'info' => urlencode('请求错误！请重新再试！'),'code' => -205);
 	        exit(urldecode(json_encode($output)));
@@ -344,7 +374,7 @@ class AdminController extends CommonController {
     	        $old_password = strtolower(trim(I('post.old_password')));
     	        $new_password = strtolower(trim(I('post.new_password')));
     	        $confirm_password = strtolower(trim(I('post.confirm_password')));
-    	        $mobile = strtolower(trim(I('post.mobile')));
+    	        $mobile = trim(I('post.mobile'));
     	        $email = strtolower(trim(I('post.email')));
     	        
     	        //当用户信息为空时，返回错误信息（需前端配合过滤）
@@ -450,7 +480,7 @@ class AdminController extends CommonController {
     }
     
 	//管理员删除用户信息
-	public function delete_users(){
+	public function del_users(){
 	    if (IS_POST) {
 	        //获取TOKEN
 	        $token = I('post.access_token');
@@ -529,7 +559,7 @@ class AdminController extends CommonController {
     }
 	
 	//管理员删除物业人员信息
-	public function delete_mgrs(){
+	public function del_mgrs(){
 	    if (IS_POST) {
 	        //获取TOKEN
 	        $token = I('post.access_token');
