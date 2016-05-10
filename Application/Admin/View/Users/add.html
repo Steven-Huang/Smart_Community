@@ -26,14 +26,14 @@
 			              <form class="form-horizontal form-label-left" id="register_form">
 			                <h1>添加业主信息</h1>
 			                <div class="item form-group">
-			                  <label class="control-label col-md-3 col-sm-3 col-xs-12" for="user_nick_name">用户名 <span class="required">*</span>
+			                  <label class="control-label col-md-3 col-sm-3 col-xs-12" for="user_nick_name">用户名 <span class="required">* </span>
 			                  </label>
 			                  <div class="col-md-6 col-sm-6 col-xs-9">
 			                    <input id="user_nick_name" name="user_nick_name" class="form-control col-md-7 col-xs-12" maxlength="10" placeholder="" required="required" type="text">
 			                  </div>
 			                </div>
 			                <div class="item form-group">
-			                  <label class="control-label col-md-3 col-sm-3 col-xs-12" for="user_true_name">真实姓名 <span class="required">*</span>
+			                  <label class="control-label col-md-3 col-sm-3 col-xs-12" for="user_true_name">真实姓名 <span class="required">* </span>
 			                  </label>
 			                  <div class="col-md-6 col-sm-6 col-xs-9">
 			                    <input id="user_true_name" name="user_true_name" class="form-control col-md-7 col-xs-12" maxlength="10" placeholder="" required="required" type="text">
@@ -78,7 +78,7 @@
 			              <label for="password" class="control-label col-md-3 col-sm-3 col-xs-12">密码 <span class="required">*</span>
 			              </label>
 			              <div class="col-md-6 col-sm-6 col-xs-9">
-			                <input id="password" type="password" name="password" data-validate-length="6,8" class="form-control col-md-7 col-xs-12" required="required">
+			                <input id="password" type="password" name="password" class="form-control col-md-7 col-xs-12" required="required">
 			              </div>
 			            </div>
 			            <div class="item form-group">
@@ -176,51 +176,6 @@
         }       
         return false;
       }); 
-	
-/*     $('body').on('click','.savedata',function(e) {
-        e.preventDefault();
-        var submit = true;
-        // evaluate the form using generic validaing
-        if (!validator.checkAll($(this))) {
-          submit = false;
-        }
-
-        if (submit)
-          this.submit();
-        return false;
-      }) */
-    /* 
-		$('body').on('click','.savedata',function(){
-	    	$.ajax({
-	            type: "post",
-	            url: "__CONTROLLER__/do_add",
-	            data: {
-	            	'access_token' : getCookie('access_token'),
-	            	'user_nick_name' : $('#user_nick_name').val(),
-	            	'user_true_name' : $('#user_true_name').val(),
-	            	'user_gender' : $("input[name='user_gender']:checked").val(),
-	            	'user_id_card_num' : $('#user_id_card_num').val(),
-	            	'user_pocn' : $('#user_pocn').val(),
-	            	'user_email' : $('#user_email').val(),
-	            	'user_password' : $('#password').val(),
-	            	'user_password_confirmed' : $('#password2').val(),
-	            	'user_mobile' : $('#user_mobile').val()
-	            },
-	            dataType: "json",
-	            success: function(data) {
-	            	if(data['code'] == '200' || data['code'] == '-200' || data['code'] == '-205' || data['code'] == '-208'){
-	            		alert(data['info']);
-	            		location.href = 'http://' + data['data']['redirect_url'];
-	            	}else if(data['code'] == '-201' || data['code'] == '-202A' || data['code'] == '-202B' || data['code'] == '-202C' || data['code'] == '-202D' || data['code'] == '-203'){
-	            		alert(data['info']);
-	            	}
-	            },
-	            error: function(xhr, type, errorThrown) {
-	              //异常处理
-	              console.log(type);
-	            }
-	          }); 			
-		}) */
 	</script>
 </body>
 </html>

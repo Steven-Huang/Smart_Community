@@ -111,18 +111,18 @@ class MgrsController extends CommonController {
 		        exit(urldecode(json_encode($output)));
 			}
 			//判断是否有效
-			if(!preg_match('^\d{15}|\d{18}$',$data['id_card_num'])){
-			    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Mgrs/add'), 'sec' => 3),'info' => '身份证号错误！','code' => '-201B');
-			    exit(urldecode(json_encode($output)));
-			}
-			if(!preg_match('^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$',$data['id_card_num'])){
-			    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Mgrs/add'), 'sec' => 3),'info' => '邮箱格式错误！','code' => '-201C');
-			    exit(urldecode(json_encode($output)));
-			}
-			if(!preg_match('^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$',$data['email'])){
-			    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Mgrs/add'), 'sec' => 3),'info' => '手机号格式错误！','code' => '-201D');
-			    exit(urldecode(json_encode($output)));
-			}
+	        if(!preg_match('/(^\d{15}$)|(^(\d{6})(\d{4})(\d{2})(\d{2})(\d{3})([0-9]|X)$)/',$data['id_card_num'])){
+	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Mgrs/add'), 'sec' => 3),'info' => '身份证号错误！','code' => '-201B');
+	            exit(urldecode(json_encode($output)));
+	        }
+	        if(!preg_match('/^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/',$data['email'])){
+	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Mgrs/add'), 'sec' => 3),'info' => '邮箱格式错误！','code' => '-201C');
+	            exit(urldecode(json_encode($output)));
+	        }
+	        if(!preg_match('/^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$/',$data['mobile'])){
+	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Mgrs/add'), 'sec' => 3),'info' => '手机号格式错误！','code' => '-201D');
+	            exit(urldecode(json_encode($output)));
+	        }
 			//检查信息(nick_name,mobile,email,id_card_num)是否重复,需前端配合过滤
 			if ($users->field('id')->where("nick_name = '{$data['nick_name']}'")->select()){
 			    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Mgrs/add'), 'sec' => 3),'info' => urlencode('昵称已存在！'),'code' => '-202A');
@@ -146,8 +146,10 @@ class MgrsController extends CommonController {
 			    exit(urldecode(json_encode($output)));
 			}
 			//密码加密
-			$data['password'] = md5($data['password']);
+			$data['password'] = create_hash($data['password'],$data['id_card_num']);
 			$data['create_time'] = date('Y-m-d h:i:s',time());
+// 			$output = array('data' => $data,'info' => urlencode('errorhere'),'code' => -203);
+// 			exit(urldecode(json_encode($output)));
 			if ($users->add($data)) {		    
 		        $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Mgrs/index'), 'sec' => 2),'info' => urlencode('添物业主信息成功！'),'code' => 200);
 		        exit(urldecode(json_encode($output)));				
