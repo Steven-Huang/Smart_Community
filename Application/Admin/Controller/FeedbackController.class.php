@@ -1,0 +1,31 @@
+<?php
+namespace Admin\Controller;
+
+class NoticeController extends CommonController {
+    
+    /**
+     * 定义_empty空操作
+     * @author Steven.Huang <87144734@qq.com>
+     */
+    public function _empty(){
+        $this->show();
+    }
+    
+    /**
+     * 定义_empty空操作跳转
+     * @author Steven.Huang <87144734@qq.com>
+     */
+    public function show(){
+        $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Index/index'), 'sec' => 3),'info' => urlencode('您访问的页面不存在！'),'code' => -404);
+        exit(urldecode(json_encode($output)));
+    }
+    
+    /**
+     * 通知反馈信息列表页面
+     * @author Steven.Huang <87144734@qq.com>
+     */
+    public function index(){
+        $this->display();
+    }
+    
+}
