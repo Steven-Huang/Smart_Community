@@ -1,0 +1,99 @@
+[ 2016-05-12T08:36:52+08:00 ] ::1 /smart_community/index.php/smart_community/index.php/Admin/Articlecate/index.html.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000425s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000517s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000664s ]
+ERR: 非法操作:index.php
+
+[ 2016-05-12T08:37:48+08:00 ] ::1 /smart_community/index.php/smart_community/index.php/Admin/Article/index.html.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000273s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000419s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000518s ]
+ERR: 非法操作:index.php
+
+[ 2016-05-12T08:38:15+08:00 ] ::1 /smart_community/index.php/smart_community/index.php/Admin/Article/index.html.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000298s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000500s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000606s ]
+ERR: 非法操作:index.php
+
+[ 2016-05-12T08:45:58+08:00 ] ::1 /smart_community/index.php/smart_community/index.php/Admin/Articlecate/index.html.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000322s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000386s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000481s ]
+ERR: 非法操作:index.php
+
+[ 2016-05-12T09:07:52+08:00 ] ::1 /smart_community/index.php/smart_community/index.php/Admin/Article/index.html.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000288s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000390s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000490s ]
+ERR: 非法操作:index.php
+
+[ 2016-05-12T09:09:29+08:00 ] ::1 /smart_community/index.php/smart_community/index.php/Admin/Article/index.html.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000360s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000442s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000554s ]
+ERR: 非法操作:index.php
+
+[ 2016-05-12T09:09:43+08:00 ] ::1 /smart_community/index.php/smart_community/index.php/Admin/Article/index.html.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000063s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000400s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000393s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000581s ]
+ERR: 非法操作:index.php
+
+[ 2016-05-12T09:10:04+08:00 ] ::1 /smart_community/index.php/smart_community/index.php/Admin/Article/index.html.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000317s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000497s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000611s ]
+ERR: 非法操作:index.php
+
+[ 2016-05-12T09:10:19+08:00 ] ::1 /smart_community/index.php/smart_community/index.php/Admin/Article/index.html.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000279s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000297s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000375s ]
+ERR: 非法操作:index.php
+
+[ 2016-05-12T10:33:59+08:00 ] ::1 /smart_community/index.php/smart_community/index.php/Admin/Articlecate/index.html.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000398s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000424s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000529s ]
+ERR: 非法操作:index.php
+
+[ 2016-05-12T10:43:04+08:00 ] ::1 /smart_community/index.php/smart_community/index.php/Admin/Article/index.html.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000290s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000519s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000646s ]
+ERR: 非法操作:index.php
+

@@ -62,7 +62,7 @@ class UsersController extends CommonController {
     	    //获取总记录数
     	    $count = $users->where("if_aprvd='0'")->count();
     	    //实例化分类页
-    	    $Page = new \Think\Page($count,$num);
+    	    $Page = new \Think\Page($count,$count);
     	    //调用show显示分页链接
     	    $show = $Page->show();
     	    //实现数据分页

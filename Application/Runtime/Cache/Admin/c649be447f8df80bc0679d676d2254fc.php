@@ -1,14 +1,14 @@
 <?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<!-- Meta, title, CSS, favicons, etc. -->
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>JoyRill智慧社区后台</title>
-<!-- Public core css/js -->
-<!-- Bootstrap core CSS -->
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<!-- Meta, title, CSS, favicons, etc. -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JoyRill智慧社区后台</title>
+	<!-- Public core css/js -->
+	<!-- Bootstrap core CSS -->
 
 <link href="/smart_community/Public/admin/css/bootstrap.min.css" rel="stylesheet">
 
@@ -32,10 +32,6 @@
 <link href="/smart_community/Public/admin/css/floatexamples.css" rel="stylesheet" type="text/css" />    
 <script src="/smart_community/Public/admin/js/jquery.min.js"></script>
 
-<script type="text/javascript"
-	src="/smart_community/Public/admin/ueditor/ueditor.config.js"></script>
-<script type="text/javascript"
-	src="/smart_community/Public/admin/ueditor/ueditor.all.js"></script>
 </head>
 <body class="nav-md">
 	<div class="container body">
@@ -75,7 +71,7 @@
               </li>
             </ul>
           </li>
-          <li><a><i class="fa fa-edit"></i> 通知发布 <span class="fa fa-chevron-down"></span></a>
+          <li><a><i class="fa fa-edit"></i> 通知管理 <span class="fa fa-chevron-down"></span></a>
             <ul class="nav child_menu" style="display: none">
               <li><a href="<?php echo U('Admin/Notice/index','notice_type=1');?>">小区通知</a>
               </li>
@@ -83,8 +79,10 @@
               </li>
               <li><a href="<?php echo U('Admin/Notice/index','notice_type=3');?>">办事指南</a>
               </li>
+              <li><a href="<?php echo U('Admin/Article/add');?>">发布通知</a>
               </li>
-              <li><a href="<?php echo U('Admin/Article/index');?>">文章</a>
+              </li>
+              <li><a href="<?php echo U('Admin/Articlecate/index');?>">分类管理</a>
               </li>
             </ul>
           </li>
@@ -238,7 +236,7 @@
     function logout(){
       $.ajax({
         type: "post",
-        url: "/smart_community/index.php/Admin/Articlecate/logout",
+        url: "/smart_community/index.php/Admin/Access/logout",
         data: {
           },
         dataType: "json",
@@ -256,56 +254,44 @@
 
 	<!-- page content -->
 	<div class="right_col" role="main">
-		<div class="col-lg-10 col-md-10 col-xs-12"
-			style="background-color: #FFF;">
-			<!-- begin tab -->
-			<ul class="nav nav-tabs ">
-				<li class="active"><a href="<?php echo U('Articlecate/index/');?>"><b>文章分类</b></a></li>
-				<li><a href="<?php echo U('Articlecate/add/');?>"><b>分类增加</b></a></li>
-				<li><a href="<?php echo U('Article/index/');?>"><b>文章管理</b></a></li>
-				<li><a href="<?php echo U('Article/add/');?>"><b>文章增加</b></a></li>
-			</ul>
-			<p></P>
-			<div class="row">
-				<div class="col-lg-2 col-md-2 col-xs-2">
-					<a class="btn blue" href="<?php echo U('Articlecate/add/');?>"> <i
-						class="fa fa-plus"></i>增加分类
-					</a>
+		<div class="col-md-12 col-sm-12 col-xs-12">
+			 <div class="x_panel">
+				<div class="title">添加节点</div>
+				<div class="container-fluid">
+					<form class="form-horizontal">
+ 						<input type="hidden" id="level" value="<?php echo $_GET['level'] ? $_GET['level'] : 1; ?>">
+			      		<input type="hidden" id="pid" value="<?php echo $_GET['pid'] ? $_GET['pid'] : 0; ?>">
+					  	<div class="form-group">
+					    	<label for="name" class="col-md-1 control-label" id="node_name"></label>
+					    	<div class="col-md-3">
+					      		<input type="text" class="form-control" id="name">
+					    	</div>
+					  	</div>
+					  	<div class="form-group">
+					    	<label for="title" class="col-md-1 control-label">描述:</label>
+					    	<div class="col-md-3">
+					      		<input type="text" class="form-control" id="title">
+					    	</div>
+					  	</div>
+					  	<div class="form-group">
+					    	<label for="sort" class="col-md-1 control-label">排序:</label>
+					    	<div class="col-md-3">
+					      		<input type="text" class="form-control" value="100" id="sort">
+<!-- 					      		<input type="hidden" id="save_level" value="">
+					      		<input type="hidden" id="save_pid" value=""> -->
+					    	</div>
+					  	</div>
+					  	<div class="form-group">
+					    	<div class="col-md-offset-1 col-md-3">
+					      		<a href="javascript:;" class="btn btn-default submit savedata" >保存</a>
+					    	</div>
+					  	</div>
+					</form>
 				</div>
-				<div class="col-lg-6 col-md-6 col-xs-6">
-					<span class="help-block"></span>
-				</div>
-				<div class="col-lg-4 col-md-4 col-xs-4"></div>
 			</div>
-			<!-- end 添加 -->
-			<p></P>
-			<table class="table table-striped table-bordered table-hover ">
-				<thead>
-					<tr>
-						<th>分类id</th>
-						<th>分类名</th>
-						<!-- end<th>排序</th> 添加 -->
-						<th>操作</th>
-
-					</tr>
-				</thead>
-				<tbody>
-					<?php if(is_array($clist)): $i = 0; $__LIST__ = $clist;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
-						<td><?php echo ($vo["acid"]); ?></td>
-						<td><?php echo ($vo["cname"]); ?></td>
-						<!-- end <td><?php echo ($vo["dcsort"]); ?></td> 添加 -->
-						<td><a href="<?php echo U('Articlecate/edit/','id='.$vo['acid']);?>"><i
-								class="fa fa-edit"></i> 修改</a> <a
-							href="<?php echo U('Articlecate/delete/','id='.$vo['acid']);?>"
-							onClick="delcfm()"><i class="fa fa-trash-o"></i> 删除</a></td>
-					</tr><?php endforeach; endif; else: echo "" ;endif; ?>
-				</tbody>
-			</table>
-		</div>
-		<!-- col end -->
-	</div>
-	<!-- /page content -->
-
+		</div>			    
+	  </div>
+	  	<!-- /page content -->
 	<!-- footer content -->
 <footer>
   <div class="pull-right">
@@ -405,17 +391,60 @@
 		$('#presentation').addClass('open');
 	})
 </script>
-	<script>
-		function delcfm() {
-			if (!confirm("确认要删除？")) {
-				window.event.returnValue = false;
-			}
+	<script type="text/javascript">
+		window.onload = function(){
+	    	$.ajax({
+	            type: "post",
+	            url: "/smart_community/index.php/Admin/Access/add_node_list",
+	            data: {
+	            	'access_token' : getCookie('access_token'),
+	            	'pid' : $('#pid').val(),
+	            	'level': $('#level').val()
+	            },
+	            dataType: "json",
+	            success: function(data) {
+	            	if(data['code'] == 200){
+	            		$('#node_name').append(data['data']['view']+':');
+/*  	            		$('#save_level').val(data['data']['level']);
+	            		$('#save_pid').val(data['data']['pid']); */
+	            	}
+	            	if(data['code'] == '-205' || data['code'] == '-208'){
+	            		alert(data['info']);
+	            		location.href = 'http://' + data['data']['redirect_url'];
+	            	}
+	            },
+	            error: function(xhr, type, errorThrown) {
+	              //异常处理
+	              console.log(type);
+	            }
+	          }); 			
 		}
+		
+		$('body').on('click','.savedata',function(){
+	    	$.ajax({
+	            type: "post",
+	            url: "/smart_community/index.php/Admin/Access/do_node",
+	            data: {
+	            	'access_token' : getCookie('access_token'),
+	            	'name' : $('#name').val(),
+	            	'title' : $('#title').val(),
+	            	'sort' : $('#sort').val(),
+	            	'level' : $('#level').val(),
+	            	'pid' : $('#pid').val()
+	            },
+	            dataType: "json",
+	            success: function(data) {
+	            	if(data['code'] == '200' || data['code'] == '-200' || data['code'] == '-201' || data['code'] == '-205' || data['code'] == '-208'){
+	            		alert(data['info']);
+	            		location.href = 'http://' + data['data']['redirect_url'];
+	            	}
+	            },
+	            error: function(xhr, type, errorThrown) {
+	              //异常处理
+	              console.log(type);
+	            }
+	          }); 			
+		})
 	</script>
-
-	<!-- END CORE PLUGINS -->
-
-	<!-- END JAVASCRIPTS -->
 </body>
-<!-- END BODY -->
 </html>

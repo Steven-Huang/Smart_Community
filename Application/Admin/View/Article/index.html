@@ -73,7 +73,7 @@
 						<td>{$vo.create_time|date="Y-m-d",###}</td>
 						<td><a href="{:U('Article/edit/','id='.$vo['aid'])}"><i
 								class="fa fa-edit"></i> 修改</a> <a
-							href="{:U('Article/delete/','id='.$vo['aid'])}"
+							href="{:U('Article/moveToTrash/','id='.$vo['aid'])}"
 							onClick="delcfm()"><i class="fa fa-trash-o"></i> 删除</a></td>
 
 					</tr>

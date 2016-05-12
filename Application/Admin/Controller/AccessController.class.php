@@ -35,9 +35,9 @@ class AccessController extends CommonController{
 	        $role = I('post.role');
 	        if ($role == 'users') {
 	            //获取总记录数
-	            $count = D('role_user')->where("user_type = 'U'")->count();
+	            $count = M('role_user')->where("user_type = 'U'")->count();
 	            //实例化分类页
-	            $Page = new \Think\Page($count,$num);
+	            $Page = new \Think\Page($count,$count);
 	            //调用show显示分页链接
 	            $show = $Page->show();
 	        

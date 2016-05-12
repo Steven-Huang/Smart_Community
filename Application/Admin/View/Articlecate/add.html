@@ -23,10 +23,8 @@
 			style="background-color: #FFF;">
 			<!-- begin tab -->
 			<ul class="nav nav-tabs ">
-				<li><a href="{:U('Articlecate/index/')}"><b>文章分类</b></a></li>
-				<li class="active"><a href="{:U('Articlecate/add/')}"><b>分类增加</b></a></li>
-				<li><a href="{:U('Article/index/')}"><b>文章管理</b></a></li>
-				<li><a href="{:U('Article/add/')}"><b>文章增加</b></a></li>
+				<li><a href="{:U('Articlecate/index/')}"><b>分类列表</b></a></li>
+				<li class="active"><a href="{:U('Articlecate/add/')}"><b>增加分类</b></a></li>
 			</ul>
 			<p></P>
 			<div class="row">
@@ -40,7 +38,7 @@
 			<p></P>
 			<form class="form-horizontal" role="form"
 				enctype="multipart/form-data" method="post"
-				action="__APP__/{$Think.MODULE_NAME}/addsave">
+				action="{:U('Articlecate/addsave/')}">
 				<div class="form-group">
 					<label for="inputEmail3" class="col-sm-2 control-label">分类名称</label>
 					<div class="col-sm-4">
@@ -68,7 +66,7 @@
 						</span>
 					</div>
 				</div>
-				<div class="form-group">
+<!-- 				<div class="form-group">
 					<label for="inputEmail8" class="col-sm-2 control-label">列表图片</label>
 					<div class="col-sm-4">
 						<input type="file" name="pic" id="exampleInputFile">
@@ -77,7 +75,7 @@
 						<span class="help-block"><i class="fa fa-exclamation"></i>
 							仅支持jpg,可不设置，建议设置图片大小640*480,</span>
 					</div>
-				</div>
+				</div> -->
 				<div class="form-group">
 					<label for="inputPassword3" class="col-sm-2 control-label">排序</label>
 					<div class="col-sm-2">

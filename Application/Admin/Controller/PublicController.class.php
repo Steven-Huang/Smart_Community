@@ -38,7 +38,7 @@ class PublicController extends Controller {
             $username = strtolower(trim(I('post.username')));
             $password = strtolower(trim(I('post.password')));
             $code = trim(I('post.code'));
-            //不同的角色：users(业主) / mgrs(物业) / admin(管理员)
+            //不同的角色：U(业主) / M(物业) / A(管理员)
             $role = I('post.role');
             $remember = I('post.remember');
             //判断数据合法性
@@ -64,8 +64,10 @@ class PublicController extends Controller {
                 $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Public/login'), 'sec' => 3),'info' => urlencode('验证码错误！'),'code' => -202);
                 exit(urldecode(json_encode($output)));
             }
+            
+            $roleModel = $role == 'U' ? 'users' : ($role == 'M' ? 'mgrs' : 'admin');
             //实例化模型
-            $users = M($role);
+            $users = M($roleModel);
             //用户输入的可能是用户名，邮箱，手机，分别进行判断
             $where1 = "nick_name='{$username}'";
             $where2 = "email='{$username}'";
@@ -76,11 +78,11 @@ class PublicController extends Controller {
             //判断登录是否成功
             if (create_hash($password, $row['id_card_num']) == $row['password']) {
                 //针对业主账户的状态进行判断
-                if ($role == 'users' && $row['if_aprvd'] == 0) {
+                if (($role == 'U' || $role == 'M') && $row['if_aprvd'] == 0) {
                     $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Public/login'), 'sec' => 3),'info' => urlencode('您的账户正在审核中，请耐心等待！'),'code' => -203);
                     exit(urldecode(json_encode($output)));
-                }elseif ($role == 'users' && $row['if_aprvd'] == -1){
-                    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Public/login'), 'sec' => 3),'info' => urlencode('您的账户审核不通过或被禁止访问，请联系物业人员！'),'code' => -204);
+                }elseif (($role == 'U' || $role == 'M') && $row['if_aprvd'] == -1){
+                    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Public/login'), 'sec' => 3),'info' => urlencode('您的账户审核不通过或被禁止访问，请联系管理员！'),'code' => -204);
                     exit(urldecode(json_encode($output)));
                 }
                 
@@ -89,7 +91,7 @@ class PublicController extends Controller {
                 
                 //设置session
                 session_set_cookie_params(259200);
-                session('user_id',$row['id']);
+                session('user_id',$role.$row['id']);
                 session('access_token',$access_token);
                 session('last_log_ip',$_SERVER['REMOTE_ADDR']);
                 session('time',time());

@@ -71,13 +71,18 @@
               </li>
             </ul>
           </li>
-          <li><a><i class="fa fa-edit"></i> 通知发布 <span class="fa fa-chevron-down"></span></a>
+          <li><a><i class="fa fa-edit"></i> 通知管理 <span class="fa fa-chevron-down"></span></a>
             <ul class="nav child_menu" style="display: none">
-              <li><a href="#">小区通知</a>
+              <li><a href="<?php echo U('Admin/Notice/index','notice_type=1');?>">小区通知</a>
               </li>
-              <li><a href="#">政府公告</a>
+              <li><a href="<?php echo U('Admin/Notice/index','notice_type=2');?>">政府公告</a>
               </li>
-              <li><a href="#">办事指南</a>
+              <li><a href="<?php echo U('Admin/Notice/index','notice_type=3');?>">办事指南</a>
+              </li>
+              <li><a href="<?php echo U('Admin/Article/add');?>">发布通知</a>
+              </li>
+              </li>
+              <li><a href="<?php echo U('Admin/Articlecate/index');?>">分类管理</a>
               </li>
             </ul>
           </li>
@@ -231,7 +236,7 @@
     function logout(){
       $.ajax({
         type: "post",
-        url: "/smart_community/index.php/Admin/Users/logout",
+        url: "/smart_community/index.php/Admin/Access/logout",
         data: {
           },
         dataType: "json",
@@ -247,110 +252,43 @@
     }
   </script>
 
-	
 	<!-- page content -->
-<div class="right_col" role="main">
-	<div id="wrapper" style="min-width:900px">
-<!-- 		<div id="register" class="animate form"> -->
-			   <section class="login_content">
-			      <div class="row">
-			        <div class="col-md-12 col-sm-12 col-xs-12">
-			          <div class="x_panel">
-			            <div class="x_content">
-			              <form class="form-horizontal form-label-left" id="register_form">
-			                <h1>添加业主信息</h1>
-			                <div class="item form-group">
-			                  <label class="control-label col-md-3 col-sm-3 col-xs-12" for="user_nick_name">用户名 <span class="required">* </span>
-			                  </label>
-			                  <div class="col-md-6 col-sm-6 col-xs-9">
-			                    <input id="user_nick_name" name="user_nick_name" class="form-control col-md-7 col-xs-12" maxlength="10" placeholder="" required="required" type="text">
-			                  </div>
-			                </div>
-			                <div class="item form-group">
-			                  <label class="control-label col-md-3 col-sm-3 col-xs-12" for="user_true_name">真实姓名 <span class="required">* </span>
-			                  </label>
-			                  <div class="col-md-6 col-sm-6 col-xs-9">
-			                    <input id="user_true_name" name="user_true_name" class="form-control col-md-7 col-xs-12" maxlength="10" placeholder="" required="required" type="text">
-			                  </div>
-			                </div>
-			                <div class="item form-group">
-			                  <label class="control-label col-md-3 col-sm-3 col-xs-12" for="user_gender">性别 <span class="required">*</span>
-			                  </label>
-			                  <div class="col-md-6 col-sm-6 col-xs-9" style="text-align:left">
-			                <div class="btn-group" data-toggle="buttons">
-			                  <label class="btn btn-default" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
-			                    <input type="radio" id="user_gender" name="user_gender" value="1"> &nbsp; 男 &nbsp;
-			                  </label>
-			                  <label class="btn btn-default" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
-			                    <input type="radio" id="user_gender" name="user_gender" value="2"> &nbsp; 女 &nbsp;
-			                  </label>
-			                </div>
-			              </div>
-			            </div>                    
-			            <div class="item form-group">
-			              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="user_id_card_num">身份证号 <span class="required">*</span>
-			              </label>
-			              <div class="col-md-6 col-sm-6 col-xs-9">
-			                <input id="user_id_card_num" name="user_id_card_num" class="form-control col-md-7 col-xs-12" maxlength="18" placeholder="" required="required" type="text">
-			              </div>
-			            </div>   
-			            <div class="item form-group">
-			              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="user_pocn">房产证号 <span class="required">*</span>
-			              </label>
-			              <div class="col-md-6 col-sm-6 col-xs-9">
-			                <input id="user_pocn" name="user_pocn" class="form-control col-md-7 col-xs-12" maxlength="18" placeholder="" required="required" type="text">
-			              </div>
-			            </div>                                                                        
-			            <div class="item form-group">
-			              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="user_email">邮箱地址 <span class="required">*</span>
-			              </label>
-			              <div class="col-md-6 col-sm-6 col-xs-9">
-			                <input type="email" id="user_email" name="user_email" required="required" class="form-control col-md-7 col-xs-12">
-			              </div>
-			            </div>
-			            <div class="item form-group">
-			              <label for="password" class="control-label col-md-3 col-sm-3 col-xs-12">密码 <span class="required">*</span>
-			              </label>
-			              <div class="col-md-6 col-sm-6 col-xs-9">
-			                <input id="password" type="password" name="password" class="form-control col-md-7 col-xs-12" required="required">
-			              </div>
-			            </div>
-			            <div class="item form-group">
-			              <label for="password2" class="control-label col-md-3 col-sm-3 col-xs-12">再次输入密码 <span class="required">*</span>
-			              </label>
-			              <div class="col-md-6 col-sm-6 col-xs-9">
-			                <input id="password2" type="password" name="password2" data-validate-linked="password" class="form-control col-md-7 col-xs-12" required="required">
-			              </div>
-			            </div>
-			            <div class="item form-group">
-			              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="user_mobile">手机号 <span class="required">*</span>
-			              </label>
-			              <div class="col-md-6 col-sm-6 col-xs-9">
-			                <input type="text" id="user_mobile" name="user_mobile" required="required" class="form-control col-md-7 col-xs-12">
-			              </div>
-			            </div>
-			            <div class="ln_solid"></div>
+	<div class="right_col" role="main">
+		<div class="col-md-12 col-sm-12 col-xs-12">
+        	<div class="x_panel">
+			<div class="title">更新用户角色</div>
+			    <div class="container-fluid">
+			        <form class="form-horizontal" method="post" action="<?php echo U('Admin/Access/do_user');?>">
+			        	<input type="hidden" id="user_id" name="user_id" value="<?php echo I('user_id') ?>">
+			        	<input type="hidden" id="role_id" name="role_id" value="<?php echo I('role_id') ?>">
+			        	<input type="hidden" id="role" name="role" value="<?php echo I('role') ?>">
 			            <div class="form-group">
-			              <div class="col-md-6 col-md-offset-3">
- 			                <button type="reset" class="btn btn-primary">清除</button>
-			                <!-- <a href="javascript:;" class="btn btn-default submit savedata" >保存</a> -->
-			                <button id="send" type="submit" class="btn btn-success">提交</button>
-			              </div>
+			                <label for="inputEmail3" class="col-md-1 control-label">名称:</label>
+			                <div class="col-md-3">
+			                    <input type="text" class="form-control" name="username" value="<?php echo I('username') ?>" readonly>
+			                </div>
 			            </div>
-			            <div class="clearfix"></div>
-			          </form>
-			        </div>
-			      </div>
-				</div>
-			</div>
-			  <!-- form -->
-			</section>
-			<!-- content -->
-<!-- 	      </div> -->
-    </div>
-</div>
-	<!-- /page content -->
-	
+			            <div class="form-group">
+			                <label for="inputPassword3" class="col-md-1 control-label">角色:</label>
+			                <div class="col-md-3">
+			                    <select class="form-control" id="role_list" name="new_role_id">
+
+			                    </select>
+			                </div>
+			            </div>
+			            <div class="form-group">
+			                <div class="col-md-offset-1 col-md-3">
+<!-- 			                    <button type="submit" class="btn btn-default">保存</button> -->
+	           					<a href="javascript:;" class="btn btn-default submit savedata" >保存</a>			                    
+			                </div>
+			            </div>
+			        </form>
+			    </div>
+	  		</div>
+	  	</div>
+	  </div>
+	  
+	  	<!-- /page content -->
 	<!-- footer content -->
 <footer>
   <div class="pull-right">
@@ -450,63 +388,63 @@
 		$('#presentation').addClass('open');
 	})
 </script>
-  <!-- form validation -->
-  <script src="/smart_community/Public/admin/js/validator/validator.js"></script>
-  <script>
-    // initialize the validator function
-    validator.message['date'] = 'not a real date';
-
-    // validate a field on "blur" event, a 'select' on 'change' event & a '.reuired' classed multifield on 'keyup':
-    $('form')
-      .on('blur', 'input[required], input.optional, select.required', validator.checkField)
-      .on('change', 'select.required', validator.checkField)
-      .on('keypress', 'input[required][pattern]', validator.keypress);
-
-    $('.multi.required')
-      .on('keyup blur', 'input', function() {
-        validator.checkField.apply($(this).siblings().last()[0]);
-      });
-    
-     $('form').submit(function(e) {
-        e.preventDefault();
-        var submit = true;
-        // evaluate the form using generic validaing
-        if (!validator.checkAll($(this))) {
-          	submit = false;
-        }
-        if (submit){
+	<script type="text/javascript">
+		window.onload = function(){
 	    	$.ajax({
 	            type: "post",
-	            url: "/smart_community/index.php/Admin/Users/do_add",
+	            url: "/smart_community/index.php/Admin/Access/role",
 	            data: {
-	            	'access_token' : getCookie('access_token'),
-	            	'user_nick_name' : $('#user_nick_name').val(),
-	            	'user_true_name' : $('#user_true_name').val(),
-	            	'user_gender' : $("input[name='user_gender']:checked").val(),
-	            	'user_id_card_num' : $('#user_id_card_num').val(),
-	            	'user_pocn' : $('#user_pocn').val(),
-	            	'user_email' : $('#user_email').val(),
-	            	'user_password' : $('#password').val(),
-	            	'user_password_confirmed' : $('#password2').val(),
-	            	'user_mobile' : $('#user_mobile').val()
+	            	access_token : getCookie('access_token')
 	            },
 	            dataType: "json",
 	            success: function(data) {
-	            	if(data['code'] == '200' || data['code'] == '-200' || data['code'] == '-205' || data['code'] == '-208'){
-	            		alert(data['info']);
-	            		location.href = 'http://' + data['data']['redirect_url'];
-	            	}else if(data['code'] == '-201A' || data['code'] == '-201B' || data['code'] == '-201C' || data['code'] == '-201D' || data['code'] == '-202A' || data['code'] == '-202B' || data['code'] == '-202C' || data['code'] == '-202D' || data['code'] == '-203'){
-	            		alert(data['info']);
+	            	if(data['code'] == 200){
+						var len = data['data'].length;
+						for(var i = 0; i < len; i++){
+							if(data['data'][i]['id'] == $('#role_id').val()){
+								$("#role_list").append("<option value=\'"+data['data'][i]['id']+"\'"+"selected=\"selected\">"+data['data'][i]['name']+"</option>");								
+							}else{
+								$("#role_list").append("<option value=\'"+data['data'][i]['id']+"\'"+">"+data['data'][i]['name']+"</option>");								
+							}
+						}
 	            	}
+
 	            },
 	            error: function(xhr, type, errorThrown) {
 	              //异常处理
 	              console.log(type);
 	            }
-	          }); 
-        }       
-        return false;
-      }); 
+	          }); 			
+			}
+		    $('body').on('click','.savedata',function(){
+		    	$.ajax({
+ 		            type: "post",
+		            url: "/smart_community/index.php/Admin/Access/do_user_role",
+		            data: {
+		            	'access_token' : getCookie('access_token'),
+			            'user_id' : $('#user_id').val(),
+			            'new_role_id' : $('#role_list').val(),
+			            'role' : $('#role').val() 
+		            },
+		            dataType: "json",
+		            success: function(data) {
+  		            	if(data['code'] == '200' || data['code'] == '-205'){
+		            		alert(data['info']);
+		            		location.href = 'http://' + data['data']['redirect_url'];
+		            	}
+  		            	if(data['code'] == '-200'){
+		            		alert(data['info']);
+		            		window.location.reload();
+		            		//location.href = 'http://' + data['data']['redirect_url'];
+		            	}
+		            },
+		            error: function(xhr, type, errorThrown) {
+		              //异常处理
+		              console.log(type);
+		            }
+		          });    
+		    })	    
 	</script>
+    
 </body>
 </html>

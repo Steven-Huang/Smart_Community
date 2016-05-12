@@ -23,10 +23,7 @@
 			style="background-color: #FFF;">
 			<!-- begin tab -->
 			<ul class="nav nav-tabs ">
-				<li><a href="{:U('Articlecate/index/')}"><b>文章分类</b></a></li>
-				<li><a href="{:U('Articlecate/add/')}"><b>分类增加</b></a></li>
-				<li><a href="{:U('Article/index/')}"><b>文章管理</b></a></li>
-				<li class="active"><a href="{:U('Article/add/')}"><b>文章增加</b></a></li>
+				<li class="active"><a href="{:U('Article/add/')}"><b>发布文章</b></a></li>
 			</ul>
 			<p></p>
 			<div class="row">
@@ -40,11 +37,13 @@
 			<form class="form-horizontal" role="form"
 				enctype="multipart/form-data" action="{:U('Article/addsave/')}"
 				method="post">
+				<input type="hidden" name="access_token"
+					value="<?php echo $_COOKIE['access_token']?>">
 				<div class="form-group">
 					<label for="inputEmail3" class="col-sm-2 control-label">文章标题</label>
 					<div class="col-sm-6">
 						<input type="text" class="form-control" id="inputEmail3"
-							name="atitle" value="">
+							name="article_title" value="">
 					</div>
 					<div class="col-sm-4">
 						<span class="help-block"><i class="fa fa-exclamation"></i>请输入文章标题</span>
@@ -68,11 +67,22 @@
 					<div class="col-sm-8">
 						<script id="conted" name="content" type="text/plain"></script>
 						<script type="text/javascript">
-									var editor = UE.getEditor('conted')
-								</script>
+							var editor = UE.getEditor('conted')
+						</script>
 					</div>
 					<div class="col-sm-2">
 						<span class="help-block"></span>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="inputPassword3" class="col-sm-2 control-label">排序</label>
+					<div class="col-sm-2">
+						<input type="text" class="form-control" name="sort"
+							value="{$item.sort}" placeholder="">
+					</div>
+					<div class="col-sm-8">
+						<span class="help-block"> <i class="fa fa-exclamation"></i>值为0-99，值越大，越靠前
+						</span>
 					</div>
 				</div>
 				<div class="modal-footer">

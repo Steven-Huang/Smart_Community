@@ -75,7 +75,7 @@
               </li>
             </ul>
           </li>
-          <li><a><i class="fa fa-edit"></i> 通知发布 <span class="fa fa-chevron-down"></span></a>
+          <li><a><i class="fa fa-edit"></i> 通知管理 <span class="fa fa-chevron-down"></span></a>
             <ul class="nav child_menu" style="display: none">
               <li><a href="<?php echo U('Admin/Notice/index','notice_type=1');?>">小区通知</a>
               </li>
@@ -83,8 +83,12 @@
               </li>
               <li><a href="<?php echo U('Admin/Notice/index','notice_type=3');?>">办事指南</a>
               </li>
+              <li><a href="<?php echo U('Admin/Article/add');?>">发布通知</a>
               </li>
-              <li><a href="<?php echo U('Admin/Article/index');?>">文章</a>
+              </li>
+              <li><a href="<?php echo U('Admin/Articlecate/index');?>">分类管理</a>
+              </li>
+              <li><a href="<?php echo U('Admin/Article/trash');?>">回收站</a>
               </li>
             </ul>
           </li>
@@ -238,7 +242,7 @@
     function logout(){
       $.ajax({
         type: "post",
-        url: "/smart_community/index.php/Admin/Articlecate/logout",
+        url: "/smart_community/index.php/Admin/Article/logout",
         data: {
           },
         dataType: "json",
@@ -260,10 +264,7 @@
 			style="background-color: #FFF;">
 			<!-- begin tab -->
 			<ul class="nav nav-tabs ">
-				<li><a href="<?php echo U('Articlecate/index/');?>"><b>文章分类</b></a></li>
-				<li class="active"><a href="<?php echo U('Articlecate/add/');?>"><b>分类增加</b></a></li>
-				<li><a href="<?php echo U('Article/index/');?>"><b>文章管理</b></a></li>
-				<li><a href="<?php echo U('Article/add/');?>"><b>文章增加</b></a></li>
+				<li class="active"><a href="#"><b>修改文章</b></a></li>
 			</ul>
 			<p></P>
 			<div class="row">
@@ -272,71 +273,67 @@
 					<span class="help-block"></span>
 				</div>
 				<div class="col-lg-4 col-md-4 col-xs-4"></div>
+
 			</div>
-			<!-- end 添加 -->
 			<p></P>
 			<form class="form-horizontal" role="form"
-				enctype="multipart/form-data" method="post"
-				action="/smart_community/index.php/<?php echo (MODULE_NAME); ?>/addsave">
+				enctype="multipart/form-data" action="<?php echo U('Article/editsave/');?>"
+				method="post">
 				<div class="form-group">
-					<label for="inputEmail3" class="col-sm-2 control-label">分类名称</label>
-					<div class="col-sm-4">
-						<input type="text" class="form-control" id="inputEmail3"
-							name="aname" placeholder="">
-					</div>
+					<label for="inputEmail3" class="col-sm-2 control-label">文章标题</label>
 					<div class="col-sm-6">
-						<span class="help-block"><i class="fa fa-exclamation"></i>
-							输入分类名称</span></span>
+						<input type="text" class="form-control" id="inputEmail3"
+							name="atitle" value="<?php echo ($item["atitle"]); ?>"> <input
+							type="hidden" name="aid" value="<?php echo ($item["aid"]); ?>">
+					</div>
+					<div class="col-sm-4">
+						<span class="help-block"><i class="fa fa-exclamation"></i>请输入文章标题</span>
 					</div>
 				</div>
 				<div class="form-group">
-					<label for="inputPassword3" class="col-sm-2 control-label">分类</label>
-					<div class="col-sm-4">
-						<select class="form-control" name="afid">
-							<option value="0">顶级分类</option>
-							<?php if(is_array($clist)): $i = 0; $__LIST__ = $clist;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><option value="<?php echo ($vo["acid"]); ?>"><?php echo ($vo["cname"]); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
+					<label for="inputEmail5" class="col-sm-2 control-label">文章分类</label>
+					<div class="col-sm-3">
+						<select class="form-control" name="acid">
+							<?php if(is_array($clist)): $i = 0; $__LIST__ = $clist;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if(($vo['acid']) == $item['acid']): ?><option value="<?php echo ($vo["acid"]); ?>" selected="selected"><?php echo ($vo["cname"]); ?></option>
+							<?php else: ?>
+							<option value="<?php echo ($vo["acid"]); ?>"><?php echo ($vo["cname"]); ?></option><?php endif; endforeach; endif; else: echo "" ;endif; ?>
 						</select>
 					</div>
-					<div class="col-sm-6">
-						<span class="help-block"> <i class="fa fa-exclamation"></i>
-							选择所属父类,建议不要超过二级
-						</span>
+					<div class="col-sm-7">
+						<span class="help-block"><i class="fa fa-exclamation"></i>请输入选择分类</span></span>
 					</div>
 				</div>
 				<div class="form-group">
-					<label for="inputEmail8" class="col-sm-2 control-label">列表图片</label>
-					<div class="col-sm-4">
-						<input type="file" name="pic" id="exampleInputFile">
+					<label for="inputEmail11" class="col-sm-2 control-label">描述</label>
+					<div class="col-sm-8">
+						<script id="conted" name="content" type="text/plain"><?php echo (htmlspecialchars_decode($item["content"])); ?></script>
+						<script type="text/javascript">
+							var editor = UE.getEditor('conted')
+						</script>
 					</div>
-					<div class="col-sm-6">
-						<span class="help-block"><i class="fa fa-exclamation"></i>
-							仅支持jpg,可不设置，建议设置图片大小640*480,</span>
+					<div class="col-sm-2">
+						<span class="help-block"></span>
 					</div>
 				</div>
 				<div class="form-group">
 					<label for="inputPassword3" class="col-sm-2 control-label">排序</label>
 					<div class="col-sm-2">
-						<input type="text" class="form-control" name="sort" value="0"
-							placeholder="">
+						<input type="text" class="form-control" name="sort"
+							value="<?php echo ($item["sort"]); ?>" placeholder="">
 					</div>
 					<div class="col-sm-8">
 						<span class="help-block"> <i class="fa fa-exclamation"></i>值为0-99，值越大，越靠前
 						</span>
 					</div>
 				</div>
-				<hr>
-				<div class="form-group">
-					<label for="inputPassword3" class="col-sm-4 control-label"></label>
-					<div class="col-sm-2">
-						<button type="sumbit" class="btn btn-primary">保存</button>
-					</div>
-					<div class="col-sm-6">
-						<span class="help-block">
-					</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+					<button type="sumbit" class="btn btn-primary">保存</button>
 				</div>
-			</form>
 		</div>
-		<!-- col end -->
+		</form>
+	</div>
+	<!-- col end -->
 	</div>
 	<!-- /page content -->
 
@@ -448,6 +445,12 @@
 			location.reload()
 
 		})
+
+		function delcfm() {
+			if (!confirm("确认要删除？")) {
+				window.event.returnValue = false;
+			}
+		}
 	</script>
 
 	<!-- END CORE PLUGINS -->

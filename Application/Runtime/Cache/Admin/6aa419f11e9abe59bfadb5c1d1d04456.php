@@ -1,14 +1,14 @@
 <?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<!-- Meta, title, CSS, favicons, etc. -->
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>JoyRill智慧社区后台</title>
-	<!-- Public core css/js -->
-	<!-- Bootstrap core CSS -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- Meta, title, CSS, favicons, etc. -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JoyRill智慧社区后台</title>
+<!-- Public core css/js -->
+<!-- Bootstrap core CSS -->
 
 <link href="/smart_community/Public/admin/css/bootstrap.min.css" rel="stylesheet">
 
@@ -32,6 +32,10 @@
 <link href="/smart_community/Public/admin/css/floatexamples.css" rel="stylesheet" type="text/css" />    
 <script src="/smart_community/Public/admin/js/jquery.min.js"></script>
 
+<script type="text/javascript"
+	src="/smart_community/Public/admin/ueditor/ueditor.config.js"></script>
+<script type="text/javascript"
+	src="/smart_community/Public/admin/ueditor/ueditor.all.js"></script>
 </head>
 <body class="nav-md">
 	<div class="container body">
@@ -71,13 +75,18 @@
               </li>
             </ul>
           </li>
-          <li><a><i class="fa fa-edit"></i> 通知发布 <span class="fa fa-chevron-down"></span></a>
+          <li><a><i class="fa fa-edit"></i> 通知管理 <span class="fa fa-chevron-down"></span></a>
             <ul class="nav child_menu" style="display: none">
-              <li><a href="#">小区通知</a>
+              <li><a href="<?php echo U('Admin/Notice/index','notice_type=1');?>">小区通知</a>
               </li>
-              <li><a href="#">政府公告</a>
+              <li><a href="<?php echo U('Admin/Notice/index','notice_type=2');?>">政府公告</a>
               </li>
-              <li><a href="#">办事指南</a>
+              <li><a href="<?php echo U('Admin/Notice/index','notice_type=3');?>">办事指南</a>
+              </li>
+              <li><a href="<?php echo U('Admin/Article/add');?>">发布通知</a>
+              </li>
+              </li>
+              <li><a href="<?php echo U('Admin/Articlecate/index');?>">分类管理</a>
               </li>
             </ul>
           </li>
@@ -231,7 +240,7 @@
     function logout(){
       $.ajax({
         type: "post",
-        url: "/smart_community/index.php/Admin/Access/logout",
+        url: "/smart_community/index.php/Admin/Articlecate/logout",
         data: {
           },
         dataType: "json",
@@ -247,81 +256,94 @@
     }
   </script>
 
-	
 	<!-- page content -->
 	<div class="right_col" role="main">
-		<div class="col-md-12 col-sm-12 col-xs-12">
-        	<div class="x_panel">
-                <ul id="myTab" class="nav nav-tabs " role="tablist">
-                  <li role="presentation" class="active"><a href="#tab_content1" role="tab" id="users-tab" data-toggle="tab" aria-expanded="true">业主</a>
-                  </li>
-                  <li role="presentation" class=""><a href="#tab_content2" role="tab" id="mgrs-tab" data-toggle="tab" aria-expanded="false">物业</a>
-                  </li>
-                  <li role="presentation" class=""><a href="#tab_content3" role="tab" id="admin-tab" data-toggle="tab" aria-expanded="false">管理员</a>
-                  </li>
-                </ul>
-                <div id="myTabContent" class="tab-content">
-                	<div role="tabpanel" class="tab-pane fade active in" id="tab_content1" aria-labelledby="home-tab">
-					    <div class="container-fluid">
-					        <table class="table table-hover">
-					            <thead>
-					                <tr>
-					                    <th>ID</th>
-					                    <th>名称</th>
-					                    <th>角色</th>
-					                    <th>操作</th>
-					                </tr>
-					            </thead>
-					            <tbody id="tab1">
-			                					                
-					            </tbody>
-					        </table>
-					        <div id="pages1"></div>
-					    </div>
-                	</div>
-                    <div role="tabpanel" class="tab-pane fade" id="tab_content2" aria-labelledby="profile-tab">
-					    <div class="container-fluid">
-					        <table class="table table-hover">
-					            <thead>
-					                <tr>
-					                    <th>ID</th>
-					                    <th>名称</th>
-					                    <th>角色</th>
-					                    <th>操作</th>
-					                </tr>
-					            </thead>
-					            <tbody id="tab2">
-			                					                
-					            </tbody>
-					        </table>
-					        <div id="pages2"></div>
-					    </div>
-                    </div>
-                    <div role="tabpanel" class="tab-pane fade" id="tab_content3" aria-labelledby="profile-tab">
-					    <div class="container-fluid">
-					        <table class="table table-hover">
-					            <thead>
-					                <tr>
-					                    <th>ID</th>
-					                    <th>名称</th>
-					                    <th>角色</th>
-					                    <th>操作</th>
-					                </tr>
-					            </thead>
-					            <tbody id="tab3">
-           					 		              
-					            </tbody>
-					        </table>
-					        <div id="pages3"></div>
-					    </div>
-                    </div>
-                </div>
+		<div class="col-lg-10 col-md-10 col-xs-12"
+			style="background-color: #FFF;">
+			<!-- begin tab -->
+			<ul class="nav nav-tabs ">
+				<li class=""><a href="<?php echo U('Articlecate/index/');?>"><b>分类列表</b></a></li>
+				<li><a href="<?php echo U('Articlecate/add/');?>"><b>增加分类</b></a></li>
+				<li class="active"><a href="#"><b>分类编辑</b></a></li>
+			</ul>
+			<p></P>
+			<div class="row">
+				<div class="col-lg-2 col-md-2 col-xs-2"></div>
+				<div class="col-lg-6 col-md-6 col-xs-6">
+					<span class="help-block"></span>
+				</div>
+				<div class="col-lg-4 col-md-4 col-xs-4"></div>
+			</div>
+			<!-- end 添加 -->
+			<p></P>
+			<form class="form-horizontal" role="form"
+				enctype="multipart/form-data" method="post"
+				action="<?php echo U('Articlecate/editsave');?>">
+				<div class="form-group">
+					<label for="inputEmail3" class="col-sm-2 control-label">分类名称</label>
+					<div class="col-sm-4">
+						<input type="text" class="form-control" id="inputEmail3"
+							name="aname" value="<?php echo ($item["aname"]); ?>" placeholder=""> <input
+							type="hidden" name="acid" value="<?php echo ($item["acid"]); ?>">
+					</div>
+					<div class="col-sm-6">
+						<span class="help-block"><i class="fa fa-exclamation"></i>
+							输入分类名称</span></span>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="inputPassword3" class="col-sm-2 control-label">分类</label>
+					<div class="col-sm-4">
+						<select class="form-control" name="afid">
+							<option value="0">顶级分类</option>
+							<?php if(is_array($clist)): $i = 0; $__LIST__ = $clist;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if(($vo['acid']) == $item['afid']): ?><option value="<?php echo ($vo["acid"]); ?>" selected="selected"><?php echo ($vo["cname"]); ?></option>
+							<?php else: ?> <?php if(($vo['acid']) == $item['acid']): else: ?>
+							<option value="<?php echo ($vo["acid"]); ?>"><?php echo ($vo["cname"]); ?></option><?php endif; endif; endforeach; endif; else: echo "" ;endif; ?>
+						</select>
+					</div>
+					<div class="col-sm-6">
+						<span class="help-block"> <i class="fa fa-exclamation"></i>
+							选择所属父类
+						</span>
+					</div>
+				</div>
+<!-- 				<div class="form-group">
+					<label for="inputEmail8" class="col-sm-2 control-label">列表图片</label>
+					<div class="col-sm-4">
+						<input type="file" name="pic" id="exampleInputFile">
+					</div>
+					<div class="col-sm-6">
+						<span class="help-block"><i class="fa fa-exclamation"></i>
+							仅支持jpg,可不设置，建议设置图片大小640*480,</span>
+					</div>
+				</div> -->
+				<div class="form-group">
+					<label for="inputPassword3" class="col-sm-2 control-label">排序</label>
+					<div class="col-sm-2">
+						<input type="text" class="form-control" name="sort"
+							value="<?php echo ($item["sort"]); ?>" placeholder="">
+					</div>
+					<div class="col-sm-8">
+						<span class="help-block"> <i class="fa fa-exclamation"></i>值为0-99，值越大，越靠前
+						</span>
+					</div>
+				</div>
+				<hr>
+				<div class="form-group">
+					<label for="inputPassword3" class="col-sm-4 control-label"></label>
+					<div class="col-sm-2">
+						<button type="sumbit" class="btn btn-primary">保存</button>
+					</div>
+					<div class="col-sm-6">
+						<span class="help-block">
+					</div>
+				</div>
+			</form>
+		</div>
+		<!-- col end -->
+	</div>
+	<!-- /page content -->
 
-	  		</div>
-	  	</div>
-	  </div>
-	  
-	  	<!-- /page content -->
 	<!-- footer content -->
 <footer>
   <div class="pull-right">
@@ -421,112 +443,19 @@
 		$('#presentation').addClass('open');
 	})
 </script>
-	<script type="text/javascript">
-		window.onload = function(){
-	    	$.ajax({
-	            type: "post",
-	            url: "/smart_community/index.php/Admin/Access/index",
-	            data: {
-	            	access_token : getCookie('access_token'),
-	              	num : '5',
-	              	role : 'users'
-	            },
-	            dataType: "json",
-	            success: function(data) {
-	            	if(data['code'] == 200){
-	            		//测试
-	            		alert(data['data']['count']);
-	            		alert(data['data']['page']);
-	            		alert(data['data']['data']);
-	            		//
-	            		if(data['data']['count'] == 0){
-	            			$("#tab1").append("<font color='red'><h5>无用户信息！</h5></font>");
-	            		}	            		
- 		            	var len = data['data']['data'].length;
-		            	for(var i=0; i < len; i++){
-		            	 	var array = "/role/users/user_id/"+data['data']['data'][i]['id']+"/username/"+data['data']['data'][i]['nick_name']+"/role_id/"+data['data']['data'][i]['role_id'];
-		            		$("#tab1").append("<tr><td>U"+data['data']['data'][i]['id']+"</td><td>"+data['data']['data'][i]['nick_name']+"</td><td>"+data['data']['data'][i]['role']+"</td><td><a class=\"btn btn-info btn-xs\" href=\""+"<?php echo U('Admin/Access/edit_user_role"+array+"');?>\"><i class=\"fa fa-pencil\"></i>更新用户角色</a></td>"+"</tr>");
-		            	 }
-		            	$('#pages1').append(data['data']['page']);
-	            	}
-	            	if(data['code'] == '-205' || data['code'] == '-208'){
- 	            		alert(data['info']);
-	            		location.href = 'http://' + data['data']['redirect_url'];	            		
-	            	}
-	            },
-	            error: function(xhr, type, errorThrown) {
-	              //异常处理
-	              console.log(type);
-	            }
-	          }); 			
-		}
-	    $('#mgrs-tab').one('click',function(){
-	    	$.ajax({
-	            type: "post",
-	            url: "/smart_community/index.php/Admin/Access/index",
-	            data: {
-			     	access_token : getCookie('access_token'),
-			        num : '5',
-			        role : 'mgrs'
-	            },
-	            dataType: "json",
-	            success: function(data) {
-	            	if(data['code'] == 200){
-	            		if(data['data']['count'] == 0){
-	            			$("#tab2").append("<font color='red'><h5>无用户信息！</h5></font>");
-	            		}	            		
- 		            	var len = data['data']['data'].length;
-		            	for(var i=0; i < len; i++){
-		            	 	var array = "/role/mgrs/user_id/"+data['data']['data'][i]['id']+"/username/"+data['data']['data'][i]['nick_name']+"/role_id/"+data['data']['data'][i]['role_id'];
-		            	 	$("#tab2").append("<tr><td>M"+data['data']['data'][i]['id']+"</td><td>"+data['data']['data'][i]['nick_name']+"</td><td>"+data['data']['data'][i]['role']+"</td><td><a class=\"btn btn-info btn-xs\" href=\""+"<?php echo U('Admin/Access/edit_user_role"+array+"');?>\"><i class=\"fa fa-pencil\"></i>更新用户角色</a></td>"+"</tr>");
-		            	 }
-		            	$('#pages2').append(data['data']['page']);
-	            	}
- 	            	if(data['code'] == '-205' || data['code'] == '-208'){
- 	            		alert(data['info']);
-	            		location.href = 'http://' + data['data']['redirect_url'];	            		
-	            	}
-	            },
-	            error: function(xhr, type, errorThrown) {
-	              //异常处理
-	              console.log(type);
-	            }
-	          }); 
-	    })
-	    $('#admin-tab').one('click',function(){
-	    	$.ajax({
-	            type: "post",
-	            url: "/smart_community/index.php/Admin/Access/index",
-	            data: {
-	            	'access_token' : getCookie('access_token'),
-	            	'num' : '5',
-	                'role' : 'admin'
-	            },
-	            dataType: "json",
-	            success: function(data) {
-	            	if(data['code'] == 200){
-	            		if(data['data']['count'] == 0){
-	            			$("#tab3").append("<font color='red'><h5>无用户信息！</h5></font>");
-	            		}
- 		            	var len = data['data']['data'].length;
-		            	for(var i=0; i < len; i++){
-		            	 	var array = "/role/admin/user_id/"+data['data']['data'][i]['id']+"/username/"+data['data']['data'][i]['nick_name']+"/role_id/"+data['data']['data'][i]['role_id'];
-		            	 	$("#tab3").append("<tr><td>A"+data['data']['data'][i]['id']+"</td><td>"+data['data']['data'][i]['nick_name']+"</td><td>"+data['data']['data'][i]['role']+"</td><td><a class=\"btn btn-info btn-xs\" href=\""+"<?php echo U('Admin/Access/edit_user_role"+array+"');?>\"><i class=\"fa fa-pencil\"></i>更新用户角色</a></td>"+"</tr>");
-		            	 }
-		            	$('#pages3').append(data['data']['page']);
-	            	}
-	            	if(data['code'] == '-205' || data['code'] == '-208'){
- 	            		alert(data['info']);
-	            		location.href = 'http://' + data['data']['redirect_url'];	            		
-	            	}
-	            },
-	            error: function(xhr, type, errorThrown) {
-	              //异常处理
-	              console.log(type);
-	            }
-	          }); 
-	    })	    
+	<script>
+		$('#myModal').on('hidden.bs.modal', function(e) {
+			location.reload()
+
+		})
+		$('#ajax').on('hidden.bs.modal', function(e) {
+			location.reload()
+
+		})
 	</script>
-    
+	<!-- END CORE PLUGINS -->
+
+	<!-- END JAVASCRIPTS -->
 </body>
+<!-- END BODY -->
 </html>
