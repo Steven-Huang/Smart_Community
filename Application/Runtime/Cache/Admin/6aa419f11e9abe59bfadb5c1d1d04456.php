@@ -77,16 +77,18 @@
           </li>
           <li><a><i class="fa fa-edit"></i> 通知管理 <span class="fa fa-chevron-down"></span></a>
             <ul class="nav child_menu" style="display: none">
-              <li><a href="<?php echo U('Admin/Notice/index','notice_type=1');?>">小区通知</a>
+              <li><a href="<?php echo U('Admin/Article/index','category_id=1');?>">小区通知</a>
               </li>
-              <li><a href="<?php echo U('Admin/Notice/index','notice_type=2');?>">政府公告</a>
+              <li><a href="<?php echo U('Admin/Article/index','category_id=2');?>">政府公告</a>
               </li>
-              <li><a href="<?php echo U('Admin/Notice/index','notice_type=3');?>">办事指南</a>
+              <li><a href="<?php echo U('Admin/Article/index','category_id=3');?>">办事指南</a>
               </li>
               <li><a href="<?php echo U('Admin/Article/add');?>">发布通知</a>
               </li>
               </li>
               <li><a href="<?php echo U('Admin/Articlecate/index');?>">分类管理</a>
+              </li>
+              <li><a href="<?php echo U('Admin/Article/trash');?>">回收站</a>
               </li>
             </ul>
           </li>
@@ -320,7 +322,7 @@
 				<div class="form-group">
 					<label for="inputPassword3" class="col-sm-2 control-label">排序</label>
 					<div class="col-sm-2">
-						<input type="text" class="form-control" name="sort"
+						<input type="number" min="0" max="99" class="form-control" name="sort"
 							value="<?php echo ($item["sort"]); ?>" placeholder="">
 					</div>
 					<div class="col-sm-8">

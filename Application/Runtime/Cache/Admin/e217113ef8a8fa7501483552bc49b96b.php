@@ -1,14 +1,14 @@
 <?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<!-- Meta, title, CSS, favicons, etc. -->
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>JoyRill智慧社区后台</title>
-<!-- Public core css/js -->
-<!-- Bootstrap core CSS -->
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<!-- Meta, title, CSS, favicons, etc. -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JoyRill智慧社区后台</title>
+	<!-- Public core css/js -->
+	<!-- Bootstrap core CSS -->
 
 <link href="/smart_community/Public/admin/css/bootstrap.min.css" rel="stylesheet">
 
@@ -32,10 +32,6 @@
 <link href="/smart_community/Public/admin/css/floatexamples.css" rel="stylesheet" type="text/css" />    
 <script src="/smart_community/Public/admin/js/jquery.min.js"></script>
 
-<script type="text/javascript"
-	src="/smart_community/Public/admin/ueditor/ueditor.config.js"></script>
-<script type="text/javascript"
-	src="/smart_community/Public/admin/ueditor/ueditor.all.js"></script>
 </head>
 <body class="nav-md">
 	<div class="container body">
@@ -83,7 +79,7 @@
               </li>
               <li><a href="<?php echo U('Admin/Article/index','category_id=3');?>">办事指南</a>
               </li>
-              <li><a href="<?php echo U('Admin/Article/add');?>">发布文章</a>
+              <li><a href="<?php echo U('Admin/Article/add');?>">发布通知</a>
               </li>
               </li>
               <li><a href="<?php echo U('Admin/Articlecate/index');?>">分类管理</a>
@@ -242,7 +238,7 @@
     function logout(){
       $.ajax({
         type: "post",
-        url: "/smart_community/index.php/Admin/Article/logout",
+        url: "/smart_community/index.php/Admin/Mgrs/logout",
         data: {
           },
         dataType: "json",
@@ -258,119 +254,111 @@
     }
   </script>
 
+	
 	<!-- page content -->
-	<div class="right_col" role="main">
-		<div class="col-lg-10 col-md-10 col-xs-12"
-			style="background-color: #FFF;">
-			<!-- begin tab -->
-			<ul class="nav nav-tabs ">
-				<li class="active"><a href=""><b>修改文章</b></a></li>
-			</ul>
-			<p></p>
-			<div class="row">
-				<div class="col-lg-2 col-md-2 col-xs-2"></div>
-				<div class="col-lg-6 col-md-6 col-xs-6">
-					<span class="help-block"></span>
+<div class="right_col" role="main">
+	<div id="wrapper" style="min-width:900px">
+<!-- 		<div id="register" class="animate form"> -->
+			   <section class="login_content">
+			      <div class="row">
+			        <div class="col-md-12 col-sm-12 col-xs-12">
+			          <div class="x_panel">
+			            <div class="x_content">
+			              <form class="form-horizontal form-label-left" id="register_form">
+			              	<input type="hidden" id="user_id" value="<?php echo $_GET['user_id'];?>" >
+			              	<h1>更新物业人员信息</h1>
+			                <div class="item form-group">
+			                  <label class="control-label col-md-3 col-sm-3 col-xs-12" for="mgrs_nick_name">用户名 <span class="required">*</span>
+			                  </label>
+			                  <div class="col-md-6 col-sm-6 col-xs-9">
+			                    <input id="mgrs_nick_name" name="mgrs_nick_name" class="form-control col-md-7 col-xs-12" maxlength="10" placeholder="" required="required" type="text" readonly>
+			                  </div>
+			                </div>
+			                <div class="item form-group">
+			                  <label class="control-label col-md-3 col-sm-3 col-xs-12" for="mgrs_true_name">真实姓名 <span class="required">*</span>
+			                  </label>
+			                  <div class="col-md-6 col-sm-6 col-xs-9">
+			                    <input id="mgrs_true_name" name="mgrs_true_name" class="form-control col-md-7 col-xs-12" maxlength="10" placeholder="" required="required" type="text" readonly>
+			                  </div>
+			                </div>
+			                <div class="item form-group">
+			                  <label class="control-label col-md-3 col-sm-3 col-xs-12" for="mgrs_gender">性别 <span class="required">*</span>
+			                  </label>
+			                  <div class="col-md-6 col-sm-6 col-xs-9" style="text-align:left">
+			                <div class="btn-group" data-toggle="buttons">
+			                  <label class="btn btn-default" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+			                    <input type="radio" id="mgrs_gender" name="mgrs_gender" value="1"> &nbsp; 男 &nbsp;
+			                  </label>
+			                  <label class="btn btn-default" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+			                    <input type="radio" id="mgrs_gender" name="mgrs_gender" value="2"> &nbsp; 女 &nbsp;
+			                  </label>
+			                </div>
+			              </div>
+			            </div>                    
+			            <div class="item form-group">
+			              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="mgrs_id_card_num">身份证号 <span class="required">*</span>
+			              </label>
+			              <div class="col-md-6 col-sm-6 col-xs-9">
+			                <input id="mgrs_id_card_num" name="mgrs_id_card_num" class="form-control col-md-7 col-xs-12" maxlength="18" placeholder="" required="required" type="text" readonly>
+			              </div>
+			            </div>                                                                          
+			            <div class="item form-group">
+			              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="mgrs_email">邮箱地址 <span class="required">*</span>
+			              </label>
+			              <div class="col-md-6 col-sm-6 col-xs-9">
+			                <input type="email" id="mgrs_email" name="mgrs_email" required="required" class="form-control col-md-7 col-xs-12">
+			              </div>
+			            </div>
+			            <div class="item form-group">
+			              <label for="password" class="control-label col-md-3 col-sm-3 col-xs-12">请输入旧密码 <span class="required">*</span>
+			              </label>
+			              <div class="col-md-6 col-sm-6 col-xs-9">
+			                <input id="old_password" type="password" name="old_password" data-validate-length="6,8" class="form-control col-md-7 col-xs-12" required="required">
+			              </div>
+			            </div>
+			            <div class="item form-group">
+			              <label for="password" class="control-label col-md-3 col-sm-3 col-xs-12">请输入新密码 <span class="required">*</span>
+			              </label>
+			              <div class="col-md-6 col-sm-6 col-xs-9">
+			                <input id="new_password" type="password" name="new_password" data-validate-length="6,8" class="form-control col-md-7 col-xs-12" required="required">
+			              </div>
+			            </div>
+			            <div class="item form-group">
+			              <label for="password2" class="control-label col-md-3 col-sm-3 col-xs-12">再次输入新密码 <span class="required">*</span>
+			              </label>
+			              <div class="col-md-6 col-sm-6 col-xs-9">
+			                <input id="new_password2" type="password" name="new_password2" data-validate-linked="new_password" class="form-control col-md-7 col-xs-12" required="required">
+			              </div>
+			            </div>
+			            <div class="item form-group">
+			              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="mgrs_mobile">手机号 <span class="required">*</span>
+			              </label>
+			              <div class="col-md-6 col-sm-6 col-xs-9">
+			                <input type="text" id="mgrs_mobile" name="mgrs_mobile" required="required" class="form-control col-md-7 col-xs-12">
+			              </div>
+			            </div>
+			            <div class="ln_solid"></div>
+			            <div class="form-group">
+			              <div class="col-md-6 col-md-offset-3">
+ 			                <button type="reset" class="btn btn-primary">清除</button>
+			                <!-- <a href="javascript:;" class="btn btn-default submit savedata" >保存</a> -->
+			                <button id="send" type="submit" class="btn btn-success">提交</button>
+			              </div>
+			            </div>
+			            <div class="clearfix"></div>
+			          </form>
+			        </div>
+			      </div>
 				</div>
-				<div class="col-lg-4 col-md-4 col-xs-4"></div>
 			</div>
-			<p></p>
-			<form class="form-horizontal" role="form"
-				enctype="multipart/form-data">
-				<input type="hidden" id="article_id"
-					value="<?php echo $_GET['id']?>">
-				<div class="form-group">
-					<label for="article_title" class="col-sm-2 control-label">标题</label>
-					<div class="col-sm-6">
-						<input type="text" class="form-control" id="article_title"
-							name="article_title" value="<?php echo ($item['atitle']); ?>" maxlength="150">
-					</div>
-				</div>
-				<div class="form-group">
-					<label for="article_source" class="col-sm-2 control-label">来源</label>
-					<div class="col-sm-3">
-						<input type="text" class="form-control" id="article_source"
-							name="article_title" value="<?php echo ($item['source']); ?>" maxlength="20">
-					</div>
-				</div>
-				<div class="form-group">
-					<label for="article_author" class="col-sm-2 control-label">作者</label>
-					<div class="col-sm-3">
-						<input type="text" class="form-control" id="article_author"
-							name="article_title" value="<?php echo ($item['author']); ?>" maxlength="20">
-					</div>
-				</div>
-				<div class="form-group">
-					<label for="category_id" class="col-sm-2 control-label">文章分类</label>
-					<div class="col-sm-3">
-						<select class="form-control" id="category_id" name="category_id">
-							<?php if(is_array($clist)): $i = 0; $__LIST__ = $clist;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if(($vo['acid']) == $item['acid']): ?><option value="<?php echo ($vo["acid"]); ?>" selected="selected"><?php echo ($vo["cname"]); ?></option>
-							<?php else: ?>
-							<option value="<?php echo ($vo["acid"]); ?>"><?php echo ($vo["cname"]); ?></option><?php endif; endforeach; endif; else: echo "" ;endif; ?>
-						</select>
-					</div>
-				</div>
-				<div class="form-group">
-					<label for="article_valid_time" class="col-sm-2 control-label">截至有效时间</label>
-					<div class="col-sm-3">
-						<input type="date" class="form-control" id="article_valid_time"
-							name="article_valid_time" value="<?php echo ($item['valid_time']); ?>">
-					</div>
-				</div>
-				<div class="form-group">
-					<label for="article_des" class="col-sm-2 control-label">摘要</label>
-					<div class="col-sm-6">
-						<textarea class="form-control" rows="3" id="article_des"
-							placeholder="" maxlength="150"><?php echo ($item['des']); ?></textarea>
-					</div>
-				</div>
-				<div class="form-group">
-					<label for="article_content" class="col-sm-2 control-label">内容</label>
-					<div class="col-sm-8">
-						<script id="article_content" name="article_content"
-							type="text/plain"><?php echo (htmlspecialchars_decode($item["content"])); ?></script>
-						<script type="text/javascript">
-							var editor = UE.getEditor('article_content')
-						</script>
-					</div>
-				</div>
-				<div class="form-group">
-					<label for="article_keyword" class="col-sm-2 control-label">关键词</label>
-					<div class="col-sm-3">
-						<input id="article_keyword" type="text" class="tags form-control"
-							value="<?php echo ($item['keyword']); ?>" maxlength="100" />
-						<div id="suggestions-container"
-							style="position: relative; float: left; width: 250px; margin: 10px;"></div>
-					</div>
-					<div class="col-sm-6">
-						<span class="help-block"> <i class="fa fa-exclamation"></i>输入关键词后按回车键
-						</span>
-					</div>
-				</div>
-				<div class="form-group">
-					<label for="article_sort" class="col-sm-2 control-label">排序</label>
-					<div class="col-sm-2">
-						<input type="text" class="form-control" id="article_sort"
-							name="article_sort" value="<?php echo ($item['sort']); ?>" placeholder="">
-					</div>
-					<div class="col-sm-8">
-						<span class="help-block"> <i class="fa fa-exclamation"></i>值为0-99，值越大，越靠前
-						</span>
-					</div>
-				</div>
-				<div class="ln_solid"></div>
-				<div class="form-group">
-					<div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3">
-						<button type="reset" class="btn btn-primary">清除</button>
-						<button type="sumbit" class="btn btn-success">保存</button>
-					</div>
-				</div>
-			</form>
-		</div>
-		<!-- col end -->
-	</div>
+			  <!-- form -->
+			</section>
+			<!-- content -->
+<!-- 	      </div> -->
+    </div>
+</div>
 	<!-- /page content -->
-
+	
 	<!-- footer content -->
 <footer>
   <div class="pull-right">
@@ -470,115 +458,100 @@
 		$('#presentation').addClass('open');
 	})
 </script>
-	<!-- form validation -->
-	<script src="/smart_community/Public/admin/js/validator/validator.js"></script>
-	<!-- Tags -->
-	<script src="/smart_community/Public/admin/js/tags/jquery.tagsinput.min.js"></script>
-	<script>
-		//input tags
-		function onAddTag(tag) {
-			alert("Added a tag: " + tag);
-		}
+  <!-- form validation -->
+  <script src="/smart_community/Public/admin/js/validator/validator.js"></script>
+  <script>
+ 	window.onload = function(){
+    	$.ajax({
+            type: "post",
+            url: "/smart_community/index.php/Admin/Mgrs/edit_all",
+            data: {
+            	access_token : getCookie('access_token'),
+            	user_id : $('#user_id').val()
+            },
+            dataType: "json",
+            success: function(data) {
+            	if(data['code'] == 200){
+            		console.log(data);
+					$('#mgrs_nick_name').val(data['data'][0]['nick_name']);
+					$('#mgrs_true_name').val(data['data'][0]['true_name']);
+					if (data['data'][0]['gender'] == 1) {
+					    $("input[name='mgrs_gender'][value='1']").attr("checked",true);
+					    $("input[name='mgrs_gender'][value='1']").parent().addClass("active");
+					}else if(data['data'][0]['gender'] == 2) {
+						$("input[name='mgrs_gender'][value='2']").attr("checked",true);
+						$("input[name='mgrs_gender'][value='2']").parent().addClass("active");
+					}
+					$('#mgrs_id_card_num').val(data['data'][0]['id_card_num']);
+					$('#mgrs_email').val(data['data'][0]['email']);
+					$('#mgrs_mobile').val(data['data'][0]['mobile']);
+            	}
+            	if(data['code'] == '-200' || data['code'] == '-205' || data['code'] == '-208'){
+	            		alert(data['info']);
+            		location.href = 'http://' + data['data']['redirect_url'];	            		
+            	}
+            },
+            error: function(xhr, type, errorThrown) {
+              //异常处理
+              console.log(type);
+            }
+          }); 			
+	} 
 
-		function onRemoveTag(tag) {
-			alert("Removed a tag: " + tag);
-		}
+    // initialize the validator function
+    validator.message['date'] = 'not a real date';
 
-		function onChangeTag(input, tag) {
-			alert("Changed a tag: " + tag);
-		}
+    // validate a field on "blur" event, a 'select' on 'change' event & a '.reuired' classed multifield on 'keyup':
+    $('form')
+      .on('blur', 'input[required], input.optional, select.required', validator.checkField)
+      .on('change', 'select.required', validator.checkField)
+      .on('keypress', 'input[required][pattern]', validator.keypress);
 
-		$(function() {
-			$('#article_keyword').tagsInput({
-				width : 'auto'
-			});
-		});
-
-		// initialize the validator function
-		validator.message['date'] = 'not a real date';
-
-		// validate a field on "blur" event, a 'select' on 'change' event & a '.reuired' classed multifield on 'keyup':
-		$('form').on('blur',
-				'input[required], input.optional, select.required',
-				validator.checkField).on('change', 'select.required',
-				validator.checkField).on('keypress',
-				'input[required][pattern]', validator.keypress);
-
-		$('.multi.required').on('keyup blur', 'input', function() {
-			validator.checkField.apply($(this).siblings().last()[0]);
-		});
-
-		$('form')
-				.submit(
-						function(e) {
-							e.preventDefault();
-							var submit = true;
-							// evaluate the form using generic validaing
-							if (!validator.checkAll($(this))) {
-								submit = false;
-							}
-							if (submit) {
-								$
-										.ajax({
-											type : "post",
-											url : "/smart_community/index.php/Admin/Article/editSave",
-											data : {
-												'access_token' : getCookie('access_token'),
-												'article_id' : $('#article_id')
-														.val(),
-												'article_title' : $(
-														'#article_title').val(),
-												'article_source' : $(
-														'#article_source')
-														.val(),
-												'article_author' : $(
-														'#article_author')
-														.val(),
-												'category_id' : $(
-														'#category_id').val(),
-												'article_valid_time' : $(
-														'#article_valid_time')
-														.val(),
-												'article_des' : $(
-														'#article_des').val(),
-												'article_content' : editor
-														.getContent(),
-												'article_keyword' : $(
-														'#article_keyword')
-														.val(),
-												'article_sort' : $(
-														'#article_sort').val()
-											},
-											dataType : "json",
-											success : function(data) {
-												console.log(data);
-												if (data['code'] == '200'
-														|| data['code'] == '-205'
-														|| data['code'] == '-208') {
-													alert(data['info']);
-													location.href = 'http://'
-															+ data['data']['redirect_url'];
-												} else if (data['code'] == '-200'
-														|| data['code'] == '-201A'
-														|| data['code'] == '-201B'
-														|| data['code'] == '-202') {
-													alert(data['info']);
-												}
-											},
-											error : function(xhr, type,
-													errorThrown) {
-												//异常处理
-												console.log(type);
-											}
-										});
-							}
-							return false;
-						});
+    $('.multi.required')
+      .on('keyup blur', 'input', function() {
+        validator.checkField.apply($(this).siblings().last()[0]);
+      });
+    
+     $('form').submit(function(e) {
+        e.preventDefault();
+        var submit = true;
+        // evaluate the form using generic validaing
+        if (!validator.checkAll($(this))) {
+          	submit = false;
+        }
+        if (submit){
+	    	$.ajax({
+	            type: "post",
+	            url: "/smart_community/index.php/Admin/Mgrs/do_edit",
+	            data: {
+	            	'access_token' : getCookie('access_token'),
+	            	'edit_type' : 'edit_all',
+	            	'mgrs_nick_name' : $('#mgrs_nick_name').val(),
+	            	'mgrs_true_name' : $('#mgrs_true_name').val(),
+	            	'mgrs_gender' : $("input[name='mgrs_gender']:checked").val(),
+	            	'mgrs_id_card_num' : $('#mgrs_id_card_num').val(),
+	            	'mgrs_email' : $('#mgrs_email').val(),
+	            	'mgrs_password' : $('#password').val(),
+	            	'mgrs_password_confirmed' : $('#password2').val(),
+	            	'mgrs_mobile' : $('#mgrs_mobile').val()
+	            },
+	            dataType: "json",
+	            success: function(data) {
+	            	if(data['code'] == '200' || data['code'] == '-200' || data['code'] == '-205' || data['code'] == '-208'){
+	            		alert(data['info']);
+	            		location.href = 'http://' + data['data']['redirect_url'];
+	            	}else if(data['code'] == '-201A' || data['code'] == '-201B' || data['code'] == '-201C' || data['code'] == '-201D' || data['code'] == '-202A' || data['code'] == '-202B' || data['code'] == '-202C' || data['code'] == '-202D' || data['code'] == '-203'){
+	            		alert(data['info']);
+	            	}
+	            },
+	            error: function(xhr, type, errorThrown) {
+	              //异常处理
+	              console.log(type);
+	            }
+	          }); 
+        }       
+        return false;
+      });
 	</script>
-
-	<!-- END CORE PLUGINS -->
-
-	<!-- END JAVASCRIPTS -->
 </body>
-<!-- END BODY -->
 </html>

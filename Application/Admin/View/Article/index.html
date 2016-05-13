@@ -10,105 +10,223 @@
 <!-- Public core css/js -->
 <include file="Public/public_head" />
 </head>
-
 <body class="nav-md">
 	<include file="Public/menu" />
 	<include file="Public/top" />
 
 	<!-- page content -->
 	<div class="right_col" role="main">
-		<div class="col-lg-10 col-md-10 col-xs-12"
-			style="background-color: #FFF;">
-			<!-- begin tab -->
-			<ul class="nav nav-tabs ">
-
-				<li><a href="{:U('Articlecate/index/')}"><b>文章分类</b></a></li>
-				<li><a href="{:U('Articlecate/add/')}"><b>分类增加</b></a></li>
-				<li class="active"><a href="{:U('Article/index/')}"><b>文章管理</b></a></li>
-				<li><a href="{:U('Article/add/')}"><b>文章增加</b></a></li>
-			</ul>
-			<p></P>
-			<div class="row">
-				<div class="col-lg-2 col-md-2 col-xs-2">
-					<a class="btn blue" href="{:U('Article/add/')}"> <i
-						class="fa fa-plus"></i>增加文章
-					</a>
-				</div>
-				<div class="col-lg-6 col-md-6 col-xs-6">
-					<span class="help-block"></span>
-				</div>
-				<div class="col-lg-4 col-md-4 col-xs-4"></div>
+		<input type="hidden" id="category_id"
+			value="<?php echo $_GET['category_id']?>">
+		<div class="col-md-12 col-sm-12 col-xs-12">
+			<div class="col-lg-2 col-md-2 col-xs-2">
+				<a class="btn btn-success" href="{:U('Article/add/')}"> <i
+					class="fa fa-plus"></i>发布通知
+				</a>
 			</div>
-			<!-- end 添加 -->
-			<p></P>
-			<table class="table table-striped table-bordered table-hover ">
-				<thead>
-					<tr>
-						<th>文章id</th>
-						<th>文章名称</th>
-						<th>分类</th>
-						<th>推荐</th>
-						<th>活动</th>
-						<th>排序</th>
-						<th>时间</th>
-						<!-- end<th>排序</th> 添加 -->
-						<th>操作</th>
-					</tr>
-				</thead>
-				<tbody>
-					<volist name="alist" id="vo">
-					<tr>
-						<td>{$vo.aid}</td>
-						<td>{$vo.atitle}</td>
-						<!-- end <td>{$vo.dcsort}</td> 添加 -->
-						<td>{$vo.acid}</td>
-						<td><eq name="vo['top']" value="0"> <a
-								href="{:U('Article/updatetop/','id='.$vo['aid'])}"><i
-								class="fa fa-check"></i> </a> <else /> <a
-								href="{:U('Article/deletetop/','id='.$vo['aid'])}"><i
-								class="fa fa fa-times"></i></a> </eq></td>
-						<td><eq name="vo['channlid']" value="1">{$vo.channlid}<i
-								class="fa fa-check"></i></eq></td>
-						<td>{$vo.sort}</td>
-						<td>{$vo.create_time|date="Y-m-d",###}</td>
-						<td><a href="{:U('Article/edit/','id='.$vo['aid'])}"><i
-								class="fa fa-edit"></i> 修改</a> <a
-							href="{:U('Article/moveToTrash/','id='.$vo['aid'])}"
-							onClick="delcfm()"><i class="fa fa-trash-o"></i> 删除</a></td>
+			<div class="x_panel">
 
-					</tr>
-					</volist>
-				</tbody>
-			</table>
-			<ul class="pagination">{$page}
-			</ul>
+				<ul id="myTab" class="nav nav-tabs " role="tablist">
+					<li role="presentation" class="active"><a href="#tab_content1"
+						role="tab" id="approved-tab" data-toggle="tab"
+						aria-expanded="true">已发布</a></li>
+					<li role="presentation" class=""><a href="#tab_content2"
+						role="tab" id="pending-tab" data-toggle="tab"
+						aria-expanded="false">待审批</a></li>
+				</ul>
+				<div id="myTabContent" class="tab-content">
+					<div role="tabpanel" class="tab-pane fade active in"
+						id="tab_content1" aria-labelledby="home-tab">
+						<div class="container-fluid">
+							<table class="table table-hover">
+								<thead>
+									<tr>
+										<th>ID</th>
+										<th>标题</th>
+										<th>作者</th>
+										<th>来源</th>
+										<th>摘要</th>
+										<th>关键词</th>
+										<th>有效期</th>
+										<th>创建时间</th>
+										<th>排序</th>
+										<th>操作</th>
+									</tr>
+								</thead>
+								<tbody id="tab1">
+
+								</tbody>
+							</table>
+							<div id="pages1"></div>
+						</div>
+					</div>
+					<div role="tabpanel" class="tab-pane fade" id="tab_content2"
+						aria-labelledby="profile-tab">
+						<div class="container-fluid">
+							<table class="table table-hover">
+								<thead>
+									<tr>
+										<th>ID</th>
+										<th>标题</th>
+										<th>作者</th>
+										<th>来源</th>
+										<th>摘要</th>
+										<th>关键词</th>
+										<th>有效期</th>
+										<th>创建时间</th>
+										<th>排序</th>
+										<th>操作</th>
+									</tr>
+								</thead>
+								<tbody id="tab2">
+
+								</tbody>
+							</table>
+							<div id="pages2"></div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
-		<!-- col end -->
 	</div>
 	<!-- /page content -->
 
 	<include file="Public/footer" />
 	<include file="Public/public_bottom" />
-	<script>
-	
-	$('#myModal').on('hidden.bs.modal', function (e) {
-		location.reload()
-	})
-	$('#ajax').on('hidden.bs.modal', function (e) {
-		location.reload()
-	})
-	
-	function delcfm() {
-		if (!confirm("确认要删除？")) {
-			window.event.returnValue = false;
+	<script type="text/javascript">
+		window.onload = function() {
+			$
+					.ajax({
+						type : "post",
+						url : "__CONTROLLER__/indexPost",
+						data : {
+							access_token : getCookie('access_token'),
+							num : '10',
+							category_id : $('#category_id').val(),
+							article_status : 1
+						},
+						dataType : "json",
+						success : function(data) {
+							if (data['code'] == 200) {
+								if (data['data']['count'] == 0) {
+									$("#tab1")
+											.append(
+													"<font color='red'><h5>无文章信息！</h5></font>");
+								}
+								var len = data['data']['data'].length;
+								for (var i = 0; i < len; i++) {
+									var array = "/id/"
+											+ data['data']['data'][i]['aid'];
+
+									$("#tab1")
+											.append(
+													"<tr><td>"
+															+ data['data']['data'][i]['aid']
+															+ "</td><td>"
+															+ data['data']['data'][i]['atitle']
+															+ "</td><td>"
+															+ data['data']['data'][i]['author']
+															+ "</td><td>"
+															+ data['data']['data'][i]['source']
+															+ "</td><td>"
+															+ data['data']['data'][i]['des']
+															+ "</td><td>"
+															+ data['data']['data'][i]['keyword']
+															+ "</td><td>"
+															+ data['data']['data'][i]['valid_time']
+															+ "</td><td>"
+															+ data['data']['data'][i]['create_time']
+															+ "</td><td>"
+															+ data['data']['data'][i]['sort']
+															+ "</td><td><a class=\"btn btn-info btn-xs\" href=\""
+															+ "{:U(\'Admin/Article/edit" + array + "\')}\"><i class=\"fa fa-pencil\"></i>更新</a>"
+															+ "<a class=\"btn btn-danger btn-xs\" href=\""
+															+ "{:U(\'Admin/Article/moveToTrash" + array + "\')}\"><i class=\"fa fa-trash\"></i>移到回收站</a></td>"
+															+ "</tr>");
+								}
+								$('#pages1').append(data['data']['page']);
+							}
+							if (data['code'] == '-205'
+									|| data['code'] == '-208') {
+								alert(data['info']);
+								location.href = 'http://'
+										+ data['data']['redirect_url'];
+							}
+						},
+						error : function(xhr, type, errorThrown) {
+							//异常处理
+							console.log(type);
+						}
+					});
 		}
-	}
-</script>
-
-	<!-- END CORE PLUGINS -->
-
-	<!-- END JAVASCRIPTS -->
-
+		$('#pending-tab')
+				.one(
+						'click',
+						function() {
+							$
+									.ajax({
+										type : "post",
+										url : "__CONTROLLER__/indexPost",
+										data : {
+											access_token : getCookie('access_token'),
+											num : '10',
+											category_id : $('#category_id').val(),
+											article_status : 0
+										},
+										dataType : "json",
+										success : function(data) {
+											if (data['code'] == 200) {
+												if (data['data']['count'] == 0) {
+													$("#tab2")
+															.append(
+																	"<font color='red'><h5>无文章信息！</h5></font>");
+												}
+												var len = data['data']['data'].length;
+												for (var i = 0; i < len; i++) {
+													var array = "/id/"
+															+ data['data']['data'][i]['aid'];
+													$("#tab2")
+															.append(
+																	"<tr><td>"
+																			+ data['data']['data'][i]['aid']
+																			+ "</td><td>"
+																			+ data['data']['data'][i]['atitle']
+																			+ "</td><td>"
+																			+ data['data']['data'][i]['author']
+																			+ "</td><td>"
+																			+ data['data']['data'][i]['source']
+																			+ "</td><td>"
+																			+ data['data']['data'][i]['des']
+																			+ "</td><td>"
+																			+ data['data']['data'][i]['keyword']
+																			+ "</td><td>"
+																			+ data['data']['data'][i]['valid_time']
+																			+ "</td><td>"
+																			+ data['data']['data'][i]['create_time']
+																			+ "</td><td>"
+																			+ data['data']['data'][i]['sort']
+																			+ "</td><td><a class=\"btn btn-success btn-xs\" href=\""
+																			+ "{:U(\'Admin/Article/approving" + array + "\')}\"><i class=\"fa fa-check\"></i>审批通过</a>"
+																			+ "<a class=\"btn btn-danger btn-xs\" href=\""
+																			+ "{:U(\'Admin/Article/moveToTrash" + array + "\')}\"><i class=\"fa fa-close\"></i>拒绝</a></td>"
+																			+ "</tr>");
+												}
+												$('#pages2').append(
+														data['data']['page']);
+											}
+											if (data['code'] == '-205'
+													|| data['code'] == '-208') {
+												alert(data['info']);
+												location.href = 'http://'
+														+ data['data']['redirect_url'];
+											}
+										},
+										error : function(xhr, type, errorThrown) {
+											//异常处理
+											console.log(type);
+										}
+									});
+						})
+	</script>
 </body>
-<!-- END BODY -->
 </html>

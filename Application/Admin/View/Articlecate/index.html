@@ -40,7 +40,7 @@
 					<tr>
 						<th>分类id</th>
 						<th>分类名</th>
-						<!-- end<th>排序</th> 添加 -->
+						<th>排序</th>
 						<th>操作</th>
 
 					</tr>
@@ -50,7 +50,7 @@
 					<tr>
 						<td>{$vo.acid}</td>
 						<td>{$vo.cname}</td>
-						<!-- end <td>{$vo.dcsort}</td> 添加 -->
+						<td>{$vo.sort}</td>
 						<td><a href="{:U('Articlecate/edit/','id='.$vo['acid'])}"><i
 								class="fa fa-edit"></i> 修改</a> <a
 							href="{:U('Articlecate/delete/','id='.$vo['acid'])}"

@@ -66,7 +66,7 @@ class ArticleController extends CommonController
             // 获取分类ID,如果没有则显示所有信息
             $cid = (int) I('post.category_id') ? (int) I('post.category_id') : 'ALL';
             // 获取通知状态（1->发布,0->待审核）
-            $status = (int) I('post.article_status');
+            $status = I('post.article_status');
             // 获取每页展示行数
             $num = I('post.num') ? I('post.num') : C('PAGE_NUM');
             // 实例化模型
@@ -81,11 +81,11 @@ class ArticleController extends CommonController
                     'status' => $status
                 ))->count();
                 // 实例化分类页
-                $Page = new \Think\Page($count, $num);
+                $Page = new \Think\Page($count, $count);
                 // 调用show显示分页链接
                 $show = $Page->show();
                 // 实现数据分页
-                $data = $Article->field('acid,atitle,keyword,source,author,des,valid_time,create_time')
+                $data = $Article->field('aid,acid,atitle,keyword,source,author,des,valid_time,create_time,sort')
                     ->where(array(
                     'acid' => $cid,
                     'status' => $status
@@ -100,11 +100,11 @@ class ArticleController extends CommonController
                     'status' => $status
                 ))->count();
                 // 实例化分类页
-                $Page = new \Think\Page($count, $num);
+                $Page = new \Think\Page($count, $count);
                 // 调用show显示分页链接
                 $show = $Page->show();
                 // 实现数据分页
-                $data = $Article->field('acid,atitle,keyword,source,author,des,valid_time,create_time')
+                $data = $Article->field('aid,acid,atitle,keyword,source,author,des,valid_time,create_time')
                     ->where(array(
                     'status' => $status
                 ))
@@ -136,35 +136,64 @@ class ArticleController extends CommonController
     }
 
     /**
-     * 文章增加页面，非API接口，get请求
+     * 文章增加页面，API接口，get/post请求
      *
      * @author Steven.Huang <87144734@qq.com>
      */
     public function add()
     {
-        // 获取TOKEN
-        $token = I('post.access_token');
-        if (! check_token($token)) {
+        if (IS_GET) {
+            import("ORG.Util.Category");
+            $cat = new \Think\Category('Article_cat', array(
+                'acid',
+                'afid',
+                'aname',
+                'cname'
+            ));
+            $clist = $cat->getList(); // 获取分类结构
+            $this->assign('clist', $clist);
+            $this->display();
+        } elseif (IS_POST) {
+            // 获取TOKEN
+            $token = I('post.access_token');
+            if (! check_token($token)) {
+                $output = array(
+                    'data' => array(
+                        'redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Public/login'),
+                        'sec' => 3
+                    ),
+                    'info' => urlencode('ACCESS_TOKEN超时，请重新登录！'),
+                    'code' => - 208
+                );
+                exit(urldecode(json_encode($output)));
+            }
+            
+            import("ORG.Util.Category");
+            $cat = new \Think\Category('Article_cat', array(
+                'acid',
+                'afid',
+                'aname',
+                'cname'
+            ));
+            $clist = $cat->getList(); // 获取分类结构
+            
+            $output = array(
+                'data' => $clist,
+                'info' => urlencode('分类列表！'),
+                'code' => 200
+            );
+            exit(urldecode(json_encode($output)));
+        } else {
             $output = array(
                 'data' => array(
-                    'redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Public/login'),
+                    'redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Index/index'),
                     'sec' => 3
                 ),
-                'info' => urlencode('ACCESS_TOKEN超时，请重新登录！'),
-                'code' => '-208'
+                'info' => urlencode('请求错误！请重新再试！'),
+                'code' => - 205
             );
             exit(urldecode(json_encode($output)));
         }
-        import("ORG.Util.Category");
-        $cat = new \Think\Category('Article_cat', array(
-            'acid',
-            'afid',
-            'aname',
-            'cname'
-        ));
-        $clist = $cat->getList(); // 获取分类结构
-        $this->assign('clist', $clist);
-        $this->display();
     }
 
     /**
@@ -191,11 +220,12 @@ class ArticleController extends CommonController
             
             // 获取文章信息
             $data = array(
-                'acid' => (int) I('post.category_id'),
-                'sort' => (int) I('post.sort'),
+                'acid' => I('post.category_id'),
+                'sort' => I('post.article_sort'),
                 'atitle' => trim(I('post.article_title')),
                 'keyword' => trim(I('post.article_keyword')),
                 'source' => trim(I('post.article_source')),
+                'valid_time' => trim(I('post.article_valid_time')),
                 'author' => trim(I('post.article_author')),
                 'des' => trim(I('post.article_des')),
                 'content' => htmlspecialchars(stripslashes(I('post.article_content'))),
@@ -204,14 +234,26 @@ class ArticleController extends CommonController
             );
             
             // 当信息为空时，返回错误信息（需前端配合过滤）
-            if (empty($data['acid']) || empty($data['sort']) || empty($data['atitle']) || empty($data['keyword']) || empty($data['source']) || empty($data['author']) || empty($data['des']) || empty($data['content'])) {
+            if (empty($data['acid']) || empty($data['atitle']) || empty($data['keyword']) || empty($data['source']) || empty($data['author']) || empty($data['des']) || empty($data['content'])) {
                 $output = array(
                     'data' => array(
                         'redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Article/add'),
                         'sec' => 3
                     ),
-                    'info' => '文章信息不能为空！',
-                    'code' => '-201'
+                    'info' => urlencode('文章信息不能为空！'),
+                    'code' => '-201A'
+                );
+                exit(urldecode(json_encode($output)));
+            }
+            // 判断用户是否选择分类
+            if ($data['acid'] == '-1') {
+                $output = array(
+                    'data' => array(
+                        'redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Article/add'),
+                        'sec' => 3
+                    ),
+                    'info' => urlencode('请选择文章分类！'),
+                    'code' => '-201B'
                 );
                 exit(urldecode(json_encode($output)));
             }
@@ -225,7 +267,15 @@ class ArticleController extends CommonController
             
             $res = $Article->create($data);
             if (! $res) {
-                $this->error($Article->getError());
+                $output = array(
+                    'data' => array(
+                        'redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Article/index'),
+                        'sec' => 3
+                    ),
+                    'info' => $Article->getError(),
+                    'code' => '-202'
+                );
+                exit(urldecode(json_encode($output)));
             } else {
                 $result = $Article->add($data);
                 if ($result) {
@@ -264,43 +314,76 @@ class ArticleController extends CommonController
     }
 
     /**
-     * 文章修改页面，非API接口，get请求
+     * 文章修改页面，API接口，get/post请求
      *
      * @author Steven.Huang <87144734@qq.com>
      */
     public function edit()
     {
-        // 获取TOKEN
-        $token = I('post.access_token');
-        if (! check_token($token)) {
+        if (IS_GET) {
+            $id = I('get.id');
+            $Article = M('Article');
+            $item = $Article->find($id);
+            
+            import("ORG.Util.Category");
+            $cat = new \Think\Category('Article_cat', array(
+                'acid',
+                'afid',
+                'aname',
+                'cname'
+            ));
+            $clist = $cat->getList(); // 获取分类结构
+            $this->assign('clist', $clist);
+            $this->assign('item', $item);
+            $this->display();
+        } elseif (IS_POST) {
+            // 获取TOKEN
+            $token = I('post.access_token');
+            if (! check_token($token)) {
+                $output = array(
+                    'data' => array(
+                        'redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Public/login'),
+                        'sec' => 3
+                    ),
+                    'info' => urlencode('ACCESS_TOKEN超时，请重新登录！'),
+                    'code' => - 208
+                );
+                exit(urldecode(json_encode($output)));
+            }
+            
+            $id = I('post.id');
+            $Article = M('Article');
+            $item = $Article->find($id);
+            
+            import("ORG.Util.Category");
+            $cat = new \Think\Category('Article_cat', array(
+                'acid',
+                'afid',
+                'aname',
+                'cname'
+            ));
+            $clist = $cat->getList(); // 获取分类结构
+            
             $output = array(
                 'data' => array(
-                    'redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Public/login'),
+                    'clist' => $clist,
+                    'item' => $item
+                ),
+                'info' => urlencode('分类列表及制定ID文章内容！'),
+                'code' => 200
+            );
+            exit(urldecode(json_encode($output)));
+        } else {
+            $output = array(
+                'data' => array(
+                    'redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Index/index'),
                     'sec' => 3
                 ),
-                'info' => urlencode('ACCESS_TOKEN超时，请重新登录！'),
-                'code' => '-208'
+                'info' => urlencode('请求错误！请重新再试！'),
+                'code' => - 205
             );
             exit(urldecode(json_encode($output)));
         }
-        $id = I('get.id');
-        $Article = M('Article');
-        $item = $Article->find($id);
-        // dump($item);
-        
-        import("ORG.Util.Category");
-        $cat = new \Think\Category('Article_cat', array(
-            'acid',
-            'afid',
-            'aname',
-            'cname'
-        ));
-        $clist = $cat->getList(); // 获取分类结构
-        $this->assign('clist', $clist);
-        
-        $this->assign('item', $item);
-        
-        $this->display();
     }
 
     /**
@@ -327,9 +410,9 @@ class ArticleController extends CommonController
             
             // 获取文章信息
             $data = array(
-                'aid' => (int) I('post.article_id'),
-                'acid' => (int) I('post.category_id'),
-                'sort' => (int) I('post.sort'),
+                'aid' => I('post.article_id'),
+                'acid' => I('post.category_id'),
+                'sort' => I('post.article_sort'),
                 'atitle' => trim(I('post.article_title')),
                 'keyword' => trim(I('post.article_keyword')),
                 'source' => trim(I('post.article_source')),
@@ -339,15 +422,15 @@ class ArticleController extends CommonController
                 'operate_time' => date('Y-m-d h:i:s', time()),
                 'operate_id' => $_SESSION['user_id']
             );
-            
+   
             // 当信息为空时，返回错误信息（需前端配合过滤）
-            if (empty($data['aid']) || empty($data['acid']) || empty($data['sort']) || empty($data['atitle']) || empty($data['keyword']) || empty($data['source']) || empty($data['author']) || empty($data['des']) || empty($data['content'])) {
+            if (empty($data['aid']) || empty($data['acid']) || empty($data['atitle']) || empty($data['keyword']) || empty($data['source']) || empty($data['author']) || empty($data['des']) || empty($data['content'])) {
                 $output = array(
                     'data' => array(
                         'redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Article/add'),
                         'sec' => 3
                     ),
-                    'info' => '更新的文章信息不能为空！',
+                    'info' => urlencode('更新的文章信息不能为空！'),
                     'code' => '-201'
                 );
                 exit(urldecode(json_encode($output)));
@@ -362,9 +445,17 @@ class ArticleController extends CommonController
             
             $res = $Article->create();
             if (! $res) {
-                $this->error($Article->getError());
+                $output = array(
+                    'data' => array(
+                        'redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Article/index'),
+                        'sec' => 3
+                    ),
+                    'info' => $Article->getError(),
+                    'code' => '-202'
+                );
+                exit(urldecode(json_encode($output)));
             } else {
-                $result = $Article->where($data['aid'])->save($data);
+                $result = $Article->save($data);
                 if ($result) {
                     $output = array(
                         'data' => array(
@@ -401,7 +492,7 @@ class ArticleController extends CommonController
     }
 
     /**
-     * 删除文章内容  [面向APP的API接口，AJAX post请求]
+     * 删除文章内容 [面向APP的API接口，AJAX post请求]
      *
      * @author Steven.Huang <87144734@qq.com>
      */
@@ -438,7 +529,7 @@ class ArticleController extends CommonController
             } else {
                 $data = array(
                     'aid' => $id,
-                    'status' => -1,
+                    'status' => - 1,
                     'operate_id' => $_SESSION['user_id']
                 );
                 $result = $Article->save($data);
@@ -478,7 +569,7 @@ class ArticleController extends CommonController
     }
 
     /**
-     * 审批文章  [面向APP的API接口，AJAX post请求]
+     * 审批文章 [面向APP的API接口，AJAX post请求]
      *
      * @author Steven.Huang <87144734@qq.com>
      */
@@ -550,7 +641,7 @@ class ArticleController extends CommonController
     {}
 
     /**
-     * 回收站-彻底删除  [面向APP的API接口，AJAX post请求]
+     * 回收站-彻底删除 [面向APP的API接口，AJAX post请求]
      *
      * @author Steven.Huang <87144734@qq.com>
      */
@@ -570,12 +661,12 @@ class ArticleController extends CommonController
                 );
                 exit(urldecode(json_encode($output)));
             }
-        
+            
             // 获取文章ID
             $id = I('post.article_id');
             $data = array(
                 'aid' => $id,
-                'status' => -2,
+                'status' => - 2,
                 'operate_id' => $_SESSION['user_id']
             );
             $status = D('notice')->save($data);
@@ -614,7 +705,7 @@ class ArticleController extends CommonController
     }
 
     /**
-     * 回收站-还原，还原为待审核状态  [面向APP的API接口，AJAX post请求]
+     * 回收站-还原，还原为待审核状态 [面向APP的API接口，AJAX post请求]
      *
      * @author Steven.Huang <87144734@qq.com>
      */
@@ -634,12 +725,12 @@ class ArticleController extends CommonController
                 );
                 exit(urldecode(json_encode($output)));
             }
-        
+            
             // 获取文章ID
             $id = I('post.article_id');
             $data = array(
                 'aid' => $id,
-                'status' => 0, //还原为待审核状态
+                'status' => 0, // 还原为待审核状态
                 'operate_id' => $_SESSION['user_id']
             );
             $status = D('notice')->save($data);

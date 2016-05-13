@@ -123,25 +123,22 @@ class ArticlecateController extends CommonController
         $map['sort'] = I('post.sort');
         $map['aname'] = trim(I('post.aname'));
         
-        $res1 = $acat->is_exist_cat($map['aname'],$map['afid']);
-        if ($res1){
-            $this->error('同级分类目录名已存在，请更换个试试');
-        }
-        
+//         $res1 = $acat->is_exist_cat($map['aname'],$map['afid']);
+//         if ($res1){
+//             $this->error('同级分类目录名已存在，请更换个试试',"edit/id/{$id}");
+//         }
         $res2 = $acat->create();
+        
         if (!$res2) {
-            // 如果创建失败 表示验证没有通过 输出错误提示信息
-            $this->error($acat->getError());
+            $this->error($acat->getError(),"index");
         } else {
-            // 验证通过 可以进行其他数据操作
             $result = $acat->where($data)->save($map);
-            if ($result) {
-                $this->success('修改成功'); // redirect(U(Articlecate/index));
+            if ($result) {               
+                $this->success('修改成功','index');
             } else {
-                // 错误页面的默认跳转页面是返回前一页，通常不需要设置
-                $this->error('修改失败');
+                $this->error('修改失败',"edit/id/{$id}");
             }
-        } // *******************res判定结束
+        }
     }
     
     /**

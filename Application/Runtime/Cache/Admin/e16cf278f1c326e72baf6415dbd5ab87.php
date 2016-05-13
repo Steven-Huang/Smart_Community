@@ -264,7 +264,7 @@
 			style="background-color: #FFF;">
 			<!-- begin tab -->
 			<ul class="nav nav-tabs ">
-				<li class="active"><a href=""><b>修改文章</b></a></li>
+				<li class="active"><a href=""><b>发布文章</b></a></li>
 			</ul>
 			<p></p>
 			<div class="row">
@@ -277,36 +277,33 @@
 			<p></p>
 			<form class="form-horizontal" role="form"
 				enctype="multipart/form-data">
-				<input type="hidden" id="article_id"
-					value="<?php echo $_GET['id']?>">
 				<div class="form-group">
 					<label for="article_title" class="col-sm-2 control-label">标题</label>
 					<div class="col-sm-6">
 						<input type="text" class="form-control" id="article_title"
-							name="article_title" value="<?php echo ($item['atitle']); ?>" maxlength="150">
+							name="article_title" value="" maxlength="150">
 					</div>
 				</div>
 				<div class="form-group">
 					<label for="article_source" class="col-sm-2 control-label">来源</label>
 					<div class="col-sm-3">
 						<input type="text" class="form-control" id="article_source"
-							name="article_title" value="<?php echo ($item['source']); ?>" maxlength="20">
+							name="article_title" value="" maxlength="20">
 					</div>
 				</div>
 				<div class="form-group">
 					<label for="article_author" class="col-sm-2 control-label">作者</label>
 					<div class="col-sm-3">
 						<input type="text" class="form-control" id="article_author"
-							name="article_title" value="<?php echo ($item['author']); ?>" maxlength="20">
+							name="article_title" value="" maxlength="20">
 					</div>
 				</div>
 				<div class="form-group">
 					<label for="category_id" class="col-sm-2 control-label">文章分类</label>
 					<div class="col-sm-3">
 						<select class="form-control" id="category_id" name="category_id">
-							<?php if(is_array($clist)): $i = 0; $__LIST__ = $clist;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if(($vo['acid']) == $item['acid']): ?><option value="<?php echo ($vo["acid"]); ?>" selected="selected"><?php echo ($vo["cname"]); ?></option>
-							<?php else: ?>
-							<option value="<?php echo ($vo["acid"]); ?>"><?php echo ($vo["cname"]); ?></option><?php endif; endforeach; endif; else: echo "" ;endif; ?>
+							<option value="-1">---请选择分类---</option>
+							<?php if(is_array($clist)): $i = 0; $__LIST__ = $clist;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><option value="<?php echo ($vo["acid"]); ?>"><?php echo ($vo["cname"]); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
 						</select>
 					</div>
 				</div>
@@ -314,21 +311,21 @@
 					<label for="article_valid_time" class="col-sm-2 control-label">截至有效时间</label>
 					<div class="col-sm-3">
 						<input type="date" class="form-control" id="article_valid_time"
-							name="article_valid_time" value="<?php echo ($item['valid_time']); ?>">
+							name="article_valid_time" value="">
 					</div>
 				</div>
 				<div class="form-group">
 					<label for="article_des" class="col-sm-2 control-label">摘要</label>
 					<div class="col-sm-6">
 						<textarea class="form-control" rows="3" id="article_des"
-							placeholder="" maxlength="150"><?php echo ($item['des']); ?></textarea>
+							placeholder="" maxlength="150"></textarea>
 					</div>
 				</div>
 				<div class="form-group">
 					<label for="article_content" class="col-sm-2 control-label">内容</label>
 					<div class="col-sm-8">
 						<script id="article_content" name="article_content"
-							type="text/plain"><?php echo (htmlspecialchars_decode($item["content"])); ?></script>
+							type="text/plain"></script>
 						<script type="text/javascript">
 							var editor = UE.getEditor('article_content')
 						</script>
@@ -338,7 +335,7 @@
 					<label for="article_keyword" class="col-sm-2 control-label">关键词</label>
 					<div class="col-sm-3">
 						<input id="article_keyword" type="text" class="tags form-control"
-							value="<?php echo ($item['keyword']); ?>" maxlength="100" />
+							value="" maxlength="100"/>
 						<div id="suggestions-container"
 							style="position: relative; float: left; width: 250px; margin: 10px;"></div>
 					</div>
@@ -351,7 +348,7 @@
 					<label for="article_sort" class="col-sm-2 control-label">排序</label>
 					<div class="col-sm-2">
 						<input type="text" class="form-control" id="article_sort"
-							name="article_sort" value="<?php echo ($item['sort']); ?>" placeholder="">
+							name="article_sort" value="0" placeholder="">
 					</div>
 					<div class="col-sm-8">
 						<span class="help-block"> <i class="fa fa-exclamation"></i>值为0-99，值越大，越靠前
@@ -367,10 +364,10 @@
 				</div>
 			</form>
 		</div>
-		<!-- col end -->
+	</div>
+	<!-- end container -->
 	</div>
 	<!-- /page content -->
-
 	<!-- footer content -->
 <footer>
   <div class="pull-right">
@@ -493,87 +490,61 @@
 				width : 'auto'
 			});
 		});
-
+		
 		// initialize the validator function
-		validator.message['date'] = 'not a real date';
+	    validator.message['date'] = 'not a real date';
 
-		// validate a field on "blur" event, a 'select' on 'change' event & a '.reuired' classed multifield on 'keyup':
-		$('form').on('blur',
-				'input[required], input.optional, select.required',
-				validator.checkField).on('change', 'select.required',
-				validator.checkField).on('keypress',
-				'input[required][pattern]', validator.keypress);
+	    // validate a field on "blur" event, a 'select' on 'change' event & a '.reuired' classed multifield on 'keyup':
+	    $('form')
+	      .on('blur', 'input[required], input.optional, select.required', validator.checkField)
+	      .on('change', 'select.required', validator.checkField)
+	      .on('keypress', 'input[required][pattern]', validator.keypress);
 
-		$('.multi.required').on('keyup blur', 'input', function() {
-			validator.checkField.apply($(this).siblings().last()[0]);
-		});
-
-		$('form')
-				.submit(
-						function(e) {
-							e.preventDefault();
-							var submit = true;
-							// evaluate the form using generic validaing
-							if (!validator.checkAll($(this))) {
-								submit = false;
-							}
-							if (submit) {
-								$
-										.ajax({
-											type : "post",
-											url : "/smart_community/index.php/Admin/Article/editSave",
-											data : {
-												'access_token' : getCookie('access_token'),
-												'article_id' : $('#article_id')
-														.val(),
-												'article_title' : $(
-														'#article_title').val(),
-												'article_source' : $(
-														'#article_source')
-														.val(),
-												'article_author' : $(
-														'#article_author')
-														.val(),
-												'category_id' : $(
-														'#category_id').val(),
-												'article_valid_time' : $(
-														'#article_valid_time')
-														.val(),
-												'article_des' : $(
-														'#article_des').val(),
-												'article_content' : editor
-														.getContent(),
-												'article_keyword' : $(
-														'#article_keyword')
-														.val(),
-												'article_sort' : $(
-														'#article_sort').val()
-											},
-											dataType : "json",
-											success : function(data) {
-												console.log(data);
-												if (data['code'] == '200'
-														|| data['code'] == '-205'
-														|| data['code'] == '-208') {
-													alert(data['info']);
-													location.href = 'http://'
-															+ data['data']['redirect_url'];
-												} else if (data['code'] == '-200'
-														|| data['code'] == '-201A'
-														|| data['code'] == '-201B'
-														|| data['code'] == '-202') {
-													alert(data['info']);
-												}
-											},
-											error : function(xhr, type,
-													errorThrown) {
-												//异常处理
-												console.log(type);
-											}
-										});
-							}
-							return false;
-						});
+	    $('.multi.required')
+	      .on('keyup blur', 'input', function() {
+	        validator.checkField.apply($(this).siblings().last()[0]);
+	      });
+	    
+	     $('form').submit(function(e) {
+	        e.preventDefault();
+	        var submit = true;
+	        // evaluate the form using generic validaing
+	        if (!validator.checkAll($(this))) {
+	          	submit = false;
+	        }
+	        if (submit){
+		    	$.ajax({
+		            type: "post",
+		            url: "/smart_community/index.php/Admin/Article/addSave",
+		            data: {
+		            	'access_token' : getCookie('access_token'),
+		            	'article_title' : $('#article_title').val(),
+		            	'article_source' : $('#article_source').val(),
+		            	'article_author' : $('#article_author').val(),
+		            	'category_id' : $('#category_id').val(),
+		            	'article_valid_time' : $('#article_valid_time').val(),
+		            	'article_des' : $('#article_des').val(),
+		            	'article_content' : editor.getContent(),
+		            	'article_keyword' : $('#article_keyword').val(),
+		            	'article_sort' : $('#article_sort').val()
+		            },
+		            dataType: "json",
+		            success: function(data) {
+		            	if(data['code'] == '200' || data['code'] == '-205' || data['code'] == '-208' || data['code'] == '-202'){
+		            		alert(data['info']);
+		            		location.href = 'http://' + data['data']['redirect_url'];
+		            	}else if(data['code'] == '-200' || data['code'] == '-201A' || data['code'] == '-201B'){
+		            		alert(data['info']);
+		            	}
+		            },
+		            error: function(xhr, type, errorThrown) {
+		              //异常处理
+		              console.log(type);
+		            }
+		          }); 
+	        }       
+	        return false;
+	      }); 
 	</script>
 
 	<!-- END CORE PLUGINS -->
