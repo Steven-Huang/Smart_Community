@@ -21,11 +21,15 @@
 		<div class="col-md-12 col-sm-12 col-xs-12">
 			<div class="col-lg-2 col-md-2 col-xs-2">
 				<a class="btn btn-success" href="{:U('Article/add/')}"> <i
-					class="fa fa-plus"></i>发布通知
+					class="fa fa-plus"></i>新增
 				</a>
 			</div>
 			<div class="x_panel">
-
+				<div class="row x_title">
+					<div class="col-md-12">
+	                  <h3 id="category_name"></h3>
+	                </div>				
+				</div>
 				<ul id="myTab" class="nav nav-tabs " role="tablist">
 					<li role="presentation" class="active"><a href="#tab_content1"
 						role="tab" id="approved-tab" data-toggle="tab"
@@ -108,6 +112,7 @@
 						dataType : "json",
 						success : function(data) {
 							if (data['code'] == 200) {
+								$('#category_name').append(data['data']['category_name'][0]['aname']);								$('#category_name2').append(data['data']['category_name'][0]['aname']);
 								if (data['data']['count'] == 0) {
 									$("#tab1")
 											.append(
@@ -205,17 +210,17 @@
 																			+ data['data']['data'][i]['create_time']
 																			+ "</td><td>"
 																			+ data['data']['data'][i]['sort']
-																			+ "</td><td><a class=\"btn btn-success btn-xs\" href=\""
-																			+ "{:U(\'Admin/Article/approving" + array + "\')}\"><i class=\"fa fa-check\"></i>审批通过</a>"
-																			+ "<a class=\"btn btn-danger btn-xs\" href=\""
-																			+ "{:U(\'Admin/Article/moveToTrash" + array + "\')}\"><i class=\"fa fa-close\"></i>拒绝</a></td>"
+																			+ "</td><td><a class=\"btn btn-info btn-xs\" href=\""
+																			+ "{:U(\'Admin/Article/edit" + array + "\')}\"><i class=\"fa fa-pencil\"></i>更新</a>"
+																			+ "<a class=\"btn btn-success btn-xs\" href=\""
+																			+ "{:U(\'Admin/Article/detail" + array + "\')}\"><i class=\"fa fa-search-plus\"></i>审批</a>"
 																			+ "</tr>");
 												}
 												$('#pages2').append(
 														data['data']['page']);
 											}
 											if (data['code'] == '-205'
-													|| data['code'] == '-208') {
+												|| data['code'] == '-206' || data['code'] == '-207' || data['code'] == '-208') {
 												alert(data['info']);
 												location.href = 'http://'
 														+ data['data']['redirect_url'];

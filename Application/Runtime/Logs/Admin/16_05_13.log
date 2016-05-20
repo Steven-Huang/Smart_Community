@@ -20943,3 +20943,198 @@ ERR: 1292:Incorrect datetime value: '2016-05-13+05%3A40%3A42' for column 'operat
 ERR: 1292:Incorrect datetime value: '2016-05-13+05%3A40%3A42' for column 'operate_time' at row 1
  [ SQL语句 ] : UPDATE `sc_article` SET `acid`='1',`sort`='0',`atitle`='45456456',`keyword`='1%252C2%252C3%252C4',`source`='4564564564564',`author`='5456456456456',`des`='12123123123',`content`='%26amp%3Blt%3Bp%26amp%3Bgt%3B%2526amp%253Blt%253Bp%2526amp%253Bgt%253B1212123123%2526amp%253Bamp%253Bnbsp%253B%2526amp%253Bamp%253Bnbsp%253B%2526amp%253Bamp%253Bnbsp%253B%2526amp%253Bamp%253Bnbsp%253B1212312%2526amp%253Blt%253B%252Fp%2526amp%253Bgt%253B%26amp%3Blt%3B%2Fp%26amp%3Bgt%3B',`operate_time`='2016-05-13+05%3A40%3A42',`operate_id`='U00000027' WHERE `aid` = 51
 
+[ 2016-05-13T17:43:44+08:00 ] ::1 /smart_community/index.php/Admin/Article/edit/id/51.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.030002s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.045977s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.046187s ]
+NOTIC: [2048] Declaration of Admin\Controller\ArticleController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/ArticleController.class.php 第 5 行.
+SQL: SHOW COLUMNS FROM `sc_article` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `sc_article` WHERE `aid` = 51 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sc_article_cat` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `sc_article_cat`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000140s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000238s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.671122s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.671279s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.086370s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.041201s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.127851s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.016857s ]
+INFO: [ app_end ] --END-- [ RunTime:0.017076s ]
+
+[ 2016-05-13T17:43:44+08:00 ] ::1 /smart_community/index.php/Admin/Article/edit/id/51.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000442s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000452s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000558s ]
+NOTIC: [2048] Declaration of Admin\Controller\ArticleController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/ArticleController.class.php 第 5 行.
+SQL: SHOW COLUMNS FROM `sc_article` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `sc_article` WHERE `aid` = 51 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sc_article_cat` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `sc_article_cat`  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000255s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000389s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015868s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015956s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000166s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000213s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000498s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000460s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000591s ]
+
+[ 2016-05-13T17:43:49+08:00 ] ::1 /smart_community/index.php/Admin/Article/edit/id/51.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000279s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000294s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000376s ]
+NOTIC: [2048] Declaration of Admin\Controller\ArticleController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/ArticleController.class.php 第 5 行.
+SQL: SHOW COLUMNS FROM `sc_article` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `sc_article` WHERE `aid` = 51 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sc_article_cat` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `sc_article_cat`  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000130s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000232s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014412s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014503s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000152s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000201s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000467s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000410s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000514s ]
+
+[ 2016-05-13T17:43:52+08:00 ] ::1 /smart_community/index.php/Admin/Users/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000496s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000350s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000438s ]
+NOTIC: [2048] Declaration of Admin\Controller\UsersController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/UsersController.class.php 第 4 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000129s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000231s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.044586s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.044669s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000145s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000204s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000462s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000409s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000539s ]
+
+[ 2016-05-13T17:43:52+08:00 ] ::1 /smart_community/index.php/Admin/Users/approved_users
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000039s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000818s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000477s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000579s ]
+NOTIC: [2048] Declaration of Admin\Controller\UsersController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/UsersController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `sc_users` [ RunTime:0.0099s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sc_users` WHERE ( if_aprvd='1' ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id`,`icon_url`,`nick_name`,`true_name`,`gender`,`h_pocn`,`mobile`,`email`,`id_card_num`,`create_time`,`last_log_ip`,`last_log_time` FROM `sc_users` WHERE ( if_aprvd='1' ) LIMIT 0,7   [ RunTime:0.0006s ]
+
+[ 2016-05-13T17:43:55+08:00 ] ::1 /smart_community/index.php/Admin/Users/logout
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000324s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000323s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000396s ]
+NOTIC: [2048] Declaration of Admin\Controller\UsersController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/UsersController.class.php 第 4 行.
+
+[ 2016-05-13T17:43:57+08:00 ] ::1 /smart_community/index.php/Admin/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000314s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000377s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000473s ]
+NOTIC: [2048] Declaration of Admin\Controller\IndexController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/IndexController.class.php 第 4 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000093s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000188s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.039336s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.039445s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.014100s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000360s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.014683s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001062s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001235s ]
+
+[ 2016-05-13T17:44:02+08:00 ] ::1 /smart_community/index.php/Admin/Index/logout
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000068s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006688s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.121049s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.121220s ]
+NOTIC: [2048] Declaration of Admin\Controller\IndexController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/IndexController.class.php 第 4 行.
+
+[ 2016-05-13T17:44:03+08:00 ] ::1 /smart_community/index.php/Admin/Public/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000407s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000390s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000552s ]
+NOTIC: [2048] Declaration of Admin\Controller\PublicController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/PublicController.class.php 第 151 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000095s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000214s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.055517s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.055646s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000162s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000218s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000495s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000483s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000628s ]
+
+[ 2016-05-13T17:44:04+08:00 ] ::1 /smart_community/index.php/Admin/Public/verify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000310s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000528s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000680s ]
+NOTIC: [2048] Declaration of Admin\Controller\PublicController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/PublicController.class.php 第 151 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000785s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000933s ]
+
+[ 2016-05-13T17:44:14+08:00 ] ::1 /smart_community/index.php/Admin/public/checklogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000040s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000609s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000354s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000443s ]
+NOTIC: [2048] Declaration of Admin\Controller\PublicController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Admin/Controller/PublicController.class.php 第 151 行.
+

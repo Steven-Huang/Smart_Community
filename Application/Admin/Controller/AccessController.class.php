@@ -8,7 +8,7 @@ class AccessController extends CommonController{
     }
     
     public function show(){
-        $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Index/index'), 'sec' => 3),'info' => urlencode('您访问的页面不存在！'),'code' => -404);
+        $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Index/index'), 'sec' => 3),'info' => urlencode('您访问的页面不存在！'),'code' => -404);
         exit(urldecode(json_encode($output)));
     }
 
@@ -26,7 +26,7 @@ class AccessController extends CommonController{
 	        //获取TOKEN
 	        $token = I('post.access_token');
 	        if (empty($token) || !check_token($token)){
-	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Public/login'), 'sec' => 3),'info' => urlencode('ACCESS_TOKEN超时，请重新登录！'),'code' => -208);
+	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Public/login'), 'sec' => 3),'info' => urlencode('ACCESS_TOKEN超时，请重新登录！'),'code' => -208);
 	            exit(urldecode(json_encode($output)));
 	        }
 	        //获取每页展示行数
@@ -46,7 +46,7 @@ class AccessController extends CommonController{
 	            //获取总记录数
 	            $count = D('role_user')->where("user_type = 'M'")->count();
 	            //实例化分类页
-	            $Page = new \Think\Page($count,$num);
+	            $Page = new \Think\Page($count,$count);
 	            //调用show显示分页链接
 	            $show = $Page->show();
 	        
@@ -55,7 +55,7 @@ class AccessController extends CommonController{
 	            //获取总记录数
 	            $count = D('role_user')->where("user_type = 'A'")->count();
 	            //实例化分类页
-	            $Page = new \Think\Page($count,$num);
+	            $Page = new \Think\Page($count,$count);
 	            //调用show显示分页链接
 	            $show = $Page->show();
 	        
@@ -68,7 +68,7 @@ class AccessController extends CommonController{
 	        $output = array('data' => array('data' => $data, 'count' => $count, 'page' => urlencode($show)),'info' => urlencode('用户角色列表'),'code' => 200);
 	        exit(urldecode(json_encode($output)));	        
 	    }else{
-            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Index/index_list'), 'sec' => 3),'info' => urlencode('请求失败，请重新再试！'),'code' => -205);
+            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Index/index'), 'sec' => 3),'info' => urlencode('请求失败，请重新再试！'),'code' => -205);
             exit(urldecode(json_encode($output)));        
         }
 	}
@@ -107,7 +107,7 @@ class AccessController extends CommonController{
 	        //获取TOKEN
 	        $token = I('post.access_token');
 	        if (!check_token($token)){
-	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Public/login'), 'sec' => 3),'info' => urlencode('ACCESS_TOKEN超时，请重新登录！'),'code' => -208);
+	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Public/login'), 'sec' => 3),'info' => urlencode('ACCESS_TOKEN超时，请重新登录！'),'code' => -208);
 	            exit(urldecode(json_encode($output)));
 	        }
     		$user_id = (int)(I('post.user_id'));
@@ -120,15 +120,15 @@ class AccessController extends CommonController{
     				);
     			$status = M('role_user')->where(array('user_id'=>$user_id,'user_type'=>$role))->save($data);
     			if($status){
-    				$output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Access/index_list'), 'sec' => 2),'info' => urlencode('修改用户角色成功！'),'code' => 200);
+    				$output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Access/index_list'), 'sec' => 2),'info' => urlencode('修改用户角色成功！'),'code' => 200);
     				exit(urldecode(json_encode($output)));
     			}else{
-    			    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Access/edit_user_role'), 'sec' => 3),'info' => urlencode('修改用户角色失败！'),'code' => -200);
+    			    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Access/edit_user_role'), 'sec' => 3),'info' => urlencode('修改用户角色失败！'),'code' => -200);
     			    exit(urldecode(json_encode($output)));
     			}
     		}
 	    }else{
-		    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Access/index_list'), 'sec' => 3),'info' => urlencode('请求失败，请重新再试！'),'code' => -205);
+		    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Index/index'), 'sec' => 3),'info' => urlencode('请求失败，请重新再试！'),'code' => -205);
 		    exit(urldecode(json_encode($output)));
 		}
 	}
@@ -145,14 +145,14 @@ class AccessController extends CommonController{
 // 			$status = M('role_user')->where(array('user_id'=>$id))->delete();
 // 			if($status){
 // 				//$this->success('删除成功',U('Admin/Access/index'));
-// 			    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Access/index'), 'sec' => 2),'info' => urlencode('删除用户成功！'),'code' => 200);
+// 			    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/index'), 'sec' => 2),'info' => urlencode('删除用户成功！'),'code' => 200);
 // 			    exit(urldecode(json_encode($output)));
 // 			}else{
-// 			    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Access/index'), 'sec' => 3),'info' => urlencode('修改用户失败！'),'code' => -200);
+// 			    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/index'), 'sec' => 3),'info' => urlencode('修改用户失败！'),'code' => -200);
 // 			    exit(urldecode(json_encode($output)));
 // 			}
 // 		}else{
-// 		    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Access/index'), 'sec' => 3),'info' => urlencode('修改用户失败！'),'code' => -200);
+// 		    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/index'), 'sec' => 3),'info' => urlencode('修改用户失败！'),'code' => -200);
 // 		    exit(urldecode(json_encode($output)));
 // 		}
 // 	}
@@ -171,7 +171,7 @@ class AccessController extends CommonController{
 	        //获取TOKEN
 	        $token = I('post.access_token');
 	        if (!check_token($token)){
-	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Public/login'), 'sec' => 3),'info' => urlencode('ACCESS_TOKEN超时，请重新登录！'),'code' => -208);
+	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Public/login'), 'sec' => 3),'info' => urlencode('ACCESS_TOKEN超时，请重新登录！'),'code' => -208);
 	            exit(urldecode(json_encode($output)));
 	        }    
     		$data = M('node')->select();
@@ -210,7 +210,7 @@ Eof;
     		$output = array('data' => $str,'info' => urlencode('节点列表'),'code' => 200);
     		exit(urldecode(json_encode($output)));		
 		}else{
-		    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Access/index_list'), 'sec' => 3),'info' => urlencode('请求失败，请重新再试！'),'code' => -205);
+		    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Index/index'), 'sec' => 3),'info' => urlencode('请求失败，请重新再试！'),'code' => -205);
 		    exit(urldecode(json_encode($output)));
 		}
 	}
@@ -229,7 +229,7 @@ Eof;
 	        //获取TOKEN
 	        $token = I('post.access_token');
 	        if (!check_token($token)){
-	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Public/login'), 'sec' => 3),'info' => urlencode('ACCESS_TOKEN超时，请重新登录！'),'code' => -208);
+	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Public/login'), 'sec' => 3),'info' => urlencode('ACCESS_TOKEN超时，请重新登录！'),'code' => -208);
 	            exit(urldecode(json_encode($output)));
 	        }
     		$pid = I('post.pid','0');
@@ -251,7 +251,7 @@ Eof;
     		$output = array('data' => array('view' => urlencode($view), 'pid' => $pid, 'level' => $level),'info' => urlencode('添加/编辑节点'),'code' => 200);
     		exit(urldecode(json_encode($output)));
 		}else{
-		    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Access/index_list'), 'sec' => 3),'info' => urlencode('请求失败，请重新再试！'),'code' => -205);
+		    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Index/index'), 'sec' => 3),'info' => urlencode('请求失败，请重新再试！'),'code' => -205);
 		    exit(urldecode(json_encode($output)));
 		}
 	}
@@ -265,7 +265,7 @@ Eof;
 	        //获取TOKEN
 	        $token = I('post.access_token');
 	        if (!check_token($token)){
-	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Public/login'), 'sec' => 3),'info' => urlencode('ACCESS_TOKEN超时，请重新登录！'),'code' => -208);
+	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Public/login'), 'sec' => 3),'info' => urlencode('ACCESS_TOKEN超时，请重新登录！'),'code' => -208);
 	            exit(urldecode(json_encode($output)));
 	        }
     		$data = array(
@@ -278,23 +278,23 @@ Eof;
     			);
     		$node = M('node');
     		if (empty($data['name']) || empty($data['title']) || empty($data['sort'])){
-    		    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Access/node_list'), 'sec' => 3),'info' => urlencode('节点信息不能为空！'),'code' => -201);
+    		    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Access/node_list'), 'sec' => 3),'info' => urlencode('节点信息不能为空！'),'code' => -201);
     		    exit(urldecode(json_encode($output)));
     		}
     		if ($node->where(array('name'=>$data['name'],'level'=>$data['level'],'pid'=>$data['pid']))->select()){
-    		    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Access/node_list'), 'sec' => 3),'info' => urlencode('节点已存在,请重新再试！'),'code' => -202);
+    		    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Access/node_list'), 'sec' => 3),'info' => urlencode('节点已存在,请重新再试！'),'code' => -202);
     		    exit(urldecode(json_encode($output)));
     		}
     		$status = $node->add($data);
     		if($status){
-    		    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Access/node_list'), 'sec' => 2),'info' => urlencode('添加节点成功！'),'code' => 200);
+    		    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Access/node_list'), 'sec' => 2),'info' => urlencode('添加节点成功！'),'code' => 200);
     		    exit(urldecode(json_encode($output)));			
     		}else{
-    		    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Access/node_list'), 'sec' => 3),'info' => urlencode('添加节点失败！'),'code' => -200);
+    		    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Access/node_list'), 'sec' => 3),'info' => urlencode('添加节点失败！'),'code' => -200);
     		    exit(urldecode(json_encode($output)));
     		}
     	}else{
-    	    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Access/index_list'), 'sec' => 3),'info' => urlencode('请求失败，请重新再试！'),'code' => -205);
+    	    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . 'Index/index'), 'sec' => 3),'info' => urlencode('请求失败，请重新再试！'),'code' => -205);
     	    exit(urldecode(json_encode($output)));
     	}
 	}
@@ -309,21 +309,21 @@ Eof;
 	        //获取TOKEN
 	        $token = I('post.access_token');
 	        if (!check_token($token)){
-	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Public/login'), 'sec' => 3),'info' => urlencode('ACCESS_TOKEN超时，请重新登录！'),'code' => -208);
+	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Public/login'), 'sec' => 3),'info' => urlencode('ACCESS_TOKEN超时，请重新登录！'),'code' => -208);
 	            exit(urldecode(json_encode($output)));
 	        }
     		$id = I('post.id');
     		$status = M('node')->where(array('id'=>$id))->delete();
     		if($status){
     		    $status = M('access')->where(array('node_id'=>$id))->delete();
-    		    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Access/node_list'), 'sec' => 2),'info' => urlencode('删除节点成功！'),'code' => 200);
+    		    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Access/node_list'), 'sec' => 2),'info' => urlencode('删除节点成功！'),'code' => 200);
     		    exit(urldecode(json_encode($output)));			
     		}else{
-    		    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Access/node_list'), 'sec' => 3),'info' => urlencode('删除节点失败！'),'code' => -200);
+    		    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Access/node_list'), 'sec' => 3),'info' => urlencode('删除节点失败！'),'code' => -200);
     		    exit(urldecode(json_encode($output)));			
     		}
 		}else{
-		    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Access/index_list'), 'sec' => 3),'info' => urlencode('请求失败，请重新再试！'),'code' => -205);
+		    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Index/index'), 'sec' => 3),'info' => urlencode('请求失败，请重新再试！'),'code' => -205);
 		    exit(urldecode(json_encode($output)));
 		}    		
 	}
@@ -342,7 +342,7 @@ Eof;
 	        //获取TOKEN
 	        $token = I('post.access_token');
 	        if (!check_token($token)){
-	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Public/login'), 'sec' => 3),'info' => urlencode('ACCESS_TOKEN超时，请重新登录！'),'code' => -208);
+	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Public/login'), 'sec' => 3),'info' => urlencode('ACCESS_TOKEN超时，请重新登录！'),'code' => -208);
 	            exit(urldecode(json_encode($output)));
 	        }	    
     		$data = M('role')->select();
@@ -353,7 +353,7 @@ Eof;
     		$output = array('data' => $data,'info' => urlencode('角色列表'),'code' => 200);
     		exit(urldecode(json_encode($output)));		
 		}else{
-		    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Access/index_list'), 'sec' => 3),'info' => urlencode('请求失败，请重新再试！'),'code' => -205);
+		    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Index/index'), 'sec' => 3),'info' => urlencode('请求失败，请重新再试！'),'code' => -205);
 		    exit(urldecode(json_encode($output)));
 		}        		
 	}
@@ -371,7 +371,7 @@ Eof;
 		    //获取TOKEN
 		    $token = I('post.access_token');
 		    if (!check_token($token)){
-		        $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Public/login'), 'sec' => 3),'info' => urlencode('ACCESS_TOKEN超时，请重新登录！'),'code' => -208);
+		        $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Public/login'), 'sec' => 3),'info' => urlencode('ACCESS_TOKEN超时，请重新登录！'),'code' => -208);
 		        exit(urldecode(json_encode($output)));
 		    }
 		    $name = I('post.name');
@@ -381,7 +381,7 @@ Eof;
 		    //判断角色名是否存在
 		    $check_name = $role->where(array('name'=>$name))->select();
 		    if ($check_name){
-		        $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Access/add_role'), 'sec' => 3),'info' => urlencode('角色名已存在！'),'code' => -201);
+		        $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Access/add_role'), 'sec' => 3),'info' => urlencode('角色名已存在！'),'code' => -201);
 		        exit(urldecode(json_encode($output)));		        
 		    }
 		    //角色名不存在时添加
@@ -392,15 +392,15 @@ Eof;
 				);
 			$status = $role->add($data);
 			if($status){
-			    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Access/role_list'), 'sec' => 2),'info' => urlencode('添加角色成功！'),'code' => 200);
+			    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Access/role_list'), 'sec' => 2),'info' => urlencode('添加角色成功！'),'code' => 200);
 			    exit(urldecode(json_encode($output)));				
 			}else{
-			    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Access/add_role'), 'sec' => 3),'info' => urlencode('添加角色失败！'),'code' => -200);
+			    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Access/add_role'), 'sec' => 3),'info' => urlencode('添加角色失败！'),'code' => -200);
 			    exit(urldecode(json_encode($output)));
 			}
 
 		}else{
-	        $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Access/index_list'), 'sec' => 3),'info' => urlencode('请求错误！请重新再试！'),'code' => -205);
+	        $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Index/index'), 'sec' => 3),'info' => urlencode('请求错误！请重新再试！'),'code' => -205);
 	        exit(urldecode(json_encode($output)));	
 		}
 	}
@@ -414,7 +414,7 @@ Eof;
 	        //获取TOKEN
 	        $token = I('post.access_token');
 	        if (!check_token($token)){
-	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Public/login'), 'sec' => 3),'info' => urlencode('ACCESS_TOKEN超时，请重新登录！'),'code' => -208);
+	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Public/login'), 'sec' => 3),'info' => urlencode('ACCESS_TOKEN超时，请重新登录！'),'code' => -208);
 	            exit(urldecode(json_encode($output)));
 	        }	    
     		$id = I('post.id');
@@ -424,14 +424,14 @@ Eof;
     		        'role_id' => 0 //为分配角色
     		    );		    
     		    M('role_user')->where(array('role_id'=>$id))->setField($data);	    
-    			$output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Access/role_list'), 'sec' => 2),'info' => urlencode('删除角色成功！'),'code' => 200);
+    			$output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Access/role_list'), 'sec' => 2),'info' => urlencode('删除角色成功！'),'code' => 200);
     			exit(urldecode(json_encode($output)));				
     		}else{
-    		    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Access/role_list'), 'sec' => 3),'info' => urlencode('删除角色失败！'),'code' => -200);
+    		    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Access/role_list'), 'sec' => 3),'info' => urlencode('删除角色失败！'),'code' => -200);
     			exit(urldecode(json_encode($output)));
     		}
 		}else{
-		    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Access/index_list'), 'sec' => 3),'info' => urlencode('请求错误！请重新再试！'),'code' => -205);
+		    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . 'Index/index'), 'sec' => 3),'info' => urlencode('请求错误！请重新再试！'),'code' => -205);
 		    exit(urldecode(json_encode($output)));
 		}	
 	}
@@ -450,7 +450,7 @@ Eof;
 	        //获取TOKEN
 	        $token = I('post.access_token');
 	        if (!check_token($token)){
-	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Public/login'), 'sec' => 3),'info' => urlencode('ACCESS_TOKEN超时，请重新登录！'),'code' => -208);
+	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Public/login'), 'sec' => 3),'info' => urlencode('ACCESS_TOKEN超时，请重新登录！'),'code' => -208);
 	            exit(urldecode(json_encode($output)));
 	        }	    
     	    //用户点击角色的权限配置跳转到此，GET请求
@@ -493,7 +493,7 @@ Eof;
     	    ),'info' => urlencode('权限列表'),'code' => 200);
     	    exit(urldecode(json_encode($output)));
 	    }else{
-	        $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Access/index_list'), 'sec' => 3),'info' => urlencode('请求错误！请重新再试！'),'code' => -205);
+	        $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . 'Index/index'), 'sec' => 3),'info' => urlencode('请求错误！请重新再试！'),'code' => -205);
 	        exit(urldecode(json_encode($output)));
 	    }
 	}
@@ -509,7 +509,7 @@ Eof;
 		    //获取TOKEN
 		    $token = I('post.access_token');
 		    if (!check_token($token)){
-		        $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Public/login'), 'sec' => 3),'info' => urlencode('ACCESS_TOKEN超时，请重新登录！'),'code' => -208);
+		        $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Public/login'), 'sec' => 3),'info' => urlencode('ACCESS_TOKEN超时，请重新登录！'),'code' => -208);
 		        exit(urldecode(json_encode($output)));
 		    }
 			$node_id = I('post.');
@@ -524,14 +524,14 @@ Eof;
 			}
 			$status = M('access')->addAll($data);
 			if($status){
-				$output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Access/role_list'), 'sec' => 2),'info' => urlencode('更新权限成功！'),'code' => 200);
+				$output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Access/role_list'), 'sec' => 2),'info' => urlencode('更新权限成功！'),'code' => 200);
 			    exit(urldecode(json_encode($output)));				
 			}else{
-			    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Access/role_list'), 'sec' => 3),'info' => urlencode('更新权限失败！'),'code' => -200);
+			    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Access/role_list'), 'sec' => 3),'info' => urlencode('更新权限失败！'),'code' => -200);
 			    exit(urldecode(json_encode($output)));
 			}
         }else{
-		    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Access/index_list'), 'sec' => 3),'info' => urlencode('请求错误！请重新再试！'),'code' => -205);
+		    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . 'Index/index'), 'sec' => 3),'info' => urlencode('请求错误！请重新再试！'),'code' => -205);
 		    exit(urldecode(json_encode($output)));
 		}
 	}

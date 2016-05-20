@@ -52,7 +52,7 @@
       </div>
       <div class="profile_info">
         <span>Welcome,</span>
-        <h2>Admin</h2>
+        <h2><?php echo ucfirst($_SESSION['nick_name']);?></h2>
       </div>
     </div>
     <!-- /menu prile quick info -->
@@ -79,7 +79,7 @@
               </li>
               <li><a href="<?php echo U('Admin/Article/index','category_id=3');?>">办事指南</a>
               </li>
-              <li><a href="<?php echo U('Admin/Article/add');?>">发布通知</a>
+              <li><a href="<?php echo U('Admin/Article/add');?>">发布文章</a>
               </li>
               </li>
               <li><a href="<?php echo U('Admin/Articlecate/index');?>">分类管理</a>
@@ -163,7 +163,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li id="user-profile" class="">
           <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-            <img src="/smart_community/Public/admin/images/img.jpg" alt="">Admin
+            <img src="/smart_community/Public/admin/images/img.jpg" alt=""><?php echo ucfirst($_SESSION['nick_name']);?>
             <span class=" fa fa-angle-down"></span>
           </a>
           <ul class="dropdown-menu dropdown-usermenu pull-right">
@@ -238,7 +238,7 @@
     function logout(){
       $.ajax({
         type: "post",
-        url: "/smart_community/index.php/Admin/Access/logout",
+        url: "/smart_community/admin.php/Public/logout",
         data: {
           },
         dataType: "json",
@@ -319,7 +319,7 @@
   <script src="/smart_community/Public/admin/js/custom.js"></script>
 
   <!-- flot js -->
-  <!--[if lte IE 8]><script type="text/javascript" src="../../../Public/Admin/js/excanvas.min.js"></script><![endif]-->
+  <!--[if lte IE 8]><script type="text/javascript" src="__ADMIN__/js/excanvas.min.js"></script><![endif]-->
 <!--   <script type="text/javascript" src="js/flot/jquery.flot.js"></script>
   <script type="text/javascript" src="js/flot/jquery.flot.pie.js"></script>
   <script type="text/javascript" src="js/flot/jquery.flot.orderBars.js"></script>
@@ -384,7 +384,7 @@
 		window.onload = function(){
 	    	$.ajax({
 	            type: "post",
-	            url: "/smart_community/index.php/Admin/Access/role",
+	            url: "/smart_community/admin.php/Access/role",
 	            data: {
 	            	'access_token' : getCookie('access_token')
 	            },
@@ -400,7 +400,7 @@
 		            		$("#role_list").append("<tr><td>"+data['data'][i]['id']+"</td><td>"+data['data'][i]['name']+"</td><td>"+data['data'][i]['remark']+"</td><td><a class=\"btn btn-info btn-xs\" href=\""+"<?php echo U('Admin/Access/access_list"+array+"');?>\"><i class=\"fa fa-pencil\"></i>权限配置</a><a class=\"btn btn-danger btn-xs\" href=\"javascript:;\" name= \"delete\" id=\""+data['data'][i]['id']+"\"><i class=\"fa fa-trash-o\"></i>删除角色</a></td>"+"</tr>");
 		            	 }
 	            	}
-	            	if(data['code'] == '-205' || data['code'] == '-208'){
+	            	if(data['code'] == '-205' || data['code'] == '-206' || data['code'] == '-207' || data['code'] == '-208'){
 	            		alert(data['info']);
 	            		location.href = 'http://' + data['data']['redirect_url'];
 	            	}
@@ -415,14 +415,14 @@
  			$("#role_list~a:odd").on('click',function(){
  	    	$.ajax({
 	            type: "post",
-	            url: "/smart_community/index.php/Admin/Access/del_role",
+	            url: "/smart_community/admin.php/Access/del_role",
 	            data: {
 	            	'id' : $(this).attr('id'),
 	            	'access_token' : getCookie('access_token')
 	            },
 	            dataType: "json",
 	            success: function(data) {
-	            	if(data['code'] == 200 || data['code'] == '-200' || data['code'] == '-205' || data['code'] == '-208'){
+	            	if(data['code'] == 200 || data['code'] == '-200' || data['code'] == '-205' || data['code'] == '-206' || data['code'] == '-207' || data['code'] == '-208'){
 	            		alert(data['info']);
 	            		location.href = 'http://' + data['data']['redirect_url'];
 	            	}

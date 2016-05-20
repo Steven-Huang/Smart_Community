@@ -52,7 +52,7 @@
       </div>
       <div class="profile_info">
         <span>Welcome,</span>
-        <h2>Admin</h2>
+        <h2><?php echo ucfirst($_SESSION['nick_name']);?></h2>
       </div>
     </div>
     <!-- /menu prile quick info -->
@@ -163,7 +163,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li id="user-profile" class="">
           <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-            <img src="/smart_community/Public/admin/images/img.jpg" alt="">Admin
+            <img src="/smart_community/Public/admin/images/img.jpg" alt=""><?php echo ucfirst($_SESSION['nick_name']);?>
             <span class=" fa fa-angle-down"></span>
           </a>
           <ul class="dropdown-menu dropdown-usermenu pull-right">
@@ -238,7 +238,7 @@
     function logout(){
       $.ajax({
         type: "post",
-        url: "/smart_community/index.php/Admin/Users/logout",
+        url: "/smart_community/admin.php/Public/logout",
         data: {
           },
         dataType: "json",
@@ -366,7 +366,7 @@
   <script src="/smart_community/Public/admin/js/custom.js"></script>
 
   <!-- flot js -->
-  <!--[if lte IE 8]><script type="text/javascript" src="../../../Public/Admin/js/excanvas.min.js"></script><![endif]-->
+  <!--[if lte IE 8]><script type="text/javascript" src="__ADMIN__/js/excanvas.min.js"></script><![endif]-->
 <!--   <script type="text/javascript" src="js/flot/jquery.flot.js"></script>
   <script type="text/javascript" src="js/flot/jquery.flot.pie.js"></script>
   <script type="text/javascript" src="js/flot/jquery.flot.orderBars.js"></script>
@@ -432,7 +432,7 @@
 			$
 					.ajax({
 						type : "post",
-						url : "/smart_community/index.php/Admin/Users/approved_users",
+						url : "/smart_community/admin.php/Users/approved_users",
 						data : {
 							access_token : getCookie('access_token'),
 							num : '5',
@@ -484,7 +484,7 @@
 								$('#pages1').append(data['data']['page']);
 							}
 							if (data['code'] == '-205'
-									|| data['code'] == '-208') {
+								|| data['code'] == '-206' || data['code'] == '-207' || data['code'] == '-208') {
 								alert(data['info']);
 								location.href = 'http://'
 										+ data['data']['redirect_url'];
@@ -503,7 +503,7 @@
 							$
 									.ajax({
 										type : "post",
-										url : "/smart_community/index.php/Admin/Users/pending_users",
+										url : "/smart_community/admin.php/Users/pending_users",
 										data : {
 											access_token : getCookie('access_token'),
 											num : '5',

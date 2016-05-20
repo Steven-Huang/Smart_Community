@@ -62,7 +62,7 @@
 	            	if(data['code'] == 200){            		
 		            	$('#node_list').append(data['data']);
 	            	}
-	            	if(data['code'] == '-205' || data['code'] == '-208'){
+	            	if(data['code'] == '-205' || data['code'] == '-206' || data['code'] == '-207' || data['code'] == '-208'){
 		            	alert(data['info']);
 	            		location.href = 'http://' + data['data']['redirect_url'];	            		
 	            	}

@@ -9,7 +9,7 @@ class PublicController extends Controller {
     }
     
     public function show(){
-        $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Index/index'), 'sec' => 3),'info' => urlencode('您访问的页面不存在！'),'code' => -404);
+        $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Index/index'), 'sec' => 3),'info' => urlencode('您访问的页面不存在！'),'code' => -404);
         exit(urldecode(json_encode($output)));
     }
     
@@ -43,28 +43,27 @@ class PublicController extends Controller {
             $remember = I('post.remember');
             //判断数据合法性
             if ($role == '-1'){
-                $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Public/login'), 'sec' => 3),'info' => urlencode('请选择用户角色！'),'code' => '-201A');
+                $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Public/login'), 'sec' => 3),'info' => urlencode('请选择用户角色！'),'code' => '-201A');
                 exit(urldecode(json_encode($output)));
             }            
             if (empty($username)) {
-                $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Public/login'), 'sec' => 3),'info' => urlencode('用户名不能为空！'),'code' => '-201B');
+                $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Public/login'), 'sec' => 3),'info' => urlencode('用户名不能为空！'),'code' => '-201B');
                 exit(urldecode(json_encode($output)));
             }
             if (empty($password)) {
-                $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Public/login'), 'sec' => 3),'info' => urlencode('密码不能为空！'),'code' => '-201C');
+                $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Public/login'), 'sec' => 3),'info' => urlencode('密码不能为空！'),'code' => '-201C');
                 exit(urldecode(json_encode($output)));
             }
             if (empty($code)) {
-                $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Public/login'), 'sec' => 3),'info' => urlencode('验证码不能为空！'),'code' => '-201D');
+                $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Public/login'), 'sec' => 3),'info' => urlencode('验证码不能为空！'),'code' => '-201D');
                 exit(urldecode(json_encode($output)));
             }            
             //判断验证码是否正确
             $verify = new \Think\Verify();
             if (!$verify->check($code)) {
-                $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Public/login'), 'sec' => 3),'info' => urlencode('验证码错误！'),'code' => -202);
+                $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Public/login'), 'sec' => 3),'info' => urlencode('验证码错误！'),'code' => -202);
                 exit(urldecode(json_encode($output)));
             }
-            
             $roleModel = $role == 'U' ? 'users' : ($role == 'M' ? 'mgrs' : 'admin');
             //实例化模型
             $users = M($roleModel);
@@ -74,24 +73,23 @@ class PublicController extends Controller {
             $where3 = "mobile='{$username}'";
             $field = 'id,nick_name,password,id_card_num,if_aprvd';
             $row = $users->field($field)->where($where1)->find() ? $users->field($field)->where($where1)->find() : ($users->field($field)->where($where2)->find() ? $users->field($field)->where($where2)->find() : $users->field($field)->where($where3)->find());
-            
             //判断登录是否成功
             if (create_hash($password, $row['id_card_num']) == $row['password']) {
                 //针对业主账户的状态进行判断
                 if (($role == 'U' || $role == 'M') && $row['if_aprvd'] == 0) {
-                    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Public/login'), 'sec' => 3),'info' => urlencode('您的账户正在审核中，请耐心等待！'),'code' => -203);
+                    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Public/login'), 'sec' => 3),'info' => urlencode('您的账户正在审核中，请耐心等待！'),'code' => -203);
                     exit(urldecode(json_encode($output)));
                 }elseif (($role == 'U' || $role == 'M') && $row['if_aprvd'] == -1){
-                    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Public/login'), 'sec' => 3),'info' => urlencode('您的账户审核不通过或被禁止访问，请联系管理员！'),'code' => -204);
+                    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Public/login'), 'sec' => 3),'info' => urlencode('您的账户审核不通过或被禁止访问，请联系管理员！'),'code' => -204);
                     exit(urldecode(json_encode($output)));
                 }
-                
                 //生成access_token
                 $access_token = create_hash(get_token(), $row['id_card_num']);
                 
                 //设置session
                 session_set_cookie_params(259200);
                 session('user_id',$role.$row['id']);
+                session('nick_name',$row['nick_name']);
                 session('access_token',$access_token);
                 session('last_log_ip',$_SERVER['REMOTE_ADDR']);
                 session('time',time());
@@ -118,34 +116,34 @@ class PublicController extends Controller {
                     'last_log_time' => date('Y-m-d h:i:s',time())
                 );
                 $users->save($data);      
-                $output = array('data' => array('access_token' => $access_token,'redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Index/index'), 'sec' => 2),'info' => urlencode('登录成功！'),'code' => 200);
+                $output = array('data' => array('access_token' => $access_token,'redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Index/index'), 'sec' => 2),'info' => urlencode('登录成功！'),'code' => 200);
                 exit(urldecode(json_encode($output)));                
             }else{
-                $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Public/login'), 'sec' => 3),'info' => urlencode('用户名或密码错误！'),'code' => -200);
+                $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Public/login'), 'sec' => 3),'info' => urlencode('用户名或密码错误！'),'code' => -200);
                 exit(urldecode(json_encode($output)));
             }
         }else{
 //测试模式， 上线后务必删除
 VAR_DUMP(session());
 
-            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Public/login'), 'sec' => 3),'info' => urlencode('请求失败，请重新登录！'),'code' => -205);
+            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Public/login'), 'sec' => 3),'info' => urlencode('请求失败，请重新登录！'),'code' => -205);
             exit(urldecode(json_encode($output)));        
         }
     }
-    
+     
     //用户退出
     public function logout(){
         //清理session
         session(null);
-        
-    	//清除COOKIE
-    	if(isset($_COOKIE['access_token'])){
-    	    //删除cookie
-    	    setcookie('access_token','',0,'/');
-    	}
-    	
-        //跳转到登陆页面
-        $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Public/login'), 'sec' => 2),'info' => urlencode('退出成功！'),'code' => 200);
+    
+        //清除COOKIE
+        if(isset($_COOKIE['access_token'])){
+            //删除cookie
+            setcookie('access_token','',0,'/');
+        }
+         
+        //跳转到登陆页面, 此处跳转URL去掉模块名Admin
+        $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Public/login'), 'sec' => 2),'info' => urlencode('退出成功！'),'code' => 200);
         exit(urldecode(json_encode($output)));
-    }    
+    }   
 }

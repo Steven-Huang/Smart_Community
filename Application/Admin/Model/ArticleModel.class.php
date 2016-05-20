@@ -33,7 +33,6 @@ class ArticleModel extends Model {
 	    array('des','require','摘要不可以为空'),
 	    array('content','require','内容不可以为空'),
 	    array('valid_time','require','有效时间不可以为空'),
-	    array('article_sort','require','排序不可以为空'),
     );	
 }
 ?>

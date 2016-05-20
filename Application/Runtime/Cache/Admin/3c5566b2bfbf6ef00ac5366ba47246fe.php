@@ -313,7 +313,7 @@
               		var verify=document.getElementById('code_img');
             		verify.setAttribute('src','/smart_community/index.php/Admin/Public/verify/'+Math.random()); 
             	}
-            	if(data['code'] == '200' || data['code'] == '-200' || data['code'] == '-203' || data['code'] == '-204'){
+            	if(data['code'] == '200' || data['code'] == '-200' || data['code'] == '-203' || data['code'] == '-204' || data['code'] == '-205' || data['code'] == '-206' || data['code'] == '-207' || data['code'] == '-208'){
             		alert(data['info']);
             		location.href = 'http://' + data['data']['redirect_url'];
             	}        	

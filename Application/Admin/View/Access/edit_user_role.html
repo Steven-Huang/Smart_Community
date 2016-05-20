@@ -92,7 +92,7 @@
 		            },
 		            dataType: "json",
 		            success: function(data) {
-  		            	if(data['code'] == '200' || data['code'] == '-205'){
+  		            	if(data['code'] == '200' || data['code'] == '-205' || data['code'] == '-206' || data['code'] == '-207' || data['code'] == '-208'){
 		            		alert(data['info']);
 		            		location.href = 'http://' + data['data']['redirect_url'];
 		            	}

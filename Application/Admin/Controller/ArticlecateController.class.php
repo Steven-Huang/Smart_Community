@@ -15,7 +15,7 @@ class ArticlecateController extends CommonController
     {
         $output = array(
             'data' => array(
-                'redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/Index/index'),
+                'redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Index/index'),
                 'sec' => 3
             ),
             'info' => urlencode('您访问的页面不存在！'),

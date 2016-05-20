@@ -62,7 +62,7 @@
 		            		$("#role_list").append("<tr><td>"+data['data'][i]['id']+"</td><td>"+data['data'][i]['name']+"</td><td>"+data['data'][i]['remark']+"</td><td><a class=\"btn btn-info btn-xs\" href=\""+"{:U(\'Admin/Access/access_list"+array+"\')}\"><i class=\"fa fa-pencil\"></i>权限配置</a><a class=\"btn btn-danger btn-xs\" href=\"javascript:;\" name= \"delete\" id=\""+data['data'][i]['id']+"\"><i class=\"fa fa-trash-o\"></i>删除角色</a></td>"+"</tr>");
 		            	 }
 	            	}
-	            	if(data['code'] == '-205' || data['code'] == '-208'){
+	            	if(data['code'] == '-205' || data['code'] == '-206' || data['code'] == '-207' || data['code'] == '-208'){
 	            		alert(data['info']);
 	            		location.href = 'http://' + data['data']['redirect_url'];
 	            	}
@@ -84,7 +84,7 @@
 	            },
 	            dataType: "json",
 	            success: function(data) {
-	            	if(data['code'] == 200 || data['code'] == '-200' || data['code'] == '-205' || data['code'] == '-208'){
+	            	if(data['code'] == 200 || data['code'] == '-200' || data['code'] == '-205' || data['code'] == '-206' || data['code'] == '-207' || data['code'] == '-208'){
 	            		alert(data['info']);
 	            		location.href = 'http://' + data['data']['redirect_url'];
 	            	}

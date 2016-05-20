@@ -52,7 +52,7 @@
       </div>
       <div class="profile_info">
         <span>Welcome,</span>
-        <h2>Admin</h2>
+        <h2><?php echo ucfirst($_SESSION['nick_name']);?></h2>
       </div>
     </div>
     <!-- /menu prile quick info -->
@@ -163,7 +163,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li id="user-profile" class="">
           <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-            <img src="/smart_community/Public/admin/images/img.jpg" alt="">Admin
+            <img src="/smart_community/Public/admin/images/img.jpg" alt=""><?php echo ucfirst($_SESSION['nick_name']);?>
             <span class=" fa fa-angle-down"></span>
           </a>
           <ul class="dropdown-menu dropdown-usermenu pull-right">
@@ -238,7 +238,7 @@
     function logout(){
       $.ajax({
         type: "post",
-        url: "/smart_community/index.php/Admin/Article/logout",
+        url: "/smart_community/admin.php/Public/logout",
         data: {
           },
         dataType: "json",
@@ -262,11 +262,15 @@
 		<div class="col-md-12 col-sm-12 col-xs-12">
 			<div class="col-lg-2 col-md-2 col-xs-2">
 				<a class="btn btn-success" href="<?php echo U('Article/add/');?>"> <i
-					class="fa fa-plus"></i>发布通知
+					class="fa fa-plus"></i>新增
 				</a>
 			</div>
 			<div class="x_panel">
-
+				<div class="row x_title">
+					<div class="col-md-12">
+	                  <h3 id="category_name"></h3>
+	                </div>				
+				</div>
 				<ul id="myTab" class="nav nav-tabs " role="tablist">
 					<li role="presentation" class="active"><a href="#tab_content1"
 						role="tab" id="approved-tab" data-toggle="tab"
@@ -370,7 +374,7 @@
   <script src="/smart_community/Public/admin/js/custom.js"></script>
 
   <!-- flot js -->
-  <!--[if lte IE 8]><script type="text/javascript" src="../../../Public/Admin/js/excanvas.min.js"></script><![endif]-->
+  <!--[if lte IE 8]><script type="text/javascript" src="__ADMIN__/js/excanvas.min.js"></script><![endif]-->
 <!--   <script type="text/javascript" src="js/flot/jquery.flot.js"></script>
   <script type="text/javascript" src="js/flot/jquery.flot.pie.js"></script>
   <script type="text/javascript" src="js/flot/jquery.flot.orderBars.js"></script>
@@ -436,7 +440,7 @@
 			$
 					.ajax({
 						type : "post",
-						url : "/smart_community/index.php/Admin/Article/indexPost",
+						url : "/smart_community/admin.php/Article/indexPost",
 						data : {
 							access_token : getCookie('access_token'),
 							num : '10',
@@ -446,6 +450,7 @@
 						dataType : "json",
 						success : function(data) {
 							if (data['code'] == 200) {
+								$('#category_name').append(data['data']['category_name'][0]['aname']);								$('#category_name2').append(data['data']['category_name'][0]['aname']);
 								if (data['data']['count'] == 0) {
 									$("#tab1")
 											.append(
@@ -504,7 +509,7 @@
 							$
 									.ajax({
 										type : "post",
-										url : "/smart_community/index.php/Admin/Article/indexPost",
+										url : "/smart_community/admin.php/Article/indexPost",
 										data : {
 											access_token : getCookie('access_token'),
 											num : '10',
@@ -543,17 +548,17 @@
 																			+ data['data']['data'][i]['create_time']
 																			+ "</td><td>"
 																			+ data['data']['data'][i]['sort']
-																			+ "</td><td><a class=\"btn btn-success btn-xs\" href=\""
-																			+ "<?php echo U('Admin/Article/approving" + array + "');?>\"><i class=\"fa fa-check\"></i>审批通过</a>"
-																			+ "<a class=\"btn btn-danger btn-xs\" href=\""
-																			+ "<?php echo U('Admin/Article/moveToTrash" + array + "');?>\"><i class=\"fa fa-close\"></i>拒绝</a></td>"
+																			+ "</td><td><a class=\"btn btn-info btn-xs\" href=\""
+																			+ "<?php echo U('Admin/Article/edit" + array + "');?>\"><i class=\"fa fa-pencil\"></i>更新</a>"
+																			+ "<a class=\"btn btn-success btn-xs\" href=\""
+																			+ "<?php echo U('Admin/Article/detail" + array + "');?>\"><i class=\"fa fa-search-plus\"></i>审批</a>"
 																			+ "</tr>");
 												}
 												$('#pages2').append(
 														data['data']['page']);
 											}
 											if (data['code'] == '-205'
-													|| data['code'] == '-208') {
+												|| data['code'] == '-206' || data['code'] == '-207' || data['code'] == '-208') {
 												alert(data['info']);
 												location.href = 'http://'
 														+ data['data']['redirect_url'];

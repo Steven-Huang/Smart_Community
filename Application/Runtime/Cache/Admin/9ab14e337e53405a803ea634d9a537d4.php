@@ -56,7 +56,7 @@
       </div>
       <div class="profile_info">
         <span>Welcome,</span>
-        <h2>Admin</h2>
+        <h2><?php echo ucfirst($_SESSION['nick_name']);?></h2>
       </div>
     </div>
     <!-- /menu prile quick info -->
@@ -83,7 +83,7 @@
               </li>
               <li><a href="<?php echo U('Admin/Article/index','category_id=3');?>">办事指南</a>
               </li>
-              <li><a href="<?php echo U('Admin/Article/add');?>">发布通知</a>
+              <li><a href="<?php echo U('Admin/Article/add');?>">发布文章</a>
               </li>
               </li>
               <li><a href="<?php echo U('Admin/Articlecate/index');?>">分类管理</a>
@@ -167,7 +167,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li id="user-profile" class="">
           <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-            <img src="/smart_community/Public/admin/images/img.jpg" alt="">Admin
+            <img src="/smart_community/Public/admin/images/img.jpg" alt=""><?php echo ucfirst($_SESSION['nick_name']);?>
             <span class=" fa fa-angle-down"></span>
           </a>
           <ul class="dropdown-menu dropdown-usermenu pull-right">
@@ -242,7 +242,7 @@
     function logout(){
       $.ajax({
         type: "post",
-        url: "/smart_community/index.php/Admin/Articlecate/logout",
+        url: "/smart_community/admin.php/Public/logout",
         data: {
           },
         dataType: "json",
@@ -262,42 +262,49 @@
 	<div class="right_col" role="main">
 		<div class="col-lg-10 col-md-10 col-xs-12"
 			style="background-color: #FFF;">
-			<!-- begin tab -->
-			<ul class="nav nav-tabs ">
-				<li class="active"><a href="<?php echo U('Articlecate/index/');?>"><b>分类列表</b></a></li>
-				<li><a href="<?php echo U('Articlecate/add/');?>"><b>增加分类</b></a></li>
-			</ul>
-			<p></P>
-			<div class="row">
-				<div class="col-lg-6 col-md-6 col-xs-6">
-					<span class="help-block"></span>
-				</div>
-				<div class="col-lg-4 col-md-4 col-xs-4"></div>
+			<div class="col-lg-2 col-md-2 col-xs-2">
+				<a class="btn btn-success" href="<?php echo U('Articlecate/add/');?>"> <i
+					class="fa fa-plus"></i>新增
+				</a>
 			</div>
-			<!-- end 添加 -->
-			<p></P>
-			<table class="table table-striped table-bordered table-hover ">
-				<thead>
-					<tr>
-						<th>分类id</th>
-						<th>分类名</th>
-						<th>排序</th>
-						<th>操作</th>
+			<div class="x_panel">
+				<!-- begin tab -->
+				<ul class="nav nav-tabs ">
+					<li class="active"><a href="<?php echo U('Articlecate/index/');?>"><b>分类列表</b></a></li>
+					<li><a href="<?php echo U('Articlecate/add/');?>"><b>增加分类</b></a></li>
+				</ul>
+				<p></P>
+				<div class="row">
+					<div class="col-lg-6 col-md-6 col-xs-6">
+						<span class="help-block"></span>
+					</div>
+					<div class="col-lg-4 col-md-4 col-xs-4"></div>
+				</div>
+				<!-- end 添加 -->
+				<p></P>
+				<table class="table table-striped table-bordered table-hover ">
+					<thead>
+						<tr>
+							<th>分类id</th>
+							<th>分类名</th>
+							<th>排序</th>
+							<th>操作</th>
 
-					</tr>
-				</thead>
-				<tbody>
-					<?php if(is_array($clist)): $i = 0; $__LIST__ = $clist;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
-						<td><?php echo ($vo["acid"]); ?></td>
-						<td><?php echo ($vo["cname"]); ?></td>
-						<td><?php echo ($vo["sort"]); ?></td>
-						<td><a href="<?php echo U('Articlecate/edit/','id='.$vo['acid']);?>"><i
-								class="fa fa-edit"></i> 修改</a> <a
-							href="<?php echo U('Articlecate/delete/','id='.$vo['acid']);?>"
-							onClick="delcfm()"><i class="fa fa-trash-o"></i> 删除</a></td>
-					</tr><?php endforeach; endif; else: echo "" ;endif; ?>
-				</tbody>
-			</table>
+						</tr>
+					</thead>
+					<tbody>
+						<?php if(is_array($clist)): $i = 0; $__LIST__ = $clist;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
+							<td><?php echo ($vo["acid"]); ?></td>
+							<td><?php echo ($vo["cname"]); ?></td>
+							<td><?php echo ($vo["sort"]); ?></td>
+							<td><a href="<?php echo U('Articlecate/edit/','id='.$vo['acid']);?>"><i
+									class="fa fa-edit"></i> 修改</a> <a
+								href="<?php echo U('Articlecate/delete/','id='.$vo['acid']);?>"
+								onClick="delcfm()"><i class="fa fa-trash-o"></i> 删除</a></td>
+						</tr><?php endforeach; endif; else: echo "" ;endif; ?>
+					</tbody>
+				</table>
+			</div>
 		</div>
 		<!-- col end -->
 	</div>
@@ -341,7 +348,7 @@
   <script src="/smart_community/Public/admin/js/custom.js"></script>
 
   <!-- flot js -->
-  <!--[if lte IE 8]><script type="text/javascript" src="../../../Public/Admin/js/excanvas.min.js"></script><![endif]-->
+  <!--[if lte IE 8]><script type="text/javascript" src="__ADMIN__/js/excanvas.min.js"></script><![endif]-->
 <!--   <script type="text/javascript" src="js/flot/jquery.flot.js"></script>
   <script type="text/javascript" src="js/flot/jquery.flot.pie.js"></script>
   <script type="text/javascript" src="js/flot/jquery.flot.orderBars.js"></script>

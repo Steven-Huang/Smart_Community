@@ -83,7 +83,7 @@
               </li>
               <li><a href="<?php echo U('Admin/Article/index','category_id=3');?>">办事指南</a>
               </li>
-              <li><a href="<?php echo U('Admin/Article/add');?>">发布通知</a>
+              <li><a href="<?php echo U('Admin/Article/add');?>">发布文章</a>
               </li>
               </li>
               <li><a href="<?php echo U('Admin/Articlecate/index');?>">分类管理</a>
