@@ -64,7 +64,7 @@
               <input type="text" class="form-control" id="code" placeholder="请输入下面的验证码" required="" />
             </div>
             <div class="form-group">
-                <img id="code_img" src="/smart_community/index.php/Admin/Public/verify" alt="CAPTCHA" style="cursor: pointer;" title="看不清？点击更换另一个验证码。" onclick="this.src='/smart_community/index.php/Admin/Public/verify/'+Math.random()" />
+                <img id="code_img" src="/smart_community/admin.php/Public/verify" alt="CAPTCHA" style="cursor: pointer;" title="看不清？点击更换另一个验证码。" onclick="this.src='/smart_community/admin.php/Public/verify/'+Math.random()" />
             </div>                  
             <div>
                <!-- <input type="submit" class="btn btn-success" value="登录" /> -->
@@ -247,7 +247,7 @@
 /*     window.onload = function(){
         $.ajax({
             type: "post",
-            url: "/smart_community/index.php/Admin/Public/verify",
+            url: "/smart_community/admin.php/Public/verify",
             data: {
               },
             dataType: "json",
@@ -264,7 +264,7 @@
 /*     function checklogin(){
       $.ajax({
         type: "post",
-        url: "/smart_community/index.php/Admin/Public/checkLogin",
+        url: "/smart_community/admin.php/Public/checkLogin",
         data: {
           username : $('#username').val(),
           password : $('#password').val(),
@@ -279,7 +279,7 @@
         	if(data['code'] == '-202'){
         		alert(data['info']);
          		var verify=document.getElementById('code_img');
-        		verify.setAttribute('src','/smart_community/index.php/Admin/Public/verify/'+Math.random());
+        		verify.setAttribute('src','/smart_community/admin.php/Public/verify/'+Math.random());
         	}
         	if(data['code'] == '-203' || data['code'] == '-204'){
         		alert(data['info']);
@@ -295,7 +295,7 @@
     $('body').on('click','.loginsubmit',function(){
     	$.ajax({
             type: "post",
-            url: "/smart_community/index.php/Admin/Public/checkLogin",
+            url: "/smart_community/admin.php/Public/checkLogin",
             data: {
               username : $('#username').val(),
               password : $('#password').val(),
@@ -311,7 +311,7 @@
             	if(data['code'] == '-202'){
             		alert(data['info']);
               		var verify=document.getElementById('code_img');
-            		verify.setAttribute('src','/smart_community/index.php/Admin/Public/verify/'+Math.random()); 
+            		verify.setAttribute('src','/smart_community/admin.php/Public/verify/'+Math.random()); 
             	}
             	if(data['code'] == '200' || data['code'] == '-200' || data['code'] == '-203' || data['code'] == '-204' || data['code'] == '-205' || data['code'] == '-206' || data['code'] == '-207' || data['code'] == '-208'){
             		alert(data['info']);

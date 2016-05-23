@@ -63,17 +63,17 @@ class ArticleController extends CommonController
                 );
                 exit(urldecode(json_encode($output)));
             }
-            // 获取分类ID,如果没有则显示所有信息
+            // 获取分类ID
             $cid = (int) I('post.category_id') ? (int) I('post.category_id') : 'ALL';
             // 获取文章状态（1->发布,0->待审核）
             $status = I('post.article_status');
             // 获取每页展示行数
             $num = I('post.num') ? I('post.num') : C('PAGE_NUM');
             
-            // 实例化模型Article
-            $Article_cat = M('Article_cat');
+            // 实例化模型Category
+            $Category = M('Category');
             // 获取分类名字
-            $Category_name = $Article_cat->field('aname')
+            $Category_name = $Category->field('aname')
                 ->where(array(
                 'acid' => $cid
             ))
@@ -159,13 +159,16 @@ class ArticleController extends CommonController
             $item = $Article->find($id);
             
             import("ORG.Util.Category");
-            $cat = new \Think\Category('Article_cat', array(
+            $cat = new \Think\Category('Category', array(
                 'acid',
                 'afid',
                 'aname',
                 'cname'
             ));
-            $clist = $cat->getList(); // 获取分类结构
+            
+            // 获取当前分类ID
+            $cid = I('get.cid');
+            $clist = $cat->getList(NULL, $cid, NULL); // 获取分类结构,只显示当前分类的子分类
             $this->assign('clist', $clist);
             $this->assign('item', $item);
             $this->display();
@@ -193,68 +196,20 @@ class ArticleController extends CommonController
             $id = I('get.id');
             $Article = M('Article');
             $item = $Article->find($id);
-    
+            
             import("ORG.Util.Category");
-            $cat = new \Think\Category('Article_cat', array(
+            $cat = new \Think\Category('Category', array(
                 'acid',
                 'afid',
                 'aname',
                 'cname'
             ));
-            $clist = $cat->getList(); // 获取分类结构
+            // 获取当前分类ID
+            $cid = I('get.cid');
+            $clist = $cat->getList(NULL, $cid, NULL); // 获取分类结构,只显示当前分类的子分类
             $this->assign('clist', $clist);
             $this->assign('item', $item);
             $this->display();
-        } else {
-            $output = array(
-                'data' => array(
-                    'redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Index/index'),
-                    'sec' => 3
-                ),
-                'info' => urlencode('请求错误！请重新再试！'),
-                'code' => - 205
-            );
-            exit(urldecode(json_encode($output)));
-        }
-    }
-    
-    /**
-     * 获取文章分类列表 [面向APP的API接口，AJAX post请求]
-     *
-     * @author Steven.Huang <87144734@qq.com>
-     */
-    public function articleCategoryList()
-    {
-        if (IS_POST) {
-            // 获取TOKEN
-            $token = I('post.access_token');
-            if (! check_token($token)) {
-                $output = array(
-                    'data' => array(
-                        'redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Public/login'),
-                        'sec' => 3
-                    ),
-                    'info' => urlencode('ACCESS_TOKEN超时，请重新登录！'),
-                    'code' => - 208
-                );
-                exit(urldecode(json_encode($output)));
-            }
-            
-            import("ORG.Util.Category");
-            $cat = new \Think\Category('Article_cat', array(
-                'acid',
-                'afid',
-                'aname',
-                'cname'
-            ));
-            $clist = $cat->getList(); // 获取分类结构
-            
-            $output = array(
-                'data' => $clist,
-                'info' => urlencode('文章分类列表！'),
-                'code' => 200
-            );
-            exit(urldecode(json_encode($output)));
         } else {
             $output = array(
                 'data' => array(
@@ -276,14 +231,17 @@ class ArticleController extends CommonController
     public function add()
     {
         if (IS_GET) {
+            // 获取当前分类ID
+            $cid = I('get.cid');
+            
             import("ORG.Util.Category");
-            $cat = new \Think\Category('Article_cat', array(
+            $cat = new \Think\Category('Category', array(
                 'acid',
                 'afid',
                 'aname',
                 'cname'
             ));
-            $clist = $cat->getList(); // 获取分类结构
+            $clist = $cat->getList(NULL, $cid, NULL); // 获取分类结构,只显示当前分类的子分类
             $this->assign('clist', $clist);
             $this->display();
         } else {
@@ -474,13 +432,16 @@ class ArticleController extends CommonController
             $item = $Article->find($id);
             
             import("ORG.Util.Category");
-            $cat = new \Think\Category('Article_cat', array(
+            $cat = new \Think\Category('Category', array(
                 'acid',
                 'afid',
                 'aname',
                 'cname'
             ));
-            $clist = $cat->getList(); // 获取分类结构
+            
+            // 获取当前分类ID
+            $cid = I('get.cid');
+            $clist = $cat->getList(NULL, $cid, NULL); // 获取分类结构
             $this->assign('clist', $clist);
             $this->assign('item', $item);
             $this->display();
@@ -727,7 +688,11 @@ class ArticleController extends CommonController
             );
             $status = $Article->save($data);
             if ($status) {
-                $acid = $Article->field('acid')->where(array('aid' => $id))->select();
+                $acid = $Article->field('acid')
+                    ->where(array(
+                    'aid' => $id
+                ))
+                    ->select();
                 $output = array(
                     'data' => array(
                         'redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Article/index/category_id/' . $acid[0]['acid']),

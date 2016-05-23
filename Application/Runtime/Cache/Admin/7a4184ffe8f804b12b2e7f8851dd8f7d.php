@@ -73,20 +73,21 @@
           </li>
           <li><a><i class="fa fa-edit"></i> 通知管理 <span class="fa fa-chevron-down"></span></a>
             <ul class="nav child_menu" style="display: none">
-              <li><a href="<?php echo U('Admin/Article/index','category_id=1');?>">小区通知</a>
+              <li><a href="<?php echo U('Admin/Article/index','category_id=4');?>">小区通知</a>
               </li>
-              <li><a href="<?php echo U('Admin/Article/index','category_id=2');?>">政府公告</a>
+              <li><a href="<?php echo U('Admin/Article/index','category_id=5');?>">政府公告</a>
               </li>
-              <li><a href="<?php echo U('Admin/Article/index','category_id=3');?>">办事指南</a>
+              <li><a href="<?php echo U('Admin/Article/index','category_id=6');?>">办事指南</a>
+              </li>
+              <li><a href="<?php echo U('Admin/Article/index','category_id=7');?>">便民服务</a>
               </li>
               <li><a href="<?php echo U('Admin/Article/add');?>">发布文章</a>
-              </li>
-              </li>
-              <li><a href="<?php echo U('Admin/Articlecate/index');?>">分类管理</a>
               </li>
               <li><a href="<?php echo U('Admin/Article/trash');?>">回收站</a>
               </li>
             </ul>
+          </li>
+          <li><a href="<?php echo U('Admin/Category/index');?>"><i class="fa fa-edit"></i> 分类管理 <span class="fa fa-chevron-down"></span></a>
           </li>
         </ul>
       </div>
@@ -261,7 +262,7 @@
 			value="<?php echo $_GET['category_id']?>">
 		<div class="col-md-12 col-sm-12 col-xs-12">
 			<div class="col-lg-2 col-md-2 col-xs-2">
-				<a class="btn btn-success" href="<?php echo U('Article/add/');?>"> <i
+				<a class="btn btn-success" href="<?php echo U('Article/add/cid/1');?>"> <i
 					class="fa fa-plus"></i>新增
 				</a>
 			</div>
@@ -450,7 +451,7 @@
 						dataType : "json",
 						success : function(data) {
 							if (data['code'] == 200) {
-								$('#category_name').append(data['data']['category_name'][0]['aname']);								$('#category_name2').append(data['data']['category_name'][0]['aname']);
+								$('#category_name').append(data['data']['category_name'][0]['aname']);
 								if (data['data']['count'] == 0) {
 									$("#tab1")
 											.append(
@@ -527,7 +528,7 @@
 												var len = data['data']['data'].length;
 												for (var i = 0; i < len; i++) {
 													var array = "/id/"
-															+ data['data']['data'][i]['aid'];
+															+ data['data']['data'][i]['aid']+"/cid/1";
 													$("#tab2")
 															.append(
 																	"<tr><td>"

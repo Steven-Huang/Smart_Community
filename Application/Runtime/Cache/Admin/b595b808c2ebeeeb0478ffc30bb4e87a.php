@@ -81,12 +81,11 @@
               </li>
               <li><a href="<?php echo U('Admin/Article/add');?>">发布文章</a>
               </li>
-              </li>
-              <li><a href="<?php echo U('Admin/Articlecate/index');?>">分类管理</a>
-              </li>
               <li><a href="<?php echo U('Admin/Article/trash');?>">回收站</a>
               </li>
             </ul>
+          </li>
+          <li><a href="<?php echo U('Admin/Category/index');?>"><i class="fa fa-edit"></i> 分类管理 <span class="fa fa-chevron-down"></span></a>
           </li>
         </ul>
       </div>

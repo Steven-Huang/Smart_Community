@@ -1,7 +1,7 @@
 <?php
 namespace Wap\Controller;
 
-class FeedbackController extends CommonController
+class RepairController extends CommonController
 {
 
     /**
@@ -33,7 +33,7 @@ class FeedbackController extends CommonController
     }
 
     /**
-     * 通知反馈信息列表页面
+     * 维修信息列表页面
      *
      * @author Steven.Huang <87144734@qq.com>
      */
@@ -43,7 +43,7 @@ class FeedbackController extends CommonController
     }
 
     /**
-     * 请求返回指定用户ID的投诉/表扬信息 [面向APP的API接口，AJAX post请求]
+     * 请求返回指定用户ID的维修信息 [面向APP的API接口，AJAX post请求]
      *
      * @author Steven.Huang <87144734@qq.com>
      */
@@ -65,19 +65,36 @@ class FeedbackController extends CommonController
             }
             // 获取用户ID
             $create_id = $_SESSION['user_id'];
+            // 获取反馈分类ID
+            $acid = (int) I('post.acid') ? (int) I('post.acid') : '';
             // 获取状态（0，待处理；1，已处理）
             $status = I('post.status');
             // 获取每页展示行数
             $num = I('post.num') ? I('post.num') : C('PAGE_NUM');
             
+            // 实例化模型Category
+            $Category = M('Category');
+            // 获取当前分类名字
+            $Current_cat_name = $Category->field('aname')
+                ->where(array(
+                'acid' => $acid
+            ))
+                ->find();
+            // 获取当前分类的子分类
+            $Child_cat_name = $Category->field('acid,aname')
+                ->where(array(
+                'fcid' => $acid
+            ))
+                ->select();
+            
             // 实例化模型
-            $Feedback = M('Feedback');
+            $Repair = M('Repair');
             // 导入分页类
             import('ORG.Util.Page');
             
             // 当指定分类时
             // 获取总记录数
-            $count = $Feedback->where(array(
+            $count = $Repair->where(array(
                 'create_id' => $create_id,
                 'status' => $status
             ))->count();
@@ -85,8 +102,13 @@ class FeedbackController extends CommonController
             $Page = new \Think\Page($count, $count);
             // 调用show显示分页链接
             $show = $Page->show();
+            if ($Current_cat_name['aname'] == '私人住宅') {
+                $field = 'id,acid,create_time,create_id,pri_items,details,pic,status,results,operate_id,operate_time';
+            } elseif ($Current_cat_name['aname'] == '公共设施') {
+                $field = 'id,acid,create_time,create_id,pub_items,details,pic,status,results,operate_id,operate_time';
+            }
             // 实现数据分页
-            $data = $Feedback->field('id,to_who,type,content,materials,from_who,mobile,create_time,create_id,status,results,operate_id,operate_time')
+            $data = $Repair->field($field)
                 ->where(array(
                 'create_id' => $create_id,
                 'status' => $status
@@ -99,9 +121,11 @@ class FeedbackController extends CommonController
                 'data' => array(
                     'data' => $data,
                     'count' => $count,
-                    'page' => urlencode($show)
+                    'page' => urlencode($show),
+                    'Category_name' => $Current_cat_name,
+                    'Child_cat_name' => $Child_cat_name
                 ),
-                'info' => urlencode('反馈信息列表！'),
+                'info' => urlencode('维修信息列表！'),
                 'code' => 200
             );
             exit(urldecode(json_encode($output)));
@@ -119,11 +143,11 @@ class FeedbackController extends CommonController
     }
 
     /**
-     * 指定ID号反馈的信息 [面向APP的API接口，AJAX post请求]
+     * 指定ID号的维修信息 [面向APP的API接口，AJAX post请求]
      *
      * @author Steven.Huang <87144734@qq.com>
      */
-    public function getSingleFeedbackById()
+    public function getSingleRepairById()
     {
         if (IS_POST) {
             // 获取TOKEN
@@ -141,12 +165,12 @@ class FeedbackController extends CommonController
             }
             
             $id = I('post.id');
-            $Feedback = M('Feedback');
-            $item = $Feedback->find($id);
+            $Repair = M('Repair');
+            $item = $Repair->find($id);
             
             $output = array(
                 'data' => $item,
-                'info' => urlencode('指定ID号反馈的信息！'),
+                'info' => urlencode('指定ID号的维修信息！'),
                 'code' => 200
             );
             exit(urldecode(json_encode($output)));
@@ -164,7 +188,7 @@ class FeedbackController extends CommonController
     }
 
     /**
-     * 反馈添加页面，非API接口，get请求【用于wap前台】
+     * 维修信息添加页面，非API接口，get请求【用于wap前台】
      *
      * @author Steven.Huang <87144734@qq.com>
      */
@@ -179,9 +203,9 @@ class FeedbackController extends CommonController
                 'cname'
             ));
             
-            // 获取当前分类ID
+            //获取当前分类ID
             $cid = I('get.cid');
-            $clist = $cat->getList(NULL, $cid, NULL); // 获取分类结构,只显示当前分类的子分类
+            $clist = $cat->getList(NULL,$cid,NULL); // 获取分类结构,只显示当前分类的子分类
             $this->assign('clist', $clist);
             $this->display();
         } else {
@@ -198,7 +222,7 @@ class FeedbackController extends CommonController
     }
 
     /**
-     * 保存反馈信息 [面向APP的API接口，AJAX post请求]
+     * 保存维修信息 [面向APP的API接口，AJAX post请求]
      *
      * @author Steven.Huang <87144734@qq.com>
      */
@@ -221,31 +245,47 @@ class FeedbackController extends CommonController
             
             $from_who = I('post.from_who');
             $mobile = trim(I('post.mobile'));
-            
+            // 获取反馈类型(1->私人住宅,2->公共设施)
+            $type = I('post.type');
             if (empty($mobile)) {
                 // 如果用户没有填写手机，则默认当前用户手机
                 $mobile2 = M('Users')->field('mobile')->find();
             }
-            
-            // 获取文章信息
-            $data = array(
-                'to_who' => I('post.to_who'),
-                'type' => I('post.type'),
-                'content' => htmlspecialchars(stripslashes(I('post.article_content'))),
-                'materials' => trim(I('post.materials')),
-                // 如果用户没有填写名字，则默认当前用户名
-                'from_who' => isset($from_who) ? $from_who : $_SESSION['nick_name'],
-                'mobile' => isset($mobile) ? $mobile : $mobile2['mobile'],
-                'create_time' => date('Y-m-d h:i:s', time()),
-                'create_id' => $_SESSION['user_id'],
-                'status' => 0
-            );
+            if ($type == '1') {
+                // 获取文章信息
+                $data = array(
+                    // 如果用户没有填写名字，则默认当前用户名
+                    'from_who' => isset($from_who) ? $from_who : $_SESSION['nick_name'],
+                    'mobile' => isset($mobile) ? $mobile : $mobile2['mobile'],
+                    'create_time' => date('Y-m-d h:i:s', time()),
+                    'create_id' => $_SESSION['user_id'],
+                    'pri_items' => I('post.pri_items'),
+                    'pub_items' => '',
+                    'details' => I('post.details'),
+                    'pic' => I('post.pic'),
+                    'status' => 0
+                );
+            } elseif ($type == '2') {
+                // 获取文章信息
+                $data = array(
+                    // 如果用户没有填写名字，则默认当前用户名
+                    'from_who' => isset($from_who) ? $from_who : $_SESSION['nick_name'],
+                    'mobile' => isset($mobile) ? $mobile : $mobile2['mobile'],
+                    'create_time' => date('Y-m-d h:i:s', time()),
+                    'create_id' => $_SESSION['user_id'],
+                    'pri_items' => '',
+                    'pub_items' => I('post.pub_items'),
+                    'details' => I('post.details'),
+                    'pic' => I('post.pic'),
+                    'status' => 0
+                );
+            }
             
             // 当信息为空时，返回错误信息（需前端配合过滤）
-            if (empty($data['to_who']) || empty($data['content'])) {
+            if (empty($data['to_who']) || empty($data['details'])) {
                 $output = array(
                     'data' => array(
-                        'redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Feedback/add'),
+                        'redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Repair/add'),
                         'sec' => 3
                     ),
                     'info' => urlencode('必填信息不能为空！'),
@@ -254,10 +294,10 @@ class FeedbackController extends CommonController
                 exit(urldecode(json_encode($output)));
             }
             // 判断用户是否选择分类
-            if ($data['type'] == '-1') {
+            if ($data['type'] == '-1' || $data['pri_items'] == '-1' || $data['pub_items'] == '-1') {
                 $output = array(
                     'data' => array(
-                        'redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Feedback/add'),
+                        'redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Repair/add'),
                         'sec' => 3
                     ),
                     'info' => urlencode('请选择类型！'),
@@ -271,38 +311,38 @@ class FeedbackController extends CommonController
                 $data[$key] = urlencode(trim($value));
             }
             
-            $Feedback = D('Feedback');
+            $Repair = D('Repair');
             
-            $res = $Feedback->create($data);
+            $res = $Repair->create($data);
             if (! $res) {
                 $output = array(
                     'data' => array(
-                        'redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Feedback/index'),
+                        'redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Repair/index'),
                         'sec' => 3
                     ),
-                    'info' => $Feedback->getError(),
+                    'info' => $Repair->getError(),
                     'code' => '-202'
                 );
                 exit(urldecode(json_encode($output)));
             } else {
-                $result = $Feedback->add($data);
+                $result = $Repair->add($data);
                 if ($result) {
                     $output = array(
                         'data' => array(
-                            'redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Feedback/add'),
+                            'redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Repair/add'),
                             'sec' => 2
                         ),
-                        'info' => urlencode('添加反馈成功！'),
+                        'info' => urlencode('添加维修订单成功！'),
                         'code' => 200
                     );
                     exit(urldecode(json_encode($output)));
                 } else {
                     $output = array(
                         'data' => array(
-                            'redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Feedback/add'),
+                            'redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Repair/add'),
                             'sec' => 3
                         ),
-                        'info' => urlencode('添加反馈失败！请重新再试！'),
+                        'info' => urlencode('添加维修订单失败！请重新再试！'),
                         'code' => - 200
                     );
                     exit(urldecode(json_encode($output)));

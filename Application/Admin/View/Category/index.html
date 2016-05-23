@@ -22,15 +22,15 @@
 		<div class="col-lg-10 col-md-10 col-xs-12"
 			style="background-color: #FFF;">
 			<div class="col-lg-2 col-md-2 col-xs-2">
-				<a class="btn btn-success" href="{:U('Articlecate/add/')}"> <i
+				<a class="btn btn-success" href="{:U('Category/add/')}"> <i
 					class="fa fa-plus"></i>新增
 				</a>
 			</div>
 			<div class="x_panel">
 				<!-- begin tab -->
 				<ul class="nav nav-tabs ">
-					<li class="active"><a href="{:U('Articlecate/index/')}"><b>分类列表</b></a></li>
-					<li><a href="{:U('Articlecate/add/')}"><b>增加分类</b></a></li>
+					<li class="active"><a href="{:U('Category/index/')}"><b>分类列表</b></a></li>
+					<li><a href="{:U('Category/add/')}"><b>增加分类</b></a></li>
 				</ul>
 				<p></P>
 				<div class="row">
@@ -57,9 +57,9 @@
 							<td>{$vo.acid}</td>
 							<td>{$vo.cname}</td>
 							<td>{$vo.sort}</td>
-							<td><a href="{:U('Articlecate/edit/','id='.$vo['acid'])}"><i
+							<td><a href="{:U('Category/edit/','id='.$vo['acid'])}"><i
 									class="fa fa-edit"></i> 修改</a> <a
-								href="{:U('Articlecate/delete/','id='.$vo['acid'])}"
+								href="{:U('Category/delete/','id='.$vo['acid'])}"
 								onClick="delcfm()"><i class="fa fa-trash-o"></i> 删除</a></td>
 						</tr>
 						</volist>

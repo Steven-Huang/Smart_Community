@@ -77,21 +77,20 @@
           </li>
           <li><a><i class="fa fa-edit"></i> 通知管理 <span class="fa fa-chevron-down"></span></a>
             <ul class="nav child_menu" style="display: none">
-              <li><a href="<?php echo U('Admin/Article/index','category_id=4');?>">小区通知</a>
+              <li><a href="<?php echo U('Admin/Article/index','category_id=1');?>">小区通知</a>
               </li>
-              <li><a href="<?php echo U('Admin/Article/index','category_id=5');?>">政府公告</a>
+              <li><a href="<?php echo U('Admin/Article/index','category_id=2');?>">政府公告</a>
               </li>
-              <li><a href="<?php echo U('Admin/Article/index','category_id=6');?>">办事指南</a>
-              </li>
-              <li><a href="<?php echo U('Admin/Article/index','category_id=7');?>">便民服务</a>
+              <li><a href="<?php echo U('Admin/Article/index','category_id=3');?>">办事指南</a>
               </li>
               <li><a href="<?php echo U('Admin/Article/add');?>">发布文章</a>
+              </li>
+              </li>
+              <li><a href="<?php echo U('Admin/Articlecate/index');?>">分类管理</a>
               </li>
               <li><a href="<?php echo U('Admin/Article/trash');?>">回收站</a>
               </li>
             </ul>
-          </li>
-          <li><a href="<?php echo U('Admin/Category/index');?>"><i class="fa fa-edit"></i> 分类管理 <span class="fa fa-chevron-down"></span></a>
           </li>
         </ul>
       </div>
@@ -265,9 +264,11 @@
 			style="background-color: #FFF;">
 			<!-- begin tab -->
 			<ul class="nav nav-tabs ">
-				<li class="active"><a href=""><b>修改文章</b></a></li>
+				<li class=""><a href="<?php echo U('Category/index/');?>"><b>分类列表</b></a></li>
+				<li><a href="<?php echo U('Category/add/');?>"><b>增加分类</b></a></li>
+				<li class="active"><a href="#"><b>分类编辑</b></a></li>
 			</ul>
-			<p></p>
+			<p></P>
 			<div class="row">
 				<div class="col-lg-2 col-md-2 col-xs-2"></div>
 				<div class="col-lg-6 col-md-6 col-xs-6">
@@ -275,94 +276,68 @@
 				</div>
 				<div class="col-lg-4 col-md-4 col-xs-4"></div>
 			</div>
-			<p></p>
+			<!-- end 添加 -->
+			<p></P>
 			<form class="form-horizontal" role="form"
-				enctype="multipart/form-data">
-				<input type="hidden" id="article_id"
-					value="<?php echo $_GET['id']?>">
+				enctype="multipart/form-data" method="post"
+				action="<?php echo U('Category/editsave');?>">
 				<div class="form-group">
-					<label for="article_title" class="col-sm-2 control-label">标题</label>
+					<label for="inputEmail3" class="col-sm-2 control-label">分类名称</label>
+					<div class="col-sm-4">
+						<input type="text" class="form-control" id="inputEmail3"
+							name="aname" value="<?php echo ($item["aname"]); ?>" placeholder=""> <input
+							type="hidden" name="acid" value="<?php echo ($item["acid"]); ?>">
+					</div>
 					<div class="col-sm-6">
-						<input type="text" class="form-control" id="article_title"
-							name="article_title" value="<?php echo ($item['atitle']); ?>" maxlength="150">
+						<span class="help-block"><i class="fa fa-exclamation"></i>
+							输入分类名称</span></span>
 					</div>
 				</div>
 				<div class="form-group">
-					<label for="article_source" class="col-sm-2 control-label">来源</label>
-					<div class="col-sm-3">
-						<input type="text" class="form-control" id="article_source"
-							name="article_title" value="<?php echo ($item['source']); ?>" maxlength="20">
-					</div>
-				</div>
-				<div class="form-group">
-					<label for="article_author" class="col-sm-2 control-label">作者</label>
-					<div class="col-sm-3">
-						<input type="text" class="form-control" id="article_author"
-							name="article_title" value="<?php echo ($item['author']); ?>" maxlength="20">
-					</div>
-				</div>
-				<div class="form-group">
-					<label for="category_id" class="col-sm-2 control-label">文章分类</label>
-					<div class="col-sm-3">
-						<select class="form-control" id="category_id" name="category_id">
-							<?php if(is_array($clist)): $i = 0; $__LIST__ = $clist;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if(($vo['acid']) == $item['acid']): ?><option value="<?php echo ($vo["acid"]); ?>" selected="selected"><?php echo ($vo["cname"]); ?></option>
-							<?php else: ?>
-							<option value="<?php echo ($vo["acid"]); ?>"><?php echo ($vo["cname"]); ?></option><?php endif; endforeach; endif; else: echo "" ;endif; ?>
+					<label for="inputPassword3" class="col-sm-2 control-label">分类</label>
+					<div class="col-sm-4">
+						<select class="form-control" name="afid">
+							<option value="0">顶级分类</option>
+							<?php if(is_array($clist)): $i = 0; $__LIST__ = $clist;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if(($vo['acid']) == $item['afid']): ?><option value="<?php echo ($vo["acid"]); ?>" selected="selected"><?php echo ($vo["cname"]); ?></option>
+							<?php else: ?> <?php if(($vo['acid']) == $item['acid']): else: ?>
+							<option value="<?php echo ($vo["acid"]); ?>"><?php echo ($vo["cname"]); ?></option><?php endif; endif; endforeach; endif; else: echo "" ;endif; ?>
 						</select>
 					</div>
-				</div>
-				<div class="form-group">
-					<label for="article_valid_time" class="col-sm-2 control-label">截至有效时间</label>
-					<div class="col-sm-3">
-						<input type="date" class="form-control" id="article_valid_time"
-							name="article_valid_time" value="<?php echo ($item['valid_time']); ?>">
-					</div>
-				</div>
-				<div class="form-group">
-					<label for="article_des" class="col-sm-2 control-label">摘要</label>
 					<div class="col-sm-6">
-						<textarea class="form-control" rows="3" id="article_des"
-							placeholder="" maxlength="150"><?php echo ($item['des']); ?></textarea>
-					</div>
-				</div>
-				<div class="form-group">
-					<label for="article_content" class="col-sm-2 control-label">内容</label>
-					<div class="col-sm-8">
-						<script id="article_content" name="article_content"
-							type="text/plain"><?php echo (htmlspecialchars_decode($item["content"])); ?></script>
-						<script type="text/javascript">
-							var editor = UE.getEditor('article_content')
-						</script>
-					</div>
-				</div>
-				<div class="form-group">
-					<label for="article_keyword" class="col-sm-2 control-label">关键词</label>
-					<div class="col-sm-3">
-						<input id="article_keyword" type="text" class="tags form-control"
-							value="<?php echo ($item['keyword']); ?>" maxlength="100" />
-						<div id="suggestions-container"
-							style="position: relative; float: left; width: 250px; margin: 10px;"></div>
-					</div>
-					<div class="col-sm-6">
-						<span class="help-block"> <i class="fa fa-exclamation"></i>输入关键词后按回车键
+						<span class="help-block"> <i class="fa fa-exclamation"></i>
+							选择所属父类
 						</span>
 					</div>
 				</div>
+<!-- 				<div class="form-group">
+					<label for="inputEmail8" class="col-sm-2 control-label">列表图片</label>
+					<div class="col-sm-4">
+						<input type="file" name="pic" id="exampleInputFile">
+					</div>
+					<div class="col-sm-6">
+						<span class="help-block"><i class="fa fa-exclamation"></i>
+							仅支持jpg,可不设置，建议设置图片大小640*480,</span>
+					</div>
+				</div> -->
 				<div class="form-group">
-					<label for="article_sort" class="col-sm-2 control-label">排序</label>
+					<label for="inputPassword3" class="col-sm-2 control-label">排序</label>
 					<div class="col-sm-2">
-						<input type="text" class="form-control" id="article_sort"
-							name="article_sort" value="<?php echo ($item['sort']); ?>" placeholder="">
+						<input type="number" min="0" max="99" class="form-control" name="sort"
+							value="<?php echo ($item["sort"]); ?>" placeholder="">
 					</div>
 					<div class="col-sm-8">
 						<span class="help-block"> <i class="fa fa-exclamation"></i>值为0-99，值越大，越靠前
 						</span>
 					</div>
 				</div>
-				<div class="ln_solid"></div>
+				<hr>
 				<div class="form-group">
-					<div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3">
-						<button type="sumbit" class="btn btn-success">保存</button>
+					<label for="inputPassword3" class="col-sm-4 control-label"></label>
+					<div class="col-sm-2">
+						<button type="sumbit" class="btn btn-primary">保存</button>
+					</div>
+					<div class="col-sm-6">
+						<span class="help-block">
 					</div>
 				</div>
 			</form>
@@ -470,111 +445,16 @@
 		$('#presentation').addClass('open');
 	})
 </script>
-	<!-- form validation -->
-	<script src="/smart_community/Public/admin/js/validator/validator.js"></script>
-	<!-- Tags -->
-	<script src="/smart_community/Public/admin/js/tags/jquery.tagsinput.min.js"></script>
 	<script>
-		//input tags
-		function onAddTag(tag) {
-			alert("Added a tag: " + tag);
-		}
+		$('#myModal').on('hidden.bs.modal', function(e) {
+			location.reload()
 
-		function onRemoveTag(tag) {
-			alert("Removed a tag: " + tag);
-		}
+		})
+		$('#ajax').on('hidden.bs.modal', function(e) {
+			location.reload()
 
-		function onChangeTag(input, tag) {
-			alert("Changed a tag: " + tag);
-		}
-
-		$(function() {
-			$('#article_keyword').tagsInput({
-				width : 'auto'
-			});
-		});
-
-		// initialize the validator function
-		validator.message['date'] = 'not a real date';
-
-		// validate a field on "blur" event, a 'select' on 'change' event & a '.reuired' classed multifield on 'keyup':
-		$('form').on('blur',
-				'input[required], input.optional, select.required',
-				validator.checkField).on('change', 'select.required',
-				validator.checkField).on('keypress',
-				'input[required][pattern]', validator.keypress);
-
-		$('.multi.required').on('keyup blur', 'input', function() {
-			validator.checkField.apply($(this).siblings().last()[0]);
-		});
-
-		$('form')
-				.submit(
-						function(e) {
-							e.preventDefault();
-							var submit = true;
-							// evaluate the form using generic validaing
-							if (!validator.checkAll($(this))) {
-								submit = false;
-							}
-							if (submit) {
-								$
-										.ajax({
-											type : "post",
-											url : "/smart_community/admin.php/Article/editSave",
-											data : {
-												'access_token' : getCookie('access_token'),
-												'article_id' : $('#article_id')
-														.val(),
-												'article_title' : $(
-														'#article_title').val(),
-												'article_source' : $(
-														'#article_source')
-														.val(),
-												'article_author' : $(
-														'#article_author')
-														.val(),
-												'category_id' : $(
-														'#category_id').val(),
-												'article_valid_time' : $(
-														'#article_valid_time')
-														.val(),
-												'article_des' : $(
-														'#article_des').val(),
-												'article_content' : editor
-														.getContent(),
-												'article_keyword' : $(
-														'#article_keyword')
-														.val(),
-												'article_sort' : $(
-														'#article_sort').val()
-											},
-											dataType : "json",
-											success : function(data) {
-												if (data['code'] == '200'
-														|| data['code'] == '-205'
-														|| data['code'] == '-206' || data['code'] == '-207' || data['code'] == '-208') {
-													alert(data['info']);
-													location.href = 'http://'
-															+ data['data']['redirect_url'];
-												} else if (data['code'] == '-200'
-														|| data['code'] == '-201A'
-														|| data['code'] == '-201B'
-														|| data['code'] == '-202') {
-													alert(data['info']);
-												}
-											},
-											error : function(xhr, type,
-													errorThrown) {
-												//异常处理
-												console.log(type);
-											}
-										});
-							}
-							return false;
-						});
+		})
 	</script>
-
 	<!-- END CORE PLUGINS -->
 
 	<!-- END JAVASCRIPTS -->

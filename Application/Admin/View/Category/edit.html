@@ -23,8 +23,9 @@
 			style="background-color: #FFF;">
 			<!-- begin tab -->
 			<ul class="nav nav-tabs ">
-				<li><a href="{:U('Articlecate/index/')}"><b>分类列表</b></a></li>
-				<li class="active"><a href="{:U('Articlecate/add/')}"><b>增加分类</b></a></li>
+				<li class=""><a href="{:U('Category/index/')}"><b>分类列表</b></a></li>
+				<li><a href="{:U('Category/add/')}"><b>增加分类</b></a></li>
+				<li class="active"><a href="#"><b>分类编辑</b></a></li>
 			</ul>
 			<p></P>
 			<div class="row">
@@ -38,12 +39,13 @@
 			<p></P>
 			<form class="form-horizontal" role="form"
 				enctype="multipart/form-data" method="post"
-				action="{:U('Articlecate/addsave/')}">
+				action="{:U('Category/editsave')}">
 				<div class="form-group">
 					<label for="inputEmail3" class="col-sm-2 control-label">分类名称</label>
 					<div class="col-sm-4">
 						<input type="text" class="form-control" id="inputEmail3"
-							name="aname" placeholder="">
+							name="aname" value="{$item.aname}" placeholder=""> <input
+							type="hidden" name="acid" value="{$item.acid}">
 					</div>
 					<div class="col-sm-6">
 						<span class="help-block"><i class="fa fa-exclamation"></i>
@@ -55,14 +57,17 @@
 					<div class="col-sm-4">
 						<select class="form-control" name="afid">
 							<option value="0">顶级分类</option>
-							<volist name="clist" id="vo">
+							<volist name="clist" id="vo"> <eq name="vo['acid']"
+								value="$item['afid']">
+							<option value="{$vo.acid}" selected="selected">{$vo.cname}</option>
+							<else /> <eq name="vo['acid']" value="$item['acid']"> <else />
 							<option value="{$vo.acid}">{$vo.cname}</option>
-							</volist>
+							</eq> </eq> </volist>
 						</select>
 					</div>
 					<div class="col-sm-6">
 						<span class="help-block"> <i class="fa fa-exclamation"></i>
-							选择所属父类,建议不要超过二级
+							选择所属父类
 						</span>
 					</div>
 				</div>
@@ -79,8 +84,8 @@
 				<div class="form-group">
 					<label for="inputPassword3" class="col-sm-2 control-label">排序</label>
 					<div class="col-sm-2">
-						<input type="number" min="0" max="99" class="form-control" name="sort" value="0"
-							placeholder="">
+						<input type="number" min="0" max="99" class="form-control" name="sort"
+							value="{$item.sort}" placeholder="">
 					</div>
 					<div class="col-sm-8">
 						<span class="help-block"> <i class="fa fa-exclamation"></i>值为0-99，值越大，越靠前
@@ -115,7 +120,6 @@
 
 		})
 	</script>
-
 	<!-- END CORE PLUGINS -->
 
 	<!-- END JAVASCRIPTS -->

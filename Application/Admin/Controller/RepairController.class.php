@@ -1,12 +1,12 @@
 <?php
 namespace Admin\Controller;
 
-class FeedbackController extends CommonController
+class RepairController extends CommonController
 {
 
     /**
      * 定义_empty空操作
-     *
+     * 
      * @author Steven.Huang <87144734@qq.com>
      */
     public function _empty()
@@ -16,7 +16,7 @@ class FeedbackController extends CommonController
 
     /**
      * 定义_empty空操作跳转
-     *
+     * 
      * @author Steven.Huang <87144734@qq.com>
      */
     public function show()
@@ -31,9 +31,9 @@ class FeedbackController extends CommonController
         );
         exit(urldecode(json_encode($output)));
     }
-
+    
     /**
-     * 通知反馈信息列表页面
+     * 维修信息列表页面
      *
      * @author Steven.Huang <87144734@qq.com>
      */
@@ -41,9 +41,9 @@ class FeedbackController extends CommonController
     {
         $this->display();
     }
-
+    
     /**
-     * 请求返回用户投诉/表扬信息 [面向APP的API接口，AJAX post请求]
+     * 请求返回维修信息 [面向APP的API接口，AJAX post请求]
      *
      * @author Steven.Huang <87144734@qq.com>
      */
@@ -63,22 +63,22 @@ class FeedbackController extends CommonController
                 );
                 exit(urldecode(json_encode($output)));
             }
-            // 获取反馈类型
-            $type = (int) I('post.type') ? (int) I('post.type') : 0;
-            // 获取状态（0，待处理；1，已处理）
+            // 获取反馈类型(1->私人住宅,2->公共设施)
+            $type = (int) I('post.type') ? (int) I('post.type') : '';
+            // 获取状态（0->待处理, 1->处理成功, 2->处理失败, 3->用户撤销）
             $status = I('post.status');
             // 获取每页展示行数
             $num = I('post.num') ? I('post.num') : C('PAGE_NUM');
-            
+    
             // 实例化模型
-            $Feedback = M('Feedback');
+            $Repair = M('Repair');
             // 导入分页类
             import('ORG.Util.Page');
-            
-            if (! $type) {
-                // 当指定分类时
+    
+            if ($type == '1') {
+                // 私人住宅
                 // 获取总记录数
-                $count = $Feedback->where(array(
+                $count = $Repair->where(array(
                     'type' => $type,
                     'status' => $status
                 ))->count();
@@ -87,18 +87,19 @@ class FeedbackController extends CommonController
                 // 调用show显示分页链接
                 $show = $Page->show();
                 // 实现数据分页
-                $data = $Feedback->field('id,to_who,type,content,materials,from_who,mobile,create_time,create_id,status,results,operate_id,operate_time')
-                    ->where(array(
+                $data = $Repair->field('id,type,create_time,create_id,from_who,mobile,pri_items,details,pic,status,results,operate_id,operate_time')
+                ->where(array(
                     'type' => $type,
                     'status' => $status
                 ))
-                    ->limit($Page->firstRow, $Page->listRows)
-                    ->order('id desc')
-                    ->select();
-            } else {
-                // 当获取全部数据时
+                ->limit($Page->firstRow, $Page->listRows)
+                ->order('id desc')
+                ->select();
+            } elseif ($type == '2') {
+                // 公共设施
                 // 获取总记录数
-                $count = $Feedback->where(array(
+                $count = $Repair->where(array(
+                    'type' => $type,
                     'status' => $status
                 ))->count();
                 // 实例化分类页
@@ -106,22 +107,23 @@ class FeedbackController extends CommonController
                 // 调用show显示分页链接
                 $show = $Page->show();
                 // 实现数据分页
-                $data = $Feedback->field('id,to_who,type,content,materials,from_who,mobile,create_time,create_id,status,results,operate_id,operate_time')
-                    ->where(array(
+                $data = $Repair->field('id,type,create_time,create_id,from_who,mobile,pub_items,details,pic,status,results,operate_id,operate_time')
+                ->where(array(
+                    'type' => $type,
                     'status' => $status
                 ))
-                    ->limit($Page->firstRow, $Page->listRows)
-                    ->order('id desc')
-                    ->select();
+                ->limit($Page->firstRow, $Page->listRows)
+                ->order('id desc')
+                ->select();
             }
-            
+    
             $output = array(
                 'data' => array(
                     'data' => $data,
                     'count' => $count,
                     'page' => urlencode($show)
                 ),
-                'info' => urlencode('反馈信息列表！'),
+                'info' => urlencode('维修信息列表！'),
                 'code' => 200
             );
             exit(urldecode(json_encode($output)));
@@ -137,13 +139,13 @@ class FeedbackController extends CommonController
             exit(urldecode(json_encode($output)));
         }
     }
-
+    
     /**
-     * 指定ID号反馈的信息 [面向APP的API接口，AJAX post请求]
+     * 指定ID号的维修信息 [面向APP的API接口，AJAX post请求]
      *
      * @author Steven.Huang <87144734@qq.com>
      */
-    public function getSingleFeedbackById()
+    public function getSingleRepairById()
     {
         if (IS_POST) {
             // 获取TOKEN
@@ -159,14 +161,14 @@ class FeedbackController extends CommonController
                 );
                 exit(urldecode(json_encode($output)));
             }
-            
+    
             $id = I('post.id');
-            $Feedback = M('Feedback');
-            $item = $Feedback->find($id);
-            
+            $Repair = M('Repair');
+            $item = $Repair->find($id);
+    
             $output = array(
                 'data' => $item,
-                'info' => urlencode('指定ID号反馈的信息！'),
+                'info' => urlencode('指定ID号的维修信息！'),
                 'code' => 200
             );
             exit(urldecode(json_encode($output)));
@@ -182,9 +184,9 @@ class FeedbackController extends CommonController
             exit(urldecode(json_encode($output)));
         }
     }
-
+    
     /**
-     * 处理反馈 [面向APP的API接口，AJAX post请求]
+     * 处理维修信息 [面向APP的API接口，AJAX post请求]
      *
      * @author Steven.Huang <87144734@qq.com>
      */
@@ -204,11 +206,11 @@ class FeedbackController extends CommonController
                 );
                 exit(urldecode(json_encode($output)));
             }
-            
+    
             // 获取反馈信息的ID
             $id = I('post.id');
             $result = I('post.result');
-            
+    
             $data = array(
                 'id' => $id,
                 'results' => $result,
@@ -216,30 +218,30 @@ class FeedbackController extends CommonController
                 'operate_time' => date('Y-m-d h:i:s', time()),
                 'operate_id' => $_SESSION['user_id']
             );
-            
-            $res = M('Feedback')->save($data);
-            
+    
+            $res = M('Repair')->save($data);
+    
             if ($res){
                 $output = array(
                     'data' => array(
-                        'redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Feedback/index'),
+                        'redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Repair/index'),
                         'sec' => 2
                     ),
-                    'info' => urlencode('处理成功！'),
+                    'info' => urlencode('保存处理结果成功！'),
                     'code' => 200
                 );
                 exit(urldecode(json_encode($output)));
             } else {
                 $output = array(
                     'data' => array(
-                        'redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Feedback/index'),
+                        'redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Repair/index'),
                         'sec' => 3
                     ),
-                    'info' => urlencode('处理失败，请重新再试！'),
+                    'info' => urlencode('保存处理结果失败，请重新再试！'),
                     'code' => - 200
                 );
                 exit(urldecode(json_encode($output)));
-            }   
+            }
         } else {
             $output = array(
                 'data' => array(

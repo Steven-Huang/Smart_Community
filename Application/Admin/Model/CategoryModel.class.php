@@ -2,7 +2,7 @@
 namespace Admin\Model;
 use Think\Model;
 
-class ArticleCatModel extends Model {
+class CategoryModel extends Model {
     
 	// 自动验证设置
 	protected $_validate = array(
