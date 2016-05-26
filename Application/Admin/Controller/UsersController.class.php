@@ -90,22 +90,22 @@ class UsersController extends CommonController {
 	            exit(urldecode(json_encode($output)));
 	        }
 	        $data = array(
-	            'nick_name' => strtolower(trim(I('post.user_nick_name'))),
-	            'true_name' => strtolower(trim(I('post.user_true_name'))),
+	            'nick_name' => strtolower(addslashes(trim(I('post.user_nick_name')))),
+	            'true_name' => strtolower(addslashes(trim(I('post.user_true_name')))),
 	            'gender' => trim(I('post.user_gender')),
-	            'id_card_num' => strtolower(trim(I('post.user_id_card_num'))),
-	            'h_pocn' => strtolower(trim(I('post.user_pocn'))),
-	            'email' => strtolower(trim(I('post.user_email'))),
-	            'password' => strtolower(trim(I('post.user_password'))),
-	            'mobile' => trim(I('post.user_mobile')),
+	            'id_card_num' => strtolower(addslashes(trim(I('post.user_id_card_num')))),
+	            'h_pocn' => strtolower(addslashes(trim(I('post.user_pocn')))),
+	            'email' => strtolower(addslashes(trim(I('post.user_email')))),
+	            'password' => strtolower(addslashes(trim(I('post.user_password')))),
+	            'mobile' => addslashes(trim(I('post.user_mobile'))),
 	        );
-	        $pwd_confirm = strtolower(trim(I('post.user_password_confirmed')));
+	        $pwd_confirm = strtolower(addslashes(trim(I('post.user_password_confirmed'))));
 	        //实例化Users对象
  	        $users = D('Users');
 // 	        $data = $users->create();
-	        foreach ($data as $key => $value){
-	            $data[$key] = strtolower(trim($value));
-	        }
+// 	        foreach ($data as $key => $value){
+// 	            $data[$key] = strtolower(trim($value));
+// 	        }
 	        //当用户信息为空时，返回错误信息（需前端配合过滤）
 	        if (empty($data['nick_name']) || empty($data['true_name']) || empty($data['password']) || empty($pwd_confirm) || empty($data['h_pocn']) || empty($data['mobile']) || empty($data['email']) || empty($data['id_card_num'])){
 	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Users/add'), 'sec' => 3),'info' => '业主信息不能为空！','code' => '-201A');
@@ -294,7 +294,7 @@ class UsersController extends CommonController {
     	    $edit_type = I('post.edit_type');
     	    $id = I('post.user_id');
     	    if ($edit_type == 'edit_icon'){
-    	        $icon_url = strtolower(trim(I('post.icon_url')));
+    	        $icon_url = strtolower(addslashes(trim(I('post.icon_url'))));
     	        $data = array(
     	            'icon_url' => $icon_url,
     	            'id' => $id
@@ -312,9 +312,9 @@ class UsersController extends CommonController {
 //     	        );
 //     	        D('users')->save($data);	        
     	    }elseif ($edit_type == 'edit_password'){
-    	        $old_password = strtolower(trim(I('post.old_password')));
-    	        $new_password = strtolower(trim(I('post.new_password')));
-    	        $confirm_password = strtolower(trim(I('post.confirm_password')));
+    	        $old_password = strtolower(addslashes(trim(I('post.old_password'))));
+    	        $new_password = strtolower(addslashes(trim(I('post.new_password'))));
+    	        $confirm_password = strtolower(addslashes(trim(I('post.confirm_password'))));
     	        //获取当前用户密码
     	        $row = D('users')->field('password,id_card_num')->where("id = '{$id}'")->select();
     	        //判断错误
@@ -335,7 +335,7 @@ class UsersController extends CommonController {
     	            }
     	        }
     	    }elseif ($edit_type == 'edit_mobile'){
-    	        $mobile = strtolower(trim(I('post.mobile')));
+    	        $mobile = strtolower(addslashes(trim(I('post.mobile'))));
     	        
     	        if (D('users')->field('id')->where("mobile = '{$mobile}'")->select()){
     	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Users/edit'), 'sec' => 3),'info' => urlencode('手机号已存在！'),'code' => '-202C');
@@ -348,7 +348,7 @@ class UsersController extends CommonController {
     	        );
     	        $status = D('users')->save($data);	        
     	    }elseif ($edit_type == 'edit_email'){
-    	        $email = strtolower(trim(I('post.email')));
+    	        $email = strtolower(addslashes(trim(I('post.email'))));
     	        
     	        if (D('users')->field('id')->where("email = '{$email}'")->select()){
     	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Users/edit'), 'sec' => 3),'info' => urlencode('邮箱已存在！'),'code' => '-202D');
@@ -360,13 +360,13 @@ class UsersController extends CommonController {
     	        );
     	        $status = D('users')->save($data);	        
     	    }elseif ($edit_type == 'edit_all'){
-    	        $icon_url = strtolower(trim(I('post.icon_url')));
-    	        $nick_name = strtolower(trim(I('post.nick_name')));
-    	        $old_password = strtolower(trim(I('post.old_password')));
-    	        $new_password = strtolower(trim(I('post.new_password')));
-    	        $confirm_password = strtolower(trim(I('post.confirm_password')));
-    	        $mobile = trim(I('post.mobile'));
-    	        $email = strtolower(trim(I('post.email')));
+    	        $icon_url = strtolower(addslashes(trim(I('post.icon_url'))));
+    	        $nick_name = strtolower(addslashes(trim(I('post.nick_name'))));
+    	        $old_password = strtolower(addslashes(trim(I('post.old_password'))));
+    	        $new_password = strtolower(addslashes(trim(I('post.new_password'))));
+    	        $confirm_password = strtolower(addslashes(trim(I('post.confirm_password'))));
+    	        $mobile = addslashes(trim(I('post.mobile')));
+    	        $email = strtolower(addslashes(trim(I('post.email'))));
     	        
     	        //当用户信息为空时，返回错误信息（需前端配合过滤）
     	        if (empty($icon_url) || empty($nick_name) || empty($old_password) || empty($new_password) || empty($confirm_password) || empty($mobile) || empty($email)){

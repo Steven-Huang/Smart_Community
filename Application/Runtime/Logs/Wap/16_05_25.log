@@ -1,0 +1,47 @@
+[ 2016-05-25T09:04:39+08:00 ] ::1 /smart_community/wap.php/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000299s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000410s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000518s ]
+NOTIC: [2048] Declaration of Wap\Controller\IndexController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Wap/Controller/IndexController.class.php 第 5 行.
+
+[ 2016-05-25T09:04:54+08:00 ] ::1 /smart_community/wap.php/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000344s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000347s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000473s ]
+NOTIC: [2048] Declaration of Wap\Controller\IndexController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Wap/Controller/IndexController.class.php 第 5 行.
+
+[ 2016-05-25T09:04:57+08:00 ] ::1 /smart_community/wap.php/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000408s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000310s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000392s ]
+NOTIC: [2048] Declaration of Wap\Controller\IndexController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Wap/Controller/IndexController.class.php 第 5 行.
+
+[ 2016-05-25T09:05:55+08:00 ] ::1 /smart_community/wap.php/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000315s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000317s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000410s ]
+NOTIC: [2048] Declaration of Wap\Controller\PublicController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Wap/Controller/PublicController.class.php 第 252 行.
+ERR: 模板不存在:./Application/Wap/View/Public/login.html
+
+[ 2016-05-25T09:06:34+08:00 ] ::1 /smart_community/wap.php/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000291s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000319s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000405s ]
+NOTIC: [2048] Declaration of Wap\Controller\PublicController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /wwwroot/Smart_Community/Application/Wap/Controller/PublicController.class.php 第 252 行.
+ERR: 模板不存在:./Application/Wap/View/Public/login.html
+

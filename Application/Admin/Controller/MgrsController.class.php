@@ -90,21 +90,21 @@ class MgrsController extends CommonController {
 		        exit(urldecode(json_encode($output)));
 		    }
 	        $data = array(
-	            'nick_name' => strtolower(trim(I('post.mgrs_nick_name'))),
-	            'true_name' => strtolower(trim(I('post.mgrs_true_name'))),
+	            'nick_name' => strtolower(addslashes(trim(I('post.mgrs_nick_name')))),
+	            'true_name' => strtolower(addslashes(trim(I('post.mgrs_true_name')))),
 	            'gender' => trim(I('post.mgrs_gender')),
-	            'id_card_num' => strtolower(trim(I('post.mgrs_id_card_num'))),
-	            'email' => strtolower(trim(I('post.mgrs_email'))),
-	            'password' => strtolower(trim(I('post.mgrs_password'))),
-	            'mobile' => trim(I('post.mgrs_mobile')),
+	            'id_card_num' => strtolower(addslashes(trim(I('post.mgrs_id_card_num')))),
+	            'email' => strtolower(addslashes(trim(I('post.mgrs_email')))),
+	            'password' => strtolower(addslashes(trim(I('post.mgrs_password')))),
+	            'mobile' => addslashes(trim(I('post.mgrs_mobile'))),
 	        );
-	        $pwd_confirm = strtolower(trim(I('post.mgrs_password_confirmed')));
+	        $pwd_confirm = strtolower(addslashes(trim(I('post.mgrs_password_confirmed'))));
 	        //实例化Users对象
  	        $users = D('Mgrs');
 // 			$data = $users->create();
-			foreach ($data as $key => $value){
-			    $data[$key] = strtolower(trim($value));
-			}
+// 			foreach ($data as $key => $value){
+// 			    $data[$key] = strtolower(trim($value));
+// 			}
 			//当用户信息为空时，返回错误信息（需前端配合过滤）
 			if (empty($data['nick_name']) || empty($data['true_name']) || empty($data['password']) || empty($pwd_confirm) || empty($data['mobile']) || empty($data['email']) || empty($data['id_card_num'])){
 		        $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Mgrs/add'), 'sec' => 3),'info' => urlencode('物业人员信息不能为空！'),'code' => '-201A');
@@ -317,9 +317,9 @@ class MgrsController extends CommonController {
 //     	        D('mgrs')->save($data);	        
     	    }elseif ($edit_type == 'edit_password'){
     	        $id = I('post.user_id');
-    	    	$old_password = strtolower(trim(I('post.old_password')));
-    	        $new_password = strtolower(trim(I('post.new_password')));
-    	        $confirm_password = strtolower(trim(I('post.confirm_password')));
+    	    	$old_password = strtolower(addslashes(trim(I('post.old_password'))));
+    	        $new_password = strtolower(addslashes(trim(I('post.new_password'))));
+    	        $confirm_password = strtolower(addslashes(trim(I('post.confirm_password'))));
     	        //获取当前用户密码
     	        $row = D('mgrs')->field('password,id_card_num')->where("id = '{$id}'")->select();
     	        //判断错误
@@ -341,7 +341,7 @@ class MgrsController extends CommonController {
     	        }
     	    }elseif ($edit_type == 'edit_mobile'){
     	        $id = I('post.user_id');
-    	        $mobile = strtolower(trim(I('post.mobile')));
+    	        $mobile = strtolower(addslashes(trim(I('post.mobile'))));
     	        if (D('mgrs')->field('id')->where("mobile = '{$mobile}'")->select()){
     	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Mgrs/edit'), 'sec' => 3),'info' => urlencode('手机号已存在！'),'code' => '-202C');
     	            exit(urldecode(json_encode($output)));
@@ -353,7 +353,7 @@ class MgrsController extends CommonController {
     	        $status = D('mgrs')->save($data);	        
     	    }elseif ($edit_type == 'edit_email'){
     	        $id = I('post.user_id');
-    	        $email = strtolower(trim(I('post.email')));
+    	        $email = strtolower(addslashes(trim(I('post.email'))));
     	        if (D('mgrs')->field('id')->where("email = '{$email}'")->select()){
     	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Mgrs/edit'), 'sec' => 3),'info' => urlencode('邮箱已存在！'),'code' => '-202D');
     	            exit(urldecode(json_encode($output)));
@@ -364,14 +364,14 @@ class MgrsController extends CommonController {
     	        );
     	        $status = D('mgrs')->save($data);	        
     	    }elseif ($edit_type == 'edit_all'){
-    	        $id = strtolower(trim(I('post.user_id')));
-    	        $icon_url = strtolower(trim(I('post.icon_url')));
-    	        $nick_name = strtolower(trim(I('post.nick_name')));
-    	        $old_password = MD5(strtolower(trim(I('post.old_password'))));
-    	        $new_password = MD5(strtolower(trim(I('post.new_password'))));
-    	        $confirm_password = MD5(strtolower(trim(I('post.confirm_password'))));
-    	        $mobile = trim(I('post.mobile'));
-    	        $email = strtolower(trim(I('post.email')));
+    	        $id = strtolower(addslashes(trim(I('post.user_id'))));
+    	        $icon_url = strtolower(addslashes(trim(I('post.icon_url'))));
+    	        $nick_name = strtolower(addslashes(trim(I('post.nick_name'))));
+    	        $old_password = MD5(strtolower(addslashes(trim(I('post.old_password')))));
+    	        $new_password = MD5(strtolower(addslashes(trim(I('post.new_password')))));
+    	        $confirm_password = MD5(strtolower(addslashes(trim(I('post.confirm_password')))));
+    	        $mobile = addslashes(trim(I('post.mobile')));
+    	        $email = strtolower(addslashes(trim(I('post.email'))));
     	        
     	        //当用户信息为空时，返回错误信息（需前端配合过滤）
     	        if (empty($icon_url) || empty($nick_name) || empty($old_password) || empty($new_password) || empty($confirm_password) || empty($mobile) || empty($email)){

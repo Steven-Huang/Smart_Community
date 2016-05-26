@@ -33,11 +33,21 @@ class FeedbackController extends CommonController
     }
 
     /**
-     * 通知反馈信息列表页面
+     * 待处理通知反馈信息列表页面
      *
      * @author Steven.Huang <87144734@qq.com>
      */
-    public function index()
+    public function toHandle()
+    {
+        $this->display();
+    }
+
+    /**
+     * 已处理通知反馈信息列表页面
+     *
+     * @author Steven.Huang <87144734@qq.com>
+     */
+    public function handled()
     {
         $this->display();
     }
@@ -64,7 +74,7 @@ class FeedbackController extends CommonController
                 exit(urldecode(json_encode($output)));
             }
             // 获取反馈类型
-            $type = (int) I('post.type') ? (int) I('post.type') : 0;
+            $cid = I('post.cid') ? I('post.cid') : 0;
             // 获取状态（0，待处理；1，已处理）
             $status = I('post.status');
             // 获取每页展示行数
@@ -75,11 +85,14 @@ class FeedbackController extends CommonController
             // 导入分页类
             import('ORG.Util.Page');
             
-            if (! $type) {
+            if ($cid) {
                 // 当指定分类时
+                // 实例化模型Category
+                $Category = M('Category');
+                
                 // 获取总记录数
                 $count = $Feedback->where(array(
-                    'type' => $type,
+                    'cid' => $cid,
                     'status' => $status
                 ))->count();
                 // 实例化分类页
@@ -87,9 +100,10 @@ class FeedbackController extends CommonController
                 // 调用show显示分页链接
                 $show = $Page->show();
                 // 实现数据分页
-                $data = $Feedback->field('id,to_who,type,content,materials,from_who,mobile,create_time,create_id,status,results,operate_id,operate_time')
+                $data = $Feedback->field('a.id,a.to_who,a.cid,a.title,a.from_who,a.mobile,a.create_time,a.create_id,a.status,a.operate_id,a.operate_time,b.aname')
+                    ->join('as a join sc_category as b on a.cid = b.acid')
                     ->where(array(
-                    'type' => $type,
+                    'cid' => $cid,
                     'status' => $status
                 ))
                     ->limit($Page->firstRow, $Page->listRows)
@@ -106,13 +120,19 @@ class FeedbackController extends CommonController
                 // 调用show显示分页链接
                 $show = $Page->show();
                 // 实现数据分页
-                $data = $Feedback->field('id,to_who,type,content,materials,from_who,mobile,create_time,create_id,status,results,operate_id,operate_time')
+                $data = $Feedback->field('a.id,a.to_who,a.cid,a.title,a.from_who,a.mobile,a.create_time,a.create_id,a.status,a.operate_id,a.operate_time,b.aname')
+                    ->join('as a join sc_category as b on a.cid = b.acid')
                     ->where(array(
                     'status' => $status
                 ))
                     ->limit($Page->firstRow, $Page->listRows)
                     ->order('id desc')
                     ->select();
+            }
+            
+            // 对内容进行编码
+            foreach ($data[0] as $key => $value) {
+                $data[0][$key] = stripslashes($value);
             }
             
             $output = array(
@@ -139,7 +159,27 @@ class FeedbackController extends CommonController
     }
 
     /**
-     * 指定ID号反馈的信息 [面向APP的API接口，AJAX post请求]
+     * 待处理反馈信息详情页面
+     *
+     * @author Steven.Huang <87144734@qq.com>
+     */
+    public function detail1()
+    {
+        $this->display();
+    }
+    
+    /**
+     * 已处理反馈信息详情页面
+     *
+     * @author Steven.Huang <87144734@qq.com>
+     */
+    public function detail2()
+    {
+        $this->display();
+    }
+    
+    /**
+     * 指定ID号的反馈信息 [面向APP的API接口，AJAX post请求]
      *
      * @author Steven.Huang <87144734@qq.com>
      */
@@ -164,9 +204,14 @@ class FeedbackController extends CommonController
             $Feedback = M('Feedback');
             $item = $Feedback->find($id);
             
+            // 对内容进行编码
+            foreach ($item as $key => $value) {
+                $item[$key] = stripslashes(trim($value));
+            }
+            
             $output = array(
                 'data' => $item,
-                'info' => urlencode('指定ID号反馈的信息！'),
+                'info' => urlencode('指定ID号的反馈信息！'),
                 'code' => 200
             );
             exit(urldecode(json_encode($output)));
@@ -211,15 +256,27 @@ class FeedbackController extends CommonController
             
             $data = array(
                 'id' => $id,
-                'results' => $result,
-                'status' => 1, //状态变成已处理
+                'results' => htmlspecialchars($result),
+                'status' => 1, // 状态变成已处理
                 'operate_time' => date('Y-m-d h:i:s', time()),
-                'operate_id' => $_SESSION['user_id']
+                'operate_id' => $_SESSION['user_id'] 
             );
+            
+            if (empty($data['results'])){
+                $output = array(
+                    'data' => array(
+                        'redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Repair/toHandle'),
+                        'sec' => 3
+                    ),
+                    'info' => urlencode('处理结果不能为空！'),
+                    'code' => -201
+                );
+                exit(urldecode(json_encode($output)));
+            }
             
             $res = M('Feedback')->save($data);
             
-            if ($res){
+            if ($res) {
                 $output = array(
                     'data' => array(
                         'redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Feedback/index'),
@@ -239,7 +296,7 @@ class FeedbackController extends CommonController
                     'code' => - 200
                 );
                 exit(urldecode(json_encode($output)));
-            }   
+            }
         } else {
             $output = array(
                 'data' => array(

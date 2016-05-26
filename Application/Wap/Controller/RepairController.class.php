@@ -66,7 +66,7 @@ class RepairController extends CommonController
             // 获取用户ID
             $create_id = $_SESSION['user_id'];
             // 获取反馈分类ID
-            $acid = (int) I('post.acid') ? (int) I('post.acid') : '';
+            $cid = (int) I('post.cid') ? (int) I('post.cid') : '';
             // 获取状态（0，待处理；1，已处理）
             $status = I('post.status');
             // 获取每页展示行数
@@ -77,13 +77,13 @@ class RepairController extends CommonController
             // 获取当前分类名字
             $Current_cat_name = $Category->field('aname')
                 ->where(array(
-                'acid' => $acid
+                'acid' => $cid
             ))
                 ->find();
             // 获取当前分类的子分类
             $Child_cat_name = $Category->field('acid,aname')
                 ->where(array(
-                'fcid' => $acid
+                'fcid' => $cid
             ))
                 ->select();
             
@@ -102,13 +102,9 @@ class RepairController extends CommonController
             $Page = new \Think\Page($count, $count);
             // 调用show显示分页链接
             $show = $Page->show();
-            if ($Current_cat_name['aname'] == '私人住宅') {
-                $field = 'id,acid,create_time,create_id,pri_items,details,pic,status,results,operate_id,operate_time';
-            } elseif ($Current_cat_name['aname'] == '公共设施') {
-                $field = 'id,acid,create_time,create_id,pub_items,details,pic,status,results,operate_id,operate_time';
-            }
+
             // 实现数据分页
-            $data = $Repair->field($field)
+            $data = $Repair->field('id,cid,create_time,create_id,title,status,operate_id,operate_time')
                 ->where(array(
                 'create_id' => $create_id,
                 'status' => $status
@@ -117,13 +113,18 @@ class RepairController extends CommonController
                 ->order('id desc')
                 ->select();
             
+            // 对内容进行编码
+            foreach ($data[0] as $key => $value) {
+                $data[0][$key] = stripslashes($value);
+            }
+            
             $output = array(
                 'data' => array(
                     'data' => $data,
                     'count' => $count,
                     'page' => urlencode($show),
-                    'Category_name' => $Current_cat_name,
-                    'Child_cat_name' => $Child_cat_name
+                    'category_name' => $Current_cat_name,
+                    'child_cat_name' => $Child_cat_name
                 ),
                 'info' => urlencode('维修信息列表！'),
                 'code' => 200
@@ -168,6 +169,11 @@ class RepairController extends CommonController
             $Repair = M('Repair');
             $item = $Repair->find($id);
             
+            // 对内容进行编码
+            foreach ($item as $key => $value) {
+                $item[$key] = stripslashes($value);
+            }
+            
             $output = array(
                 'data' => $item,
                 'info' => urlencode('指定ID号的维修信息！'),
@@ -203,9 +209,9 @@ class RepairController extends CommonController
                 'cname'
             ));
             
-            //获取当前分类ID
+            // 获取当前分类ID
             $cid = I('get.cid');
-            $clist = $cat->getList(NULL,$cid,NULL); // 获取分类结构,只显示当前分类的子分类
+            $clist = $cat->getList(NULL, $cid, NULL); // 获取分类结构,只显示当前分类的子分类
             $this->assign('clist', $clist);
             $this->display();
         } else {
@@ -243,46 +249,29 @@ class RepairController extends CommonController
                 exit(urldecode(json_encode($output)));
             }
             
-            $from_who = I('post.from_who');
-            $mobile = trim(I('post.mobile'));
-            // 获取反馈类型(1->私人住宅,2->公共设施)
-            $type = I('post.type');
+            $from_who = addslashes(trim(I('post.from_who')));
+            $mobile = addslashes(trim(I('post.mobile')));
+           
             if (empty($mobile)) {
                 // 如果用户没有填写手机，则默认当前用户手机
                 $mobile2 = M('Users')->field('mobile')->find();
             }
-            if ($type == '1') {
-                // 获取文章信息
-                $data = array(
-                    // 如果用户没有填写名字，则默认当前用户名
-                    'from_who' => isset($from_who) ? $from_who : $_SESSION['nick_name'],
-                    'mobile' => isset($mobile) ? $mobile : $mobile2['mobile'],
-                    'create_time' => date('Y-m-d h:i:s', time()),
-                    'create_id' => $_SESSION['user_id'],
-                    'pri_items' => I('post.pri_items'),
-                    'pub_items' => '',
-                    'details' => I('post.details'),
-                    'pic' => I('post.pic'),
-                    'status' => 0
-                );
-            } elseif ($type == '2') {
-                // 获取文章信息
-                $data = array(
-                    // 如果用户没有填写名字，则默认当前用户名
-                    'from_who' => isset($from_who) ? $from_who : $_SESSION['nick_name'],
-                    'mobile' => isset($mobile) ? $mobile : $mobile2['mobile'],
-                    'create_time' => date('Y-m-d h:i:s', time()),
-                    'create_id' => $_SESSION['user_id'],
-                    'pri_items' => '',
-                    'pub_items' => I('post.pub_items'),
-                    'details' => I('post.details'),
-                    'pic' => I('post.pic'),
-                    'status' => 0
-                );
-            }
+            
+            $data = array(
+                'cid' => I('post.cid'),// 获取反馈类型(私人住宅/公共设施)
+                // 如果用户没有填写名字，则默认当前用户名
+                'from_who' => isset($from_who) ? $from_who : $_SESSION['nick_name'],
+                'mobile' => isset($mobile) ? $mobile : $mobile2['mobile'],
+                'create_time' => date('Y-m-d h:i:s', time()),
+                'create_id' => $_SESSION['user_id'],
+                'title' => addslashes(I('post.title')),
+                'content' => htmlspecialchars(I('post.content')),
+                'materials' => addslashes(I('post.materials')),
+                'status' => 0
+            );
             
             // 当信息为空时，返回错误信息（需前端配合过滤）
-            if (empty($data['to_who']) || empty($data['details'])) {
+            if (empty($data['to_who']) || empty($data['title']) || empty($data['content'])) {
                 $output = array(
                     'data' => array(
                         'redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Repair/add'),
@@ -294,7 +283,7 @@ class RepairController extends CommonController
                 exit(urldecode(json_encode($output)));
             }
             // 判断用户是否选择分类
-            if ($data['type'] == '-1' || $data['pri_items'] == '-1' || $data['pub_items'] == '-1') {
+            if ($data['cid'] == '-1') {
                 $output = array(
                     'data' => array(
                         'redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Repair/add'),

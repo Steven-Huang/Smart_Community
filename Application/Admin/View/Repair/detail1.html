@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- Meta, title, CSS, favicons, etc. -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JoyRill智慧社区后台</title>
+<!-- Public core css/js -->
+<include file="Public/public_head" />
+<script type="text/javascript"
+	src="__PUBLIC__/admin/ueditor/ueditor.config.js"></script>
+<script type="text/javascript"
+	src="__PUBLIC__/admin/ueditor/ueditor.all.js"></script>
+</head>
+<body class="nav-md">
+	<include file="Public/menu" />
+	<include file="Public/top" />
+	<!-- page content -->
+	<div class="right_col" role="main">
+		<div class="col-lg-10 col-md-10 col-xs-12"
+			style="background-color: #FFF;">
+			<!-- begin tab -->
+			<ul class="nav nav-tabs ">
+				<li class="active"><a href=""><b>待处理维修信息详情</b></a></li>
+			</ul>
+			<p></p>
+			<form class="form-horizontal" role="form"
+					enctype="multipart/form-data">
+			<div class="row">
+				<div class="col-lg-2 col-md-2 col-xs-2"></div>
+				<div class="col-lg-6 col-md-6 col-xs-6">
+					<span class="help-block"></span>
+				</div>
+				<div class="col-lg-4 col-md-4 col-xs-4"></div>
+			</div>
+			<p></p>
+				<input type="hidden" id="id"
+					value="<?php echo $_GET['id']?>">
+				<div class="form-group">
+					<label for="title" class="col-sm-2 control-label">标题</label>
+					<div class="col-sm-6">
+						<input type="text" class="form-control" id="title"
+							name="title" value="{$item['title']}" maxlength="150"
+							readonly>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="type" class="col-sm-2 control-label">类别</label>
+					<div class="col-sm-3">
+						<input type="text" class="form-control" id="type"
+							name="type" value="{$item['cid']}" maxlength="20"
+							readonly>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="from_who" class="col-sm-2 control-label">来自</label>
+					<div class="col-sm-3">
+						<input type="text" class="form-control" id="from_who"
+							name="from_who" value="{$item['from_who']}" maxlength="20"
+							readonly>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="mobile" class="col-sm-2 control-label">手机</label>
+					<div class="col-sm-3">
+						<input type="text" class="form-control" id="mobile"
+							name="mobile" value="{$item['mobile']}" maxlength="20"
+							readonly>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="create_time" class="col-sm-2 control-label">创建时间</label>
+					<div class="col-sm-3">
+						<input type="text" class="form-control" id="create_time"
+							name="create_time" value="{$item['create_time']}" readonly>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="content" class="col-sm-2 control-label">内容</label>
+					<div class="col-sm-8">
+						<script id="content" name="content"
+							type="text/plain">{$item.content|htmlspecialchars_decode}</script>
+						<script type="text/javascript">
+							//设置只读
+							var editor = new UE.ui.Editor({
+								readonly : true,
+							});
+							editor.render('content');
+						</script>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="materials" class="col-sm-2 control-label">图片</label>
+					<div class="col-sm-3">
+						<img alt="图片1" src="" width="100" height="50">
+						<img alt="图片2" src="" width="100" height="50">
+						<img alt="图片3" src="" width="100" height="50">
+					</div>
+				</div>
+				<div class="ln_solid"></div>
+			</form>		
+			<form class="form-horizontal" role="form"
+					enctype="multipart/form-data">
+				<div class="form-group">
+					<label for="results" class="col-sm-2 control-label">处理结果</label>
+					<div class="col-sm-6">
+						<textarea class="form-control" rows="3" id="results"
+							placeholder="" maxlength="150">{$item['des']}</textarea>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3">
+						<a href="javascript:;" id="handle" class="btn btn-success"><li class="fa fa-check"></li> 保存处理结果</a>
+					</div>
+				</div>
+			</form>
+		</div>
+		<!-- col end -->
+	</div>
+	<!-- /page content -->
+
+	<include file="Public/footer" />
+	<include file="Public/public_bottom" />
+	<!-- Tags -->
+	<!-- 	<script src="__PUBLIC__/admin/js/tags/jquery.tagsinput.min.js"></script> -->
+	<script>
+		//input tags
+		/* 		function onAddTag(tag) {
+		 alert("Added a tag: " + tag);
+		 }
+
+		 function onRemoveTag(tag) {
+		 alert("Removed a tag: " + tag);
+		 }
+
+		 function onChangeTag(input, tag) {
+		 alert("Changed a tag: " + tag);
+		 }
+
+		 $(function() {
+		 $('#article_keyword').tagsInput({
+		 width : 'auto'
+		 });
+		 }); */
+		 
+		//保存处理结果
+		$('body').on(
+				'click',
+				'#handle',
+				function() {
+					$.ajax({
+						type : "post",
+						url : "__CONTROLLER__/handle",
+						data : {
+							'access_token' : getCookie('access_token'),
+							'id' : $('#id').val(),
+							'results' : $('#results').val()
+						},
+						dataType : "json",
+						success : function(data) {
+							if (data['code'] == '200' || data['code'] == '-200'
+									|| data['code'] == '-205'
+									|| data['code'] == '-206' || data['code'] == '-207' || data['code'] == '-208') {
+								alert(data['info']);
+								location.href = 'http://'
+										+ data['data']['redirect_url'];
+							}
+							if(data['code'] == '-201'){
+								alert(data['info']);
+							}
+						},
+						error : function(xhr, type, errorThrown) {
+							//异常处理
+							console.log(type);
+						}
+					});
+				})
+	</script>
+
+	<!-- END CORE PLUGINS -->
+
+	<!-- END JAVASCRIPTS -->
+</body>
+<!-- END BODY -->
+</html>

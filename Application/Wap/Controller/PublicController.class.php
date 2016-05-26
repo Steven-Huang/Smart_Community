@@ -49,8 +49,8 @@ class PublicController extends Controller
     {
         if (IS_POST) {
             // 接收数据
-            $username = strtolower(trim(I('post.username')));
-            $password = strtolower(trim(I('post.password')));
+            $username = strtolower(addslashes(trim(I('post.username'))));
+            $password = strtolower(addslashes(trim(I('post.password'))));
             $code = trim(I('post.code'));
             // 不同的角色：U(业主) / M(物业) / A(管理员)
             $role = I('post.role');

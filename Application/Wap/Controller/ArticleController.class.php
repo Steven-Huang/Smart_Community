@@ -110,6 +110,11 @@ class ArticleController extends CommonController
                     ->select();
             }
             
+            // 对内容进行编码
+            foreach ($data[0] as $key => $value) {
+                $data[0][$key] = stripslashes($value);
+            }
+            
             $output = array(
                 'data' => array(
                     'data' => $data,
@@ -209,6 +214,11 @@ class ArticleController extends CommonController
             $id = I('post.id');
             $Article = M('Article');
             $item = $Article->find($id);
+            
+            // 对内容进行编码
+            foreach ($item as $key => $value) {
+                $item[$key] = stripslashes(trim($value));
+            }
             
             $output = array(
                 'data' => $item,

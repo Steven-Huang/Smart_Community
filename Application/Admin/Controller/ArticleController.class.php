@@ -122,6 +122,11 @@ class ArticleController extends CommonController
                     ->select();
             }
             
+            // 对内容进行编码
+            foreach ($data[0] as $key => $value) {
+                $data[0][$key] = stripslashes($value);
+            }
+            
             $output = array(
                 'data' => array(
                     'data' => $data,
@@ -157,6 +162,11 @@ class ArticleController extends CommonController
             $id = I('get.id');
             $Article = M('Article');
             $item = $Article->find($id);
+            
+            // 对内容进行编码
+            foreach ($item as $key => $value) {
+                $item[$key] = stripslashes($value);
+            }
             
             import("ORG.Util.Category");
             $cat = new \Think\Category('Category', array(
@@ -196,6 +206,11 @@ class ArticleController extends CommonController
             $id = I('get.id');
             $Article = M('Article');
             $item = $Article->find($id);
+            
+            // 对内容进行编码
+            foreach ($item as $key => $value) {
+                $item[$key] = stripslashes($value);
+            }
             
             import("ORG.Util.Category");
             $cat = new \Think\Category('Category', array(
@@ -282,18 +297,17 @@ class ArticleController extends CommonController
             // 获取文章信息
             $data = array(
                 'acid' => I('post.category_id'),
-                'sort' => I('post.article_sort') ? I('post.article_sort') : 0,
-                'atitle' => trim(I('post.article_title')),
-                'keyword' => trim(I('post.article_keyword')),
-                'source' => trim(I('post.article_source')),
-                'valid_time' => trim(I('post.article_valid_time')),
-                'author' => trim(I('post.article_author')),
-                'des' => trim(I('post.article_des')),
-                'content' => htmlspecialchars(stripslashes(I('post.article_content'))),
+                'atitle' => addslashes(trim(I('post.article_title'))),
+                'keyword' => addslashes(trim(I('post.article_keyword'))),
+                'source' => addslashes(trim(I('post.article_source'))),
+                'author' => addslashes(trim(I('post.article_author'))),
+                'des' => addslashes(trim(I('post.article_des'))),
+                'content' => htmlspecialchars(I('post.article_content')),
+                'valid_time' => I('post.article_valid_time'),
+                'create_id' => $_SESSION['user_id'],
                 'status' => 0, // 需审核才可以正式发布
-                'create_id' => $_SESSION['user_id']
+                'sort' => I('post.article_sort') ? I('post.article_sort') : 0,
             );
-            
             // 当信息为空时，返回错误信息（需前端配合过滤）
             if (empty($data['acid']) || empty($data['atitle']) || empty($data['keyword']) || empty($data['source']) || empty($data['valid_time']) || empty($data['author']) || empty($data['des']) || empty($data['content'])) {
                 $output = array(
@@ -318,12 +332,10 @@ class ArticleController extends CommonController
                 );
                 exit(urldecode(json_encode($output)));
             }
-            
-            // 对内容进行编码
-            foreach ($data as $key => $value) {
-                $data[$key] = urlencode(trim($value));
-            }
-            
+//             // 对内容进行编码
+//             foreach ($data as $key => $value) {
+//                 $data[$key] = urlencode(trim($value));
+//             }
             $Article = D('Article');
             
             $res = $Article->create($data);
@@ -342,7 +354,7 @@ class ArticleController extends CommonController
                 if ($result) {
                     $output = array(
                         'data' => array(
-                            'redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Article/add'),
+                            'redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Article/add/cid/1'),
                             'sec' => 2
                         ),
                         'info' => urlencode('添加文章成功！'),
@@ -352,7 +364,7 @@ class ArticleController extends CommonController
                 } else {
                     $output = array(
                         'data' => array(
-                            'redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Article/add'),
+                            'redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Article/add/cid/1'),
                             'sec' => 3
                         ),
                         'info' => urlencode('添加文章失败！请重新再试！'),
@@ -400,6 +412,11 @@ class ArticleController extends CommonController
             $Article = M('Article');
             $item = $Article->find($id);
             
+            // 对内容进行编码
+            foreach ($item as $key => $value) {
+                $item[$key] = stripslashes($value);
+            }
+            
             $output = array(
                 'data' => $item,
                 'info' => urlencode('指定ID号文章的信息！'),
@@ -430,6 +447,11 @@ class ArticleController extends CommonController
             $id = I('get.id');
             $Article = M('Article');
             $item = $Article->find($id);
+                
+            // 对内容进行编码
+            foreach ($item as $key => $value) {
+                $item[$key] = stripslashes($value);
+            }
             
             import("ORG.Util.Category");
             $cat = new \Think\Category('Category', array(
@@ -484,18 +506,19 @@ class ArticleController extends CommonController
             $data = array(
                 'aid' => I('post.article_id'),
                 'acid' => I('post.category_id'),
-                'sort' => I('post.article_sort'),
-                'atitle' => trim(I('post.article_title')),
-                'keyword' => trim(I('post.article_keyword')),
-                'source' => trim(I('post.article_source')),
-                'valid_time' => trim(I('post.article_valid_time')),
-                'author' => trim(I('post.article_author')),
-                'des' => trim(I('post.article_des')),
-                'content' => htmlspecialchars(stripslashes(I('post.article_content'))),
+                'atitle' => addslashes(trim(I('post.article_title'))),
+                'keyword' => addslashes(trim(I('post.article_keyword'))),
+                'source' => addslashes(trim(I('post.article_source'))),
+                'author' => addslashes(trim(I('post.article_author'))),
+                'des' => addslashes(trim(I('post.article_des'))),
+                'content' => htmlspecialchars(I('post.article_content')),
+                'valid_time' => I('post.article_valid_time'),
+                'status' => 0, // 需审核才可以正式发布
                 'operate_time' => date('Y-m-d h:i:s', time()),
-                'operate_id' => $_SESSION['user_id']
+                'operate_id' => $_SESSION['user_id'],
+                'sort' => I('post.article_sort') ? I('post.article_sort') : 0
             );
-            
+
             // 当信息为空时，返回错误信息（需前端配合过滤）
             if (empty($data['aid']) || empty($data['acid']) || empty($data['atitle']) || empty($data['keyword']) || empty($data['source']) || empty($data['valid_time']) || empty($data['author']) || empty($data['des']) || empty($data['content'])) {
                 $output = array(
@@ -521,10 +544,10 @@ class ArticleController extends CommonController
                 exit(urldecode(json_encode($output)));
             }
             
-            // 对内容进行编码
-            foreach ($data as $key => $value) {
-                $data[$key] = urlencode(trim($value));
-            }
+//             // 对内容进行编码
+//             foreach ($data as $key => $value) {
+//                 $data[$key] = urlencode(trim($value));
+//             }
             
             $Article = D('Article');
             

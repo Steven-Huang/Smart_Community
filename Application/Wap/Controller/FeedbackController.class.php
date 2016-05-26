@@ -86,7 +86,7 @@ class FeedbackController extends CommonController
             // 调用show显示分页链接
             $show = $Page->show();
             // 实现数据分页
-            $data = $Feedback->field('id,to_who,type,content,materials,from_who,mobile,create_time,create_id,status,results,operate_id,operate_time')
+            $data = $Feedback->field('id,to_who,cid,title,from_who,mobile,create_time,create_id,status,operate_id,operate_time')
                 ->where(array(
                 'create_id' => $create_id,
                 'status' => $status
@@ -94,6 +94,11 @@ class FeedbackController extends CommonController
                 ->limit($Page->firstRow, $Page->listRows)
                 ->order('id desc')
                 ->select();
+            
+            // 对内容进行编码
+            foreach ($data[0] as $key => $value) {
+                $data[0][$key] = stripslashes($value);
+            }
             
             $output = array(
                 'data' => array(
@@ -143,6 +148,11 @@ class FeedbackController extends CommonController
             $id = I('post.id');
             $Feedback = M('Feedback');
             $item = $Feedback->find($id);
+            
+            // 对内容进行编码
+            foreach ($item as $key => $value) {
+                $item[$key] = stripslashes($value);
+            }
             
             $output = array(
                 'data' => $item,
@@ -219,8 +229,8 @@ class FeedbackController extends CommonController
                 exit(urldecode(json_encode($output)));
             }
             
-            $from_who = I('post.from_who');
-            $mobile = trim(I('post.mobile'));
+            $from_who = addslashes(I('post.from_who'));
+            $mobile = addslashes(trim(I('post.mobile')));
             
             if (empty($mobile)) {
                 // 如果用户没有填写手机，则默认当前用户手机
@@ -229,10 +239,11 @@ class FeedbackController extends CommonController
             
             // 获取文章信息
             $data = array(
-                'to_who' => I('post.to_who'),
-                'type' => I('post.type'),
+                'to_who' => addslashes(I('post.to_who')),
+                'cid' => I('post.cid'),
+                'title' => addslashes(I('post.title')),
                 'content' => htmlspecialchars(stripslashes(I('post.article_content'))),
-                'materials' => trim(I('post.materials')),
+                'materials' => addslashes(trim(I('post.materials'))),
                 // 如果用户没有填写名字，则默认当前用户名
                 'from_who' => isset($from_who) ? $from_who : $_SESSION['nick_name'],
                 'mobile' => isset($mobile) ? $mobile : $mobile2['mobile'],
@@ -242,7 +253,7 @@ class FeedbackController extends CommonController
             );
             
             // 当信息为空时，返回错误信息（需前端配合过滤）
-            if (empty($data['to_who']) || empty($data['content'])) {
+            if (empty($data['to_who']) || empty($data['title']) || empty($data['content'])) {
                 $output = array(
                     'data' => array(
                         'redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Feedback/add'),
@@ -254,7 +265,7 @@ class FeedbackController extends CommonController
                 exit(urldecode(json_encode($output)));
             }
             // 判断用户是否选择分类
-            if ($data['type'] == '-1') {
+            if ($data['cid'] == '-1') {
                 $output = array(
                     'data' => array(
                         'redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Feedback/add'),

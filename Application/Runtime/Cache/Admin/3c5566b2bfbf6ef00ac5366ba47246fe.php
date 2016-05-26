@@ -49,7 +49,7 @@
             <div class="form-group">
 	            <select class="form-control" id="role">
 	              <option value='-1'>请选择角色</option>
-	              <option value= "U">业主</option>
+<!-- 	              <option value= "U">业主</option> -->
 	              <option value= "M">物业</option>
 	              <option value= "A">管理员</option>
 	            </select>
@@ -75,9 +75,9 @@
             <div class="clearfix"></div>
             <div class="separator">
 
-              <p class="change_link">新用户?
+<!--               <p class="change_link">新用户?
                 <a href="#toregister" class="to_register"> 注册新账号 </a>
-              </p>
+              </p> -->
               <div class="clearfix"></div>
               <br />
               <div>
@@ -92,7 +92,7 @@
         <!-- content -->
       </div>
     </div>
-    <div id="wrapper" style="min-width:700px">
+<!--     <div id="wrapper" style="min-width:700px">
       <div id="register" class="animate form">
         <section class="login_content">
           <div class="row">
@@ -204,11 +204,11 @@
               </div>
        		</div>
        	</div>
-          <!-- form -->
+          form
         </section>
-        <!-- content -->
+        content
       </div>
-    </div>
+    </div> -->
   </div>
 	
   <!-- form validation -->
