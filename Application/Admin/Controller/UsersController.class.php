@@ -138,19 +138,19 @@ class UsersController extends CommonController {
 	            exit(urldecode(json_encode($output)));
 	        }
 	        //检查信息(nick_name,mobile,email,id_card_num)是否重复,需前端配合过滤
-	        if ($users->field('id')->where("nick_name = '{$data['nick_name']}'")->select()){
+	        if ($users->field('id')->where("nick_name = '{$data['nick_name']}'")->find()){
 	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Users/add'), 'sec' => 3),'info' => urlencode('昵称已存在！'),'code' => '-202A');
 	            exit(urldecode(json_encode($output)));
 	        }
-	        if ($users->field('id')->where("id_card_num = '{$data['id_card_num']}'")->select()){
+	        if ($users->field('id')->where("id_card_num = '{$data['id_card_num']}'")->find()){
 	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Users/add'), 'sec' => 3),'info' => urlencode('身份证号已存在！'),'code' => '-202D');
 	            exit(urldecode(json_encode($output)));
 	        }
-	        if ($users->field('id')->where("email = '{$data['email']}'")->select()){
+	        if ($users->field('id')->where("email = '{$data['email']}'")->find()){
 	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Users/add'), 'sec' => 3),'info' => urlencode('邮箱已存在！'),'code' => '-202C');
 	            exit(urldecode(json_encode($output)));
 	        }
-	        if ($users->field('id')->where("mobile = '{$data['mobile']}'")->select()){
+	        if ($users->field('id')->where("mobile = '{$data['mobile']}'")->find()){
 	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Users/add'), 'sec' => 3),'info' => urlencode('手机号已存在！'),'code' => '-202B');
 	            exit(urldecode(json_encode($output)));
 	        }
@@ -193,8 +193,8 @@ class UsersController extends CommonController {
     	    $id = I('post.user_id');
     	    $users = D('users');
     	    //$data = $users->field('icon_url,nick_name,true_name,gender,h_pocn,mobile,email,id_card_num')->select();
-    	    $data = $users->field('id,icon_url')->where("id = '{$id}'")->select();
-    	    $output = array('data' => array('id' => $data[0]['id'],'icon_url' => $data[0]['icon_url']),'info' => urlencode('用户头像'),'code' => 200);
+    	    $data = $users->field('id,icon_url')->where("id = '{$id}'")->find();
+    	    $output = array('data' => array('id' => $data['id'],'icon_url' => $data['icon_url']),'info' => urlencode('用户头像'),'code' => 200);
     	    exit(urldecode(json_encode($output)));
 	    }else{
 	        $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Users/edit'), 'sec' => 3),'info' => urlencode('请求错误！请重新再试！'),'code' => -205);
@@ -227,8 +227,8 @@ class UsersController extends CommonController {
 	        }
     	    $id = I('post.user_id');
     	    $users = D('users');
-    	    $data = $users->field('id,mobile')->where("id = '{$id}'")->select();
-    	    $output = array('data' => array('id' => $data[0]['id'],'mobile' => $data[0]['mobile']),'info' => urlencode('用户手机号'),'code' => 200);
+    	    $data = $users->field('id,mobile')->where("id = '{$id}'")->find();
+    	    $output = array('data' => array('id' => $data['id'],'mobile' => $data['mobile']),'info' => urlencode('用户手机号'),'code' => 200);
     	    exit(urldecode(json_encode($output)));	
 	    }else{
 	        $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Users/edit'), 'sec' => 3),'info' => urlencode('请求错误！请重新再试！'),'code' => -205);
@@ -247,8 +247,8 @@ class UsersController extends CommonController {
 	        }
     	    $id = I('post.user_id');
     	    $users = D('users');
-    	    $data = $users->field('id,email')->where("id = '{$id}'")->select();
-    	    $output = array('data' => array('id' => $data[0]['id'],'email' => $data[0]['email']),'info' => urlencode('用户邮箱'),'code' => 200);
+    	    $data = $users->field('id,email')->where("id = '{$id}'")->find();
+    	    $output = array('data' => array('id' => $data['id'],'email' => $data['email']),'info' => urlencode('用户邮箱'),'code' => 200);
     	    exit(urldecode(json_encode($output)));	
 	    }else{
 	        $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Users/edit'), 'sec' => 3),'info' => urlencode('请求错误！请重新再试！'),'code' => -205);
@@ -267,9 +267,9 @@ class UsersController extends CommonController {
             }
             $id = I('post.user_id');
             $users = D('users');
-            $data = $users->field('id,icon_url,nick_name,true_name,gender,id_card_num,h_pocn,mobile,email')->where("id = '{$id}'")->select();
+            $data = $users->field('id,icon_url,nick_name,true_name,gender,id_card_num,h_pocn,mobile,email')->where("id = '{$id}'")->find();
             //身份证号加*号隐藏部分信息
-            $data[0]['id_card_num'] = strlen($data[0]['id_card_num']) == 15 ? substr_replace($data[0]['id_card_num'],"****",8,4) : (strlen($data[0]['id_card_num']) == 18 ? substr_replace($data[0]['id_card_num'],"****",10,4) : "身份证位数不正常！");
+            $data['id_card_num'] = strlen($data['id_card_num']) == 15 ? substr_replace($data['id_card_num'],"****",8,4) : (strlen($data['id_card_num']) == 18 ? substr_replace($data['id_card_num'],"****",10,4) : "身份证位数不正常！");
             if ($data){
                 $output = array('data' => $data,'info' => urlencode('需更新的用户信息'),'code' => 200);
                 exit(urldecode(json_encode($output)));                
@@ -293,13 +293,17 @@ class UsersController extends CommonController {
 	        }
     	    $edit_type = I('post.edit_type');
     	    $id = I('post.user_id');
+    	    
+    	    //实例化用户
+    	    $Users = D('users');
+    	    
     	    if ($edit_type == 'edit_icon'){
     	        $icon_url = strtolower(addslashes(trim(I('post.icon_url'))));
     	        $data = array(
     	            'icon_url' => $icon_url,
     	            'id' => $id
     	        );
-    	        $status = D('users')->save($data);
+    	        $status = $Users->save($data);
 //     	    }elseif ($edit_type == 'edit_nick_name'){
 //     	        $nick_name = strtolower(trim(I('post.nick_name')));
 //     	        if (D('users')->field('id')->where("nick_name = '{$nick_name}'")->select()){
@@ -314,9 +318,9 @@ class UsersController extends CommonController {
     	    }elseif ($edit_type == 'edit_password'){
     	        $old_password = strtolower(addslashes(trim(I('post.old_password'))));
     	        $new_password = strtolower(addslashes(trim(I('post.new_password'))));
-    	        $confirm_password = strtolower(addslashes(trim(I('post.confirm_password'))));
+    	        $confirm_password = strtolower(addslashes(trim(I('post.new_password2'))));
     	        //获取当前用户密码
-    	        $row = D('users')->field('password,id_card_num')->where("id = '{$id}'")->select();
+    	        $row = $Users->field('password,id_card_num')->where("id = '{$id}'")->select();
     	        //判断错误
     	        if ($new_password != $confirm_password){
     	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Users/edit'), 'sec' => 3),'info' => urlencode('两次输入的新密码不一致！'),'code' => '-202A');
@@ -337,7 +341,7 @@ class UsersController extends CommonController {
     	    }elseif ($edit_type == 'edit_mobile'){
     	        $mobile = strtolower(addslashes(trim(I('post.mobile'))));
     	        
-    	        if (D('users')->field('id')->where("mobile = '{$mobile}'")->select()){
+    	        if ($Users->field('id')->where("mobile = '{$mobile}'")->select()){
     	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Users/edit'), 'sec' => 3),'info' => urlencode('手机号已存在！'),'code' => '-202C');
     	            exit(urldecode(json_encode($output)));
     	        }
@@ -346,11 +350,11 @@ class UsersController extends CommonController {
     	            'mobile' => $mobile,
     	            'id' => $id
     	        );
-    	        $status = D('users')->save($data);	        
+    	        $status = $Users->save($data);	        
     	    }elseif ($edit_type == 'edit_email'){
     	        $email = strtolower(addslashes(trim(I('post.email'))));
     	        
-    	        if (D('users')->field('id')->where("email = '{$email}'")->select()){
+    	        if ($Users->field('id')->where("email = '{$email}'")->select()){
     	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Users/edit'), 'sec' => 3),'info' => urlencode('邮箱已存在！'),'code' => '-202D');
     	            exit(urldecode(json_encode($output)));
     	        }    	        
@@ -358,36 +362,43 @@ class UsersController extends CommonController {
     	            'email' => $email,
     	            'id' => $id
     	        );
-    	        $status = D('users')->save($data);	        
+    	        $status = $Users->save($data);	        
     	    }elseif ($edit_type == 'edit_all'){
-    	        $icon_url = strtolower(addslashes(trim(I('post.icon_url'))));
-    	        $nick_name = strtolower(addslashes(trim(I('post.nick_name'))));
+    	        //$icon_url = strtolower(addslashes(trim(I('post.icon_url'))));
+    	        //$nick_name = strtolower(addslashes(trim(I('post.nick_name'))));
     	        $old_password = strtolower(addslashes(trim(I('post.old_password'))));
     	        $new_password = strtolower(addslashes(trim(I('post.new_password'))));
-    	        $confirm_password = strtolower(addslashes(trim(I('post.confirm_password'))));
-    	        $mobile = addslashes(trim(I('post.mobile')));
-    	        $email = strtolower(addslashes(trim(I('post.email'))));
+    	        $confirm_password = strtolower(addslashes(trim(I('post.new_password2'))));
+    	        $mobile = addslashes(trim(I('post.user_mobile')));
+    	        $email = strtolower(addslashes(trim(I('post.user_email'))));
     	        
     	        //当用户信息为空时，返回错误信息（需前端配合过滤）
-    	        if (empty($icon_url) || empty($nick_name) || empty($old_password) || empty($new_password) || empty($confirm_password) || empty($mobile) || empty($email)){
+    	        if (empty($old_password) || empty($new_password) || empty($confirm_password) || empty($mobile) || empty($email)){
     	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Users/edit'), 'sec' => 3),'info' => urlencode('更新信息不能为空！'),'code' => -201);
     	            exit(urldecode(json_encode($output)));
     	        }
     	        //检查信息(nick_name,mobile,email,id_card_num)是否重复,需前端配合过滤
-    	        if (D('users')->field('id')->where("nick_name = '{$nick_name}'")->select()){
-    	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Users/edit'), 'sec' => 3),'info' => urlencode('昵称已存在！'),'code' => '-202E');
-    	            exit(urldecode(json_encode($output)));
-    	        }
-    	        if (D('users')->field('id')->where("mobile = '{$mobile}'")->select()){
-    	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Users/edit'), 'sec' => 3),'info' => urlencode('手机号已存在！'),'code' => '-202C');
-    	            exit(urldecode(json_encode($output)));
-    	        }
-    	        if (D('users')->field('id')->where("email = '{$email}'")->select()){
-    	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Users/edit'), 'sec' => 3),'info' => urlencode('邮箱已存在！'),'code' => '-202D');
-    	            exit(urldecode(json_encode($output)));
-    	        }    	        
-    	        //获取当前用户密码
-    	        $row = D('admin')->field('password,id_card_num')->where("id = '{$id}'")->select();
+//     	        if (D('users')->field('id')->where("nick_name = '{$nick_name}'")->select()){
+//     	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Users/edit'), 'sec' => 3),'info' => urlencode('昵称已存在！'),'code' => '-202E');
+//     	            exit(urldecode(json_encode($output)));
+//     	        }
+                
+                $row = $Users->field('email,mobile,password,id_card_num')->where("id = '{$id}'")->find();
+                
+                if ($row['mobile'] != $mobile){
+                    if ($Users->field('id')->where("mobile = '{$mobile}'")->find()){
+                        $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Users/edit'), 'sec' => 3),'info' => urlencode('手机号已存在！'),'code' => '-202C');
+                        exit(urldecode(json_encode($output)));
+                    }
+                }
+
+                if ($row['email'] != $email){
+                    if ($Users->field('id')->where("email = '{$email}'")->find()){
+                        $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Users/edit'), 'sec' => 3),'info' => urlencode('邮箱已存在！'),'code' => '-202D');
+                        exit(urldecode(json_encode($output)));
+                    }
+                }
+    	        
     	        //判断错误
     	        if ($row['password'] != create_hash($old_password, $row['id_card_num'])) {
     	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Users/edit'), 'sec' => 3),'info' => urlencode('输入的旧密码错误！'),'code' => '-202B');
@@ -399,13 +410,11 @@ class UsersController extends CommonController {
     	        //执行	        
     	        $data = array(
     	            'id' => $id,
-    	            'icon_url' => $icon_url,
-    	            'nick_name' => $nick_name,
     	            'password' => create_hash($new_password, $row['id_card_num']),
     	            'mobile' => $mobile,
     	            'email' => $email
     	        );
-    	        $status = D('users')->save($data);
+    	        $status = $Users->save($data);
     	    }
     	    //判断修改状态
     	    if ($status){

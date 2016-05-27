@@ -12,12 +12,9 @@ class UploadController extends CommonController
     /**
      * 上传文件
      *
-     * @param string $ftype
-     *            :image/file, default image
-     * @param string $rootPath
-     *            :default './Uploads/'
-     * @param string $savePath
-     *            :default ''
+     * @param string $ftype image/file default image
+     * @param string $rootPath default './Uploads/'
+     * @param string $savePath default ''
      *            
      * @author Steven.Huang <87144734@qq.com>
      */
@@ -66,30 +63,22 @@ class UploadController extends CommonController
         }
     }
     
-    // Public function uppic()
-    // {
-    // $upload = new \Think\Upload();
-    // $upload->maxSize = 3145728; // 设置附件上传大小
-    // $upload->exts = array(
-    // 'jpg',
-    // 'gif',
-    // 'png',
-    // 'jpeg'
-    // ); // 设置附件上传类型
-    // $upload->rootPath = './Uploads/'; // 设置附件上传根目录
-    // $upload->savePath = 'Repair/'; // 设置附件上传（子）目录
-    // // 上传文件
-    // $info = $upload->upload();
-    // if (! $info) { // 上传错误提示错误信息
-    // $this->error($upload->getError());
-    // } else { // 上传成功 获取上传文件信息
-    // foreach ($info as $file) {
-    // echo $file['savepath'] . $file['savename'];
-    // }
-    // }
-    // }
-    public function aa()
+    //调用实例
+    public function upPic()
     {
         $this->upload('image', './Uploads/', 'Repair/');
+    }
+
+    /**
+     * 删除文件，public/swfupload/js/handlers.js 调用
+     * 
+     * @author Steven.Huang <87144734@qq.com>
+     */
+    public function del(){
+        echo __FILE__;   
+        $src=str_replace('/smart_community', '.', $_GET['src']);   //测验用，后期正式运行需要修改此规则，直接GET
+        if (file_exists($src)) {
+            unlink($src);
+        }
     }
 }

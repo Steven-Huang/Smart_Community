@@ -76,21 +76,21 @@
 			              </div>
 			            </div>
 			            <div class="item form-group">
-			              <label for="password" class="control-label col-md-3 col-sm-3 col-xs-12">请输入旧密码 <span class="required">*</span>
+			              <label for="old_password" class="control-label col-md-3 col-sm-3 col-xs-12">请输入旧密码 <span class="required">*</span>
 			              </label>
 			              <div class="col-md-6 col-sm-6 col-xs-9">
 			                <input id="old_password" type="password" name="old_password" data-validate-length="6,8" class="form-control col-md-7 col-xs-12" required="required">
 			              </div>
 			            </div>
 			            <div class="item form-group">
-			              <label for="password" class="control-label col-md-3 col-sm-3 col-xs-12">请输入新密码 <span class="required">*</span>
+			              <label for="new_password" class="control-label col-md-3 col-sm-3 col-xs-12">请输入新密码 <span class="required">*</span>
 			              </label>
 			              <div class="col-md-6 col-sm-6 col-xs-9">
 			                <input id="new_password" type="password" name="new_password" data-validate-length="6,8" class="form-control col-md-7 col-xs-12" required="required">
 			              </div>
 			            </div>
 			            <div class="item form-group">
-			              <label for="password2" class="control-label col-md-3 col-sm-3 col-xs-12">再次输入新密码 <span class="required">*</span>
+			              <label for="new_password2" class="control-label col-md-3 col-sm-3 col-xs-12">再次输入新密码 <span class="required">*</span>
 			              </label>
 			              <div class="col-md-6 col-sm-6 col-xs-9">
 			                <input id="new_password2" type="password" name="new_password2" data-validate-linked="new_password" class="form-control col-md-7 col-xs-12" required="required">
@@ -142,19 +142,19 @@
             success: function(data) {
             	if(data['code'] == 200){
             		console.log(data);
-					$('#user_nick_name').val(data['data'][0]['nick_name']);
-					$('#user_true_name').val(data['data'][0]['true_name']);
-					if (data['data'][0]['gender'] == 1) {
+					$('#user_nick_name').val(data['data']['nick_name']);
+					$('#user_true_name').val(data['data']['true_name']);
+					if (data['data']['gender'] == 1) {
 					    $("input[name='user_gender'][value='1']").attr("checked",true);
 					    $("input[name='user_gender'][value='1']").parent().addClass("active");
-					}else if(data['data'][0]['gender'] == 2) {
+					}else if(data['data']['gender'] == 2) {
 						$("input[name='user_gender'][value='2']").attr("checked",true);
 						$("input[name='user_gender'][value='2']").parent().addClass("active");
 					}
-					$('#user_id_card_num').val(data['data'][0]['id_card_num']);
-					$('#user_pocn').val(data['data'][0]['h_pocn']);
-					$('#user_email').val(data['data'][0]['email']);
-					$('#user_mobile').val(data['data'][0]['mobile']);
+					$('#user_id_card_num').val(data['data']['id_card_num']);
+					$('#user_pocn').val(data['data']['h_pocn']);
+					$('#user_email').val(data['data']['email']);
+					$('#user_mobile').val(data['data']['mobile']);
             	}
             	if(data['code'] == '-200' || data['code'] == '-205' || data['code'] == '-208'){
 	            		alert(data['info']);
@@ -196,22 +196,20 @@
 	            data: {
 	            	'access_token' : getCookie('access_token'),
 	            	'edit_type' : 'edit_all',
-	            	'user_nick_name' : $('#user_nick_name').val(),
-	            	'user_true_name' : $('#user_true_name').val(),
-	            	'user_gender' : $("input[name='user_gender']:checked").val(),
-	            	'user_id_card_num' : $('#user_id_card_num').val(),
-	            	'user_pocn' : $('#user_pocn').val(),
+	            	'user_id' : $('#user_id').val(),
 	            	'user_email' : $('#user_email').val(),
-	            	'user_password' : $('#password').val(),
-	            	'user_password_confirmed' : $('#password2').val(),
+	            	'old_password' : $('#old_password').val(),
+	            	'new_password' : $('#new_password').val(),
+	            	'new_password2' : $('#new_password2').val(),
 	            	'user_mobile' : $('#user_mobile').val()
 	            },
 	            dataType: "json",
 	            success: function(data) {
+	            	console.log(data);
 	            	if(data['code'] == '200' || data['code'] == '-200' || data['code'] == '-205' || data['code'] == '-206' || data['code'] == '-207' || data['code'] == '-208'){
 	            		alert(data['info']);
 	            		location.href = 'http://' + data['data']['redirect_url'];
-	            	}else if(data['code'] == '-201A' || data['code'] == '-201B' || data['code'] == '-201C' || data['code'] == '-201D' || data['code'] == '-202A' || data['code'] == '-202B' || data['code'] == '-202C' || data['code'] == '-202D' || data['code'] == '-203'){
+	            	}else if(data['code'] == '-201' || data['code'] == '-202A' || data['code'] == '-202B' || data['code'] == '-202C' || data['code'] == '-202D' || data['code'] == '-202E' || data['code'] == '-203'){
 	            		alert(data['info']);
 	            	}
 	            },

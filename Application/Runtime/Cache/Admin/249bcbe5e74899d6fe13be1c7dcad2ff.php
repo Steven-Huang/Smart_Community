@@ -1,14 +1,14 @@
 <?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<!-- Meta, title, CSS, favicons, etc. -->
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>JoyRill智慧社区后台</title>
-<!-- Public core css/js -->
-<!-- Bootstrap core CSS -->
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<!-- Meta, title, CSS, favicons, etc. -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JoyRill智慧社区后台</title>
+	<!-- Public core css/js -->
+	<!-- Bootstrap core CSS -->
 
 <link href="/smart_community/Public/admin/css/bootstrap.min.css" rel="stylesheet">
 
@@ -273,44 +273,118 @@
     }
   </script>
 
+	
 	<!-- page content -->
-	<div class="right_col" role="main">
-		<div class="col-md-12 col-sm-12 col-xs-12">
-			<div class="x_panel">
-				<div class="row x_title">
-					<div class="col-md-12">
-	                  <h3 id="category_name">待处理维修信息</h3>
-	                </div>				
-				</div>
-				<div id="myTabContent" class="tab-content">
-					<div role="tabpanel" class="tab-pane fade active in"
-						id="tab_content1" aria-labelledby="home-tab">
-						<div class="container-fluid">
-							<table class="table table-hover">
-								<thead>
-									<tr>
-										<th>ID</th>
-										<th>标题</th>
-										<th>类型</th>
-										<th>来自</th>
-										<th>手机</th>
-										<th>创建时间</th>
-										<th>操作</th>
-									</tr>
-								</thead>
-								<tbody id="tab1">
-
-								</tbody>
-							</table>
-							<div id="pages1"></div>
-						</div>
-					</div>
+<div class="right_col" role="main">
+	<div id="wrapper" style="min-width:900px">
+<!-- 		<div id="register" class="animate form"> -->
+			   <section class="login_content">
+			      <div class="row">
+			        <div class="col-md-12 col-sm-12 col-xs-12">
+			          <div class="x_panel">
+			            <div class="x_content">
+			              <form class="form-horizontal form-label-left" id="register_form">
+			              	<input type="hidden" id="user_id" value="<?php echo $_GET['user_id'];?>" >
+			              	<h1>更新业主信息</h1>
+			                <div class="item form-group">
+			                  <label class="control-label col-md-3 col-sm-3 col-xs-12" for="user_nick_name">用户名 <span class="required">*</span>
+			                  </label>
+			                  <div class="col-md-6 col-sm-6 col-xs-9">
+			                    <input id="user_nick_name" name="user_nick_name" class="form-control col-md-7 col-xs-12" maxlength="10" placeholder="" required="required" type="text" readonly>
+			                  </div>
+			                </div>
+			                <div class="item form-group">
+			                  <label class="control-label col-md-3 col-sm-3 col-xs-12" for="user_true_name">真实姓名 <span class="required">*</span>
+			                  </label>
+			                  <div class="col-md-6 col-sm-6 col-xs-9">
+			                    <input id="user_true_name" name="user_true_name" class="form-control col-md-7 col-xs-12" maxlength="10" placeholder="" required="required" type="text" readonly>
+			                  </div>
+			                </div>
+			                <div class="item form-group">
+			                  <label class="control-label col-md-3 col-sm-3 col-xs-12" for="user_gender">性别 <span class="required">*</span>
+			                  </label>
+			                  <div class="col-md-6 col-sm-6 col-xs-9" style="text-align:left">
+			                <div class="btn-group" data-toggle="buttons">
+			                  <label class="btn btn-default" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+			                    <input type="radio" id="user_gender" name="user_gender" value="1"> &nbsp; 男 &nbsp;
+			                  </label>
+			                  <label class="btn btn-default" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+			                    <input type="radio" id="user_gender" name="user_gender" value="2"> &nbsp; 女 &nbsp;
+			                  </label>
+			                </div>
+			              </div>
+			            </div>                    
+			            <div class="item form-group">
+			              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="user_id_card_num">身份证号 <span class="required">*</span>
+			              </label>
+			              <div class="col-md-6 col-sm-6 col-xs-9">
+			                <input id="user_id_card_num" name="user_id_card_num" class="form-control col-md-7 col-xs-12" maxlength="18" placeholder="" required="required" type="text" readonly>
+			              </div>
+			            </div>   
+			            <div class="item form-group">
+			              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="user_pocn">房产证号 <span class="required">*</span>
+			              </label>
+			              <div class="col-md-6 col-sm-6 col-xs-9">
+			                <input id="user_pocn" name="user_pocn" class="form-control col-md-7 col-xs-12" maxlength="18" placeholder="" required="required" type="text" readonly>
+			              </div>
+			            </div>                                                                        
+			            <div class="item form-group">
+			              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="user_email">邮箱地址 <span class="required">*</span>
+			              </label>
+			              <div class="col-md-6 col-sm-6 col-xs-9">
+			                <input type="email" id="user_email" name="user_email" required="required" class="form-control col-md-7 col-xs-12">
+			              </div>
+			            </div>
+			            <div class="item form-group">
+			              <label for="old_password" class="control-label col-md-3 col-sm-3 col-xs-12">请输入旧密码 <span class="required">*</span>
+			              </label>
+			              <div class="col-md-6 col-sm-6 col-xs-9">
+			                <input id="old_password" type="password" name="old_password" data-validate-length="6,8" class="form-control col-md-7 col-xs-12" required="required">
+			              </div>
+			            </div>
+			            <div class="item form-group">
+			              <label for="new_password" class="control-label col-md-3 col-sm-3 col-xs-12">请输入新密码 <span class="required">*</span>
+			              </label>
+			              <div class="col-md-6 col-sm-6 col-xs-9">
+			                <input id="new_password" type="password" name="new_password" data-validate-length="6,8" class="form-control col-md-7 col-xs-12" required="required">
+			              </div>
+			            </div>
+			            <div class="item form-group">
+			              <label for="new_password2" class="control-label col-md-3 col-sm-3 col-xs-12">再次输入新密码 <span class="required">*</span>
+			              </label>
+			              <div class="col-md-6 col-sm-6 col-xs-9">
+			                <input id="new_password2" type="password" name="new_password2" data-validate-linked="new_password" class="form-control col-md-7 col-xs-12" required="required">
+			              </div>
+			            </div>
+			            <div class="item form-group">
+			              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="user_mobile">手机号 <span class="required">*</span>
+			              </label>
+			              <div class="col-md-6 col-sm-6 col-xs-9">
+			                <input type="text" id="user_mobile" name="user_mobile" required="required" class="form-control col-md-7 col-xs-12">
+			              </div>
+			            </div>
+			            <div class="ln_solid"></div>
+			            <div class="form-group">
+			              <div class="col-md-6 col-md-offset-3">
+ 			                <button type="reset" class="btn btn-primary">清除</button>
+			                <!-- <a href="javascript:;" class="btn btn-default submit savedata" >保存</a> -->
+			                <button id="send" type="submit" class="btn btn-success">提交</button>
+			              </div>
+			            </div>
+			            <div class="clearfix"></div>
+			          </form>
+			        </div>
+			      </div>
 				</div>
 			</div>
-		</div>
-	</div>
+			  <!-- form -->
+			</section>
+			<!-- content -->
+<!-- 	      </div> -->
+    </div>
+</div>
 	<!-- /page content -->
-
+	
 	<!-- footer content -->
 <footer>
   <div class="pull-right">
@@ -410,64 +484,145 @@
 		$('#presentation').addClass('open');
 	})
 </script>
-	<script type="text/javascript">
-		window.onload = function() {
-			$
-					.ajax({
-						type : "post",
-						url : "/smart_community/admin.php/Repair/indexPost",
-						data : {
-							access_token : getCookie('access_token'),
-							num : 10,
-							cid : 0, //获取全部类型
-							status : 0 //获取待处理状态
-						},
-						dataType : "json",
-						success : function(data) {
-							if (data['code'] == 200) {
-								if (data['data']['count'] == 0) {
-									$("#tab1")
-											.append(
-													"<font color='red'><h5>无文章信息！</h5></font>");
-								}
-								var len = data['data']['data'].length;
-								for (var i = 0; i < len; i++) {
-									var array = "/id/"
-											+ data['data']['data'][i]['id'];
-									$("#tab1")
-											.append(
-													"<tr><td>"
-															+ data['data']['data'][i]['id']
-															+ "</td><td>"
-															+ data['data']['data'][i]['title']
-															+ "</td><td>"
-															+ data['data']['data'][i]['aname']
-															+ "</td><td>"
-															+ data['data']['data'][i]['from_who']
-															+ "</td><td>"
-															+ data['data']['data'][i]['mobile']
-															+ "</td><td>"
-															+ data['data']['data'][i]['create_time']
-															+ "</td><td><a class=\"btn btn-info btn-xs\" href=\""
-															+ "<?php echo U('Admin/Repair/detail1" + array + "');?>\"><i class=\"fa fa-search-plus\"></i> 处理</a>"
-															+ "</td>"
-															+ "</tr>");
-								}
-								$('#pages1').append(data['data']['page']);
-							}
-							if (data['code'] == '-205'
-									|| data['code'] == '-208') {
-								alert(data['info']);
-								location.href = 'http://'
-										+ data['data']['redirect_url'];
-							}
-						},
-						error : function(xhr, type, errorThrown) {
-							//异常处理
-							console.log(type);
-						}
-					});
-		}
+  <!-- form validation -->
+  <script src="/smart_community/Public/admin/js/validator/validator.js"></script>
+  <script>
+ 	window.onload = function(){
+    	$.ajax({
+            type: "post",
+            url: "/smart_community/admin.php/Users/edit_all",
+            data: {
+            	access_token : getCookie('access_token'),
+              	user_id : $('#user_id').val()
+            },
+            dataType: "json",
+            success: function(data) {
+            	if(data['code'] == 200){
+            		console.log(data);
+					$('#user_nick_name').val(data['data']['nick_name']);
+					$('#user_true_name').val(data['data']['true_name']);
+					if (data['data']['gender'] == 1) {
+					    $("input[name='user_gender'][value='1']").attr("checked",true);
+					    $("input[name='user_gender'][value='1']").parent().addClass("active");
+					}else if(data['data']['gender'] == 2) {
+						$("input[name='user_gender'][value='2']").attr("checked",true);
+						$("input[name='user_gender'][value='2']").parent().addClass("active");
+					}
+					$('#user_id_card_num').val(data['data']['id_card_num']);
+					$('#user_pocn').val(data['data']['h_pocn']);
+					$('#user_email').val(data['data']['email']);
+					$('#user_mobile').val(data['data']['mobile']);
+            	}
+            	if(data['code'] == '-200' || data['code'] == '-205' || data['code'] == '-208'){
+	            		alert(data['info']);
+            		location.href = 'http://' + data['data']['redirect_url'];	            		
+            	}
+            },
+            error: function(xhr, type, errorThrown) {
+              //异常处理
+              console.log(type);
+            }
+          }); 			
+	} 
+
+    // initialize the validator function
+    validator.message['date'] = 'not a real date';
+
+    // validate a field on "blur" event, a 'select' on 'change' event & a '.reuired' classed multifield on 'keyup':
+    $('form')
+      .on('blur', 'input[required], input.optional, select.required', validator.checkField)
+      .on('change', 'select.required', validator.checkField)
+      .on('keypress', 'input[required][pattern]', validator.keypress);
+
+    $('.multi.required')
+      .on('keyup blur', 'input', function() {
+        validator.checkField.apply($(this).siblings().last()[0]);
+      });
+    
+     $('form').submit(function(e) {
+        e.preventDefault();
+        var submit = true;
+        // evaluate the form using generic validaing
+        if (!validator.checkAll($(this))) {
+          	submit = false;
+        }
+        if (submit){
+	    	$.ajax({
+	            type: "post",
+	            url: "/smart_community/admin.php/Users/do_edit",
+	            data: {
+	            	'access_token' : getCookie('access_token'),
+	            	'edit_type' : 'edit_all',
+	            	'user_id' : $('#user_id').val(),
+	            	'user_email' : $('#user_email').val(),
+	            	'old_password' : $('#old_password').val(),
+	            	'new_password' : $('#new_password').val(),
+	            	'new_password2' : $('#new_password2').val(),
+	            	'user_mobile' : $('#user_mobile').val()
+	            },
+	            dataType: "json",
+	            success: function(data) {
+	            	console.log(data);
+	            	if(data['code'] == '200' || data['code'] == '-200' || data['code'] == '-205' || data['code'] == '-206' || data['code'] == '-207' || data['code'] == '-208'){
+	            		alert(data['info']);
+	            		location.href = 'http://' + data['data']['redirect_url'];
+	            	}else if(data['code'] == '-201' || data['code'] == '-202A' || data['code'] == '-202B' || data['code'] == '-202C' || data['code'] == '-202D' || data['code'] == '-202E' || data['code'] == '-203'){
+	            		alert(data['info']);
+	            	}
+	            },
+	            error: function(xhr, type, errorThrown) {
+	              //异常处理
+	              console.log(type);
+	            }
+	          }); 
+        }       
+        return false;
+      });
+	
+/*     $('body').on('click','.savedata',function(e) {
+        e.preventDefault();
+        var submit = true;
+        // evaluate the form using generic validaing
+        if (!validator.checkAll($(this))) {
+          submit = false;
+        }
+
+        if (submit)
+          this.submit();
+        return false;
+      }) */
+    /* 
+		$('body').on('click','.savedata',function(){
+	    	$.ajax({
+	            type: "post",
+	            url: "/smart_community/admin.php/Users/do_add",
+	            data: {
+	            	'access_token' : getCookie('access_token'),
+	            	'user_nick_name' : $('#user_nick_name').val(),
+	            	'user_true_name' : $('#user_true_name').val(),
+	            	'user_gender' : $("input[name='user_gender']:checked").val(),
+	            	'user_id_card_num' : $('#user_id_card_num').val(),
+	            	'user_pocn' : $('#user_pocn').val(),
+	            	'user_email' : $('#user_email').val(),
+	            	'user_password' : $('#password').val(),
+	            	'user_password_confirmed' : $('#password2').val(),
+	            	'user_mobile' : $('#user_mobile').val()
+	            },
+	            dataType: "json",
+	            success: function(data) {
+	            	if(data['code'] == '200' || data['code'] == '-200' || data['code'] == '-205' || data['code'] == '-208'){
+	            		alert(data['info']);
+	            		location.href = 'http://' + data['data']['redirect_url'];
+	            	}else if(data['code'] == '-201' || data['code'] == '-202A' || data['code'] == '-202B' || data['code'] == '-202C' || data['code'] == '-202D' || data['code'] == '-203'){
+	            		alert(data['info']);
+	            	}
+	            },
+	            error: function(xhr, type, errorThrown) {
+	              //异常处理
+	              console.log(type);
+	            }
+	          }); 			
+		}) */
 	</script>
 </body>
 </html>

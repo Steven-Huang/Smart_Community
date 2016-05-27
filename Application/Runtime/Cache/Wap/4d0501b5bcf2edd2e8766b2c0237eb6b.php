@@ -1,62 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit();?><!-- <!doctype html>
- <html>
- <head>
- <meta charset="utf-8">
- <title>图片上传</title>
- <script type="text/javascript" src="/smart_community/Public/wap/js/jquery.js"></script>
- <script type="text/javascript" src="/smart_community/Public/wap/js/ajaxupload.js"></script>
- </head>
- <body>
-    <label class="control-label" for="bike_type"> </label>
-    <input type="file" style="display:none" name="userfile">
-    <input type="" id="newbikephotoName" name="bike_photo" value="" />
-    <input type="" id="newbikephoto" value="" />
-    <div class="controls" style="text-align:left;">
-        <span class="help-inline"></span>
-        <br>
-        <div id="uploadphotoconfirm"></div>
-        <br>
-        <input type="button" class="btn btn-primary" id="upload_button"  value="上传图片" /><br/>
-        <span class="help-inline">*请上传格式为.png .jpg .jpeg 的图片</span>
-    </div>
-    
-    
-    <form action="" enctype="multipart/form-data" method="post" >
-<input type="file" name="userfile[]" />
-<input type="file" name="userfile[]" />
-<input type="file" name="userfile[]" />
-<input type="button" class="btn btn-primary" id="upload_button"  value="上传图片" /><br/>
-</form>
-
-<script type="text/javascript">
-$(function(){
-    var button = $('#upload_button'), interval;
-    new AjaxUpload(button,{
-        action: "<?php echo U('Upload/aa');?>",
-        name: 'userfile',
-        onSubmit : function(file, ext){
-                if (ext && /^(jpg|png|jpeg|gif|JPG)$/.test(ext)){
-                    this.setData({
-                        'info': '文件类型为图片'
-                    });
-                } else {
-                     confirmdiv.text('文件格式错误，请上传格式为.png .jpg .jpeg 的图片');
-                    return false;
-                }
-        },
-        onComplete: function(file, response){
-
-            alert('上传成功');
-        }
-    });
- });
- </script>
-
- </body>
- </html> -->
- 
- 
- <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -108,7 +50,7 @@ window.onload = function() {
 </script>
 </head>
 <body>
-<form action="<?php echo U('Upload/aa');?>" method="post">
+<form action="" method="">
 <div style="width: 610px; height: auto; border: 1px solid #e1e1e1; font-size: 12px; padding: 10px;">
 <span id="spanButtonPlaceholder"></span>
 <div id="divFileProgressContainer"></div>

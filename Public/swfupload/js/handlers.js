@@ -155,10 +155,12 @@ function addImage(src) {
 
 var del = function() {
 	var src = $(this).siblings('img').attr('src');
-	alert(src);
+//	alert(src);
+//	alert(location.href.replace('index','del'));
 	$.ajax({
 		type : "GET", // 访问WebService使用Post方式请求
-		url : "/smart_community/public/swfupload/ajax.php?act=del", // 调用WebService的地址和方法名称组合---WsURL/方法名
+		//url : "http://localhost/smart_community/wap.php/upload/del", // 调用WebService的地址和方法名称组合---WsURL/方法名
+		url : location.href.replace('index','del'), // 基于当前路径为 http://localhost/smart_community/wap.php/upload/index
 		//contentType:'application/x-www-form-urlencoded; charset=UTF-8',
 		data : {
 			"src" : src

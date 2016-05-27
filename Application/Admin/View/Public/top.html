@@ -9,7 +9,8 @@
       <ul class="nav navbar-nav navbar-right">
         <li id="user-profile" class="">
           <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-            <img src="__PUBLIC__/admin/images/img.jpg" alt=""><?php echo ucfirst($_SESSION['nick_name']);?>
+<!--            <img src="__PUBLIC__/admin/images/img.jpg" alt=""><?php echo ucfirst($_SESSION['nick_name']);?>  -->
+			<img src="<?php echo 'http://localhost/smart_community' . $_SESSION['icon_url']?>" alt=""><?php echo ucfirst($_SESSION['nick_name']);?>
             <span class=" fa fa-angle-down"></span>
           </a>
           <ul class="dropdown-menu dropdown-usermenu pull-right">

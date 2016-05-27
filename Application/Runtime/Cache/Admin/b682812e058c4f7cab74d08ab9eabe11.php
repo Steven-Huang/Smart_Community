@@ -48,7 +48,8 @@
     <!-- menu prile quick info -->
     <div class="profile">
       <div class="profile_pic">
-        <img src="/smart_community/Public/admin/images/img.jpg" alt="..." class="img-circle profile_img">
+        <!--<img src="/smart_community/Public/admin/images/img.jpg" alt="..." class="img-circle profile_img">-->
+        <img src="<?php echo 'http://localhost/smart_community' . $_SESSION['icon_url']?>" alt="..." class="img-circle profile_img">
       </div>
       <div class="profile_info">
         <span>Welcome,</span>
@@ -180,7 +181,8 @@
       <ul class="nav navbar-nav navbar-right">
         <li id="user-profile" class="">
           <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-            <img src="/smart_community/Public/admin/images/img.jpg" alt=""><?php echo ucfirst($_SESSION['nick_name']);?>
+<!--            <img src="/smart_community/Public/admin/images/img.jpg" alt=""><?php echo ucfirst($_SESSION['nick_name']);?>  -->
+			<img src="<?php echo 'http://localhost/smart_community' . $_SESSION['icon_url']?>" alt=""><?php echo ucfirst($_SESSION['nick_name']);?>
             <span class=" fa fa-angle-down"></span>
           </a>
           <ul class="dropdown-menu dropdown-usermenu pull-right">
@@ -430,7 +432,7 @@
  		            	var len = data['data']['data'].length;
 		            	for(var i=0; i < len; i++){
 		            	 	var array = "/role/admin/user_id/"+data['data']['data'][i]['id'];
-		            		$("#tab1").append("<tr><td>A"+data['data']['data'][i]['id']+"</td><td>"+data['data']['data'][i]['icon_url']+"</td><td>"+data['data']['data'][i]['nick_name']+"</td><td>"+data['data']['data'][i]['true_name']+"</td><td>"+data['data']['data'][i]['gender']+"</td><td>"+data['data']['data'][i]['mobile']+"</td><td>"+data['data']['data'][i]['email']+"</td><td>"+data['data']['data'][i]['id_card_num']+"</td><td>"+data['data']['data'][i]['create_time']+"</td><td>"+data['data']['data'][i]['last_log_ip']+"</td><td>"+data['data']['data'][i]['last_log_time']+"</td><td><a class=\"btn btn-info btn-xs\" href=\""+"<?php echo U('Admin/Admin/edit"+array+"');?>\"><i class=\"fa fa-pencil\"></i>更新</a>"+"</td>"+"</tr>");
+		            		$("#tab1").append("<tr><td>A"+data['data']['data'][i]['id']+"</td><td><img width='30' height='30' src=\"\/smart_community"+data['data']['data'][i]['icon_url']+"\"></td><td>"+data['data']['data'][i]['nick_name']+"</td><td>"+data['data']['data'][i]['true_name']+"</td><td>"+data['data']['data'][i]['gender']+"</td><td>"+data['data']['data'][i]['mobile']+"</td><td>"+data['data']['data'][i]['email']+"</td><td>"+data['data']['data'][i]['id_card_num']+"</td><td>"+data['data']['data'][i]['create_time']+"</td><td>"+data['data']['data'][i]['last_log_ip']+"</td><td>"+data['data']['data'][i]['last_log_time']+"</td><td><a class=\"btn btn-info btn-xs\" href=\""+"<?php echo U('Admin/Admin/edit"+array+"');?>\"><i class=\"fa fa-pencil\"></i>更新</a>"+"</td>"+"</tr>");
 		            	 }
 		            	$('#pages1').append(data['data']['page']);
 	            	}

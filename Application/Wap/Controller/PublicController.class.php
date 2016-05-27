@@ -120,7 +120,7 @@ class PublicController extends Controller
             $where1 = "nick_name='{$username}'";
             $where2 = "email='{$username}'";
             $where3 = "mobile='{$username}'";
-            $field = 'id,nick_name,password,id_card_num,if_aprvd';
+            $field = 'id,icon_url,nick_name,password,id_card_num,if_aprvd';
             $row = $users->field($field)
                 ->where($where1)
                 ->find() ? $users->field($field)
@@ -162,6 +162,7 @@ class PublicController extends Controller
                 // 设置session
                 session_set_cookie_params(259200);
                 session('user_id', $role . $row['id']);
+                session('icon_url', $row['icon_url']);
                 session('nick_name', $row['nick_name']);
                 session('access_token', $access_token);
                 session('last_log_ip', $_SERVER['REMOTE_ADDR']);

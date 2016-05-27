@@ -48,7 +48,8 @@
     <!-- menu prile quick info -->
     <div class="profile">
       <div class="profile_pic">
-        <img src="/smart_community/Public/admin/images/img.jpg" alt="..." class="img-circle profile_img">
+        <!--<img src="/smart_community/Public/admin/images/img.jpg" alt="..." class="img-circle profile_img">-->
+        <img src="<?php echo 'http://localhost/smart_community' . $_SESSION['icon_url']?>" alt="..." class="img-circle profile_img">
       </div>
       <div class="profile_info">
         <span>Welcome,</span>
@@ -180,7 +181,8 @@
       <ul class="nav navbar-nav navbar-right">
         <li id="user-profile" class="">
           <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-            <img src="/smart_community/Public/admin/images/img.jpg" alt=""><?php echo ucfirst($_SESSION['nick_name']);?>
+<!--            <img src="/smart_community/Public/admin/images/img.jpg" alt=""><?php echo ucfirst($_SESSION['nick_name']);?>  -->
+			<img src="<?php echo 'http://localhost/smart_community' . $_SESSION['icon_url']?>" alt=""><?php echo ucfirst($_SESSION['nick_name']);?>
             <span class=" fa fa-angle-down"></span>
           </a>
           <ul class="dropdown-menu dropdown-usermenu pull-right">
