@@ -1,6 +1,7 @@
 <?php
 namespace Admin\Controller;
 //use Admin\Model\UsersModel;
+use Think\Model;
 
 class AdminController extends CommonController {
     //定义_empty空操作
@@ -157,26 +158,40 @@ class AdminController extends CommonController {
 	            exit(urldecode(json_encode($output)));
 	        }
     	    $id = I('post.id');
-    	    $Admin = M('admin');
-    	    $name = $Admin->field('nick_name')->where(array('id'=>$id))->select();
+    	    
+    	    //开启事务
+    	    $model = new Model();
+    	    $model->startTrans();
+    	    
+
+    	    $name = $model->table('admin')->field('nick_name')->where(array('id'=>$id))->select();
     	    //Admin 不能给删除
     	    if ($name[0]['nick_name'] == 'admin'){
     	        $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/index'), 'sec' => 3),'info' => urlencode('不能删除超级管理员admin！'),'code' => -201);
     	        exit(urldecode(json_encode($output)));
     	    }
-    	    $status = $Admin->where(array('id'=>$id))->delete();
-    	    if($status){
+    	    $status1 = $model->table('admin')->where(array('id'=>$id))->delete();
+    	    if($status1){
     	        //同时删除用户角色数据
-    	        $status = M('role_user')->where(array('user_id'=>$id))->delete();
-    	        if($status){
-    	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/index'), 'sec' => 2),'info' => urlencode('删除超级管理员及用户角色信息成功！'),'code' => 200);
+    	        $status2 = $model->table('role_user')->where(array('user_id'=>$id))->delete();
+    	        if($status2){
+    	            //成功提交
+    	            $model->commit();
+    	            
+    	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/index'), 'sec' => 2),'info' => urlencode('删除超级管理员成功！'),'code' => 200);
     	            exit(urldecode(json_encode($output)));
     	        }else{
-    	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/index'), 'sec' => 3),'info' => urlencode('修改超级管理员成功，但删除用户角色数据失败！'),'code' => "-200A");
+    	            //失败回滚
+    	            $model->rollback();
+    	            
+    	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/index'), 'sec' => 3),'info' => urlencode('删除超级管理员失败！'),'code' => -200);
     	            exit(urldecode(json_encode($output)));
     	        }
     	    }else{
-    	        $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/index'), 'sec' => 3),'info' => urlencode('修改超级管理员失败！'),'code' => "-200B");
+    	        //失败回滚
+    	        $model->rollback();
+    	        
+    	        $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/index'), 'sec' => 3),'info' => urlencode('删除超级管理员失败！'),'code' => -200);
     	        exit(urldecode(json_encode($output)));
     	    }
 	    }else{
@@ -302,7 +317,7 @@ class AdminController extends CommonController {
 	        exit(urldecode(json_encode($output)));
 	    }
 	}
-	//处理业主更新信息
+	//处理管理员更新信息
 	public function do_edit(){
 	    if (IS_POST) {
 	        //获取TOKEN
@@ -339,11 +354,11 @@ class AdminController extends CommonController {
     	        $row = D('admin')->field('password,id_card_num')->where("id = '{$id}'")->select();
     	        //判断错误
     	        if ($new_password != $confirm_password){
-    	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Users/edit'), 'sec' => 3),'info' => urlencode('两次输入的新密码不一致！'),'code' => '-202A');
+    	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/edit'), 'sec' => 3),'info' => urlencode('两次输入的新密码不一致！'),'code' => '-202A');
     	            exit(urldecode(json_encode($output)));
     	        }else{
     	            if ($row['password'] != create_hash($old_password, $row['id_card_num'])) {
-    	                $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Users/edit'), 'sec' => 3),'info' => urlencode('输入的旧密码错误！'),'code' => '-202B');
+    	                $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/edit'), 'sec' => 3),'info' => urlencode('输入的旧密码错误！'),'code' => '-202B');
     	                exit(urldecode(json_encode($output)));
     	            }else{
     	                //执行
@@ -434,7 +449,7 @@ class AdminController extends CommonController {
     	        exit(urldecode(json_encode($output)));
     	    }
 	    }else{
-	        $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/edit'), 'sec' => 3),'info' => urlencode('请求错误！请重新再试！'),'code' => -205);
+	        $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/index'), 'sec' => 3),'info' => urlencode('请求错误！请重新再试！'),'code' => -205);
 	        exit(urldecode(json_encode($output)));
 	    }
 	}	
@@ -453,36 +468,61 @@ class AdminController extends CommonController {
             //获取动作（approve / reject）
             $action = I('post.action');
             
+            //开启事务
+    	    $model = new Model();
+    	    $model->startTrans();
+            
             //判断
             if ($action == 'approve') {
                 $data = array(
                   'id' => $id,
                   'if_aprvd' => 1
                 );
-                D('users')->save($data);
-                
-                //当业主信息审批通过，需同时给sc_role_user添加角色关系，角色默认为“无”
-                $data = array(
-                    'role_id' => 2, //默认为普通业主
-                    'user_id' => $id,
-                    'user_type' => 'U'
-                );
-                M('role_user')->add($data);
-                
-                $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Users/approved_users'), 'sec' => 2),'info' => urlencode('业主审批已通过！'),'code' => 200);
-                exit(urldecode(json_encode($output)));
+                $status1 = $model->table('users')->save($data);
+                if($status1){
+                    //当业主信息审批通过，需同时给sc_role_user添加角色关系，角色默认为“无”
+                    $data = array(
+                        'role_id' => 2, //默认为普通业主
+                        'user_id' => $id,
+                        'user_type' => 'U'
+                    );
+                    $status2 = $model->table('role_user')->add($data);
+                    if ($status2){
+                        //成功提交
+                        $model->commit();
+                        
+                        $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Users/index'), 'sec' => 2),'info' => urlencode('业主审批已通过！'),'code' => '200A');
+                        exit(urldecode(json_encode($output)));
+                    }else {
+                        //失败回滚
+                        $model->rollback();
+                        
+                        $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Users/index'), 'sec' => 3),'info' => urlencode('操作失败！'),'code' => -200);
+                        exit(urldecode(json_encode($output)));
+                    }
+                }else{
+                    //失败回滚
+                    $model->rollback();
+                    
+                    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Users/index'), 'sec' => 3),'info' => urlencode('操作失败！'),'code' => -200);
+                    exit(urldecode(json_encode($output)));
+                }
             }elseif ($action == 'reject'){
                 $data = array(
                     'id' => $id,
-                    'if_aprvd' => 1
+                    'if_aprvd' => -1
                 );
-                D('users')->save($data);
-                
-                $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Users/approved_users'), 'sec' => 2),'info' => urlencode('业主审批已拒绝！'),'code' => 200);
-                exit(urldecode(json_encode($output)));            
+                $status = $model->table('users')->save($data);
+                if ($status){
+                    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Users/index'), 'sec' => 2),'info' => urlencode('业主审批已拒绝！'),'code' => '200B');
+                    exit(urldecode(json_encode($output)));
+                } else{
+                    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Users/index'), 'sec' => 3),'info' => urlencode('操作失败！'),'code' => -200);
+                    exit(urldecode(json_encode($output)));
+                }
             }
         }else{
-            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/edit'), 'sec' => 3),'info' => urlencode('请求错误！请重新再试！'),'code' => -205);
+            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/index'), 'sec' => 3),'info' => urlencode('请求错误！请重新再试！'),'code' => -205);
             exit(urldecode(json_encode($output)));
         }            
     }
@@ -497,40 +537,58 @@ class AdminController extends CommonController {
 	            exit(urldecode(json_encode($output)));
 	        }
     	    $id = I('post.id');
-    	    $status = M('users')->where(array('id'=>$id))->delete();
-    	    if($status){
+    	    
+    	    //开启事务
+    	    $model = new Model();
+    	    $model->startTrans();
+    	    
+    	    $status1 = $model->table('users')->where(array('id'=>$id))->delete();
+    	    if($status1){
     	        //同时删除用户角色信息
-    	        $status = M('role_user')->where(array('user_id'=>$id))->delete();
-    	        if($status){
-    	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Users/approved_users'), 'sec' => 2),'info' => urlencode('删除用户及用户角色数据成功！'),'code' => 200);
+    	        $status2 = $model->table('role_user')->where(array('user_id'=>$id))->delete();
+    	        if($status2){
+    	            //成功提交
+    	            $model->commit();
+    	            
+    	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Users/index'), 'sec' => 2),'info' => urlencode('删除用户及用户角色数据成功！'),'code' => 200);
     	            exit(urldecode(json_encode($output)));
     	        }else{
-    	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Users/approved_users'), 'sec' => 3),'info' => urlencode('修改用户成功，删除用户角色失败！'),'code' => '-200A');
+    	            //失败回滚
+    	            $model->rollback();
+    	            
+    	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Users/index'), 'sec' => 3),'info' => urlencode('删除用户失败！'),'code' => -200);
     	            exit(urldecode(json_encode($output)));
     	        }
     	    }else{
-    	        $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Users/approved_users'), 'sec' => 3),'info' => urlencode('修改用户失败！'),'code' => '-200B');
+    	        //失败回滚
+    	        $model->rollback();
+    	        
+    	        $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Users/index'), 'sec' => 3),'info' => urlencode('删除用户失败！'),'code' => -200);
     	        exit(urldecode(json_encode($output)));
     	    }	   
 	    }else{
-	        $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/edit'), 'sec' => 3),'info' => urlencode('请求错误！请重新再试！'),'code' => -205);
+	        $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/index'), 'sec' => 3),'info' => urlencode('请求错误！请重新再试！'),'code' => -205);
 	        exit(urldecode(json_encode($output)));
 	    }    	      
 	}
 	
 	//管理员对物业人员信息进行处理
     public function approving_mgrs(){
-        if (IS_POST) {
+    if (IS_POST) {
             //获取TOKEN
             $token = I('post.access_token');
             if (!check_token($token)){
                 $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Public/login'), 'sec' => 3),'info' => urlencode('ACCESS_TOKEN超时，请重新登录！'),'code' => -208);
                 exit(urldecode(json_encode($output)));
-            }
+                }
             //获取需要审批的业主ID
             $id = I('post.id');
             //获取动作（approve / reject）
             $action = I('post.action');
+            
+            //开启事务
+    	    $model = new Model();
+    	    $model->startTrans();
             
             //判断
             if ($action == 'approve') {
@@ -538,32 +596,53 @@ class AdminController extends CommonController {
                   'id' => $id,
                   'if_aprvd' => 1
                 );
-                D('mgrs')->save($data);
-                
-                //当业主信息审批通过，需同时给sc_role_user添加角色关系，角色默认为“无”
-                $data = array(
-                    'role_id' => 0, //默认为无，需管理员重新分配
-                    'user_id' => $id,
-                    'user_type' => 'M'
-                );
-                M('role_user')->add($data);
-                
-                $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Mgrs/approved_mgrs'), 'sec' => 2),'info' => urlencode('物业审批已通过！'),'code' => 200);
-                exit(urldecode(json_encode($output)));
+                $status1 = $model->table('mgrs')->save($data);
+                if($status1){
+                    //当业主信息审批通过，需同时给sc_role_user添加角色关系，角色默认为“无”
+                    $data = array(
+                        'role_id' => 2, //默认为普通业主
+                        'user_id' => $id,
+                        'user_type' => 'M'
+                    );
+                    $status2 = $model->table('role_user')->add($data);
+                    if ($status2){
+                        //成功提交
+                        $model->commit();
+                        
+                        $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Mgrs/index'), 'sec' => 2),'info' => urlencode('业主审批已通过！'),'code' => '200A');
+                        exit(urldecode(json_encode($output)));
+                    }else {
+                        //失败回滚
+                        $model->rollback();
+                        
+                        $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Mgrs/index'), 'sec' => 3),'info' => urlencode('操作失败！'),'code' => -200);
+                        exit(urldecode(json_encode($output)));
+                    }
+                }else{
+                    //失败回滚
+                    $model->rollback();
+                    
+                    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Mgrs/index'), 'sec' => 3),'info' => urlencode('操作失败！'),'code' => -200);
+                    exit(urldecode(json_encode($output)));
+                }
             }elseif ($action == 'reject'){
                 $data = array(
                     'id' => $id,
-                    'if_aprvd' => 1
+                    'if_aprvd' => -1
                 );
-                D('mgrs')->save($data);
-                
-                $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Mgrs/approved_mgrs'), 'sec' => 2),'info' => urlencode('物业审批已拒绝！'),'code' => 200);
-                exit(urldecode(json_encode($output)));            
+                $status = $model->table('mgrs')->save($data);
+                if ($status){
+                    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Mgrs/index'), 'sec' => 2),'info' => urlencode('业主审批已拒绝！'),'code' => '200B');
+                    exit(urldecode(json_encode($output)));
+                } else{
+                    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Mgrs/index'), 'sec' => 3),'info' => urlencode('操作失败！'),'code' => -200);
+                    exit(urldecode(json_encode($output)));
+                }
             }
         }else{
-            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/edit'), 'sec' => 3),'info' => urlencode('请求错误！请重新再试！'),'code' => -205);
+            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/index'), 'sec' => 3),'info' => urlencode('请求错误！请重新再试！'),'code' => -205);
             exit(urldecode(json_encode($output)));
-        }
+        }            
     }
 	
 	//管理员删除物业人员信息
@@ -576,22 +655,36 @@ class AdminController extends CommonController {
 	            exit(urldecode(json_encode($output)));
 	        }
     	    $id = I('post.id');
-    	    $status = M('mgrs')->where(array('id'=>$id))->delete();
-    	    if($status){
-    	        $status = M('role_user')->where(array('user_id'=>$id))->delete();
-    	        if($status){
-    	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/approved_mgrs'), 'sec' => 2),'info' => urlencode('删除物业及物业角色数据成功！'),'code' => 200);
+    	    
+    	    //开启事务
+    	    $model = new Model();
+    	    $model->startTrans();
+    	    
+    	    $status1 = $model->table('mgrs')->where(array('id'=>$id))->delete();
+    	    if($status1){
+    	        $status2 = $model->table('role_user')->where(array('user_id'=>$id))->delete();
+    	        if($status2){
+    	            //成功提交
+    	            $model->commit();
+    	            
+    	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Mgrs/index'), 'sec' => 2),'info' => urlencode('删除成功！'),'code' => 200);
     	            exit(urldecode(json_encode($output)));
     	        }else{
-    	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/approved_mgrs'), 'sec' => 3),'info' => urlencode('修改物业成功，删除物业角色失败！'),'code' => '-200A');
+    	            //失败回滚
+    	            $model->rollback();
+    	            
+    	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Mgrs/index'), 'sec' => 3),'info' => urlencode('删除物业失败！'),'code' => -200);
     	            exit(urldecode(json_encode($output)));
     	        }
     	    }else{
-    	        $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/approved_mgrs'), 'sec' => 3),'info' => urlencode('删除物业失败！'),'code' => '-200B');
+    	        //失败回滚
+    	        $model->rollback();
+    	        
+    	        $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Mgrs/index'), 'sec' => 3),'info' => urlencode('删除物业失败！'),'code' => -200);
     	        exit(urldecode(json_encode($output)));
     	    }	
     	}else{
-    	    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/edit'), 'sec' => 3),'info' => urlencode('请求错误！请重新再试！'),'code' => -205);
+    	    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Mgrs/index'), 'sec' => 3),'info' => urlencode('请求错误！请重新再试！'),'code' => -205);
     	    exit(urldecode(json_encode($output)));
 	    }
 	}

@@ -153,6 +153,7 @@ class CategoryController extends CommonController
             'cname'
         ));
         $id = trim(I('get.id'));
+           
         // 检查此分类是否有子类，如果有则不能删除
         if (M('Category')->where(array(
             'afid' => $id
@@ -165,6 +166,7 @@ class CategoryController extends CommonController
         ))->select()) {
             $this->error('此分类有文章，删除失败');
         }
+        
         $result = $acat->del($id);
         if ($result) {
             $this->success('删除成功');

@@ -28,6 +28,7 @@ class PublicController extends Controller
     {
         $this->display();
     }
+    
     // 定义verify方法
     public function verify()
     {

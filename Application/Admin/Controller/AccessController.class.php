@@ -1,6 +1,9 @@
 <?php
 namespace Admin\Controller;
+use Think\Model;
 
+use Think\Think;
+use Think\Page;
 class AccessController extends CommonController{
     //定义_empty空操作
     public function _empty(){
@@ -38,6 +41,7 @@ class AccessController extends CommonController{
 	            $count = M('role_user')->where("user_type = 'U'")->count();
 	            //实例化分类页
 	            $Page = new \Think\Page($count,$count);
+
 	            //调用show显示分页链接
 	            $show = $Page->show();
 	        
@@ -184,7 +188,7 @@ class AccessController extends CommonController{
             foreach ($data as $v){
                 $str .= <<<Eof
                         	<div style="margin:5px;border-bottom:1px dotted #ccc">
-                        		<button type="button" class="btn btn-primary">{$v['title']}</button>
+                        		<button type="button" class="btn-primary">{$v['title']}</button>
                         		<a href="add_node/pid/{$v['id']}/level/2"><i class="fa fa-plus"></i></a>
                         		<a href="javascript:;" name="del" id="{$v['id']}"><i class="fa fa-trash-o"></i></a>
                         	</div>
@@ -192,7 +196,7 @@ Eof;
                 foreach ($v['child'] as $con){
                     $str .= <<<Eof
                     		<div style="margin:5px;border-top:1px solid #555">
-                    			<button type="button" class="btn btn-success">{$con['title']}</button>
+                    			<button type="button" class="btn-success">{$con['title']}</button>
                     			<a href="add_node/pid/{$con['id']}/level/3"><i class="fa fa-plus"></i></a>
                     			<a href="javascript:;" name="del" id="{$con['id']}"><i class="fa fa-trash-o"></i></a>
                     		</div>
@@ -200,7 +204,7 @@ Eof;
 Eof;
                     foreach ($con['child'] as $act){
                         $str .= <<<Eof
-            				<button type="button" class="btn btn-info" >{$act['title']}</button>
+            				<button type="button" class="btn-info" >{$act['title']}</button>
             				<a style="margin-right:10px" href="javascript:;" name="del" id="{$act['id']}"><i class="fa fa-trash-o"></i></a>
 Eof;
                     }
@@ -313,15 +317,41 @@ Eof;
 	            exit(urldecode(json_encode($output)));
 	        }
     		$id = I('post.id');
-    		$status = M('node')->where(array('id'=>$id))->delete();
-    		if($status){
-    		    $status = M('access')->where(array('node_id'=>$id))->delete();
-    		    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Access/node_list'), 'sec' => 2),'info' => urlencode('删除节点成功！'),'code' => 200);
-    		    exit(urldecode(json_encode($output)));			
-    		}else{
-    		    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Access/node_list'), 'sec' => 3),'info' => urlencode('删除节点失败！'),'code' => -200);
-    		    exit(urldecode(json_encode($output)));			
+    		$model = new Model();
+    		//开启事务
+    		$model->startTrans();
+    		
+    		$status1 = $model->table('node')->where(array('pid'=>$id))->find();
+    	     
+    		if ($status1){
+    		    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Access/node_list'), 'sec' => 3),'info' => urlencode('此节点存在子节点，请先删除子节点！'),'code' => -201);
+    		    exit(urldecode(json_encode($output)));
+    		} else {
+    		    $status2 = $model->table('node')->where(array('id'=>$id))->delete();
+    		    if($status2){
+    		        $status3 = $model->table('access')->where(array('node_id'=>$id))->delete();
+    		        if ($status3){
+    		            //成功提交
+    		            $model->commit();
+    		            
+    		            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Access/node_list'), 'sec' => 2),'info' => urlencode('删除节点成功！'),'code' => 200);
+    		            exit(urldecode(json_encode($output)));
+    		        } else {
+    		            //失败回滚
+    		            $model->rollback();
+    		            
+    		            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Access/node_list'), 'sec' => 3),'info' => urlencode('删除节点失败！'),'code' => -200);
+    		            exit(urldecode(json_encode($output)));
+    		        }  
+    		    }else{
+    		        //失败回滚
+    		        $node->rollback();
+    		        
+    		        $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Access/node_list'), 'sec' => 3),'info' => urlencode('删除节点失败！'),'code' => -200);
+    		        exit(urldecode(json_encode($output)));
+    		    } 
     		}
+
 		}else{
 		    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Index/index'), 'sec' => 3),'info' => urlencode('请求失败，请重新再试！'),'code' => -205);
 		    exit(urldecode(json_encode($output)));
@@ -418,15 +448,34 @@ Eof;
 	            exit(urldecode(json_encode($output)));
 	        }	    
     		$id = I('post.id');
-    		$status = M('role')->where(array('id'=>$id))->delete();
-    		if($status){
+    		
+    		$model = new Model();
+    		//开启事务
+    		$model->startTrans();
+    		
+    		$status1 = $model->table('role')->where(array('id'=>$id))->delete();
+    		if($status1){
     		    $data = array(
-    		        'role_id' => 0 //为分配角色
+    		        'role_id' => 0 //为待分配角色
     		    );		    
-    		    M('role_user')->where(array('role_id'=>$id))->setField($data);	    
-    			$output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Access/role_list'), 'sec' => 2),'info' => urlencode('删除角色成功！'),'code' => 200);
-    			exit(urldecode(json_encode($output)));				
+    		    $status2 = $model->table('role_user')->where(array('role_id'=>$id))->setField($data);	    
+    			if ($status2){
+    			    //成功提交
+    			    $model->commit();
+    			    
+    			    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Access/role_list'), 'sec' => 2),'info' => urlencode('删除角色成功！'),'code' => 200);
+    			    exit(urldecode(json_encode($output)));
+    			}else {
+    			    //失败回滚
+    			    $model->rollback();
+    			    
+    			    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Access/role_list'), 'sec' => 3),'info' => urlencode('删除角色失败！'),'code' => -200);
+    			    exit(urldecode(json_encode($output)));
+    			}
     		}else{
+    		    //失败回滚
+    		    $model->rollback();
+    		    
     		    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Access/role_list'), 'sec' => 3),'info' => urlencode('删除角色失败！'),'code' => -200);
     			exit(urldecode(json_encode($output)));
     		}
@@ -437,6 +486,18 @@ Eof;
 	}
 	
 	public function access_list(){
+	    //用户点击角色的权限配置跳转到此，GET请求
+	    $id = I('get.id');
+	    $data = M('node')->select();
+	    	
+	    //$ids  = M('access')->field('node_id')->where(array('role_id'=>$id))->select();
+	    $ids  = M('access')->where(array('role_id'=>$id))->getField('node_id',true);
+	    
+	    $data = category($data);
+	    
+	    $this->assign('data',$data);
+	    $this->assign('ids',$ids);
+	    $this->assign('id',$id);
 	    $this->display();
 	}
 
@@ -456,40 +517,48 @@ Eof;
     	    //用户点击角色的权限配置跳转到此，GET请求
     	    $id = I('post.id');
     	    $data = M('node')->select();
+    	    
+    	    //$ids  = M('access')->field('node_id')->where(array('role_id'=>$id))->select();
     	    $ids  = M('access')->where(array('role_id'=>$id))->getField('node_id',true);
+
     	    foreach ($data as $key => &$value){
     	        $value['title'] = urlencode($value['title']);
     	    }
     	    $data = category($data);
     	    $str = '';
+    	    
     	    foreach ($data as $v){
     	        $str .= <<<Eof
-                        <div style="margin:5px;border-bottom:1px dotted #ccc">
-                        <button type="button" class="btn btn-primary">{$v['title']}</button>
-                        <input type="checkbox" name="access[]" class="level1" value="{$v['id']}" <?php if(in_array({$v['id']}, {$ids}))echo "checked"?>>
+    	                <div>
+                        <div style="border-bottom:1px dotted #ccc">
+                        <button type="button" class="btn-primary">{$v['title']}</button>
+                        <input type="checkbox" id="node" name="access[]" class="level1" value="{$v['id']}">
+                        </div>
 Eof;
     	        foreach ($v['child'] as $con){
     	            $str .= <<<Eof
-                            <div style="margin:5px;border-top:1px solid #555">
-                                <button type="button" class="btn btn-success">{$con['title']}</button>
-                                <input type="checkbox" name="access[]" class="level2" value="{$con['id']}" <?php if(in_array({$con['id']}, {$ids}))echo "checked"?>>
+                            <div style="border-top:1px solid #555">
+                                <button type="button" class="btn-success">{$con['title']}</button>
+                                <input type="checkbox" id="node" name="access[]" class="level2" value="{$con['id']}">
                             </div>
-                            <div style="margin:5px;">
 Eof;
+    	            // "<?php if(in_array({$con['id']}, {$ids})){echo 'checked'}
     	            foreach ($con['child'] as $act){
     	                $str .= <<<Eof
-                                <button type="button" class="btn btn-info" >{$act['title']}</button>
-                                <input type="checkbox" name="access[]" class="level3" value="{$act['id']}" <?php if(in_array({$act['id']}, {$ids}))echo "checked"?>>
+    	                       <div style="">
+                                <button type="button" class="btn-info" >{$act['title']}</button>
+                                <input type="checkbox" id="node" name="access[]" class="level3" value="{$act['id']}">
+                                </div>
 Eof;
     	            }
-    	            $str .= "</div></div>";
+    	            $str .= "</div>";
     	        }
     	    }
     	    
     	    $output = array('data' => array(
     	        'ids' => $ids,
     	        'id' => $id,
-    	        'data' => $data
+    	        'data' => $str
     	    ),'info' => urlencode('权限列表'),'code' => 200);
     	    exit(urldecode(json_encode($output)));
 	    }else{
@@ -512,16 +581,18 @@ Eof;
 		        $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Public/login'), 'sec' => 3),'info' => urlencode('ACCESS_TOKEN超时，请重新登录！'),'code' => -208);
 		        exit(urldecode(json_encode($output)));
 		    }
-			$node_id = I('post.');
-			$role_id = $node_id['id'];
+			$node_id = explode(',', I('post.access'));
+			$role_id = I('post.id');
 			$status = M('access')->where(array('role_id'=>$role_id))->delete();
 			$data = array();
-			foreach ($node_id['access'] as $key => $value) {
+			foreach ($node_id as $key => $value) {
 				$data[] = array(
 					'role_id' => $role_id,
 					'node_id' => $value,
 					);
 			}
+// 			$output = array('info' => $node_id,'code' => -200);
+// 			exit(urldecode(json_encode($output)));
 			$status = M('access')->addAll($data);
 			if($status){
 				$output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Access/role_list'), 'sec' => 2),'info' => urlencode('更新权限成功！'),'code' => 200);
