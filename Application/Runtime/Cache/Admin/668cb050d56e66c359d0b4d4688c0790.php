@@ -1,14 +1,14 @@
 <?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<!-- Meta, title, CSS, favicons, etc. -->
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>JoyRill智慧社区后台</title>
-	<!-- Public core css/js -->
-	<!-- Bootstrap core CSS -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- Meta, title, CSS, favicons, etc. -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JoyRill智慧社区后台</title>
+<!-- Public core css/js -->
+<!-- Bootstrap core CSS -->
 
 <link href="/smart_community/Public/admin/css/bootstrap.min.css" rel="stylesheet">
 
@@ -32,6 +32,10 @@
 <link href="/smart_community/Public/admin/css/floatexamples.css" rel="stylesheet" type="text/css" />    
 <script src="/smart_community/Public/admin/js/jquery.min.js"></script>
 
+<script type="text/javascript"
+	src="/smart_community/Public/admin/ueditor/ueditor.config.js"></script>
+<script type="text/javascript"
+	src="/smart_community/Public/admin/ueditor/ueditor.all.js"></script>
 </head>
 <body class="nav-md">
 	<div class="container body">
@@ -48,7 +52,8 @@
     <!-- menu prile quick info -->
     <div class="profile">
       <div class="profile_pic">
-        <img src="/smart_community/Public/admin/images/img.jpg" alt="..." class="img-circle profile_img">
+        <!--<img src="/smart_community/Public/admin/images/img.jpg" alt="..." class="img-circle profile_img">-->
+        <img src="<?php echo 'http://localhost/smart_community' . $_SESSION['icon_url']?>" alt="..." class="img-circle profile_img">
       </div>
       <div class="profile_info">
         <span>Welcome,</span>
@@ -180,7 +185,8 @@
       <ul class="nav navbar-nav navbar-right">
         <li id="user-profile" class="">
           <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-            <img src="/smart_community/Public/admin/images/img.jpg" alt=""><?php echo ucfirst($_SESSION['nick_name']);?>
+<!--            <img src="/smart_community/Public/admin/images/img.jpg" alt=""><?php echo ucfirst($_SESSION['nick_name']);?>  -->
+			<img src="<?php echo 'http://localhost/smart_community' . $_SESSION['icon_url']?>" alt=""><?php echo ucfirst($_SESSION['nick_name']);?>
             <span class=" fa fa-angle-down"></span>
           </a>
           <ul class="dropdown-menu dropdown-usermenu pull-right">
@@ -271,33 +277,130 @@
     }
   </script>
 
-	
 	<!-- page content -->
 	<div class="right_col" role="main">
-		<div class="col-md-12 col-sm-12 col-xs-12">
-        	<div class="x_panel">	
-			    <div class="title">
-			        <a class="btn btn-default" href="<?php echo U('Admin/Access/add_role');?>" >添加角色</a>
-			    </div>
-			    <div class="container-fluid">
-			        <table class="table table-hover">
-			            <thead>
-			                <tr>
-			                    <th>ID</th>
-			                    <th>名称</th>
-			                    <th>描述</th>
-			                    <th>操作</th>
-			                </tr>
-			            </thead>
-			            <tbody id="role_list">
-
-			            </tbody>
-			        </table>
-			    </div>
+		<div class="col-lg-10 col-md-10 col-xs-12"
+			style="background-color: #FFF;">
+			<!-- begin tab -->
+			<ul class="nav nav-tabs ">
+				<li class="active"><a href=""><b>文章详情</b></a></li>
+			</ul>
+			<p></p>
+			<div class="row">
+				<div class="col-lg-2 col-md-2 col-xs-2"></div>
+				<div class="col-lg-6 col-md-6 col-xs-6">
+					<span class="help-block"></span>
+				</div>
+				<div class="col-lg-4 col-md-4 col-xs-4"></div>
 			</div>
-		</div>			    
-	  </div>
-	  	<!-- /page content -->
+			<p></p>
+			<form class="form-horizontal" role="form"
+				enctype="multipart/form-data">
+				<input type="hidden" id="article_id"
+					value="<?php echo $_GET['id']?>">
+				<div class="form-group">
+					<label for="article_title" class="col-sm-2 control-label">标题</label>
+					<div class="col-sm-6">
+						<input type="text" class="form-control" id="article_title"
+							name="article_title" value="<?php echo ($item['atitle']); ?>" maxlength="150"
+							readonly>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="article_source" class="col-sm-2 control-label">来源</label>
+					<div class="col-sm-3">
+						<input type="text" class="form-control" id="article_source"
+							name="article_title" value="<?php echo ($item['source']); ?>" maxlength="20"
+							readonly>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="article_author" class="col-sm-2 control-label">作者</label>
+					<div class="col-sm-3">
+						<input type="text" class="form-control" id="article_author"
+							name="article_title" value="<?php echo ($item['author']); ?>" maxlength="20"
+							readonly>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="category_id" class="col-sm-2 control-label">文章分类</label>
+					<div class="col-sm-3">
+						<select class="form-control" id="category_id" name="category_id"
+							disabled>
+							<?php if(is_array($clist)): $i = 0; $__LIST__ = $clist;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if(($vo['acid']) == $item['acid']): ?><option value="<?php echo ($vo["acid"]); ?>" selected="selected"><?php echo ($vo["cname"]); ?></option>
+							<?php else: ?>
+							<option value="<?php echo ($vo["acid"]); ?>"><?php echo ($vo["cname"]); ?></option><?php endif; endforeach; endif; else: echo "" ;endif; ?>
+						</select>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="article_valid_time" class="col-sm-2 control-label">截至有效时间</label>
+					<div class="col-sm-3">
+						<input type="date" class="form-control" id="article_valid_time"
+							name="article_valid_time" value="<?php echo ($item['valid_time']); ?>" readonly>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="article_des" class="col-sm-2 control-label">摘要</label>
+					<div class="col-sm-6">
+						<textarea class="form-control" rows="3" id="article_des"
+							placeholder="" maxlength="150" readonly><?php echo ($item['des']); ?></textarea>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="article_content" class="col-sm-2 control-label">内容</label>
+					<div class="col-sm-8">
+						<script id="article_content" name="article_content"
+							type="text/plain"><?php echo (htmlspecialchars_decode($item["content"])); ?></script>
+						<script type="text/javascript">
+							//设置只读
+							var editor = new UE.ui.Editor({
+								readonly : true,
+							});
+							editor.render('article_content');
+						</script>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="article_keyword" class="col-sm-2 control-label">关键词</label>
+					<div class="col-sm-3">
+						<input id="article_keyword" type="text" class="tags form-control"
+							value="<?php echo ($item['keyword']); ?>" maxlength="100" />
+						<div id="suggestions-container"
+							style="position: relative; float: left; width: 250px; margin: 10px;"></div>
+					</div>
+					<div class="col-sm-6">
+						<span class="help-block"> <i class="fa fa-exclamation"></i>输入关键词后按回车键
+						</span>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="article_sort" class="col-sm-2 control-label">排序</label>
+					<div class="col-sm-2">
+						<input type="text" class="form-control" id="article_sort"
+							name="article_sort" value="<?php echo ($item['sort']); ?>" placeholder=""
+							readonly>
+					</div>
+					<div class="col-sm-8">
+						<span class="help-block"> <i class="fa fa-exclamation"></i>值为0-99，值越大，越靠前
+						</span>
+					</div>
+				</div>
+				<div class="ln_solid"></div>
+				<div class="form-group">
+					<div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3">
+						<a href="javascript:;" id="delete" class="btn btn-danger"><li
+							class="fa fa-trash"></li> 彻底删除</a> <a href="javascript:;"
+							id="undo" class="btn btn-success"><li
+							class="fa fa-check"></li> 还原</a>
+					</div>
+				</div>
+			</form>
+		</div>
+		<!-- col end -->
+	</div>
+	<!-- /page content -->
+
 	<!-- footer content -->
 <footer>
   <div class="pull-right">
@@ -397,59 +500,90 @@
 		$('#presentation').addClass('open');
 	})
 </script>
-	<script type="text/javascript">
-		window.onload = function(){
-	    	$.ajax({
-	            type: "post",
-	            url: "/smart_community/admin.php/Access/role",
-	            data: {
-	            	'access_token' : getCookie('access_token')
-	            },
-	            dataType: "json",
-	            success: function(data) {
-	            	if(data['code'] == 200){
-			            var len = data['data'].length;
-	            		if(len == 0){
-	            			$("#role_list").append("<font color='red'><h5>无角色信息！</h5></font>");
-	            		}	            		
-		            	for(var i=0; i < len; i++){
-		            	 	var array = "/id/"+data['data'][i]['id'];
-		            		$("#role_list").append("<tr><td>"+data['data'][i]['id']+"</td><td>"+data['data'][i]['name']+"</td><td>"+data['data'][i]['remark']+"</td><td><a class=\"btn btn-info btn-xs\" href=\""+"<?php echo U('Admin/Access/access_list"+array+"');?>\"><i class=\"fa fa-pencil\"></i>权限配置</a><a class=\"btn btn-danger btn-xs\" href=\"javascript:;\" name= \"delete\" id=\""+data['data'][i]['id']+"\"><i class=\"fa fa-trash-o\"></i>删除角色</a></td>"+"</tr>");
-		            	 }
-	            	}
-	            	if(data['code'] == '-205' || data['code'] == '-206' || data['code'] == '-207' || data['code'] == '-208'){
-	            		alert(data['info']);
-	            		location.href = 'http://' + data['data']['redirect_url'];
-	            	}
-	            },
-	            error: function(xhr, type, errorThrown) {
-	              //异常处理
-	              console.log(type);
-	            }
-	          }); 			
-		}
- 		//$("#role_list a[name='delete']").on('click',function(){
- 			$("#role_list~a:odd").on('click',function(){
- 	    	$.ajax({
-	            type: "post",
-	            url: "/smart_community/admin.php/Access/del_role",
-	            data: {
-	            	'id' : $(this).attr('id'),
-	            	'access_token' : getCookie('access_token')
-	            },
-	            dataType: "json",
-	            success: function(data) {
-	            	if(data['code'] == 200 || data['code'] == '-200' || data['code'] == '-205' || data['code'] == '-206' || data['code'] == '-207' || data['code'] == '-208'){
-	            		alert(data['info']);
-	            		location.href = 'http://' + data['data']['redirect_url'];
-	            	}
-	            },
-	            error: function(xhr, type, errorThrown) {
-	              //异常处理
-	              console.log(type);
-	            }
-	       }); 
-		}); 
+	<!-- Tags -->
+	<!-- 	<script src="/smart_community/Public/admin/js/tags/jquery.tagsinput.min.js"></script> -->
+	<script>
+		//input tags
+		/* 		function onAddTag(tag) {
+		 alert("Added a tag: " + tag);
+		 }
+
+		 function onRemoveTag(tag) {
+		 alert("Removed a tag: " + tag);
+		 }
+
+		 function onChangeTag(input, tag) {
+		 alert("Changed a tag: " + tag);
+		 }
+
+		 $(function() {
+		 $('#article_keyword').tagsInput({
+		 width : 'auto'
+		 });
+		 }); */
+		 
+		//放入回收站
+		$('body').on(
+				'click',
+				'#delete',
+				function() {
+					$.ajax({
+						type : "post",
+						url : "/smart_community/admin.php/Article/delete",
+						data : {
+							'access_token' : getCookie('access_token'),
+							'article_id' : $('#article_id').val(),
+						},
+						dataType : "json",
+						success : function(data) {
+							if (data['code'] == '200' || data['code'] == '-200'
+									|| data['code'] == '-205'
+									|| data['code'] == '-206' || data['code'] == '-207' || data['code'] == '-208') {
+								alert(data['info']);
+								location.href = 'http://'
+										+ data['data']['redirect_url'];
+							}
+						},
+						error : function(xhr, type, errorThrown) {
+							//异常处理
+							console.log(type);
+						}
+					});
+				})
+		
+		//审批
+		$('body').on(
+				'click',
+				'#undo',
+				function() {
+					$.ajax({
+						type : "post",
+						url : "/smart_community/admin.php/Article/undo",
+						data : {
+							'access_token' : getCookie('access_token'),
+							'article_id' : $('#article_id').val(),
+						},
+						dataType : "json",
+						success : function(data) {
+							if (data['code'] == '200' || data['code'] == '-200'
+									|| data['code'] == '-205'
+									|| data['code'] == '-206' || data['code'] == '-207' || data['code'] == '-208') {
+								alert(data['info']);
+								location.href = 'http://'
+										+ data['data']['redirect_url'];
+							}
+						},
+						error : function(xhr, type, errorThrown) {
+							//异常处理
+							console.log(type);
+						}
+					});
+				})
 	</script>
+
+	<!-- END CORE PLUGINS -->
+
+	<!-- END JAVASCRIPTS -->
 </body>
+<!-- END BODY -->
 </html>

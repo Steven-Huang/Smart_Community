@@ -534,12 +534,8 @@
 												}
 												var len = data['data']['data'].length;
 												for (var i = 0; i < len; i++) {
-													var array = "/role/users/user_id/"
-															+ data['data']['data'][i]['id']
-															+ "/username/"
-															+ data['data']['data'][i]['nick_name']
-															+ "/role_id/"
-															+ data['data']['data'][i]['role_id'];
+													var array = "/user_id/"
+															+ data['data']['data'][i]['id'];
 													$("#tab2")
 															.append(
 																	"<tr><td>U"
@@ -560,9 +556,8 @@
 																			+ "</td><td>"
 																			+ data['data']['data'][i]['create_time']
 																			+ "</td><td><a class=\"btn btn-success btn-xs\" href=\""
-																			+ "<?php echo U('Admin/Users/edit" + array + "');?>\"><i class=\"fa fa-check\"></i>审批通过</a>"
-																			+ "<a class=\"btn btn-danger btn-xs\" href=\""
-																			+ "<?php echo U('Admin/Users/edit" + array + "');?>\"><i class=\"fa fa-close\"></i>拒绝</a></td>"
+																			+ "<?php echo U('Admin/Users/detail" + array + "');?>\"><i class=\"fa fa-search-plus\"></i>审批</a>"
+																			+ "</td>"
 																			+ "</tr>");
 												}
 												$('#pages2').append(

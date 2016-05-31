@@ -269,7 +269,7 @@ class UsersController extends CommonController {
             $users = D('users');
             $data = $users->field('id,icon_url,nick_name,true_name,gender,id_card_num,h_pocn,mobile,email')->where("id = '{$id}'")->find();
             //身份证号加*号隐藏部分信息
-            $data['id_card_num'] = strlen($data['id_card_num']) == 15 ? substr_replace($data['id_card_num'],"****",8,4) : (strlen($data['id_card_num']) == 18 ? substr_replace($data['id_card_num'],"****",10,4) : "身份证位数不正常！");
+            //$data['id_card_num'] = strlen($data['id_card_num']) == 15 ? substr_replace($data['id_card_num'],"****",8,4) : (strlen($data['id_card_num']) == 18 ? substr_replace($data['id_card_num'],"****",10,4) : "身份证位数不正常！");
             if ($data){
                 $output = array('data' => $data,'info' => urlencode('需更新的用户信息'),'code' => 200);
                 exit(urldecode(json_encode($output)));                
@@ -421,13 +421,18 @@ class UsersController extends CommonController {
     	        $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Users/edit'), 'sec' => 2),'info' => urlencode('更新成功！'),'code' => 200);
     	        exit(urldecode(json_encode($output)));
     	    }else{
-    	        $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Users/edit'), 'sec' => 3),'info' => urlencode('更新失败！'),'code' => 200);
+    	        $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Users/edit'), 'sec' => 3),'info' => urlencode('更新失败，原因：信息错误或没有更新！'),'code' => 200);
     	        exit(urldecode(json_encode($output)));
     	    }
 	    }else{
 	        $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Users/edit'), 'sec' => 3),'info' => urlencode('请求错误！请重新再试！'),'code' => -205);
 	        exit(urldecode(json_encode($output)));
 	    }
+	}
+	
+	//用户审批页面
+	public function detail(){
+	    $this->display();
 	}
 	
 }

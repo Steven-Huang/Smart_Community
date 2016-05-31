@@ -212,9 +212,6 @@ class PublicController extends Controller
                 exit(urldecode(json_encode($output)));
             }
         } else {
-            // 测试模式， 上线后务必删除
-            VAR_DUMP(session());
-            
             $output = array(
                 'data' => array(
                     'redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Public/login'),

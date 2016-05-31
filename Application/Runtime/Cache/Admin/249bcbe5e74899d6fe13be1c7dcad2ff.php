@@ -339,14 +339,14 @@
 			              <label for="old_password" class="control-label col-md-3 col-sm-3 col-xs-12">请输入旧密码 <span class="required">*</span>
 			              </label>
 			              <div class="col-md-6 col-sm-6 col-xs-9">
-			                <input id="old_password" type="password" name="old_password" data-validate-length="6,8" class="form-control col-md-7 col-xs-12" required="required">
+			                <input id="old_password" type="password" name="old_password" class="form-control col-md-7 col-xs-12" required="required">
 			              </div>
 			            </div>
 			            <div class="item form-group">
 			              <label for="new_password" class="control-label col-md-3 col-sm-3 col-xs-12">请输入新密码 <span class="required">*</span>
 			              </label>
 			              <div class="col-md-6 col-sm-6 col-xs-9">
-			                <input id="new_password" type="password" name="new_password" data-validate-length="6,8" class="form-control col-md-7 col-xs-12" required="required">
+			                <input id="new_password" type="password" name="new_password" class="form-control col-md-7 col-xs-12" required="required">
 			              </div>
 			            </div>
 			            <div class="item form-group">
@@ -366,7 +366,7 @@
 			            <div class="ln_solid"></div>
 			            <div class="form-group">
 			              <div class="col-md-6 col-md-offset-3">
- 			                <button type="reset" class="btn btn-primary">清除</button>
+ 			                <!-- <button type="reset" class="btn btn-primary">清除</button> -->
 			                <!-- <a href="javascript:;" class="btn btn-default submit savedata" >保存</a> -->
 			                <button id="send" type="submit" class="btn btn-success">提交</button>
 			              </div>
@@ -514,8 +514,7 @@
 					$('#user_mobile').val(data['data']['mobile']);
             	}
             	if(data['code'] == '-200' || data['code'] == '-205' || data['code'] == '-208'){
-	            		alert(data['info']);
-            		location.href = 'http://' + data['data']['redirect_url'];	            		
+	            		alert(data['info']);            		
             	}
             },
             error: function(xhr, type, errorThrown) {

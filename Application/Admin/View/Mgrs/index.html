@@ -1,154 +1,224 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<!-- Meta, title, CSS, favicons, etc. -->
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>JoyRill智慧社区后台</title>
-	<!-- Public core css/js -->
-	<include file="Public/public_head"/>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- Meta, title, CSS, favicons, etc. -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JoyRill智慧社区后台</title>
+<!-- Public core css/js -->
+<include file="Public/public_head" />
 </head>
 <body class="nav-md">
-	<include file="Public/menu"/>
-	<include file="Public/top"/>
-	
+	<include file="Public/menu" />
+	<include file="Public/top" />
+
 	<!-- page content -->
 	<div class="right_col" role="main">
 		<div class="col-md-12 col-sm-12 col-xs-12">
-        	<div class="x_panel">
-                <ul id="myTab" class="nav nav-tabs " role="tablist">
-                  <li role="presentation" class="active"><a href="#tab_content1" role="tab" id="approved-tab" data-toggle="tab" aria-expanded="true">物业人员（已审批）</a>
-                  </li>
-                  <li role="presentation" class=""><a href="#tab_content2" role="tab" id="pending-tab" data-toggle="tab" aria-expanded="false">物业人员（待审批）</a>
-                  </li>
-                </ul>
-                <div id="myTabContent" class="tab-content">
-                	<div role="tabpanel" class="tab-pane fade active in" id="tab_content1" aria-labelledby="home-tab">
-					    <div class="container-fluid">
-					        <table class="table table-hover">
-					            <thead>
-					                <tr>
-					                    <th>ID</th>
-					                    <th>头像</th>
-					                    <th>用户名</th>
-					                    <th>真实姓名</th>
-					                    <th>性别</th>
-					                    <th>手机号</th>
-					                    <th>邮箱</th>
-					                    <th>身份证号</th>
-					                    <th>创建时间</th>
-					                    <th>上次登录IP</th>
-					                    <th>上次登录时间</th>
-					                    <th>操作</th>
-					                </tr>
-					            </thead>
-					            <tbody id="tab1">
-			                					                
-					            </tbody>
-					        </table>
-					        <div id="pages1"></div>
-					    </div>
-                	</div>
-                    <div role="tabpanel" class="tab-pane fade" id="tab_content2" aria-labelledby="profile-tab">
-					    <div class="container-fluid">
-					        <table class="table table-hover">
-					            <thead>
-					                <tr>
-					                    <th>ID</th>
-					                    <th>头像</th>
-					                    <th>用户名</th>
-					                    <th>真实姓名</th>
-					                    <th>性别</th>
-					                    <th>手机号</th>
-					                    <th>邮箱</th>
-					                    <th>身份证号</th>
-					                    <th>创建时间</th>
-					                    <th>操作</th>
-					                </tr>
-					            </thead>
-					            <tbody id="tab2">
-			                					                
-					            </tbody>
-					        </table>
-					        <div id="pages2"></div>
-					    </div>
-                    </div>
-                </div>
-	  		</div>
-	  	</div>
-	  </div>
-	  
-	  	<!-- /page content -->
-	<include file="Public/footer"/>
-	<include file="Public/public_bottom"/>
+			<div class="x_panel">
+				<ul id="myTab" class="nav nav-tabs " role="tablist">
+					<li role="presentation" class="active"><a href="#tab_content1"
+						role="tab" id="approved-tab" data-toggle="tab"
+						aria-expanded="true">物业人员（已审批）</a></li>
+					<li role="presentation" class=""><a href="#tab_content2"
+						role="tab" id="pending-tab" data-toggle="tab"
+						aria-expanded="false">物业人员（待审批）</a></li>
+				</ul>
+				<div id="myTabContent" class="tab-content">
+					<div role="tabpanel" class="tab-pane fade active in"
+						id="tab_content1" aria-labelledby="home-tab">
+						<div class="container-fluid">
+							<table class="table table-hover">
+								<thead>
+									<tr>
+										<th>ID</th>
+										<th>头像</th>
+										<th>用户名</th>
+										<th>真实姓名</th>
+										<th>性别</th>
+										<th>手机号</th>
+										<th>邮箱</th>
+										<th>身份证号</th>
+										<th>创建时间</th>
+										<th>上次登录IP</th>
+										<th>上次登录时间</th>
+										<th>操作</th>
+									</tr>
+								</thead>
+								<tbody id="tab1">
+
+								</tbody>
+							</table>
+							<div id="pages1"></div>
+						</div>
+					</div>
+					<div role="tabpanel" class="tab-pane fade" id="tab_content2"
+						aria-labelledby="profile-tab">
+						<div class="container-fluid">
+							<table class="table table-hover">
+								<thead>
+									<tr>
+										<th>ID</th>
+										<th>头像</th>
+										<th>用户名</th>
+										<th>真实姓名</th>
+										<th>性别</th>
+										<th>手机号</th>
+										<th>邮箱</th>
+										<th>身份证号</th>
+										<th>创建时间</th>
+										<th>操作</th>
+									</tr>
+								</thead>
+								<tbody id="tab2">
+
+								</tbody>
+							</table>
+							<div id="pages2"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- /page content -->
+	<include file="Public/footer" />
+	<include file="Public/public_bottom" />
 	<script type="text/javascript">
-		window.onload = function(){
-	    	$.ajax({
-	            type: "post",
-	            url: "__CONTROLLER__/approved_mgrs",
-	            data: {
-	            	access_token : getCookie('access_token'),
-	              	num : '5',
-	            },
-	            dataType: "json",
-	            success: function(data) {
-	            	if(data['code'] == 200){
-	            		if(data['data']['count'] == 0){
-	            			$("#tab1").append("<font color='red'><h5>无用户信息！</h5></font>");
-	            		}	            		
-			            var len = data['data']['data'].length;
-		            	for(var i=0; i < len; i++){
-		            	 	var array = "/role/mgrs/user_id/"+data['data']['data'][i]['id'];
-		            		$("#tab1").append("<tr><td>M"+data['data']['data'][i]['id']+"</td><td><img width='30' height='30' src=\"\/smart_community"+data['data']['data'][i]['icon_url']+"\"></td><td>"+data['data']['data'][i]['nick_name']+"</td><td>"+data['data']['data'][i]['true_name']+"</td><td>"+data['data']['data'][i]['gender']+"</td><td>"+data['data']['data'][i]['mobile']+"</td><td>"+data['data']['data'][i]['email']+"</td><td>"+data['data']['data'][i]['id_card_num']+"</td><td>"+data['data']['data'][i]['create_time']+"</td><td>"+data['data']['data'][i]['last_log_ip']+"</td><td>"+data['data']['data'][i]['last_log_time']+"</td><td><a class=\"btn btn-info btn-xs\" href=\""+"{:U(\'Admin/Mgrs/edit"+array+"\')}\"><i class=\"fa fa-pencil\"></i>更新</a>"+"<a class=\"btn btn-danger btn-xs\" href=\""+"{:U(\'Admin/Admin/del_mgrs"+array+"\')}\"><i class=\"fa fa-trash\"></i>删除</a></td>"+"</tr>");
-		            	 }
-		            	$('#pages1').append(data['data']['page']);
-	            	}
-	            	if(data['code'] == '-205' || data['code'] == '-208'){
-	            		alert(data['info']);
-            			location.href = 'http://' + data['data']['redirect_url'];	            		
-	            	}
-	            },
-	            error: function(xhr, type, errorThrown) {
-	              //异常处理
-	              console.log(type);
-	            }
-	          }); 			
+		window.onload = function() {
+			$
+					.ajax({
+						type : "post",
+						url : "__CONTROLLER__/approved_mgrs",
+						data : {
+							access_token : getCookie('access_token'),
+							num : '5',
+						},
+						dataType : "json",
+						success : function(data) {
+							if (data['code'] == 200) {
+								if (data['data']['count'] == 0) {
+									$("#tab1")
+											.append(
+													"<font color='red'><h5>无用户信息！</h5></font>");
+								}
+								var len = data['data']['data'].length;
+								for (var i = 0; i < len; i++) {
+									var array = "/role/mgrs/user_id/"
+											+ data['data']['data'][i]['id'];
+									$("#tab1")
+											.append(
+													"<tr><td>M"
+															+ data['data']['data'][i]['id']
+															+ "</td><td><img width='30' height='30' src=\"\/smart_community"+data['data']['data'][i]['icon_url']+"\"></td><td>"
+															+ data['data']['data'][i]['nick_name']
+															+ "</td><td>"
+															+ data['data']['data'][i]['true_name']
+															+ "</td><td>"
+															+ data['data']['data'][i]['gender']
+															+ "</td><td>"
+															+ data['data']['data'][i]['mobile']
+															+ "</td><td>"
+															+ data['data']['data'][i]['email']
+															+ "</td><td>"
+															+ data['data']['data'][i]['id_card_num']
+															+ "</td><td>"
+															+ data['data']['data'][i]['create_time']
+															+ "</td><td>"
+															+ data['data']['data'][i]['last_log_ip']
+															+ "</td><td>"
+															+ data['data']['data'][i]['last_log_time']
+															+ "</td><td><a class=\"btn btn-info btn-xs\" href=\""
+															+ "{:U(\'Admin/Mgrs/edit" + array + "\')}\"><i class=\"fa fa-pencil\"></i>更新</a>"
+															+ "<a class=\"btn btn-danger btn-xs\" href=\""
+															+ "{:U(\'Admin/Admin/del_mgrs" + array + "\')}\"><i class=\"fa fa-trash\"></i>删除</a></td>"
+															+ "</tr>");
+								}
+								$('#pages1').append(data['data']['page']);
+							}
+							if (data['code'] == '-205'
+									|| data['code'] == '-208') {
+								alert(data['info']);
+								location.href = 'http://'
+										+ data['data']['redirect_url'];
+							}
+						},
+						error : function(xhr, type, errorThrown) {
+							//异常处理
+							console.log(type);
+						}
+					});
 		}
-	    $('#pending-tab').one('click',function(){
-	    	$.ajax({
-	            type: "post",
-	            url: "__CONTROLLER__/pending_mgrs",
-	            data: {
-			     	access_token : getCookie('access_token'),
-			        num : '5',
-	            },
-	            dataType: "json",
-	            success: function(data) {
-	            	if(data['code'] == 200){
-	            		if(data['data']['count'] == 0){
-	            			$("#tab2").append("<font color='red'><h5>无用户信息！</h5></font>");
-	            		}	            		
-			            var len = data['data']['data'].length;
-		            	for(var i=0; i < len; i++){
-		            	 	var array = "/role/users/user_id/"+data['data']['data'][i]['id']+"/username/"+data['data']['data'][i]['nick_name']+"/role_id/"+data['data']['data'][i]['role_id'];
-		            		$("#tab2").append("<tr><td>M"+data['data']['data'][i]['id']+"</td><td><img width='30' height='30' src=\"\/smart_community"+data['data']['data'][i]['icon_url']+"\"></td><td>"+"</td><td>"+data['data']['data'][i]['nick_name']+"</td><td>"+data['data']['data'][i]['true_name']+"</td><td>"+data['data']['data'][i]['gender']+"</td><td>"+data['data']['data'][i]['mobile']+"</td><td>"+data['data']['data'][i]['email']+"</td><td>"+data['data']['data'][i]['id_card_num']+"</td><td>"+data['data']['data'][i]['create_time']+"</td><td><a class=\"btn btn-success btn-xs\" href=\""+"{:U(\'Admin/Users/edit"+array+"\')}\"><i class=\"fa fa-check\"></i>审批通过</a>"+"<a class=\"btn btn-danger btn-xs\" href=\""+"{:U(\'Admin/Users/edit"+array+"\')}\"><i class=\"fa fa-close\"></i>拒绝</a></td>"+"</tr>");
-		            	 }
-		            	$('#pages2').append(data['data']['page']);
-	            	}
-		            if(data['code'] == '-205' || data['code'] == '-206' || data['code'] == '-207' || data['code'] == '-208'){
-	            		alert(data['info']);
-            			location.href = 'http://' + data['data']['redirect_url'];	            		
-	            	}
-	            },
-	            error: function(xhr, type, errorThrown) {
-	              //异常处理
-	              console.log(type);
-	            }
-	          }); 
-	    })
+		$('#pending-tab')
+				.one(
+						'click',
+						function() {
+							$
+									.ajax({
+										type : "post",
+										url : "__CONTROLLER__/pending_mgrs",
+										data : {
+											access_token : getCookie('access_token'),
+											num : '5',
+										},
+										dataType : "json",
+										success : function(data) {
+											if (data['code'] == 200) {
+												if (data['data']['count'] == 0) {
+													$("#tab2")
+															.append(
+																	"<font color='red'><h5>无用户信息！</h5></font>");
+												}
+												var len = data['data']['data'].length;
+												for (var i = 0; i < len; i++) {
+													var array = "/user_id/"
+															+ data['data']['data'][i]['id'];
+													$("#tab2")
+															.append(
+																	"<tr><td>M"
+																			+ data['data']['data'][i]['id']
+																			+ "</td><td><img width='30' height='30' src=\"\/smart_community"+data['data']['data'][i]['icon_url']+"\"></td><td>"
+																			+ "</td><td>"
+																			+ data['data']['data'][i]['nick_name']
+																			+ "</td><td>"
+																			+ data['data']['data'][i]['true_name']
+																			+ "</td><td>"
+																			+ data['data']['data'][i]['gender']
+																			+ "</td><td>"
+																			+ data['data']['data'][i]['mobile']
+																			+ "</td><td>"
+																			+ data['data']['data'][i]['email']
+																			+ "</td><td>"
+																			+ data['data']['data'][i]['id_card_num']
+																			+ "</td><td>"
+																			+ data['data']['data'][i]['create_time']
+																			+ "</td><td><a class=\"btn btn-success btn-xs\" href=\""
+																			+ "{:U(\'Admin/Mgrs/detail" + array + "\')}\"><i class=\"fa fa-search-plus\"></i>审批</a>"
+																			+ "</td>"
+																			+ "</tr>");
+												}
+												$('#pages2').append(
+														data['data']['page']);
+											}
+											if (data['code'] == '-205'
+													|| data['code'] == '-206'
+													|| data['code'] == '-207'
+													|| data['code'] == '-208') {
+												alert(data['info']);
+												location.href = 'http://'
+														+ data['data']['redirect_url'];
+											}
+										},
+										error : function(xhr, type, errorThrown) {
+											//异常处理
+											console.log(type);
+										}
+									});
+						})
 	</script>
-    
+
 </body>
 </html>

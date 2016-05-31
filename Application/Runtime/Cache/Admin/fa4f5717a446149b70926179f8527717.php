@@ -48,7 +48,8 @@
     <!-- menu prile quick info -->
     <div class="profile">
       <div class="profile_pic">
-        <img src="/smart_community/Public/admin/images/img.jpg" alt="..." class="img-circle profile_img">
+        <!--<img src="/smart_community/Public/admin/images/img.jpg" alt="..." class="img-circle profile_img">-->
+        <img src="<?php echo 'http://localhost/smart_community' . $_SESSION['icon_url']?>" alt="..." class="img-circle profile_img">
       </div>
       <div class="profile_info">
         <span>Welcome,</span>
@@ -180,7 +181,8 @@
       <ul class="nav navbar-nav navbar-right">
         <li id="user-profile" class="">
           <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-            <img src="/smart_community/Public/admin/images/img.jpg" alt=""><?php echo ucfirst($_SESSION['nick_name']);?>
+<!--            <img src="/smart_community/Public/admin/images/img.jpg" alt=""><?php echo ucfirst($_SESSION['nick_name']);?>  -->
+			<img src="<?php echo 'http://localhost/smart_community' . $_SESSION['icon_url']?>" alt=""><?php echo ucfirst($_SESSION['nick_name']);?>
             <span class=" fa fa-angle-down"></span>
           </a>
           <ul class="dropdown-menu dropdown-usermenu pull-right">
@@ -276,28 +278,42 @@
 	<div class="right_col" role="main">
 		<div class="col-md-12 col-sm-12 col-xs-12">
         	<div class="x_panel">
-				<div class="title">
-					<a class="btn btn-default" href="<?php echo U('Admin/Access/add_node');?>" >添加节点</a>
-				</div>
-				<div id="node_list" class="container-fluid">
-<!-- 					<?php if(is_array($data)): foreach($data as $key=>$v): ?><div style="margin:5px;border-bottom:1px dotted #ccc">
-							<button type="button" class="btn btn-primary"><?php echo ($v['title']); ?></button>
-							<a href="<?php echo U('Admin/Access/add_node',array('pid'=>$v['id'],'level'=>$v['level'] + 1));?>">添加</a>
-							<a href="<?php echo U('Admin/Access/del_node',array('id'=>$v['id']));?>">删除</a>
-						</div>
-						<?php if(is_array($v['child'])): foreach($v['child'] as $key=>$con): ?><div style="margin:5px;border-top:1px solid #555">
-								<button type="button" class="btn btn-success"><?php echo ($con['title']); ?></button>
-								<a href="<?php echo U('Admin/Access/add_node',array('pid'=>$con['id'],'level'=>$con['level'] + 1));?>">添加</a>
-								<a href="<?php echo U('Admin/Access/del_node',array('id'=>$con['id']));?>">删除</a>
-							</div>
-							<div style="margin:5px;">
-								<?php if(is_array($con['child'])): foreach($con['child'] as $key=>$act): ?><button type="button" class="btn btn-info" ><?php echo ($act['title']); ?></button>
-									<a style="margin-right:10px" href="<?php echo U('Admin/Access/del_node',array('id'=>$act['id']));?>">删除</a><?php endforeach; endif; ?>
-							</div><?php endforeach; endif; endforeach; endif; ?> -->
-				</div>
-			</div>
-		</div>		
+                <ul id="myTab" class="nav nav-tabs " role="tablist">
+                  <li role="presentation" class="active"><a href="#tab_content1" role="tab" id="approved-tab" data-toggle="tab" aria-expanded="true">超级管理员信息</a>
+                  </li>
+                </ul>
+                <div id="myTabContent" class="tab-content">
+                	<div role="tabpanel" class="tab-pane fade active in" id="tab_content1" aria-labelledby="home-tab">
+					    <div class="container-fluid">
+					        <table class="table table-hover">
+					            <thead>
+					                <tr>
+					                    <th>ID</th>
+					                    <th>头像</th>
+					                    <th>用户名</th>
+					                    <th>真实姓名</th>
+					                    <th>性别</th>
+					                    <th>手机号</th>
+					                    <th>邮箱</th>
+					                    <th>身份证号</th>
+					                    <th>创建时间</th>
+					                    <th>上次登录IP</th>
+					                    <th>上次登录时间</th>
+					                    <th>操作</th>
+					                </tr>
+					            </thead>
+					            <tbody id="tab1">
+			                					                
+					            </tbody>
+					        </table>
+					        <div id="pages1"></div>
+					    </div>
+                	</div>
+                </div>
+	  		</div>
+	  	</div>
 	  </div>
+	  
 	  	<!-- /page content -->
 	<!-- footer content -->
 <footer>
@@ -402,17 +418,26 @@
 		window.onload = function(){
 	    	$.ajax({
 	            type: "post",
-	            url: "/smart_community/admin.php/Access/node",
+	            url: "/smart_community/admin.php/Admin/index_list",
 	            data: {
 	            	access_token : getCookie('access_token'),
+	              	num : '5',
 	            },
 	            dataType: "json",
 	            success: function(data) {
-	            	if(data['code'] == 200){            		
-		            	$('#node_list').append(data['data']);
+	            	if(data['code'] == 200){
+	            		if(data['data']['count'] == 0){
+	            			$("#tab1").append("<font color='red'><h5>无用户信息！</h5></font>");
+	            		}	            		
+ 		            	var len = data['data']['data'].length;
+		            	for(var i=0; i < len; i++){
+		            	 	var array = "/role/admin/user_id/"+data['data']['data'][i]['id'];
+		            		$("#tab1").append("<tr><td>A"+data['data']['data'][i]['id']+"</td><td><img width='30' height='30' src=\"\/smart_community"+data['data']['data'][i]['icon_url']+"\"></td><td>"+data['data']['data'][i]['nick_name']+"</td><td>"+data['data']['data'][i]['true_name']+"</td><td>"+data['data']['data'][i]['gender']+"</td><td>"+data['data']['data'][i]['mobile']+"</td><td>"+data['data']['data'][i]['email']+"</td><td>"+data['data']['data'][i]['id_card_num']+"</td><td>"+data['data']['data'][i]['create_time']+"</td><td>"+data['data']['data'][i]['last_log_ip']+"</td><td>"+data['data']['data'][i]['last_log_time']+"</td><td><a class=\"btn btn-info btn-xs\" href=\""+"<?php echo U('Admin/Admin/edit"+array+"');?>\"><i class=\"fa fa-pencil\"></i>更新</a>"+"</td>"+"</tr>");
+		            	 }
+		            	$('#pages1').append(data['data']['page']);
 	            	}
 	            	if(data['code'] == '-205' || data['code'] == '-206' || data['code'] == '-207' || data['code'] == '-208'){
-		            	alert(data['info']);
+ 	            		alert(data['info']);
 	            		location.href = 'http://' + data['data']['redirect_url'];	            		
 	            	}
 	            },
@@ -420,15 +445,9 @@
 	              //异常处理
 	              console.log(type);
 	            }
-	        }); 		
+	          }); 			
 		}
-		//测试不成功
-		$(function(){
-			$("a[name='del']").click(function(){
-				alert('1');
-			});
-		});
-
 	</script>
+    
 </body>
 </html>

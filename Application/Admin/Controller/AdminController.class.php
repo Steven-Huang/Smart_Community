@@ -164,16 +164,16 @@ class AdminController extends CommonController {
     	    $model->startTrans();
     	    
 
-    	    $name = $model->table('admin')->field('nick_name')->where(array('id'=>$id))->select();
+    	    $name = $model->table(C('DB_PREFIX').'admin')->field('nick_name')->where(array('id'=>$id))->select();
     	    //Admin 不能给删除
     	    if ($name[0]['nick_name'] == 'admin'){
     	        $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/index'), 'sec' => 3),'info' => urlencode('不能删除超级管理员admin！'),'code' => -201);
     	        exit(urldecode(json_encode($output)));
     	    }
-    	    $status1 = $model->table('admin')->where(array('id'=>$id))->delete();
+    	    $status1 = $model->table(C('DB_PREFIX').'admin')->where(array('id'=>$id))->delete();
     	    if($status1){
     	        //同时删除用户角色数据
-    	        $status2 = $model->table('role_user')->where(array('user_id'=>$id))->delete();
+    	        $status2 = $model->table(C('DB_PREFIX').'role_user')->where(array('user_id'=>$id))->delete();
     	        if($status2){
     	            //成功提交
     	            $model->commit();
@@ -304,7 +304,7 @@ class AdminController extends CommonController {
     	    $users = D('admin');
 	        $data = $users->field('id,icon_url,nick_name,true_name,gender,id_card_num,mobile,email')->where("id = '{$id}'")->select();
             //身份证号加*号隐藏部分信息
-            $data[0]['id_card_num'] = strlen($data[0]['id_card_num']) == 15 ? substr_replace($data[0]['id_card_num'],"****",8,4) : (strlen($data[0]['id_card_num']) == 18 ? substr_replace($data[0]['id_card_num'],"****",10,4) : "身份证位数不正常！");
+            //$data[0]['id_card_num'] = strlen($data[0]['id_card_num']) == 15 ? substr_replace($data[0]['id_card_num'],"****",8,4) : (strlen($data[0]['id_card_num']) == 18 ? substr_replace($data[0]['id_card_num'],"****",10,4) : "身份证位数不正常！");
             if ($data){
                 $output = array('data' => $data,'info' => urlencode('需更新的用户信息'),'code' => 200);
                 exit(urldecode(json_encode($output)));                
@@ -328,13 +328,17 @@ class AdminController extends CommonController {
 	        }
     	    $edit_type = I('post.edit_type');
     	    $id = I('post.user_id');
+    	    
+    	    //实例化用户
+    	    $Users = D('admin');
+    	    
     	    if ($edit_type == 'edit_icon'){
     	        $icon_url = strtolower(trim(I('post.icon_url')));
     	        $data = array(
     	            'icon_url' => $icon_url,
     	            'id' => $id
     	        );
-    	        $status = D('admin')->save($data);
+    	        $status = $Users->save($data);
 //     	    }elseif ($edit_type == 'edit_nick_name'){
 //     	        $nick_name = strtolower(trim(I('post.nick_name')));
 //     	        if (D('admin')->field('id')->where("nick_name = '{$nick_name}'")->select()){
@@ -351,7 +355,7 @@ class AdminController extends CommonController {
     	        $new_password = strtolower(addslashes(trim(I('post.new_password'))));
     	        $confirm_password = strtolower(addslashes(trim(I('post.confirm_password'))));
     	        //获取当前用户密码
-    	        $row = D('admin')->field('password,id_card_num')->where("id = '{$id}'")->select();
+    	        $row = $Users->field('password,id_card_num')->where("id = '{$id}'")->select();
     	        //判断错误
     	        if ($new_password != $confirm_password){
     	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/edit'), 'sec' => 3),'info' => urlencode('两次输入的新密码不一致！'),'code' => '-202A');
@@ -371,7 +375,7 @@ class AdminController extends CommonController {
     	        }
     	    }elseif ($edit_type == 'edit_mobile'){
     	        $mobile = strtolower(addslashes(trim(I('post.mobile'))));
-    	        if (D('admin')->field('id')->where("mobile = '{$mobile}'")->select()){
+    	        if ($Users->field('id')->where("mobile = '{$mobile}'")->select()){
     	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/edit'), 'sec' => 3),'info' => urlencode('手机号已存在！'),'code' => '-202C');
     	            exit(urldecode(json_encode($output)));
     	        }
@@ -382,7 +386,7 @@ class AdminController extends CommonController {
     	        $status = D('admin')->save($data);
     	    }elseif ($edit_type == 'edit_email'){
     	        $email = strtolower(addslashes(trim(I('post.email'))));
-    	        if (D('admin')->field('id')->where("email = '{$email}'")->select()){
+    	        if ($Users->field('id')->where("email = '{$email}'")->select()){
     	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/edit'), 'sec' => 3),'info' => urlencode('邮箱已存在！'),'code' => '-202D');
     	            exit(urldecode(json_encode($output)));
     	        }    
@@ -390,55 +394,59 @@ class AdminController extends CommonController {
     	            'email' => $email,
     	            'id' => $id
     	        );
-    	        $status = D('admin')->save($data);
+    	        $status = $Users->save($data);
     	    }elseif ($edit_type == 'edit_all'){
-    	        $icon_url = strtolower(addslashes(trim(I('post.icon_url'))));
-    	        $nick_name = strtolower(addslashes(trim(I('post.nick_name'))));
+//     	        $icon_url = strtolower(addslashes(trim(I('post.icon_url'))));
+//     	        $nick_name = strtolower(addslashes(trim(I('post.nick_name'))));
     	        $old_password = strtolower(addslashes(trim(I('post.old_password'))));
     	        $new_password = strtolower(addslashes(trim(I('post.new_password'))));
-    	        $confirm_password = strtolower(addslashes(trim(I('post.confirm_password'))));
+    	        $confirm_password = strtolower(addslashes(trim(I('post.new_password2'))));
     	        $mobile = addslashes(trim(I('post.mobile')));
     	        $email = strtolower(addslashes(trim(I('post.email'))));
     	        
     	        //当用户信息为空时，返回错误信息（需前端配合过滤）
-    	        if (empty($icon_url) || empty($nick_name) || empty($old_password) || empty($new_password) || empty($confirm_password) || empty($mobile) || empty($email)){
+    	        if (empty($old_password) || empty($new_password) || empty($confirm_password) || empty($mobile) || empty($email)){
     	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/edit'), 'sec' => 3),'info' => urlencode('更新信息不能为空！'),'code' => -201);
     	            exit(urldecode(json_encode($output)));
     	        }
     	        //检查信息(nick_name,mobile,email,id_card_num)是否重复,需前端配合过滤
-    	        if (D('admin')->field('id')->where("nick_name = '{$nick_name}'")->select()){
-    	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/edit'), 'sec' => 3),'info' => urlencode('昵称已存在！'),'code' => '-202E');
-    	            exit(urldecode(json_encode($output)));
-    	        }
-    	        if (D('admin')->field('id')->where("mobile = '{$mobile}'")->select()){
-    	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/edit'), 'sec' => 3),'info' => urlencode('手机号已存在！'),'code' => '-202C');
-    	            exit(urldecode(json_encode($output)));
-    	        }
-    	        if (D('admin')->field('id')->where("email = '{$email}'")->select()){
-    	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/edit'), 'sec' => 3),'info' => urlencode('邮箱已存在！'),'code' => '-202D');
-    	            exit(urldecode(json_encode($output)));
-    	        }    
-    	        //获取当前用户密码
-    	        $row = D('admin')->field('password,id_card_num')->where("id = '{$id}'")->select();
+//     	        if (D('admin')->field('id')->where("nick_name = '{$nick_name}'")->select()){
+//     	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/edit'), 'sec' => 3),'info' => urlencode('昵称已存在！'),'code' => '-202E');
+//     	            exit(urldecode(json_encode($output)));
+//     	        }
+    	        $row = $Users->field('email,mobile,password,id_card_num')->where("id = '{$id}'")->find();
+                
+                if ($row['mobile'] != $mobile){
+                    if ($Users->field('id')->where("mobile = '{$mobile}'")->find()){
+                        $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Users/edit'), 'sec' => 3),'info' => urlencode('手机号已存在！'),'code' => '-202C');
+                        exit(urldecode(json_encode($output)));
+                    }
+                }
+
+                if ($row['email'] != $email){
+                    if ($Users->field('id')->where("email = '{$email}'")->find()){
+                        $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Users/edit'), 'sec' => 3),'info' => urlencode('邮箱已存在！'),'code' => '-202D');
+                        exit(urldecode(json_encode($output)));
+                    }
+                }
+    	        
     	        //判断错误
     	        if ($row['password'] != create_hash($old_password, $row['id_card_num'])) {
-    	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/edit'), 'sec' => 3),'info' => urlencode('输入的旧密码错误！'),'code' => '-202B');
+    	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Users/edit'), 'sec' => 3),'info' => urlencode('输入的旧密码错误！'),'code' => '-202B');
     	            exit(urldecode(json_encode($output)));
     	        }elseif ($new_password != $confirm_password){
-    	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Admin/edit'), 'sec' => 3),'info' => urlencode('两次输入的新密码不一致！'),'code' => '-202A');
+    	            $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Users/edit'), 'sec' => 3),'info' => urlencode('两次输入的新密码不一致！'),'code' => '-202A');
     	            exit(urldecode(json_encode($output)));
     	        }
     	        //执行
     	        $data = array(
     	            'id' => $id,
-    	            'icon_url' => $icon_url,
-    	            'nick_name' => $nick_name,
     	            'password' => create_hash($new_password, $row['id_card_num']),
     	            'mobile' => $mobile,
     	            'email' => $email
     	        );
     
-    	        $status = D('admin')->save($data);	        
+    	        $status = $Users->save($data);	        
     	    }
     	    //判断修改状态
     	    if ($status){
@@ -478,7 +486,9 @@ class AdminController extends CommonController {
                   'id' => $id,
                   'if_aprvd' => 1
                 );
-                $status1 = $model->table('users')->save($data);
+                
+                $status1 = $model->table(C('DB_PREFIX').'users')->save($data);
+                
                 if($status1){
                     //当业主信息审批通过，需同时给sc_role_user添加角色关系，角色默认为“无”
                     $data = array(
@@ -486,7 +496,8 @@ class AdminController extends CommonController {
                         'user_id' => $id,
                         'user_type' => 'U'
                     );
-                    $status2 = $model->table('role_user')->add($data);
+                    
+                    $status2 = $model->table(C('DB_PREFIX').'role_user')->add($data);
                     if ($status2){
                         //成功提交
                         $model->commit();
@@ -512,7 +523,7 @@ class AdminController extends CommonController {
                     'id' => $id,
                     'if_aprvd' => -1
                 );
-                $status = $model->table('users')->save($data);
+                $status = $model->table(C('DB_PREFIX').'users')->save($data);
                 if ($status){
                     $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Users/index'), 'sec' => 2),'info' => urlencode('业主审批已拒绝！'),'code' => '200B');
                     exit(urldecode(json_encode($output)));
@@ -542,10 +553,10 @@ class AdminController extends CommonController {
     	    $model = new Model();
     	    $model->startTrans();
     	    
-    	    $status1 = $model->table('users')->where(array('id'=>$id))->delete();
+    	    $status1 = $model->table(C('DB_PREFIX').'users')->where(array('id'=>$id))->delete();
     	    if($status1){
     	        //同时删除用户角色信息
-    	        $status2 = $model->table('role_user')->where(array('user_id'=>$id))->delete();
+    	        $status2 = $model->table(C('DB_PREFIX').'role_user')->where(array('user_id'=>$id))->delete();
     	        if($status2){
     	            //成功提交
     	            $model->commit();
@@ -596,7 +607,7 @@ class AdminController extends CommonController {
                   'id' => $id,
                   'if_aprvd' => 1
                 );
-                $status1 = $model->table('mgrs')->save($data);
+                $status1 = $model->table(C('DB_PREFIX').'mgrs')->save($data);
                 if($status1){
                     //当业主信息审批通过，需同时给sc_role_user添加角色关系，角色默认为“无”
                     $data = array(
@@ -604,7 +615,7 @@ class AdminController extends CommonController {
                         'user_id' => $id,
                         'user_type' => 'M'
                     );
-                    $status2 = $model->table('role_user')->add($data);
+                    $status2 = $model->table(C('DB_PREFIX').'role_user')->add($data);
                     if ($status2){
                         //成功提交
                         $model->commit();
@@ -630,7 +641,7 @@ class AdminController extends CommonController {
                     'id' => $id,
                     'if_aprvd' => -1
                 );
-                $status = $model->table('mgrs')->save($data);
+                $status = $model->table(C('DB_PREFIX').'mgrs')->save($data);
                 if ($status){
                     $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Mgrs/index'), 'sec' => 2),'info' => urlencode('业主审批已拒绝！'),'code' => '200B');
                     exit(urldecode(json_encode($output)));
@@ -660,9 +671,9 @@ class AdminController extends CommonController {
     	    $model = new Model();
     	    $model->startTrans();
     	    
-    	    $status1 = $model->table('mgrs')->where(array('id'=>$id))->delete();
+    	    $status1 = $model->table(C('DB_PREFIX').'mgrs')->where(array('id'=>$id))->delete();
     	    if($status1){
-    	        $status2 = $model->table('role_user')->where(array('user_id'=>$id))->delete();
+    	        $status2 = $model->table(C('DB_PREFIX').'role_user')->where(array('user_id'=>$id))->delete();
     	        if($status2){
     	            //成功提交
     	            $model->commit();

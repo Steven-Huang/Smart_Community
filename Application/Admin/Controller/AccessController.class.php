@@ -321,15 +321,15 @@ Eof;
     		//开启事务
     		$model->startTrans();
     		
-    		$status1 = $model->table('node')->where(array('pid'=>$id))->find();
+    		$status1 = $model->table(C('DB_PREFIX').'node')->where(array('pid'=>$id))->find();
     	     
     		if ($status1){
     		    $output = array('data' => array('redirect_url' => urlencode($_SERVER['HTTP_HOST'] . __APP__ . '/Access/node_list'), 'sec' => 3),'info' => urlencode('此节点存在子节点，请先删除子节点！'),'code' => -201);
     		    exit(urldecode(json_encode($output)));
     		} else {
-    		    $status2 = $model->table('node')->where(array('id'=>$id))->delete();
+    		    $status2 = $model->table(C('DB_PREFIX').'node')->where(array('id'=>$id))->delete();
     		    if($status2){
-    		        $status3 = $model->table('access')->where(array('node_id'=>$id))->delete();
+    		        $status3 = $model->table(C('DB_PREFIX').'access')->where(array('node_id'=>$id))->delete();
     		        if ($status3){
     		            //成功提交
     		            $model->commit();
@@ -453,12 +453,12 @@ Eof;
     		//开启事务
     		$model->startTrans();
     		
-    		$status1 = $model->table('role')->where(array('id'=>$id))->delete();
+    		$status1 = $model->table(C('DB_PREFIX').'role')->where(array('id'=>$id))->delete();
     		if($status1){
     		    $data = array(
     		        'role_id' => 0 //为待分配角色
     		    );		    
-    		    $status2 = $model->table('role_user')->where(array('role_id'=>$id))->setField($data);	    
+    		    $status2 = $model->table(C('DB_PREFIX').'role_user')->where(array('role_id'=>$id))->setField($data);	    
     			if ($status2){
     			    //成功提交
     			    $model->commit();
